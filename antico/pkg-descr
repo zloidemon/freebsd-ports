@@ -1,0 +1,7 @@
+The goal is to create a Window/Desktop manager simple and fast.
+All parameters must be configured from few files, avoiding unnecessary
+complications, following the K.I.S.S. philosophy.
+The whole project is based only on Qt4 libraries, without any other external
+dependencies (e.g. kdelibs #).
+
+WWW:	http://www.antico.netsons.org

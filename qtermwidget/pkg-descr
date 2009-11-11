@@ -1,0 +1,6 @@
+QT4 widget for terminal emulation. It is based on KDE4 Konsole code, which was
+rewritten entirely, and now it requires QT4 only (no KDE at all). 
+
+Package provides the widget library and a sample application.
+
+WWW:	http://port.home.page/

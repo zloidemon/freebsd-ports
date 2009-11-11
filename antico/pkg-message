@@ -1,0 +1,8 @@
+##########################################################
+#							 #
+#	Window manager:					 #
+#	- from KDM/GMD, select "Antico" from WM list     #
+#	- from shell, type "xinit /usr/local/bin/antico" #
+#	(first "pkill" kdm/gdm and X)			 #	
+#							 #
+##########################################################

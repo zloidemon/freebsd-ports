@@ -1,0 +1,15 @@
+bin/nmapsi4
+share/applications/kde/nmapsi4-admin.desktop
+share/applications/kde/nmapsi4.desktop
+share/icons/hicolor/128x128/apps/nmapsi4.png
+share/icons/hicolor/16x16/apps/nmapsi4.png
+share/icons/hicolor/32x32/apps/nmapsi4.png
+share/icons/hicolor/64x64/apps/nmapsi4.png
+share/nmapsi4/locale/nmapsi4_de.qm
+share/nmapsi4/locale/nmapsi4_es.qm
+share/nmapsi4/locale/nmapsi4_fr.qm
+share/nmapsi4/locale/nmapsi4_it.qm
+share/nmapsi4/locale/nmapsi4_pl.qm
+@dirrm share/nmapsi4/locale
+@dirrm share/nmapsi4
+@dirrm share/applications/kde
