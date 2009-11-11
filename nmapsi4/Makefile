@@ -14,9 +14,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	GUI frontend for the nmap scanning utility
 
+RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
+
 USE_CMAKE= 	yes
 USE_QT_VER=	4
 OMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
