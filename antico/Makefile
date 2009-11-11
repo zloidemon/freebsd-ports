@@ -8,7 +8,7 @@
 PORTNAME=	antico
 PORTVERSION=	0.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	
+MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTNAME}-33b232a
 
 MAINTAINER=	g.veniamin@googlemail.com
