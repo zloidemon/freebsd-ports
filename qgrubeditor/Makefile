@@ -14,6 +14,8 @@ DISTNAME=	60391-QGRUBEditor-${PORTVERSION}-src
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	GRUB configuration utility using QT4
 
+RUN_DEPENDS=    grub:${PORTSDIR}/sysutils/grub
+
 USE_BZIP2=	yes
 
 USE_QT_VER=	4
