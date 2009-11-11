@@ -1,3 +1,5 @@
-[description of the port]
+QGRUBEditor is a system tool to view and edit the GRUB boot loader. It offers
+many features and it is the perfect solution for those who want to change the
+way GRUB works, without messing with GRUB's configuration files.
 
-WWW:	http://port.home.page/
+WWW:	http://www.qt-apps.org/content/show.php/QGRUBEditor?content=60391
