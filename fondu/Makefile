@@ -1,0 +1,31 @@
+# New ports collection makefile for:	fondu
+# Date created:		2009-11-14
+# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	fondu
+PORTVERSION=	051010
+CATEGORIES=	converters
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
+DISTNAME=	fondu_src-051010
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	g.veniamin@googlemail.com
+COMMENT=	A series of programs to interconvert between mac fonts
+
+HAS_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/dfont2res.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/fondu.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/frombin.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/lumper.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/showfond.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/tobin.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/ufond.1 ${MANPREFIX}/man/man1/
+
+.include <bsd.port.mk>
