@@ -16,6 +16,13 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	A series of programs to interconvert between mac fonts
 
 HAS_CONFIGURE=	yes
+MAN1=		dfont2res.1 \
+		fondu.1 \
+		frombin.1 \
+		lumper.1 \
+		showfond.1 \
+		tobin.1 \
+		ufond.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
