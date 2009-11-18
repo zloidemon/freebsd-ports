@@ -18,9 +18,14 @@ USE_QT_VER=	4
 OMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
 
 QMAKE_PRO=	${PORTNAME}.pro
-QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.png
 
 do-configure:
-	cd ${WRKSRC} && ${QT_LRELEASE} ${QMAKE_PRO} && ${QMAKE} ${QMAKE_PRO}
+	cd ${WRKSRC} && ${QMAKE} ${QMAKE_PRO}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/znotes.png ${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
