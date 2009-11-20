@@ -14,11 +14,20 @@ DISTNAME=	grub-${PORTVERSION}
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	GRand Unified Bootloader
 
-USE_AUTOTOOLS=  autoconf:262
+ONLY_FOR_ARCHS=	i386
+USE_AUTOTOOLS=  autoconf:262 autoheader:262
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-freebsd-freebsd${OSREL}
 
-USE_RUBBY=	16
+USE_RUBY=	yes
+USE_RUBY_VER=	18
 
 .include <bsd.port.pre.mk>
+pre-configure:
+	@cd ${WRKSRC} && ${ACLOCAL}
+	@cd ${WRKSRC} && ${RUBY} genmk.rb < conf\/*.rmk
+	@cd ${WRKSRC} && ${REINPLACE_CMD} 's/\.conf/*.rmk/.mk/'
+	${SH} ${WRKSRC}/gendistlist.sh > ${WRKSRC}/DISTLIST
+
 .include <bsd.port.post.mk>
