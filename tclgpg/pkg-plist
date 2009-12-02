@@ -1,1 +1,4 @@
-@comment $FreeBSD$
+lib/gpg1.0/pkgIndex.tcl
+lib/gpg1.0/tclgpg.tcl
+lib/gpg1.0/libgpg1.0.so
+@dirrm lib/gpg1.0

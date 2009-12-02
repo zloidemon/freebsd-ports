@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-r71
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Tcl interface to GNU Privacy Guard
 
+MANN=		gpg.n
+
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -28,5 +31,4 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR} \
 		--enable-threads
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
