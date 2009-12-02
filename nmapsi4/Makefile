@@ -18,6 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
 
 USE_CMAKE= 	yes
 USE_QT_VER=	4
-OMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
 
 .include <bsd.port.mk>
