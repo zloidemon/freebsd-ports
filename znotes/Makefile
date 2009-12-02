@@ -15,7 +15,7 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Simple notes based on QT4
 
 USE_QT_VER=	4
-OMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
 
 QMAKE_PRO=	${PORTNAME}.pro
 PLIST_FILES=	bin/${PORTNAME} \
