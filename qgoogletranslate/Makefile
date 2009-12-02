@@ -16,7 +16,7 @@ COMMENT=	This application translates text via Google Translate engine
 
 USE_ZIP=	yes
 USE_QT_VER=	4
-OMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
 
 QMAKE_PRO=	QGoogleTranslate.pro
 
