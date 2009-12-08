@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qgoogletranslate
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	QGoogleTranslate-${PORTVERSION}b-build4-20090309-src
+DISTNAME=	QGoogleTranslate-${PORTVERSION}b-build5-20091204-src
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	This application translates text via Google Translate engine
