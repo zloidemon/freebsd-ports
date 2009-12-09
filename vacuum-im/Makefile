@@ -5,24 +5,39 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vacuum-im
-PORTVERSION=
+PORTNAME=	vacuum
+PORTVERSION=	0.0.919
 CATEGORIES=	net-im
-MASTER_SITES=	
-DISTNAME=	${PORTNAME}.r916
+MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
+PKGNAMESUFFIX=	-im
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.r919
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Crossplatform Jabber client
 
+#USE_DOS2UNIX=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
+USE_LDCONFIG=	yes
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
 
 QMAKE_PRO=	vacuum.pro
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
 do-configure:
 	cd ${WRKSRC} && ${QMAKE}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} resources ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} translations ${DATADIR}
+	${MKDIR} ${PREFIX}/lib/${PORTNAME}
+	cd ${WRKSRC} && ${CP} -Rv plugins ${PREFIX}/lib/${PORTNAME}
+	${CP} ${WRKSRC}/src/libs/libvacuumutils.so.1.0.0 ${PREFIX}/lib
+	${LN} -s ${PREFIX}/lib/libvacuumutils.so.1.0.0 ${PREFIX}/lib/libvacuumutils.so
+	${LN} -s ${PREFIX}/lib/libvacuumutils.so.1.0.0 ${PREFIX}/lib/libvacuumutils.so.1
+	${LN} -s ${PREFIX}/lib/libvacuumutils.so.1.0.0 ${PREFIX}/lib/libvacuumutils.so.1.0
 
 .include <bsd.port.mk>
