@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	vacuum
-PORTVERSION=	0.0.919
+PORTVERSION=	0.0.928
 CATEGORIES=	net-im
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
 PKGNAMESUFFIX=	-im
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.r919
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.r928
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Crossplatform Jabber client
