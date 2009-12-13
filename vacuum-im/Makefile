@@ -21,7 +21,7 @@ USE_QT_VER=	4
 USE_LDCONFIG=	yes
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
 
-QMAKE_PRO=	vacuum.pro
+QMAKE_PRO=	${PORTNAME}.pro
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
