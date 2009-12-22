@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vacuum
-PORTVERSION=	0.0.948
+PORTVERSION=	0.0.0.948
 CATEGORIES=	net-im
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
 PKGNAMESUFFIX=	-im
