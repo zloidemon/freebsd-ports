@@ -6,18 +6,23 @@
 #
 
 PORTNAME=	nmapsi4
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha2
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	GUI frontend for the nmap scanning utility
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
 
-USE_CMAKE= 	yes
+USE_CMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
+INSTALLS_ICONS=	yes
+
+post-install:
+	${CHMOD} 755 ${PREFIX}/bin/${PORTNAME}
+	${CHMOD} 755 ${PREFIX}/bin/${PORTNAME}-logr
 
 .include <bsd.port.mk>
