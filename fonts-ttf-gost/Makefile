@@ -7,7 +7,7 @@
 
 PORTNAME=	fonts-ttf-gost
 PORTVERSION=	7.2
-CATEGORIES=	russian x11-fonts
+CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
