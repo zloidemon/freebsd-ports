@@ -18,7 +18,7 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-FONTSDIR=	lib/X11/fonts/${PORTNAME}
+FONTSDIR=	lib/X11/fonts/gost
 PLIST_SUB+=	FONTSDIR=${FONTSDIR}
 
 do-install:
@@ -26,9 +26,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/${FONTSDIR}
 
 post-install:
-	@${ECHO_MSG} "==> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${FONTSDIR}
-	@${ECHO_MSG}
+	${ECHO_MSG} "===> Running fc-cache"
+	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
+	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} "Standart GOST font. GOST 2.304-81"
 	@${ECHO_MSG} "Pay attention to copyright issues before\
