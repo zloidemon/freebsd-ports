@@ -1,0 +1,7 @@
+@exec %D/bin/fc-cache -f -v %%FONTSDIR%%
+%%FONTSDIR%%/gost_a.ttf
+%%FONTSDIR%%/gost_b.ttf
+%%FONTSDIR%%/symbol_a.ttf
+%%FONTSDIR%%/symbol_b.ttf
+%%FONTSDIR%%/fonts.cache-1
+@dirrm %%FONTSDIR%%
