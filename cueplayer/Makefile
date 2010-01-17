@@ -15,7 +15,7 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	CUE player
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build phonon network phonon-gst
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
 USE_GSTREAMER=	flac good dvd lame ugly
 
 DESKTOP_ENTRIES="Cueplayer" "Listening and convert flac files" \
