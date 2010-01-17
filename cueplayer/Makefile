@@ -14,11 +14,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	CUE player
 
+BUILD_DEPENDS=	${_GST_LIB_BASE}/libgstflumpegdemux.so:${PORTSDIR}/multimedia/gstreamer-plugins-fluendo-mpegdemux
+
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
-USE_GSTREAMER=	flac good dvd lame ugly
+USE_GSTREAMER=	flac good dvd lame ugly ffmpeg taglib ogg vorbis soup libmms
 
-DESKTOP_ENTRIES="Cueplayer" "Listening and convert flac files" \
+DESKTOP_ENTRIES="Cueplayer" "Lightweight media player based on Qt and Gstreamer" \
 		"${DATADIR}/knotify.png" "${PORTNAME}" \
 		"AudioVideo;Audio;Video;" ${FALSE}
 
