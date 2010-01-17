@@ -1,0 +1,840 @@
+bin/spark
+%%SPARKDIR%%/Spark
+%%SPARKDIR%%/documentation/LICENSE.html
+%%SPARKDIR%%/documentation/README.html
+%%SPARKDIR%%/documentation/builder.jar
+%%SPARKDIR%%/documentation/changelog.html
+%%SPARKDIR%%/documentation/images/banner-spark.gif
+%%SPARKDIR%%/documentation/images/banner-spring.gif
+%%SPARKDIR%%/documentation/images/chat-room.png
+%%SPARKDIR%%/documentation/images/contact-list.png
+%%SPARKDIR%%/documentation/images/login-dialog.png
+%%SPARKDIR%%/documentation/sparkplug_dev_guide.html
+%%SPARKDIR%%/documentation/style.css
+%%SPARKDIR%%/jre/COPYRIGHT
+%%SPARKDIR%%/jre/LICENSE
+%%SPARKDIR%%/jre/README
+%%SPARKDIR%%/jre/THIRDPARTYLICENSEREADME.txt
+%%SPARKDIR%%/jre/Welcome.html
+%%SPARKDIR%%/jre/bin/ControlPanel
+%%SPARKDIR%%/jre/bin/java
+%%SPARKDIR%%/jre/bin/java_vm
+%%SPARKDIR%%/jre/bin/jcontrol
+%%SPARKDIR%%/jre/bin/keytool
+%%SPARKDIR%%/jre/bin/orbd
+%%SPARKDIR%%/jre/bin/pack200
+%%SPARKDIR%%/jre/bin/policytool
+%%SPARKDIR%%/jre/bin/rmid
+%%SPARKDIR%%/jre/bin/rmiregistry
+%%SPARKDIR%%/jre/bin/servertool
+%%SPARKDIR%%/jre/bin/tnameserv
+%%SPARKDIR%%/jre/bin/unpack200
+%%SPARKDIR%%/jre/lib/calendars.properties
+%%SPARKDIR%%/jre/lib/charsets.jar.pack
+%%SPARKDIR%%/jre/lib/classlist
+%%SPARKDIR%%/jre/lib/cmm/CIEXYZ.pf
+%%SPARKDIR%%/jre/lib/cmm/GRAY.pf
+%%SPARKDIR%%/jre/lib/cmm/LINEAR_RGB.pf
+%%SPARKDIR%%/jre/lib/cmm/PYCC.pf
+%%SPARKDIR%%/jre/lib/cmm/sRGB.pf
+%%SPARKDIR%%/jre/lib/content-types.properties
+%%SPARKDIR%%/jre/lib/deploy.jar.pack
+%%SPARKDIR%%/jre/lib/deploy/ffjcext.zip
+%%SPARKDIR%%/jre/lib/deploy/java-icon.ico
+%%SPARKDIR%%/jre/lib/deploy/messages.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_de.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_es.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_fr.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_it.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_ja.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_ko.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_sv.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_zh_CN.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_zh_HK.properties
+%%SPARKDIR%%/jre/lib/deploy/messages_zh_TW.properties
+%%SPARKDIR%%/jre/lib/deploy/splash.jpg
+%%SPARKDIR%%/jre/lib/desktop/applications/sun-java.desktop
+%%SPARKDIR%%/jre/lib/desktop/applications/sun-javaws.desktop
+%%SPARKDIR%%/jre/lib/desktop/applications/sun_java.desktop
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/16x16/apps/sun-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/16x16/apps/sun-javaws.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/16x16/apps/sun-jcontrol.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-text-x-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/48x48/apps/sun-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/48x48/apps/sun-javaws.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/48x48/apps/sun-jcontrol.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-text-x-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-javaws.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-jcontrol.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-text-x-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-javaws.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-jcontrol.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-text-x-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/16x16/apps/sun-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/16x16/apps/sun-javaws.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/16x16/apps/sun-jcontrol.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-text-x-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/48x48/apps/sun-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/48x48/apps/sun-javaws.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/48x48/apps/sun-jcontrol.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-text-x-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/16x16/apps/sun-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/16x16/apps/sun-javaws.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/16x16/apps/sun-jcontrol.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-text-x-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/48x48/apps/sun-javaws.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/48x48/apps/sun-jcontrol.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%SPARKDIR%%/jre/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-text-x-java.png
+%%SPARKDIR%%/jre/lib/desktop/mime/packages/x-java-archive.xml
+%%SPARKDIR%%/jre/lib/desktop/mime/packages/x-java-jnlp-file.xml
+%%SPARKDIR%%/jre/lib/ext/dnsns.jar
+%%SPARKDIR%%/jre/lib/ext/localedata.jar.pack
+%%SPARKDIR%%/jre/lib/ext/meta-index
+%%SPARKDIR%%/jre/lib/ext/sunjce_provider.jar
+%%SPARKDIR%%/jre/lib/ext/sunpkcs11.jar
+%%SPARKDIR%%/jre/lib/flavormap.properties
+%%SPARKDIR%%/jre/lib/fontconfig.RedHat.2.1.bfc
+%%SPARKDIR%%/jre/lib/fontconfig.RedHat.2.1.properties.src
+%%SPARKDIR%%/jre/lib/fontconfig.RedHat.3.bfc
+%%SPARKDIR%%/jre/lib/fontconfig.RedHat.3.properties.src
+%%SPARKDIR%%/jre/lib/fontconfig.RedHat.bfc
+%%SPARKDIR%%/jre/lib/fontconfig.RedHat.properties.src
+%%SPARKDIR%%/jre/lib/fontconfig.SuSE.bfc
+%%SPARKDIR%%/jre/lib/fontconfig.SuSE.properties.src
+%%SPARKDIR%%/jre/lib/fontconfig.Sun.bfc
+%%SPARKDIR%%/jre/lib/fontconfig.Sun.properties.src
+%%SPARKDIR%%/jre/lib/fontconfig.Turbo.bfc
+%%SPARKDIR%%/jre/lib/fontconfig.Turbo.properties.src
+%%SPARKDIR%%/jre/lib/fontconfig.bfc
+%%SPARKDIR%%/jre/lib/fontconfig.properties.src
+%%SPARKDIR%%/jre/lib/fonts/LucidaBrightDemiBold.ttf
+%%SPARKDIR%%/jre/lib/fonts/LucidaBrightDemiItalic.ttf
+%%SPARKDIR%%/jre/lib/fonts/LucidaBrightItalic.ttf
+%%SPARKDIR%%/jre/lib/fonts/LucidaBrightRegular.ttf
+%%SPARKDIR%%/jre/lib/fonts/LucidaSansDemiBold.ttf
+%%SPARKDIR%%/jre/lib/fonts/LucidaSansRegular.ttf
+%%SPARKDIR%%/jre/lib/fonts/LucidaTypewriterBold.ttf
+%%SPARKDIR%%/jre/lib/fonts/LucidaTypewriterRegular.ttf
+%%SPARKDIR%%/jre/lib/fonts/fonts.dir
+%%SPARKDIR%%/jre/lib/i386/client/Xusage.txt
+%%SPARKDIR%%/jre/lib/i386/client/libjsig.so
+%%SPARKDIR%%/jre/lib/i386/client/libjvm.so
+%%SPARKDIR%%/jre/lib/i386/headless/libmawt.so
+%%SPARKDIR%%/jre/lib/i386/jli/libjli.so
+%%SPARKDIR%%/jre/lib/i386/jvm.cfg
+%%SPARKDIR%%/jre/lib/i386/libJdbcOdbc.so
+%%SPARKDIR%%/jre/lib/i386/libawt.so
+%%SPARKDIR%%/jre/lib/i386/libcmm.so
+%%SPARKDIR%%/jre/lib/i386/libdcpr.so
+%%SPARKDIR%%/jre/lib/i386/libdeploy.so
+%%SPARKDIR%%/jre/lib/i386/libdt_socket.so
+%%SPARKDIR%%/jre/lib/i386/libfontmanager.so
+%%SPARKDIR%%/jre/lib/i386/libhprof.so
+%%SPARKDIR%%/jre/lib/i386/libinstrument.so
+%%SPARKDIR%%/jre/lib/i386/libioser12.so
+%%SPARKDIR%%/jre/lib/i386/libj2gss.so
+%%SPARKDIR%%/jre/lib/i386/libj2pcsc.so
+%%SPARKDIR%%/jre/lib/i386/libj2pkcs11.so
+%%SPARKDIR%%/jre/lib/i386/libjaas_unix.so
+%%SPARKDIR%%/jre/lib/i386/libjava.so
+%%SPARKDIR%%/jre/lib/i386/libjava_crw_demo.so
+%%SPARKDIR%%/jre/lib/i386/libjavaplugin_jni.so
+%%SPARKDIR%%/jre/lib/i386/libjavaplugin_nscp.so
+%%SPARKDIR%%/jre/lib/i386/libjavaplugin_nscp_gcc29.so
+%%SPARKDIR%%/jre/lib/i386/libjawt.so
+%%SPARKDIR%%/jre/lib/i386/libjdwp.so
+%%SPARKDIR%%/jre/lib/i386/libjpeg.so
+%%SPARKDIR%%/jre/lib/i386/libjsig.so
+%%SPARKDIR%%/jre/lib/i386/libjsound.so
+%%SPARKDIR%%/jre/lib/i386/libjsoundalsa.so
+%%SPARKDIR%%/jre/lib/i386/libmanagement.so
+%%SPARKDIR%%/jre/lib/i386/libmlib_image.so
+%%SPARKDIR%%/jre/lib/i386/libnative_chmod.so
+%%SPARKDIR%%/jre/lib/i386/libnative_chmod_g.so
+%%SPARKDIR%%/jre/lib/i386/libnet.so
+%%SPARKDIR%%/jre/lib/i386/libnio.so
+%%SPARKDIR%%/jre/lib/i386/libnpt.so
+%%SPARKDIR%%/jre/lib/i386/librmi.so
+%%SPARKDIR%%/jre/lib/i386/libsplashscreen.so
+%%SPARKDIR%%/jre/lib/i386/libunpack.so
+%%SPARKDIR%%/jre/lib/i386/libverify.so
+%%SPARKDIR%%/jre/lib/i386/libzip.so
+%%SPARKDIR%%/jre/lib/i386/motif21/libmawt.so
+%%SPARKDIR%%/jre/lib/i386/native_threads/libhpi.so
+%%SPARKDIR%%/jre/lib/i386/server/Xusage.txt
+%%SPARKDIR%%/jre/lib/i386/server/libjsig.so
+%%SPARKDIR%%/jre/lib/i386/server/libjvm.so
+%%SPARKDIR%%/jre/lib/i386/xawt/libmawt.so
+%%SPARKDIR%%/jre/lib/im/indicim.jar
+%%SPARKDIR%%/jre/lib/im/thaiim.jar
+%%SPARKDIR%%/jre/lib/images/cursors/cursors.properties
+%%SPARKDIR%%/jre/lib/images/cursors/invalid32x32.gif
+%%SPARKDIR%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
+%%SPARKDIR%%/jre/lib/images/cursors/motif_CopyNoDrop32x32.gif
+%%SPARKDIR%%/jre/lib/images/cursors/motif_LinkDrop32x32.gif
+%%SPARKDIR%%/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
+%%SPARKDIR%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
+%%SPARKDIR%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
+%%SPARKDIR%%/jre/lib/images/icons/sun-java.png
+%%SPARKDIR%%/jre/lib/images/icons/sun-java_HighContrast.png
+%%SPARKDIR%%/jre/lib/images/icons/sun-java_HighContrastInverse.png
+%%SPARKDIR%%/jre/lib/images/icons/sun-java_LowContrast.png
+%%SPARKDIR%%/jre/lib/jce.jar
+%%SPARKDIR%%/jre/lib/jexec
+%%SPARKDIR%%/jre/lib/jsse.jar.pack
+%%SPARKDIR%%/jre/lib/jvm.hprof.txt
+%%SPARKDIR%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/zh_HK.BIG5HK/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+%%SPARKDIR%%/jre/lib/logging.properties
+%%SPARKDIR%%/jre/lib/management-agent.jar
+%%SPARKDIR%%/jre/lib/management/jmxremote.access
+%%SPARKDIR%%/jre/lib/management/jmxremote.password.template
+%%SPARKDIR%%/jre/lib/management/management.properties
+%%SPARKDIR%%/jre/lib/management/snmp.acl.template
+%%SPARKDIR%%/jre/lib/meta-index
+%%SPARKDIR%%/jre/lib/net.properties
+%%SPARKDIR%%/jre/lib/oblique-fonts/LucidaSansDemiOblique.ttf
+%%SPARKDIR%%/jre/lib/oblique-fonts/LucidaSansOblique.ttf
+%%SPARKDIR%%/jre/lib/oblique-fonts/LucidaTypewriterBoldOblique.ttf
+%%SPARKDIR%%/jre/lib/oblique-fonts/LucidaTypewriterOblique.ttf
+%%SPARKDIR%%/jre/lib/oblique-fonts/fonts.dir
+%%SPARKDIR%%/jre/lib/plugin.jar.pack
+%%SPARKDIR%%/jre/lib/psfont.properties.ja
+%%SPARKDIR%%/jre/lib/psfontj2d.properties
+%%SPARKDIR%%/jre/lib/resources.jar
+%%SPARKDIR%%/jre/lib/rt.jar.pack
+%%SPARKDIR%%/jre/lib/security/US_export_policy.jar
+%%SPARKDIR%%/jre/lib/security/cacerts
+%%SPARKDIR%%/jre/lib/security/java.policy
+%%SPARKDIR%%/jre/lib/security/java.security
+%%SPARKDIR%%/jre/lib/security/javaws.policy
+%%SPARKDIR%%/jre/lib/security/local_policy.jar
+%%SPARKDIR%%/jre/lib/sound.properties
+%%SPARKDIR%%/jre/lib/zi/Africa/Abidjan
+%%SPARKDIR%%/jre/lib/zi/Africa/Accra
+%%SPARKDIR%%/jre/lib/zi/Africa/Addis_Ababa
+%%SPARKDIR%%/jre/lib/zi/Africa/Algiers
+%%SPARKDIR%%/jre/lib/zi/Africa/Asmara
+%%SPARKDIR%%/jre/lib/zi/Africa/Bamako
+%%SPARKDIR%%/jre/lib/zi/Africa/Bangui
+%%SPARKDIR%%/jre/lib/zi/Africa/Banjul
+%%SPARKDIR%%/jre/lib/zi/Africa/Bissau
+%%SPARKDIR%%/jre/lib/zi/Africa/Blantyre
+%%SPARKDIR%%/jre/lib/zi/Africa/Brazzaville
+%%SPARKDIR%%/jre/lib/zi/Africa/Bujumbura
+%%SPARKDIR%%/jre/lib/zi/Africa/Cairo
+%%SPARKDIR%%/jre/lib/zi/Africa/Casablanca
+%%SPARKDIR%%/jre/lib/zi/Africa/Ceuta
+%%SPARKDIR%%/jre/lib/zi/Africa/Conakry
+%%SPARKDIR%%/jre/lib/zi/Africa/Dakar
+%%SPARKDIR%%/jre/lib/zi/Africa/Dar_es_Salaam
+%%SPARKDIR%%/jre/lib/zi/Africa/Djibouti
+%%SPARKDIR%%/jre/lib/zi/Africa/Douala
+%%SPARKDIR%%/jre/lib/zi/Africa/El_Aaiun
+%%SPARKDIR%%/jre/lib/zi/Africa/Freetown
+%%SPARKDIR%%/jre/lib/zi/Africa/Gaborone
+%%SPARKDIR%%/jre/lib/zi/Africa/Harare
+%%SPARKDIR%%/jre/lib/zi/Africa/Johannesburg
+%%SPARKDIR%%/jre/lib/zi/Africa/Kampala
+%%SPARKDIR%%/jre/lib/zi/Africa/Khartoum
+%%SPARKDIR%%/jre/lib/zi/Africa/Kigali
+%%SPARKDIR%%/jre/lib/zi/Africa/Kinshasa
+%%SPARKDIR%%/jre/lib/zi/Africa/Lagos
+%%SPARKDIR%%/jre/lib/zi/Africa/Libreville
+%%SPARKDIR%%/jre/lib/zi/Africa/Lome
+%%SPARKDIR%%/jre/lib/zi/Africa/Luanda
+%%SPARKDIR%%/jre/lib/zi/Africa/Lubumbashi
+%%SPARKDIR%%/jre/lib/zi/Africa/Lusaka
+%%SPARKDIR%%/jre/lib/zi/Africa/Malabo
+%%SPARKDIR%%/jre/lib/zi/Africa/Maputo
+%%SPARKDIR%%/jre/lib/zi/Africa/Maseru
+%%SPARKDIR%%/jre/lib/zi/Africa/Mbabane
+%%SPARKDIR%%/jre/lib/zi/Africa/Mogadishu
+%%SPARKDIR%%/jre/lib/zi/Africa/Monrovia
+%%SPARKDIR%%/jre/lib/zi/Africa/Nairobi
+%%SPARKDIR%%/jre/lib/zi/Africa/Ndjamena
+%%SPARKDIR%%/jre/lib/zi/Africa/Niamey
+%%SPARKDIR%%/jre/lib/zi/Africa/Nouakchott
+%%SPARKDIR%%/jre/lib/zi/Africa/Ouagadougou
+%%SPARKDIR%%/jre/lib/zi/Africa/Porto-Novo
+%%SPARKDIR%%/jre/lib/zi/Africa/Sao_Tome
+%%SPARKDIR%%/jre/lib/zi/Africa/Tripoli
+%%SPARKDIR%%/jre/lib/zi/Africa/Tunis
+%%SPARKDIR%%/jre/lib/zi/Africa/Windhoek
+%%SPARKDIR%%/jre/lib/zi/America/Adak
+%%SPARKDIR%%/jre/lib/zi/America/Anchorage
+%%SPARKDIR%%/jre/lib/zi/America/Anguilla
+%%SPARKDIR%%/jre/lib/zi/America/Antigua
+%%SPARKDIR%%/jre/lib/zi/America/Araguaina
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/Buenos_Aires
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/Catamarca
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/Cordoba
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/Jujuy
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/La_Rioja
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/Mendoza
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/Rio_Gallegos
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/San_Juan
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/Tucuman
+%%SPARKDIR%%/jre/lib/zi/America/Argentina/Ushuaia
+%%SPARKDIR%%/jre/lib/zi/America/Aruba
+%%SPARKDIR%%/jre/lib/zi/America/Asuncion
+%%SPARKDIR%%/jre/lib/zi/America/Atikokan
+%%SPARKDIR%%/jre/lib/zi/America/Bahia
+%%SPARKDIR%%/jre/lib/zi/America/Barbados
+%%SPARKDIR%%/jre/lib/zi/America/Belem
+%%SPARKDIR%%/jre/lib/zi/America/Belize
+%%SPARKDIR%%/jre/lib/zi/America/Blanc-Sablon
+%%SPARKDIR%%/jre/lib/zi/America/Boa_Vista
+%%SPARKDIR%%/jre/lib/zi/America/Bogota
+%%SPARKDIR%%/jre/lib/zi/America/Boise
+%%SPARKDIR%%/jre/lib/zi/America/Cambridge_Bay
+%%SPARKDIR%%/jre/lib/zi/America/Campo_Grande
+%%SPARKDIR%%/jre/lib/zi/America/Cancun
+%%SPARKDIR%%/jre/lib/zi/America/Caracas
+%%SPARKDIR%%/jre/lib/zi/America/Cayenne
+%%SPARKDIR%%/jre/lib/zi/America/Cayman
+%%SPARKDIR%%/jre/lib/zi/America/Chicago
+%%SPARKDIR%%/jre/lib/zi/America/Chihuahua
+%%SPARKDIR%%/jre/lib/zi/America/Costa_Rica
+%%SPARKDIR%%/jre/lib/zi/America/Cuiaba
+%%SPARKDIR%%/jre/lib/zi/America/Curacao
+%%SPARKDIR%%/jre/lib/zi/America/Danmarkshavn
+%%SPARKDIR%%/jre/lib/zi/America/Dawson
+%%SPARKDIR%%/jre/lib/zi/America/Dawson_Creek
+%%SPARKDIR%%/jre/lib/zi/America/Denver
+%%SPARKDIR%%/jre/lib/zi/America/Detroit
+%%SPARKDIR%%/jre/lib/zi/America/Dominica
+%%SPARKDIR%%/jre/lib/zi/America/Edmonton
+%%SPARKDIR%%/jre/lib/zi/America/Eirunepe
+%%SPARKDIR%%/jre/lib/zi/America/El_Salvador
+%%SPARKDIR%%/jre/lib/zi/America/Fortaleza
+%%SPARKDIR%%/jre/lib/zi/America/Glace_Bay
+%%SPARKDIR%%/jre/lib/zi/America/Godthab
+%%SPARKDIR%%/jre/lib/zi/America/Goose_Bay
+%%SPARKDIR%%/jre/lib/zi/America/Grand_Turk
+%%SPARKDIR%%/jre/lib/zi/America/Grenada
+%%SPARKDIR%%/jre/lib/zi/America/Guadeloupe
+%%SPARKDIR%%/jre/lib/zi/America/Guatemala
+%%SPARKDIR%%/jre/lib/zi/America/Guayaquil
+%%SPARKDIR%%/jre/lib/zi/America/Guyana
+%%SPARKDIR%%/jre/lib/zi/America/Halifax
+%%SPARKDIR%%/jre/lib/zi/America/Havana
+%%SPARKDIR%%/jre/lib/zi/America/Hermosillo
+%%SPARKDIR%%/jre/lib/zi/America/Indiana/Indianapolis
+%%SPARKDIR%%/jre/lib/zi/America/Indiana/Knox
+%%SPARKDIR%%/jre/lib/zi/America/Indiana/Marengo
+%%SPARKDIR%%/jre/lib/zi/America/Indiana/Petersburg
+%%SPARKDIR%%/jre/lib/zi/America/Indiana/Vevay
+%%SPARKDIR%%/jre/lib/zi/America/Indiana/Vincennes
+%%SPARKDIR%%/jre/lib/zi/America/Indiana/Winamac
+%%SPARKDIR%%/jre/lib/zi/America/Inuvik
+%%SPARKDIR%%/jre/lib/zi/America/Iqaluit
+%%SPARKDIR%%/jre/lib/zi/America/Jamaica
+%%SPARKDIR%%/jre/lib/zi/America/Juneau
+%%SPARKDIR%%/jre/lib/zi/America/Kentucky/Louisville
+%%SPARKDIR%%/jre/lib/zi/America/Kentucky/Monticello
+%%SPARKDIR%%/jre/lib/zi/America/La_Paz
+%%SPARKDIR%%/jre/lib/zi/America/Lima
+%%SPARKDIR%%/jre/lib/zi/America/Los_Angeles
+%%SPARKDIR%%/jre/lib/zi/America/Maceio
+%%SPARKDIR%%/jre/lib/zi/America/Managua
+%%SPARKDIR%%/jre/lib/zi/America/Manaus
+%%SPARKDIR%%/jre/lib/zi/America/Martinique
+%%SPARKDIR%%/jre/lib/zi/America/Mazatlan
+%%SPARKDIR%%/jre/lib/zi/America/Menominee
+%%SPARKDIR%%/jre/lib/zi/America/Merida
+%%SPARKDIR%%/jre/lib/zi/America/Mexico_City
+%%SPARKDIR%%/jre/lib/zi/America/Miquelon
+%%SPARKDIR%%/jre/lib/zi/America/Moncton
+%%SPARKDIR%%/jre/lib/zi/America/Monterrey
+%%SPARKDIR%%/jre/lib/zi/America/Montevideo
+%%SPARKDIR%%/jre/lib/zi/America/Montreal
+%%SPARKDIR%%/jre/lib/zi/America/Montserrat
+%%SPARKDIR%%/jre/lib/zi/America/Nassau
+%%SPARKDIR%%/jre/lib/zi/America/New_York
+%%SPARKDIR%%/jre/lib/zi/America/Nipigon
+%%SPARKDIR%%/jre/lib/zi/America/Nome
+%%SPARKDIR%%/jre/lib/zi/America/Noronha
+%%SPARKDIR%%/jre/lib/zi/America/North_Dakota/Center
+%%SPARKDIR%%/jre/lib/zi/America/North_Dakota/New_Salem
+%%SPARKDIR%%/jre/lib/zi/America/Panama
+%%SPARKDIR%%/jre/lib/zi/America/Pangnirtung
+%%SPARKDIR%%/jre/lib/zi/America/Paramaribo
+%%SPARKDIR%%/jre/lib/zi/America/Phoenix
+%%SPARKDIR%%/jre/lib/zi/America/Port-au-Prince
+%%SPARKDIR%%/jre/lib/zi/America/Port_of_Spain
+%%SPARKDIR%%/jre/lib/zi/America/Porto_Velho
+%%SPARKDIR%%/jre/lib/zi/America/Puerto_Rico
+%%SPARKDIR%%/jre/lib/zi/America/Rainy_River
+%%SPARKDIR%%/jre/lib/zi/America/Rankin_Inlet
+%%SPARKDIR%%/jre/lib/zi/America/Recife
+%%SPARKDIR%%/jre/lib/zi/America/Regina
+%%SPARKDIR%%/jre/lib/zi/America/Resolute
+%%SPARKDIR%%/jre/lib/zi/America/Rio_Branco
+%%SPARKDIR%%/jre/lib/zi/America/Santiago
+%%SPARKDIR%%/jre/lib/zi/America/Santo_Domingo
+%%SPARKDIR%%/jre/lib/zi/America/Sao_Paulo
+%%SPARKDIR%%/jre/lib/zi/America/Scoresbysund
+%%SPARKDIR%%/jre/lib/zi/America/St_Johns
+%%SPARKDIR%%/jre/lib/zi/America/St_Kitts
+%%SPARKDIR%%/jre/lib/zi/America/St_Lucia
+%%SPARKDIR%%/jre/lib/zi/America/St_Thomas
+%%SPARKDIR%%/jre/lib/zi/America/St_Vincent
+%%SPARKDIR%%/jre/lib/zi/America/Swift_Current
+%%SPARKDIR%%/jre/lib/zi/America/Tegucigalpa
+%%SPARKDIR%%/jre/lib/zi/America/Thule
+%%SPARKDIR%%/jre/lib/zi/America/Thunder_Bay
+%%SPARKDIR%%/jre/lib/zi/America/Tijuana
+%%SPARKDIR%%/jre/lib/zi/America/Toronto
+%%SPARKDIR%%/jre/lib/zi/America/Tortola
+%%SPARKDIR%%/jre/lib/zi/America/Vancouver
+%%SPARKDIR%%/jre/lib/zi/America/Whitehorse
+%%SPARKDIR%%/jre/lib/zi/America/Winnipeg
+%%SPARKDIR%%/jre/lib/zi/America/Yakutat
+%%SPARKDIR%%/jre/lib/zi/America/Yellowknife
+%%SPARKDIR%%/jre/lib/zi/Antarctica/Casey
+%%SPARKDIR%%/jre/lib/zi/Antarctica/Davis
+%%SPARKDIR%%/jre/lib/zi/Antarctica/DumontDUrville
+%%SPARKDIR%%/jre/lib/zi/Antarctica/Mawson
+%%SPARKDIR%%/jre/lib/zi/Antarctica/McMurdo
+%%SPARKDIR%%/jre/lib/zi/Antarctica/Palmer
+%%SPARKDIR%%/jre/lib/zi/Antarctica/Rothera
+%%SPARKDIR%%/jre/lib/zi/Antarctica/Syowa
+%%SPARKDIR%%/jre/lib/zi/Antarctica/Vostok
+%%SPARKDIR%%/jre/lib/zi/Asia/Aden
+%%SPARKDIR%%/jre/lib/zi/Asia/Almaty
+%%SPARKDIR%%/jre/lib/zi/Asia/Amman
+%%SPARKDIR%%/jre/lib/zi/Asia/Anadyr
+%%SPARKDIR%%/jre/lib/zi/Asia/Aqtau
+%%SPARKDIR%%/jre/lib/zi/Asia/Aqtobe
+%%SPARKDIR%%/jre/lib/zi/Asia/Ashgabat
+%%SPARKDIR%%/jre/lib/zi/Asia/Baghdad
+%%SPARKDIR%%/jre/lib/zi/Asia/Bahrain
+%%SPARKDIR%%/jre/lib/zi/Asia/Baku
+%%SPARKDIR%%/jre/lib/zi/Asia/Bangkok
+%%SPARKDIR%%/jre/lib/zi/Asia/Beirut
+%%SPARKDIR%%/jre/lib/zi/Asia/Bishkek
+%%SPARKDIR%%/jre/lib/zi/Asia/Brunei
+%%SPARKDIR%%/jre/lib/zi/Asia/Calcutta
+%%SPARKDIR%%/jre/lib/zi/Asia/Choibalsan
+%%SPARKDIR%%/jre/lib/zi/Asia/Chongqing
+%%SPARKDIR%%/jre/lib/zi/Asia/Colombo
+%%SPARKDIR%%/jre/lib/zi/Asia/Damascus
+%%SPARKDIR%%/jre/lib/zi/Asia/Dhaka
+%%SPARKDIR%%/jre/lib/zi/Asia/Dili
+%%SPARKDIR%%/jre/lib/zi/Asia/Dubai
+%%SPARKDIR%%/jre/lib/zi/Asia/Dushanbe
+%%SPARKDIR%%/jre/lib/zi/Asia/Gaza
+%%SPARKDIR%%/jre/lib/zi/Asia/Harbin
+%%SPARKDIR%%/jre/lib/zi/Asia/Hong_Kong
+%%SPARKDIR%%/jre/lib/zi/Asia/Hovd
+%%SPARKDIR%%/jre/lib/zi/Asia/Irkutsk
+%%SPARKDIR%%/jre/lib/zi/Asia/Jakarta
+%%SPARKDIR%%/jre/lib/zi/Asia/Jayapura
+%%SPARKDIR%%/jre/lib/zi/Asia/Jerusalem
+%%SPARKDIR%%/jre/lib/zi/Asia/Kabul
+%%SPARKDIR%%/jre/lib/zi/Asia/Kamchatka
+%%SPARKDIR%%/jre/lib/zi/Asia/Karachi
+%%SPARKDIR%%/jre/lib/zi/Asia/Kashgar
+%%SPARKDIR%%/jre/lib/zi/Asia/Katmandu
+%%SPARKDIR%%/jre/lib/zi/Asia/Krasnoyarsk
+%%SPARKDIR%%/jre/lib/zi/Asia/Kuala_Lumpur
+%%SPARKDIR%%/jre/lib/zi/Asia/Kuching
+%%SPARKDIR%%/jre/lib/zi/Asia/Kuwait
+%%SPARKDIR%%/jre/lib/zi/Asia/Macau
+%%SPARKDIR%%/jre/lib/zi/Asia/Magadan
+%%SPARKDIR%%/jre/lib/zi/Asia/Makassar
+%%SPARKDIR%%/jre/lib/zi/Asia/Manila
+%%SPARKDIR%%/jre/lib/zi/Asia/Muscat
+%%SPARKDIR%%/jre/lib/zi/Asia/Nicosia
+%%SPARKDIR%%/jre/lib/zi/Asia/Novosibirsk
+%%SPARKDIR%%/jre/lib/zi/Asia/Omsk
+%%SPARKDIR%%/jre/lib/zi/Asia/Oral
+%%SPARKDIR%%/jre/lib/zi/Asia/Phnom_Penh
+%%SPARKDIR%%/jre/lib/zi/Asia/Pontianak
+%%SPARKDIR%%/jre/lib/zi/Asia/Pyongyang
+%%SPARKDIR%%/jre/lib/zi/Asia/Qatar
+%%SPARKDIR%%/jre/lib/zi/Asia/Qyzylorda
+%%SPARKDIR%%/jre/lib/zi/Asia/Rangoon
+%%SPARKDIR%%/jre/lib/zi/Asia/Riyadh
+%%SPARKDIR%%/jre/lib/zi/Asia/Riyadh87
+%%SPARKDIR%%/jre/lib/zi/Asia/Riyadh88
+%%SPARKDIR%%/jre/lib/zi/Asia/Riyadh89
+%%SPARKDIR%%/jre/lib/zi/Asia/Saigon
+%%SPARKDIR%%/jre/lib/zi/Asia/Sakhalin
+%%SPARKDIR%%/jre/lib/zi/Asia/Samarkand
+%%SPARKDIR%%/jre/lib/zi/Asia/Seoul
+%%SPARKDIR%%/jre/lib/zi/Asia/Shanghai
+%%SPARKDIR%%/jre/lib/zi/Asia/Singapore
+%%SPARKDIR%%/jre/lib/zi/Asia/Taipei
+%%SPARKDIR%%/jre/lib/zi/Asia/Tashkent
+%%SPARKDIR%%/jre/lib/zi/Asia/Tbilisi
+%%SPARKDIR%%/jre/lib/zi/Asia/Tehran
+%%SPARKDIR%%/jre/lib/zi/Asia/Thimphu
+%%SPARKDIR%%/jre/lib/zi/Asia/Tokyo
+%%SPARKDIR%%/jre/lib/zi/Asia/Ulaanbaatar
+%%SPARKDIR%%/jre/lib/zi/Asia/Urumqi
+%%SPARKDIR%%/jre/lib/zi/Asia/Vientiane
+%%SPARKDIR%%/jre/lib/zi/Asia/Vladivostok
+%%SPARKDIR%%/jre/lib/zi/Asia/Yakutsk
+%%SPARKDIR%%/jre/lib/zi/Asia/Yekaterinburg
+%%SPARKDIR%%/jre/lib/zi/Asia/Yerevan
+%%SPARKDIR%%/jre/lib/zi/Atlantic/Azores
+%%SPARKDIR%%/jre/lib/zi/Atlantic/Bermuda
+%%SPARKDIR%%/jre/lib/zi/Atlantic/Canary
+%%SPARKDIR%%/jre/lib/zi/Atlantic/Cape_Verde
+%%SPARKDIR%%/jre/lib/zi/Atlantic/Faroe
+%%SPARKDIR%%/jre/lib/zi/Atlantic/Madeira
+%%SPARKDIR%%/jre/lib/zi/Atlantic/Reykjavik
+%%SPARKDIR%%/jre/lib/zi/Atlantic/South_Georgia
+%%SPARKDIR%%/jre/lib/zi/Atlantic/St_Helena
+%%SPARKDIR%%/jre/lib/zi/Atlantic/Stanley
+%%SPARKDIR%%/jre/lib/zi/Australia/Adelaide
+%%SPARKDIR%%/jre/lib/zi/Australia/Brisbane
+%%SPARKDIR%%/jre/lib/zi/Australia/Broken_Hill
+%%SPARKDIR%%/jre/lib/zi/Australia/Currie
+%%SPARKDIR%%/jre/lib/zi/Australia/Darwin
+%%SPARKDIR%%/jre/lib/zi/Australia/Eucla
+%%SPARKDIR%%/jre/lib/zi/Australia/Hobart
+%%SPARKDIR%%/jre/lib/zi/Australia/Lindeman
+%%SPARKDIR%%/jre/lib/zi/Australia/Lord_Howe
+%%SPARKDIR%%/jre/lib/zi/Australia/Melbourne
+%%SPARKDIR%%/jre/lib/zi/Australia/Perth
+%%SPARKDIR%%/jre/lib/zi/Australia/Sydney
+%%SPARKDIR%%/jre/lib/zi/CET
+%%SPARKDIR%%/jre/lib/zi/CST6CDT
+%%SPARKDIR%%/jre/lib/zi/EET
+%%SPARKDIR%%/jre/lib/zi/EST
+%%SPARKDIR%%/jre/lib/zi/EST5EDT
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+1
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+10
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+11
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+12
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+2
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+3
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+4
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+5
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+6
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+7
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+8
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT+9
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-1
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-10
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-11
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-12
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-13
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-14
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-2
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-3
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-4
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-5
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-6
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-7
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-8
+%%SPARKDIR%%/jre/lib/zi/Etc/GMT-9
+%%SPARKDIR%%/jre/lib/zi/Etc/UCT
+%%SPARKDIR%%/jre/lib/zi/Etc/UTC
+%%SPARKDIR%%/jre/lib/zi/Europe/Amsterdam
+%%SPARKDIR%%/jre/lib/zi/Europe/Andorra
+%%SPARKDIR%%/jre/lib/zi/Europe/Athens
+%%SPARKDIR%%/jre/lib/zi/Europe/Belgrade
+%%SPARKDIR%%/jre/lib/zi/Europe/Berlin
+%%SPARKDIR%%/jre/lib/zi/Europe/Brussels
+%%SPARKDIR%%/jre/lib/zi/Europe/Bucharest
+%%SPARKDIR%%/jre/lib/zi/Europe/Budapest
+%%SPARKDIR%%/jre/lib/zi/Europe/Chisinau
+%%SPARKDIR%%/jre/lib/zi/Europe/Copenhagen
+%%SPARKDIR%%/jre/lib/zi/Europe/Dublin
+%%SPARKDIR%%/jre/lib/zi/Europe/Gibraltar
+%%SPARKDIR%%/jre/lib/zi/Europe/Helsinki
+%%SPARKDIR%%/jre/lib/zi/Europe/Istanbul
+%%SPARKDIR%%/jre/lib/zi/Europe/Kaliningrad
+%%SPARKDIR%%/jre/lib/zi/Europe/Kiev
+%%SPARKDIR%%/jre/lib/zi/Europe/Lisbon
+%%SPARKDIR%%/jre/lib/zi/Europe/London
+%%SPARKDIR%%/jre/lib/zi/Europe/Luxembourg
+%%SPARKDIR%%/jre/lib/zi/Europe/Madrid
+%%SPARKDIR%%/jre/lib/zi/Europe/Malta
+%%SPARKDIR%%/jre/lib/zi/Europe/Minsk
+%%SPARKDIR%%/jre/lib/zi/Europe/Monaco
+%%SPARKDIR%%/jre/lib/zi/Europe/Moscow
+%%SPARKDIR%%/jre/lib/zi/Europe/Oslo
+%%SPARKDIR%%/jre/lib/zi/Europe/Paris
+%%SPARKDIR%%/jre/lib/zi/Europe/Prague
+%%SPARKDIR%%/jre/lib/zi/Europe/Riga
+%%SPARKDIR%%/jre/lib/zi/Europe/Rome
+%%SPARKDIR%%/jre/lib/zi/Europe/Samara
+%%SPARKDIR%%/jre/lib/zi/Europe/Simferopol
+%%SPARKDIR%%/jre/lib/zi/Europe/Sofia
+%%SPARKDIR%%/jre/lib/zi/Europe/Stockholm
+%%SPARKDIR%%/jre/lib/zi/Europe/Tallinn
+%%SPARKDIR%%/jre/lib/zi/Europe/Tirane
+%%SPARKDIR%%/jre/lib/zi/Europe/Uzhgorod
+%%SPARKDIR%%/jre/lib/zi/Europe/Vaduz
+%%SPARKDIR%%/jre/lib/zi/Europe/Vienna
+%%SPARKDIR%%/jre/lib/zi/Europe/Vilnius
+%%SPARKDIR%%/jre/lib/zi/Europe/Volgograd
+%%SPARKDIR%%/jre/lib/zi/Europe/Warsaw
+%%SPARKDIR%%/jre/lib/zi/Europe/Zaporozhye
+%%SPARKDIR%%/jre/lib/zi/Europe/Zurich
+%%SPARKDIR%%/jre/lib/zi/GMT
+%%SPARKDIR%%/jre/lib/zi/HST
+%%SPARKDIR%%/jre/lib/zi/Indian/Antananarivo
+%%SPARKDIR%%/jre/lib/zi/Indian/Chagos
+%%SPARKDIR%%/jre/lib/zi/Indian/Christmas
+%%SPARKDIR%%/jre/lib/zi/Indian/Cocos
+%%SPARKDIR%%/jre/lib/zi/Indian/Comoro
+%%SPARKDIR%%/jre/lib/zi/Indian/Kerguelen
+%%SPARKDIR%%/jre/lib/zi/Indian/Mahe
+%%SPARKDIR%%/jre/lib/zi/Indian/Maldives
+%%SPARKDIR%%/jre/lib/zi/Indian/Mauritius
+%%SPARKDIR%%/jre/lib/zi/Indian/Mayotte
+%%SPARKDIR%%/jre/lib/zi/Indian/Reunion
+%%SPARKDIR%%/jre/lib/zi/MET
+%%SPARKDIR%%/jre/lib/zi/MST
+%%SPARKDIR%%/jre/lib/zi/MST7MDT
+%%SPARKDIR%%/jre/lib/zi/PST8PDT
+%%SPARKDIR%%/jre/lib/zi/Pacific/Apia
+%%SPARKDIR%%/jre/lib/zi/Pacific/Auckland
+%%SPARKDIR%%/jre/lib/zi/Pacific/Chatham
+%%SPARKDIR%%/jre/lib/zi/Pacific/Easter
+%%SPARKDIR%%/jre/lib/zi/Pacific/Efate
+%%SPARKDIR%%/jre/lib/zi/Pacific/Enderbury
+%%SPARKDIR%%/jre/lib/zi/Pacific/Fakaofo
+%%SPARKDIR%%/jre/lib/zi/Pacific/Fiji
+%%SPARKDIR%%/jre/lib/zi/Pacific/Funafuti
+%%SPARKDIR%%/jre/lib/zi/Pacific/Galapagos
+%%SPARKDIR%%/jre/lib/zi/Pacific/Gambier
+%%SPARKDIR%%/jre/lib/zi/Pacific/Guadalcanal
+%%SPARKDIR%%/jre/lib/zi/Pacific/Guam
+%%SPARKDIR%%/jre/lib/zi/Pacific/Honolulu
+%%SPARKDIR%%/jre/lib/zi/Pacific/Johnston
+%%SPARKDIR%%/jre/lib/zi/Pacific/Kiritimati
+%%SPARKDIR%%/jre/lib/zi/Pacific/Kosrae
+%%SPARKDIR%%/jre/lib/zi/Pacific/Kwajalein
+%%SPARKDIR%%/jre/lib/zi/Pacific/Majuro
+%%SPARKDIR%%/jre/lib/zi/Pacific/Marquesas
+%%SPARKDIR%%/jre/lib/zi/Pacific/Midway
+%%SPARKDIR%%/jre/lib/zi/Pacific/Nauru
+%%SPARKDIR%%/jre/lib/zi/Pacific/Niue
+%%SPARKDIR%%/jre/lib/zi/Pacific/Norfolk
+%%SPARKDIR%%/jre/lib/zi/Pacific/Noumea
+%%SPARKDIR%%/jre/lib/zi/Pacific/Pago_Pago
+%%SPARKDIR%%/jre/lib/zi/Pacific/Palau
+%%SPARKDIR%%/jre/lib/zi/Pacific/Pitcairn
+%%SPARKDIR%%/jre/lib/zi/Pacific/Ponape
+%%SPARKDIR%%/jre/lib/zi/Pacific/Port_Moresby
+%%SPARKDIR%%/jre/lib/zi/Pacific/Rarotonga
+%%SPARKDIR%%/jre/lib/zi/Pacific/Saipan
+%%SPARKDIR%%/jre/lib/zi/Pacific/Tahiti
+%%SPARKDIR%%/jre/lib/zi/Pacific/Tarawa
+%%SPARKDIR%%/jre/lib/zi/Pacific/Tongatapu
+%%SPARKDIR%%/jre/lib/zi/Pacific/Truk
+%%SPARKDIR%%/jre/lib/zi/Pacific/Wake
+%%SPARKDIR%%/jre/lib/zi/Pacific/Wallis
+%%SPARKDIR%%/jre/lib/zi/SystemV/AST4
+%%SPARKDIR%%/jre/lib/zi/SystemV/AST4ADT
+%%SPARKDIR%%/jre/lib/zi/SystemV/CST6
+%%SPARKDIR%%/jre/lib/zi/SystemV/CST6CDT
+%%SPARKDIR%%/jre/lib/zi/SystemV/EST5
+%%SPARKDIR%%/jre/lib/zi/SystemV/EST5EDT
+%%SPARKDIR%%/jre/lib/zi/SystemV/HST10
+%%SPARKDIR%%/jre/lib/zi/SystemV/MST7
+%%SPARKDIR%%/jre/lib/zi/SystemV/MST7MDT
+%%SPARKDIR%%/jre/lib/zi/SystemV/PST8
+%%SPARKDIR%%/jre/lib/zi/SystemV/PST8PDT
+%%SPARKDIR%%/jre/lib/zi/SystemV/YST9
+%%SPARKDIR%%/jre/lib/zi/SystemV/YST9YDT
+%%SPARKDIR%%/jre/lib/zi/WET
+%%SPARKDIR%%/jre/lib/zi/ZoneInfoMappings
+%%SPARKDIR%%/lib/activation.jar
+%%SPARKDIR%%/lib/asterisk-im-client.jar
+%%SPARKDIR%%/lib/base.jar
+%%SPARKDIR%%/lib/dom4j.jar
+%%SPARKDIR%%/lib/i4jruntime.jar
+%%SPARKDIR%%/lib/linux/jdic.jar
+%%SPARKDIR%%/lib/linux/jmf.jar
+%%SPARKDIR%%/lib/linux/libjdic.so
+%%SPARKDIR%%/lib/linux/libmozembed-linux-gtk1.2.so
+%%SPARKDIR%%/lib/linux/libmozembed-linux-gtk2.so
+%%SPARKDIR%%/lib/linux/libtray.so
+%%SPARKDIR%%/lib/linux/mozembed-linux-gtk1.2
+%%SPARKDIR%%/lib/smack.jar
+%%SPARKDIR%%/lib/smackx-debug.jar
+%%SPARKDIR%%/lib/smackx.jar
+%%SPARKDIR%%/%%SPARKDIR%%.jar
+%%SPARKDIR%%/lib/startup.jar
+%%SPARKDIR%%/lib/swingx.jar
+%%SPARKDIR%%/lib/synthetica.jar
+%%SPARKDIR%%/lib/syntheticaBlueMoon.jar
+%%SPARKDIR%%/lib/systeminfo.jar
+%%SPARKDIR%%/lib/xpp.jar
+%%SPARKDIR%%/lib/xstream.jar
+%%SPARKDIR%%/logs/error.log
+%%SPARKDIR%%/plugins/fastpath.jar
+%%SPARKDIR%%/plugins/idlelinux.jar
+%%SPARKDIR%%/plugins/jingle.jar
+%%SPARKDIR%%/plugins/jniwrapper.jar
+%%SPARKDIR%%/plugins/spelling-plugin.jar
+%%SPARKDIR%%/resources/Info.plist
+%%SPARKDIR%%/resources/jniwrap.dll
+%%SPARKDIR%%/resources/jniwrap.lic
+%%SPARKDIR%%/resources/sounds/bell.wav
+%%SPARKDIR%%/resources/sounds/chat_request.wav
+%%SPARKDIR%%/resources/sounds/incoming.wav
+%%SPARKDIR%%/resources/sounds/outgoing.wav
+%%SPARKDIR%%/resources/sounds/presence_changed.wav
+%%SPARKDIR%%/resources/startup.sh
+%%SPARKDIR%%/resources/systeminfo.dll
+%%SPARKDIR%%/xtra/emoticons/Default.adiumemoticonset.zip
+%%SPARKDIR%%/xtra/emoticons/GTalk.AdiumEmoticonset.zip
+%%SPARKDIR%%/xtra/emoticons/POPO.adiumemoticonset.zip
+%%SPARKDIR%%/xtra/emoticons/sparkEmoticonSet.zip
+%%SPARKDIR%%/.install4j/MessagesDefault
+%%SPARKDIR%%/.install4j/firstrun
+%%SPARKDIR%%/.install4j/i4jparams.conf
+%%SPARKDIR%%/.install4j/i4jruntime.jar
+%%SPARKDIR%%/.install4j/user.jar
+@dirrm %%SPARKDIR%%/.install4j
+@dirrm %%SPARKDIR%%/xtra/emoticons
+@dirrm %%SPARKDIR%%/xtra
+@dirrm %%SPARKDIR%%/resources/sounds
+@dirrm %%SPARKDIR%%/resources
+@dirrm %%SPARKDIR%%/plugins
+@dirrm %%SPARKDIR%%/logs
+@dirrm %%SPARKDIR%%/lib/linux
+@dirrm %%SPARKDIR%%/lib
+@dirrm %%SPARKDIR%%/jre/lib/zi/SystemV
+@dirrm %%SPARKDIR%%/jre/lib/zi/Pacific
+@dirrm %%SPARKDIR%%/jre/lib/zi/Indian
+@dirrm %%SPARKDIR%%/jre/lib/zi/Europe
+@dirrm %%SPARKDIR%%/jre/lib/zi/Etc
+@dirrm %%SPARKDIR%%/jre/lib/zi/Australia
+@dirrm %%SPARKDIR%%/jre/lib/zi/Atlantic
+@dirrm %%SPARKDIR%%/jre/lib/zi/Asia
+@dirrm %%SPARKDIR%%/jre/lib/zi/Antarctica
+@dirrm %%SPARKDIR%%/jre/lib/zi/America/North_Dakota
+@dirrm %%SPARKDIR%%/jre/lib/zi/America/Kentucky
+@dirrm %%SPARKDIR%%/jre/lib/zi/America/Indiana
+@dirrm %%SPARKDIR%%/jre/lib/zi/America/Argentina
+@dirrm %%SPARKDIR%%/jre/lib/zi/America
+@dirrm %%SPARKDIR%%/jre/lib/zi/Africa
+@dirrm %%SPARKDIR%%/jre/lib/zi
+@dirrm %%SPARKDIR%%/jre/lib/security
+@dirrm %%SPARKDIR%%/jre/lib/oblique-fonts
+@dirrm %%SPARKDIR%%/jre/lib/management
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh_TW/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh_TW.BIG5
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh_TW
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh_HK.BIG5HK/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh_HK.BIG5HK
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh.GBK/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh.GBK
+@dirrm %%SPARKDIR%%/jre/lib/locale/zh
+@dirrm %%SPARKDIR%%/jre/lib/locale/sv/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/sv
+@dirrm %%SPARKDIR%%/jre/lib/locale/ko/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/ko.UTF-8
+@dirrm %%SPARKDIR%%/jre/lib/locale/ko
+@dirrm %%SPARKDIR%%/jre/lib/locale/ja/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/ja
+@dirrm %%SPARKDIR%%/jre/lib/locale/it/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/it
+@dirrm %%SPARKDIR%%/jre/lib/locale/fr/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/fr
+@dirrm %%SPARKDIR%%/jre/lib/locale/es/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/es
+@dirrm %%SPARKDIR%%/jre/lib/locale/de/LC_MESSAGES
+@dirrm %%SPARKDIR%%/jre/lib/locale/de
+@dirrm %%SPARKDIR%%/jre/lib/locale
+@dirrm %%SPARKDIR%%/jre/lib/images/icons
+@dirrm %%SPARKDIR%%/jre/lib/images/cursors
+@dirrm %%SPARKDIR%%/jre/lib/images
+@dirrm %%SPARKDIR%%/jre/lib/im
+@dirrm %%SPARKDIR%%/jre/lib/i386/xawt
+@dirrm %%SPARKDIR%%/jre/lib/i386/server
+@dirrm %%SPARKDIR%%/jre/lib/i386/native_threads
+@dirrm %%SPARKDIR%%/jre/lib/i386/motif21
+@dirrm %%SPARKDIR%%/jre/lib/i386/jli
+@dirrm %%SPARKDIR%%/jre/lib/i386/headless
+@dirrm %%SPARKDIR%%/jre/lib/i386/client
+@dirrm %%SPARKDIR%%/jre/lib/i386
+@dirrm %%SPARKDIR%%/jre/lib/fonts
+@dirrm %%SPARKDIR%%/jre/lib/ext
+@dirrm %%SPARKDIR%%/jre/lib/desktop/mime/packages
+@dirrm %%SPARKDIR%%/jre/lib/desktop/mime
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/hicolor/48x48/mimetypes
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/hicolor/48x48/apps
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/hicolor/48x48
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/hicolor/16x16/mimetypes
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/hicolor/16x16/apps
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/hicolor/16x16
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/hicolor
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/48x48/mimetypes
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/48x48/apps
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/48x48
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/16x16/mimetypes
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/16x16/apps
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/LowContrast/16x16
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/LowContrast
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/48x48/mimetypes
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/48x48/apps
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/48x48
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/16x16/mimetypes
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/16x16/apps
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse/16x16
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrastInverse
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/48x48/mimetypes
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/48x48/apps
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/48x48
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/16x16/mimetypes
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/16x16/apps
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrast/16x16
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons/HighContrast
+@dirrm %%SPARKDIR%%/jre/lib/desktop/icons
+@dirrm %%SPARKDIR%%/jre/lib/desktop/applications
+@dirrm %%SPARKDIR%%/jre/lib/desktop
+@dirrm %%SPARKDIR%%/jre/lib/deploy
+@dirrm %%SPARKDIR%%/jre/lib/cmm
+@dirrm %%SPARKDIR%%/jre/lib/applet
+@dirrm %%SPARKDIR%%/jre/lib
+@dirrm %%SPARKDIR%%/jre/bin
+@dirrm %%SPARKDIR%%/jre
+@dirrm %%SPARKDIR%%/documentation/images
+@dirrm %%SPARKDIR%%/documentation
+@dirrm %%SPARKDIR%%/bin
+@dirrm %%SPARKDIR%%
