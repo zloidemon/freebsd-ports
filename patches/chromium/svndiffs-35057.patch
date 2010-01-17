@@ -1,0 +1,932 @@
+Index: third_party/WebKit/WebCore/dom/SelectElement.cpp
+===================================================================
+--- third_party/WebKit/WebCore/dom/SelectElement.cpp	(revision 51724)
++++ third_party/WebKit/WebCore/dom/SelectElement.cpp	(working copy)
+@@ -52,7 +52,7 @@
+ #if PLATFORM(MAC) || (PLATFORM(CHROMIUM) && PLATFORM(DARWIN))
+ #define ARROW_KEYS_POP_MENU 1
+ #define SPACE_OR_RETURN_POP_MENU 0
+-#elif PLATFORM(GTK) || (PLATFORM(CHROMIUM) && PLATFORM(LINUX))
++#elif PLATFORM(GTK) || (PLATFORM(CHROMIUM) && (PLATFORM(LINUX) || PLATFORM(FREEBSD)))
+ #define ARROW_KEYS_POP_MENU 0
+ #define SPACE_OR_RETURN_POP_MENU 1
+ #else
+Index: third_party/WebKit/WebCore/page/chromium/EventHandlerChromium.cpp
+===================================================================
+--- third_party/WebKit/WebCore/page/chromium/EventHandlerChromium.cpp	(revision 51724)
++++ third_party/WebKit/WebCore/page/chromium/EventHandlerChromium.cpp	(working copy)
+@@ -154,7 +154,7 @@
+ #endif
+ }
+ 
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ // GTK+ must scroll horizontally if the mouse pointer is on top of the
+ // horizontal scrollbar while scrolling with the wheel.
+ // This code comes from gtk/EventHandlerGtk.cpp.
+Index: third_party/WebKit/WebCore/page/EventHandler.cpp
+===================================================================
+--- third_party/WebKit/WebCore/page/EventHandler.cpp	(revision 51724)
++++ third_party/WebKit/WebCore/page/EventHandler.cpp	(working copy)
+@@ -1791,7 +1791,7 @@
+     return swallowEvent;
+ }
+ 
+-#if !PLATFORM(GTK) && !(PLATFORM(CHROMIUM) && PLATFORM(LINUX))
++#if !PLATFORM(GTK) && !(PLATFORM(CHROMIUM) && (PLATFORM(LINUX) || PLATFORM(FREEBSD)))
+ bool EventHandler::shouldTurnVerticalTicksIntoHorizontal(const HitTestResult&) const
+ {
+     return false;
+Index: third_party/WebKit/WebCore/platform/chromium/ChromiumBridge.h
+===================================================================
+--- third_party/WebKit/WebCore/platform/chromium/ChromiumBridge.h	(revision 51724)
++++ third_party/WebKit/WebCore/platform/chromium/ChromiumBridge.h	(working copy)
+@@ -108,7 +108,7 @@
+ #if PLATFORM(WIN_OS)
+         static bool ensureFontLoaded(HFONT font);
+ #endif
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+         static String getFontFamilyForCharacters(const UChar*, size_t numCharacters);
+ #endif
+ 
+Index: third_party/WebKit/WebCore/platform/graphics/chromium/FontCustomPlatformData.cpp
+===================================================================
+--- third_party/WebKit/WebCore/platform/graphics/chromium/FontCustomPlatformData.cpp	(revision 51724)
++++ third_party/WebKit/WebCore/platform/graphics/chromium/FontCustomPlatformData.cpp	(working copy)
+@@ -36,7 +36,7 @@
+ #include "Base64.h"
+ #include "ChromiumBridge.h"
+ #include "OpenTypeUtilities.h"
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ #include "SkStream.h"
+ #endif
+ 
+@@ -47,7 +47,7 @@
+ 
+ #if PLATFORM(WIN_OS)
+ #include <objbase.h>
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ #include <cstring>
+ #endif
+ 
+@@ -58,7 +58,7 @@
+ #if PLATFORM(WIN_OS)
+     if (m_fontReference)
+         RemoveFontMemResourceEx(m_fontReference);
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     if (m_fontReference)
+         m_fontReference->unref();
+ #endif
+@@ -99,7 +99,7 @@
+ 
+     HFONT hfont = CreateFontIndirect(&logFont);
+     return FontPlatformData(hfont, size);
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     ASSERT(m_fontReference);
+     return FontPlatformData(m_fontReference, size, bold && !m_fontReference->isBold(), italic && !m_fontReference->isItalic());
+ #else
+@@ -123,7 +123,7 @@
+ }
+ #endif
+ 
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ class RemoteFontStream : public SkStream {
+ public:
+     explicit RemoteFontStream(PassRefPtr<SharedBuffer> buffer)
+@@ -189,7 +189,7 @@
+     if (!fontReference)
+         return 0;
+     return new FontCustomPlatformData(fontReference, fontName);
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     RemoteFontStream stream(buffer);
+     SkTypeface* typeface = SkTypeface::CreateFromStream(&stream);
+     if (!typeface)
+Index: third_party/WebKit/WebCore/platform/graphics/chromium/FontPlatformData.h
+===================================================================
+--- third_party/WebKit/WebCore/platform/graphics/chromium/FontPlatformData.h	(revision 51724)
++++ third_party/WebKit/WebCore/platform/graphics/chromium/FontPlatformData.h	(working copy)
+@@ -33,7 +33,7 @@
+ 
+ #if PLATFORM(WIN_OS)
+ #include "FontPlatformDataChromiumWin.h"
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__FreeBSD__)
+ #include "FontPlatformDataLinux.h"
+ #endif
+ 
+Index: third_party/WebKit/WebCore/platform/graphics/chromium/FontCustomPlatformData.h
+===================================================================
+--- third_party/WebKit/WebCore/platform/graphics/chromium/FontCustomPlatformData.h	(revision 51724)
++++ third_party/WebKit/WebCore/platform/graphics/chromium/FontCustomPlatformData.h	(working copy)
+@@ -38,7 +38,7 @@
+ #if PLATFORM(WIN_OS)
+ #include "PlatformString.h"
+ #include <windows.h>
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ #include "SkTypeface.h"
+ #endif
+ 
+@@ -53,7 +53,7 @@
+         : m_fontReference(fontReference)
+         , m_name(name)
+     {}
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     explicit FontCustomPlatformData(SkTypeface* typeface)
+         : m_fontReference(typeface)
+     {}
+@@ -67,7 +67,7 @@
+ #if PLATFORM(WIN_OS)
+     HANDLE m_fontReference;
+     String m_name;
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     SkTypeface* m_fontReference;
+ #endif
+ };
+Index: third_party/WebKit/WebCore/platform/graphics/skia/PlatformContextSkia.cpp
+===================================================================
+--- third_party/WebKit/WebCore/platform/graphics/skia/PlatformContextSkia.cpp	(revision 51724)
++++ third_party/WebKit/WebCore/platform/graphics/skia/PlatformContextSkia.cpp	(working copy)
+@@ -89,7 +89,7 @@
+     // color to produce a new output color.
+     SkColor applyAlpha(SkColor) const;
+ 
+-#if defined(__linux__) || PLATFORM(WIN_OS)
++#if defined(__linux__) || defined(__FreeBSD__) || PLATFORM(WIN_OS)
+     // If non-empty, the current State is clipped to this image.
+     SkBitmap m_imageBufferClip;
+     // If m_imageBufferClip is non-empty, this is the region the image is clipped to.
+@@ -143,7 +143,7 @@
+     , m_lineJoin(other.m_lineJoin)
+     , m_dash(other.m_dash)
+     , m_textDrawingMode(other.m_textDrawingMode)
+-#if defined(__linux__) || PLATFORM(WIN_OS)
++#if defined(__linux__) || defined(__FreeBSD__) || PLATFORM(WIN_OS)
+     , m_imageBufferClip(other.m_imageBufferClip)
+     , m_clip(other.m_clip)
+ #endif
+@@ -214,7 +214,7 @@
+     m_stateStack.append(*m_state);
+     m_state = &m_stateStack.last();
+ 
+-#if defined(__linux__) || PLATFORM(WIN_OS)
++#if defined(__linux__) || defined(__FreeBSD__) || PLATFORM(WIN_OS)
+     // The clip image only needs to be applied once. Reset the image so that we
+     // don't attempt to clip multiple times.
+     m_state->m_imageBufferClip.reset();
+@@ -224,7 +224,7 @@
+     canvas()->save();
+ }
+ 
+-#if defined(__linux__) || PLATFORM(WIN_OS)
++#if defined(__linux__) || defined(__FreeBSD__) || PLATFORM(WIN_OS)
+ void PlatformContextSkia::beginLayerClippedToImage(const WebCore::FloatRect& rect,
+                                                    const WebCore::ImageBuffer* imageBuffer)
+ {
+@@ -271,7 +271,7 @@
+ 
+ void PlatformContextSkia::restore()
+ {
+-#if defined(__linux__) || PLATFORM(WIN_OS)
++#if defined(__linux__) || defined(__FreeBSD__) || PLATFORM(WIN_OS)
+     if (!m_state->m_imageBufferClip.empty()) {
+         applyClipFromImage(m_state->m_clip, m_state->m_imageBufferClip);
+         canvas()->restore();
+@@ -574,7 +574,7 @@
+     return m_canvas->getTopPlatformDevice().IsVectorial();
+ }
+ 
+-#if defined(__linux__) || PLATFORM(WIN_OS)
++#if defined(__linux__) || defined(__FreeBSD__) || PLATFORM(WIN_OS)
+ void PlatformContextSkia::applyClipFromImage(const WebCore::FloatRect& rect, const SkBitmap& imageBuffer)
+ {
+     // NOTE: this assumes the image mask contains opaque black for the portions that are to be shown, as such we
+Index: third_party/WebKit/WebCore/platform/graphics/skia/PlatformContextSkia.h
+===================================================================
+--- third_party/WebKit/WebCore/platform/graphics/skia/PlatformContextSkia.h	(revision 51724)
++++ third_party/WebKit/WebCore/platform/graphics/skia/PlatformContextSkia.h	(working copy)
+@@ -88,7 +88,7 @@
+     // |rect|. This layer is implicitly restored when the next restore is
+     // invoked.
+     // NOTE: |imageBuffer| may be deleted before the |restore| is invoked.
+-#if defined(__linux__) || PLATFORM(WIN_OS)
++#if defined(__linux__) || defined(__FreeBSD__) || PLATFORM(WIN_OS)
+     void beginLayerClippedToImage(const WebCore::FloatRect&,
+                                   const WebCore::ImageBuffer*);
+ #endif
+@@ -168,7 +168,7 @@
+     bool isPrinting();
+ 
+ private:
+-#if defined(__linux__) || PLATFORM(WIN_OS)
++#if defined(__linux__) || defined(__FreeBSD__) || PLATFORM(WIN_OS)
+     // Used when restoring and the state has an image clip. Only shows the pixels in
+     // m_canvas that are also in imageBuffer.
+     void applyClipFromImage(const WebCore::FloatRect&, const SkBitmap&);
+Index: third_party/WebKit/WebCore/platform/graphics/skia/GraphicsContextSkia.cpp
+===================================================================
+--- third_party/WebKit/WebCore/platform/graphics/skia/GraphicsContextSkia.cpp	(revision 51724)
++++ third_party/WebKit/WebCore/platform/graphics/skia/GraphicsContextSkia.cpp	(working copy)
+@@ -431,7 +431,7 @@
+     if (paintingDisabled())
+         return;
+ 
+-#if defined(__linux__) || PLATFORM(WIN_OS)
++#if defined(__linux__) || defined(__FreeBSD__) || PLATFORM(WIN_OS)
+     platformContext()->beginLayerClippedToImage(rect, imageBuffer);
+ #endif
+ }
+Index: third_party/WebKit/WebCore/loader/CachedFont.cpp
+===================================================================
+--- third_party/WebKit/WebCore/loader/CachedFont.cpp	(revision 51724)
++++ third_party/WebKit/WebCore/loader/CachedFont.cpp	(working copy)
+@@ -27,7 +27,7 @@
+ #include "config.h"
+ #include "CachedFont.h"
+ 
+-#if PLATFORM(CG) || PLATFORM(QT) || PLATFORM(GTK) || (PLATFORM(CHROMIUM) && (PLATFORM(WIN_OS) || PLATFORM(LINUX))) || PLATFORM(HAIKU) || PLATFORM(WINCE)
++#if PLATFORM(CG) || PLATFORM(QT) || PLATFORM(GTK) || (PLATFORM(CHROMIUM) && (PLATFORM(WIN_OS) || PLATFORM(LINUX) || PLATFORM(FREEBSD))) || PLATFORM(HAIKU) || PLATFORM(WINCE)
+ #define STORE_FONT_CUSTOM_PLATFORM_DATA
+ #endif
+ 
+Index: third_party/WebKit/WebKit/chromium/src/ChromiumBridge.cpp
+===================================================================
+--- third_party/WebKit/WebKit/chromium/src/ChromiumBridge.cpp	(revision 52372)
++++ third_party/WebKit/WebKit/chromium/src/ChromiumBridge.cpp	(working copy)
+@@ -61,7 +61,7 @@
+ #include "WebThemeEngine.h"
+ #endif
+ 
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ #include "WebSandboxSupport.h"
+ #include "WebFontInfo.h"
+ #endif
+@@ -290,7 +290,7 @@
+ }
+ #endif
+ 
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ String ChromiumBridge::getFontFamilyForCharacters(const UChar* characters, size_t numCharacters)
+ {
+     if (webKitClient()->sandboxSupport())
+Index: third_party/WebKit/WebKit/chromium/src/WebFrameImpl.cpp
+===================================================================
+--- third_party/WebKit/WebKit/chromium/src/WebFrameImpl.cpp	(revision 52372)
++++ third_party/WebKit/WebKit/chromium/src/WebFrameImpl.cpp	(working copy)
+@@ -147,7 +147,7 @@
+ #include "LocalCurrentGraphicsContext.h"
+ #endif
+ 
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ #include <gdk/gdk.h>
+ #endif
+ 
+Index: third_party/WebKit/WebKit/chromium/src/GraphicsContext3D.cpp
+===================================================================
+--- third_party/WebKit/WebKit/chromium/src/GraphicsContext3D.cpp	(revision 52372)
++++ third_party/WebKit/WebKit/chromium/src/GraphicsContext3D.cpp	(working copy)
+@@ -80,7 +80,7 @@
+ #define USE_TEXTURE_RECTANGLE_FOR_FRAMEBUFFER
+ #endif
+ 
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ #include <dlfcn.h>
+ #include "GL/glxew.h"
+ #endif
+@@ -190,7 +190,7 @@
+     CGLContextObj m_contextObj;
+     unsigned char* m_renderOutput;
+     CGContextRef m_cgContext;
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     Display* m_display;
+     GLXContext m_contextObj;
+     GLXPbuffer m_pbuffer;
+@@ -225,7 +225,7 @@
+ {
+ }
+ 
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ static void* tryLoad(const char* libName)
+ {
+     // We use RTLD_GLOBAL semantics so that GLEW initialization works;
+@@ -256,7 +256,7 @@
+     , m_contextObj(0)
+     , m_renderOutput(0)
+     , m_cgContext(0)
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     , m_display(0)
+     , m_contextObj(0)
+     , m_pbuffer(0)
+@@ -383,7 +383,7 @@
+     }
+     m_pbuffer = pbuffer;
+     m_contextObj = context;
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     m_display = XOpenDisplay(0);
+     if (!m_display) {
+         printf("GraphicsContext3D: error opening X display\n");
+@@ -514,7 +514,7 @@
+         CGContextRelease(m_cgContext);
+     if (m_renderOutput)
+         delete[] m_renderOutput;
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     m_glXMakeCurrent(m_display, 0, 0);
+     m_glXDestroyContext(m_display, m_contextObj);
+     m_glXDestroyPbuffer(m_display, m_pbuffer);
+@@ -536,7 +536,7 @@
+     if (CGLGetCurrentContext() != m_contextObj)
+         if (CGLSetCurrentContext(m_contextObj) == kCGLNoError)
+             return true;
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     if (m_glXGetCurrentContext() != m_contextObj)
+         if (m_glXMakeCurrent(m_display, m_pbuffer, m_contextObj))
+             return true;
+Index: third_party/WebKit/WebKit/chromium/src/WebViewImpl.cpp
+===================================================================
+--- third_party/WebKit/WebKit/chromium/src/WebViewImpl.cpp	(revision 52372)
++++ third_party/WebKit/WebKit/chromium/src/WebViewImpl.cpp	(working copy)
+@@ -101,7 +101,7 @@
+ #include "KeyboardCodesWin.h"
+ #include "RenderThemeChromiumWin.h"
+ #else
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ #include "RenderThemeChromiumLinux.h"
+ #endif
+ #include "KeyboardCodesPosix.h"
+@@ -333,7 +333,7 @@
+         || (event.button == WebMouseEvent::ButtonLeft
+             && event.modifiers & WebMouseEvent::ControlKey))
+         mouseContextMenu(event);
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     if (event.button == WebMouseEvent::ButtonRight)
+         mouseContextMenu(event);
+ #endif
+@@ -372,7 +372,7 @@
+     if (!mainFrameImpl() || !mainFrameImpl()->frameView())
+         return;
+ 
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     // If the event was a middle click, attempt to copy text into the focused
+     // frame. We execute this before we let the page have a go at the event
+     // because the page may change what is focused during in its event handler.
+@@ -453,11 +453,11 @@
+     if (!handler)
+         return keyEventDefault(event);
+ 
+-#if PLATFORM(WIN_OS) || PLATFORM(LINUX)
++#if PLATFORM(WIN_OS) || PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     const WebInputEvent::Type contextMenuTriggeringEventType =
+ #if PLATFORM(WIN_OS)
+         WebInputEvent::KeyUp;
+-#elif PLATFORM(LINUX)
++#elif PLATFORM(LINUX) || PLATFORM(FREEBSD)
+         WebInputEvent::RawKeyDown;
+ #endif
+ 
+@@ -583,7 +583,7 @@
+ //
+ // This function is an ugly copy/paste and should be cleaned up when the
+ // WebKitWin version is cleaned: https://bugs.webkit.org/show_bug.cgi?id=20438
+-#if PLATFORM(WIN_OS) || PLATFORM(LINUX)
++#if PLATFORM(WIN_OS) || PLATFORM(LINUX) || PLATFORM(FREEBSD)
+ // FIXME: implement on Mac
+ bool WebViewImpl::sendContextMenuEvent(const WebKeyboardEvent& event)
+ {
+@@ -1647,7 +1647,7 @@
+ void WebViewImpl::setScrollbarColors(unsigned inactiveColor,
+                                      unsigned activeColor,
+                                      unsigned trackColor) {
+-#if PLATFORM(LINUX)
++#if PLATFORM(LINUX) || PLATFORM(FREEBSD)
+     RenderThemeChromiumLinux::setScrollbarColors(inactiveColor,
+                                                  activeColor,
+                                                  trackColor);
+Index: tools/gyp/pylib/gyp/generator/make.py
+===================================================================
+--- tools/gyp/pylib/gyp/generator/make.py	(revision 766)
++++ tools/gyp/pylib/gyp/generator/make.py	(working copy)
+@@ -34,7 +34,7 @@
+ generator_default_variables = {
+   'EXECUTABLE_PREFIX': '',
+   'EXECUTABLE_SUFFIX': '',
+-  'OS': 'linux',
++# 'OS': 'linux',
+   'STATIC_LIB_PREFIX': 'lib',
+   'SHARED_LIB_PREFIX': 'lib',
+   'STATIC_LIB_SUFFIX': '.a',
+Index: tools/gyp/test/additional-targets/src/dir1/actions.gyp
+===================================================================
+--- tools/gyp/test/additional-targets/src/dir1/actions.gyp	(revision 766)
++++ tools/gyp/test/additional-targets/src/dir1/actions.gyp	(working copy)
+@@ -47,7 +47,7 @@
+     },
+   ],
+   'conditions': [
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="freebsd"', {
+       'target_defaults': {
+         'cflags': ['-fPIC'],
+       },
+Index: tools/gyp/test/library/src/library.gyp
+===================================================================
+--- tools/gyp/test/library/src/library.gyp	(revision 766)
++++ tools/gyp/test/library/src/library.gyp	(working copy)
+@@ -48,7 +48,7 @@
+     },
+   ],
+   'conditions': [
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="freebsd"', {
+       'target_defaults': {
+         # Support 64-bit shared libs (also works fine for 32-bit).
+         'cflags': ['-fPIC'],
+Index: third_party/hunspell/hunspell.gyp
+===================================================================
+--- third_party/hunspell/hunspell.gyp	(revision 27726)
++++ third_party/hunspell/hunspell.gyp	(working copy)
+@@ -63,11 +63,12 @@
+         ],
+       },
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'cflags': [
+             '-Wno-unused-value',
+             '-Wno-unused-variable',
+             '-Wno-write-strings',
++            '-Wno-parentheses',
+           ],
+         }],
+       ],
+Index: third_party/icu/public/common/unicode/umachine.h
+===================================================================
+--- third_party/icu/public/common/unicode/umachine.h	(revision 33767)
++++ third_party/icu/public/common/unicode/umachine.h	(working copy)
+@@ -49,6 +49,8 @@
+ #   include "unicode/pmac.h"
+ #elif defined(__linux__)
+ #   include "unicode/plinux.h"
++#elif defined(__FreeBSD__)
++#   include "unicode/pfreebsd.h"
+ #else
+ #   include "unicode/platform.h"
+ #endif
+Index: third_party/icu/public/common/unicode/pfreebsd.h
+===================================================================
+--- third_party/icu/public/common/unicode/pfreebsd.h	(revision 0)
++++ third_party/icu/public/common/unicode/pfreebsd.h	(revision 0)
+@@ -0,0 +1,313 @@
++/*
++******************************************************************************
++*
++*   Copyright (C) 1997-2007, International Business Machines
++*   Corporation and others.  All Rights Reserved.
++*
++******************************************************************************
++*
++*  FILE NAME : platform.h
++*
++*   Date        Name        Description
++*   05/13/98    nos         Creation (content moved here from ptypes.h).
++*   03/02/99    stephen     Added AS400 support.
++*   03/30/99    stephen     Added Linux support.
++*   04/13/99    stephen     Reworked for autoconf.
++******************************************************************************
++*/
++
++/**
++ * \file 
++ * \brief Basic types for the platform 
++ */
++
++/* Define the platform we're on. */
++#ifndef U_BSD
++#define U_BSD
++#endif
++
++/* Define whether inttypes.h is available */
++#ifndef U_HAVE_INTTYPES_H
++#define U_HAVE_INTTYPES_H 1
++#endif
++
++/*
++ * Define what support for C++ streams is available.
++ *     If U_IOSTREAM_SOURCE is set to 199711, then <iostream> is available
++ * (1997711 is the date the ISO/IEC C++ FDIS was published), and then
++ * one should qualify streams using the std namespace in ICU header
++ * files.
++ *     If U_IOSTREAM_SOURCE is set to 198506, then <iostream.h> is
++ * available instead (198506 is the date when Stroustrup published
++ * "An Extensible I/O Facility for C++" at the summer USENIX conference).
++ *     If U_IOSTREAM_SOURCE is 0, then C++ streams are not available and
++ * support for them will be silently suppressed in ICU.
++ *
++ */
++
++#ifndef U_IOSTREAM_SOURCE
++#define U_IOSTREAM_SOURCE 199711
++#endif
++
++/* Determines whether specific types are available */
++#ifndef U_HAVE_INT8_T
++#define U_HAVE_INT8_T 1
++#endif
++
++#ifndef U_HAVE_UINT8_T
++#define U_HAVE_UINT8_T 1
++#endif
++
++#ifndef U_HAVE_INT16_T
++#define U_HAVE_INT16_T 1
++#endif
++
++#ifndef U_HAVE_UINT16_T
++#define U_HAVE_UINT16_T 1
++#endif
++
++#ifndef U_HAVE_INT32_T
++#define U_HAVE_INT32_T 1
++#endif
++
++#ifndef U_HAVE_UINT32_T
++#define U_HAVE_UINT32_T 1
++#endif
++
++#ifndef U_HAVE_INT64_T
++#define U_HAVE_INT64_T 1
++#endif
++
++#ifndef U_HAVE_UINT64_T
++#define U_HAVE_UINT64_T 1
++#endif
++
++/*===========================================================================*/
++/* Generic data types                                                        */
++/*===========================================================================*/
++
++#include <sys/types.h>
++
++/* If your platform does not have the <inttypes.h> header, you may
++   need to edit the typedefs below. */
++#if U_HAVE_INTTYPES_H
++
++/* autoconf 2.13 sometimes can't properly find the data types in <inttypes.h> */
++/* os/390 needs <inttypes.h>, but it doesn't have int8_t, and it sometimes */
++/* doesn't have uint8_t depending on the OS version. */
++/* So we have this work around. */
++#ifdef OS390
++/* The features header is needed to get (u)int64_t sometimes. */
++#include <features.h>
++#if ! U_HAVE_INT8_T
++typedef signed char int8_t;
++#endif
++#if !defined(__uint8_t)
++#define __uint8_t 1
++typedef unsigned char uint8_t;
++#endif
++#endif /* OS390 */
++
++#include <inttypes.h>
++
++#else /* U_HAVE_INTTYPES_H */
++
++#if ! U_HAVE_INT8_T
++typedef signed char int8_t;
++#endif
++
++#if ! U_HAVE_UINT8_T
++typedef unsigned char uint8_t;
++#endif
++
++#if ! U_HAVE_INT16_T
++typedef signed short int16_t;
++#endif
++
++#if ! U_HAVE_UINT16_T
++typedef unsigned short uint16_t;
++#endif
++
++#if ! U_HAVE_INT32_T
++typedef signed int int32_t;
++#endif
++
++#if ! U_HAVE_UINT32_T
++typedef unsigned int uint32_t;
++#endif
++
++#if ! U_HAVE_INT64_T
++    typedef signed long long int64_t;
++/* else we may not have a 64-bit type */
++#endif
++
++#if ! U_HAVE_UINT64_T
++    typedef unsigned long long uint64_t;
++/* else we may not have a 64-bit type */
++#endif
++
++#endif
++
++/*===========================================================================*/
++/* Compiler and environment features                                         */
++/*===========================================================================*/
++
++/* Define whether namespace is supported */
++#ifndef U_HAVE_NAMESPACE
++#define U_HAVE_NAMESPACE 1
++#endif
++
++/* Determines the endianness of the platform
++   It's done this way in case multiple architectures are being built at once.
++   For example, Darwin supports fat binaries, which can be both PPC and x86 based. */
++#if defined(BYTE_ORDER) && defined(BIG_ENDIAN)
++#define U_IS_BIG_ENDIAN (BYTE_ORDER == BIG_ENDIAN)
++#else
++#define U_IS_BIG_ENDIAN 0
++#endif
++
++/* 1 or 0 to enable or disable threads.  If undefined, default is: enable threads. */
++#define ICU_USE_THREADS 1
++
++/* On strong memory model CPUs (e.g. x86 CPUs), we use a safe & quick double check lock. */
++#if defined(__GNUC__) && (defined(__i386__) || defined(__x86_64__))
++#define UMTX_STRONG_MEMORY_MODEL 1
++#endif
++
++#ifndef U_DEBUG
++#define U_DEBUG 0
++#endif
++
++#ifndef U_RELEASE
++#define U_RELEASE 1
++#endif
++
++/* Determine whether to disable renaming or not. This overrides the
++   setting in umachine.h which is for all platforms. */
++#ifndef U_DISABLE_RENAMING
++#define U_DISABLE_RENAMING 0
++#endif
++
++/* Determine whether to override new and delete. */
++#ifndef U_OVERRIDE_CXX_ALLOCATION
++#define U_OVERRIDE_CXX_ALLOCATION 1
++#endif
++/* Determine whether to override placement new and delete for STL. */
++#ifndef U_HAVE_PLACEMENT_NEW
++#define U_HAVE_PLACEMENT_NEW 1
++#endif
++
++/* Determine whether to enable tracing. */
++#ifndef U_ENABLE_TRACING
++#define U_ENABLE_TRACING 0
++#endif
++
++/* Do we allow ICU users to use the draft APIs by default? */
++#ifndef U_DEFAULT_SHOW_DRAFT
++#define U_DEFAULT_SHOW_DRAFT 1
++#endif
++
++/* Define the library suffix in a C syntax. */
++#define U_HAVE_LIB_SUFFIX 0
++#define U_LIB_SUFFIX_C_NAME 
++#define U_LIB_SUFFIX_C_NAME_STRING ""
++
++/*===========================================================================*/
++/* Character data types                                                      */
++/*===========================================================================*/
++
++#if ((defined(OS390) && (!defined(__CHARSET_LIB) || !__CHARSET_LIB))) || defined(OS400)
++#   define U_CHARSET_FAMILY 1
++#endif
++
++/*===========================================================================*/
++/* Information about wchar support                                           */
++/*===========================================================================*/
++
++#define U_HAVE_WCHAR_H      1
++#define U_SIZEOF_WCHAR_T    4
++
++#define U_HAVE_WCSCPY       1
++
++/**
++ * \def U_DECLARE_UTF16
++ * Do not use this macro. Use the UNICODE_STRING or U_STRING_DECL macros
++ * instead.
++ * @internal
++ */
++#if 1 || defined(U_CHECK_UTF16_STRING)
++#if (defined(__xlC__) && defined(__IBM_UTF_LITERAL) && U_SIZEOF_WCHAR_T != 2) \
++    || (defined(__HP_aCC) && __HP_aCC >= 035000) \
++    || (defined(__HP_cc) && __HP_cc >= 111106)
++#define U_DECLARE_UTF16(string) u ## string
++#elif (defined(__SUNPRO_CC) && __SUNPRO_CC >= 0x550)
++/* || (defined(__SUNPRO_C) && __SUNPRO_C >= 0x580) */
++/* Sun's C compiler has issues with this notation, and it's unreliable. */
++#define U_DECLARE_UTF16(string) U ## string
++#elif U_SIZEOF_WCHAR_T == 2 \
++    && (U_CHARSET_FAMILY == 0 || ((defined(OS390) || defined(OS400)) && defined(__UCS2__)))
++#define U_DECLARE_UTF16(string) L ## string
++#endif
++#endif
++
++/*===========================================================================*/
++/* Information about POSIX support                                           */
++/*===========================================================================*/
++
++#define U_HAVE_NL_LANGINFO_CODESET  1
++#define U_NL_LANGINFO_CODESET       CODESET
++
++#if 1
++#define U_TZSET         tzset
++#endif
++#if 0
++#define U_TIMEZONE      
++#endif
++#if 1
++#define U_TZNAME        tzname
++#endif
++
++#define U_HAVE_MMAP     1
++#define U_HAVE_POPEN    1
++
++/*===========================================================================*/
++/* Symbol import-export control                                              */
++/*===========================================================================*/
++
++#if 1
++#define U_EXPORT __attribute__((visibility("default")))
++/*#elif defined(__HP_aCC) || defined(__HP_cc)
++#define U_EXPORT __declspec(dllexport)*/
++#else
++#define U_EXPORT
++#endif
++
++/* U_CALLCONV is releated to U_EXPORT2 */
++#define U_EXPORT2
++
++/* cygwin needs to export/import data */
++#ifdef U_CYGWIN
++#define U_IMPORT __declspec(dllimport)
++#else
++#define U_IMPORT 
++#endif
++
++/*===========================================================================*/
++/* Code alignment and C function inlining                                    */
++/*===========================================================================*/
++
++#ifndef U_INLINE
++#   ifdef __cplusplus
++#       define U_INLINE inline
++#   else
++#       define U_INLINE inline
++#   endif
++#endif
++
++#define U_ALIGN_CODE(n) 
++
++/*===========================================================================*/
++/* Programs used by ICU code                                                 */
++/*===========================================================================*/
++
++#define U_MAKE  "/usr/local/bin/gmake"
+Index: third_party/icu/icu.gyp
+===================================================================
+--- third_party/icu/icu.gyp	(revision 33767)
++++ third_party/icu/icu.gyp	(working copy)
+@@ -38,7 +38,7 @@
+         }, {  # else: OS != "win"
+           'sources!': ['icudt42.dll'],
+         }],
+-        [ 'OS != "linux"', {
++        [ 'OS != "linux" and OS!= "freebsd"', {
+           'sources!': ['linux/icudt42l_dat.s'],
+         }],
+         [ 'OS != "mac"', {
+@@ -208,7 +208,7 @@
+         ],
+       },
+       'conditions': [
+-        [ 'OS=="linux"', {
++        [ 'OS=="linux" or OS=="freebsd"', {
+           # Since ICU wants to internally use its own deprecated APIs, don't
+           # complain about it.
+           'cflags': [
+@@ -396,7 +396,7 @@
+             'source/stubdata/stubdata.c',
+           ],
+         }],
+-        [ 'OS == "linux"', {
++        [ 'OS == "linux" or OS=="freebsd"', {
+           'cflags': [
+             # TODO(port): fix ICU to not depend on this flag.
+             '-fno-strict-aliasing',
+Index: native_client/src/shared/platform/platform.gyp
+===================================================================
+--- native_client/src/shared/platform/platform.gyp	(revision 1067)
++++ native_client/src/shared/platform/platform.gyp	(working copy)
+@@ -58,7 +58,7 @@
+       'time.h',
+     ],
+     'conditions': [
+-      ['OS=="linux"', {
++      ['OS=="linux" or OS=="freebsd"', {
+         'platform_sources': [
+           'linux/condition_variable.cc',
+           'linux/lock.cc',
+@@ -117,7 +117,7 @@
+       'target_name': 'platform',
+       'type': 'static_library',
+       'conditions': [
+-        ['OS=="linux" or OS=="mac"', {
++        ['OS=="linux" or OS=="mac" or OS=="freebsd"', {
+           'cflags': [
+             '-Wno-long-long',
+           ],
+Index: native_client/src/trusted/service_runtime/service_runtime.gyp
+===================================================================
+--- native_client/src/trusted/service_runtime/service_runtime.gyp	(revision 1067)
++++ native_client/src/trusted/service_runtime/service_runtime.gyp	(working copy)
+@@ -31,7 +31,7 @@
+ {
+   'variables': {
+     'conditions': [
+-      ['OS=="linux"', {
++      ['OS=="linux" or OS=="freebsd"', {
+         'syscall_handler': [
+           'linux/nacl_syscall_impl.c'
+         ],
+@@ -121,7 +121,7 @@
+             'arch/arm/nacl_tls_tramp.S',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'sources': [
+             'linux/sel_memory.c',
+             'linux/nacl_thread_nice.c',
+Index: native_client/build/common.gypi
+===================================================================
+--- native_client/build/common.gypi	(revision 1067)
++++ native_client/build/common.gypi	(working copy)
+@@ -266,7 +266,7 @@
+     },
+   },
+   'conditions': [
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="freebsd"', {
+       'variables': {
+         # This variable is overriden below for Windows
+         # and should never be used on other platforms.
+Index: v8/tools/gyp/v8.gyp
+===================================================================
+--- v8/tools/gyp/v8.gyp	(revision 3423)
++++ v8/tools/gyp/v8.gyp	(working copy)
+@@ -78,7 +78,7 @@
+       },
+       'Release': {
+         'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="freebsd"', {
+             'cflags!': [
+               '-O2',
+               '-Os',
+@@ -506,6 +506,17 @@
+             ],
+           }
+         ],
++        ['OS=="freebsd"', {
++            'link_settings': {
++              'libraries': [
++                '-L/usr/local/lib -lexecinfo',
++            ]},
++            'sources': [
++              '../../src/platform-freebsd.cc',
++              '../../src/platform-posix.cc'
++            ],
++          }
++        ],
+         ['OS=="openbsd"', {
+             'link_settings': {
+               'libraries': [
