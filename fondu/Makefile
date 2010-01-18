@@ -9,7 +9,7 @@ PORTNAME=	fondu
 PORTVERSION=	051010
 CATEGORIES=	converters
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
-DISTNAME=	fondu_src-051010
+DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	g.veniamin@googlemail.com
@@ -23,6 +23,15 @@ MAN1=		dfont2res.1 \
 		showfond.1 \
 		tobin.1 \
 		ufond.1
+
+PLIST_FILES=	bin/dfont2res \
+		bin/${PORTNAME} \
+		bin/frombin \
+		bin/lumper \
+		bin/setfondname \
+		bin/showfond \
+		bin/tobin \
+		bin/ufond
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
