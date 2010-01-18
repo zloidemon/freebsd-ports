@@ -19,7 +19,7 @@ QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
 
 DESKTOP_ENTRIES="zNotes" "Simple notes" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
-		"Qt;Utility;" ${FALSE}
+		"Utility;TextEditor;Qt;" ${FALSE}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
