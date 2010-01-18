@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	znotes
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.9
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -17,7 +17,10 @@ COMMENT=	Simple notes based on QT4
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
 
-QMAKE_PRO=	${PORTNAME}.pro
+DESKTOP_ENTRIES="zNotes" "Simple notes" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
+		"Qt;Utility;" ${FALSE}
+
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
