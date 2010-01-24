@@ -8,7 +8,8 @@
 PORTNAME=	dmg2img
 PORTVERSION=	1.6.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
+MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
+		http://tourservice.kz/zloidemon/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
