@@ -9,7 +9,8 @@ PORTNAME=	xwinwrap
 PORTVERSION=	0.3
 CATEGORIES=	x11
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
-		http://tourservice.kz/zloidemon/distfiles/
+		http://tourservice.kz/zloidemon/distfiles/ \
+		http://z-up.ru/zloidemon/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
