@@ -9,7 +9,7 @@ PORTNAME=	nmapsi4
 PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha3
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	GUI frontend for the nmap scanning utility
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
 
 USE_CMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network linguist
 INSTALLS_ICONS=	yes
 
 post-install:
