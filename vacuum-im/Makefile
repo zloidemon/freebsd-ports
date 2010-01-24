@@ -9,7 +9,8 @@ PORTNAME=	vacuum
 PORTVERSION=	0.0.0.990
 CATEGORIES=	net-im
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
-		http://tourservice.kz/zloidemon/distfiles/
+		http://tourservice.kz/zloidemon/distfiles/ \
+		http://z-up.ru/zloidemon/distfiles/
 PKGNAMESUFFIX=	-im
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.r990
 
