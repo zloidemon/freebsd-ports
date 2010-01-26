@@ -8,8 +8,8 @@
 PORTNAME=	deadbeef
 PORTVERSION=	0.3.2
 CATEGORIES=	audio
-MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
-		http://tourservice.kz/zloidemon/distfiles/
+MASTER_SITES=	http://tourservice.kz/zloidemon/distfiles/ \
+		http://fbsd.zlonet.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-git
 
 MAINTAINER=	g.veniamin@googlemail.com
