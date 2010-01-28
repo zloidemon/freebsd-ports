@@ -5,38 +5,39 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vacuum
-PORTVERSION=	0.0.0.990
+PORTNAME=	vacuum-im
+PORTVERSION=	1.0.0
 CATEGORIES=	net-im
-MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
-		http://tourservice.kz/zloidemon/distfiles/ \
-		http://z-up.ru/zloidemon/distfiles/
-PKGNAMESUFFIX=	-im
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.r990
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	${VACUUM}_${PORTVERSION}.999-source
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Crossplatform Jabber client
 
-#USE_DOS2UNIX=	yes
-USE_BZIP2=	yes
 USE_QT_VER=	4
 USE_LDCONFIG=	yes
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
+		network linguist webkit
 
-QMAKE_PRO=	${PORTNAME}.pro
+DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
+		"${DATADIR}/resources/menuicons/shared/mainwindowlogo96.png" "${VACUUM}" \
+		"Qt;Network;InstantMessaging;" ${FALSE}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
+VACUUM=		vacuum
+DATADIR=	${PREFIX}/share/${VACUUM}
+
+WRKSRC=		${WRKDIR}/${VACUUM}
 
 do-configure:
 	cd ${WRKSRC} && ${QMAKE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${VACUUM} ${PREFIX}/bin/${VACUUM}
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} resources ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} translations ${DATADIR}
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	cd ${WRKSRC} && ${CP} -Rv plugins ${PREFIX}/lib/${PORTNAME}
+	${MKDIR} ${PREFIX}/lib/${VACUUM}
+	cd ${WRKSRC} && ${CP} -Rv plugins ${PREFIX}/lib/${VACUUM}
 	${CP} ${WRKSRC}/src/libs/libvacuumutils.so.1.0.0 ${PREFIX}/lib
 	${LN} -s ${PREFIX}/lib/libvacuumutils.so.1.0.0 ${PREFIX}/lib/libvacuumutils.so
 	${LN} -s ${PREFIX}/lib/libvacuumutils.so.1.0.0 ${PREFIX}/lib/libvacuumutils.so.1
