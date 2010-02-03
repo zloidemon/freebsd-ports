@@ -57,6 +57,7 @@ PLIST_SUB+=	EN_RU="@comment "
 .endif
 
 do-install:
+	${MKDIR} ${PREFIX}/${DICTDIR}
 	${FIND} ${WRKDIR}/stardict-* -type f -exec ${CP} {} ${PREFIX}/${DICTDIR} \;
 
 .include <bsd.port.post.mk>

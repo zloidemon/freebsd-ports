@@ -10,3 +10,5 @@
 %%PC%%share/stardict/dic/pc-user-ru.dict.dz
 %%PC%%share/stardict/dic/pc-user-ru.idx
 %%PC%%share/stardict/dic/pc-user-ru.ifo
+@dirrm share/stardict/dic
+@dirrm share/stardict
