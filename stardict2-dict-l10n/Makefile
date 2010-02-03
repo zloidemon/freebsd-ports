@@ -9,7 +9,7 @@ PORTNAME=	stardict2-dict-l10n
 PORTVERSION=	2.4.2
 CATEGORIES=	russian textproc
 MASTER_SITES=	SF/stardict/stardict-dictionaries-ru/${PORTVERSION}
-PKGNAMEPREFIX=	ru-
+PKGNAMESUFFIX=	-ru
 DIST_SUBDIR=	stardict
 
 MAINTAINER=	g.veniamin@googlemail.com
