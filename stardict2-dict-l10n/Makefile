@@ -1,11 +1,11 @@
-# New ports collection makefile for:	stardict2-dict-ru
+# New ports collection makefile for:	stardict2-dict-l10n-ru
 # Date created:		2010-01-26
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	stardict2-dict-ru
+PORTNAME=	stardict2-dict-l10n
 PORTVERSION=	2.4.2
 CATEGORIES=	russian textproc
 MASTER_SITES=	SF/stardict/stardict-dictionaries-ru/${PORTVERSION}
