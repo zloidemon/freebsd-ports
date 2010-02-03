@@ -26,21 +26,12 @@ DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
 		"${DATADIR}/resources/menuicons/shared/mainwindowlogo96.png" "${PORTNAME}" \
 		"Qt;Network;InstantMessaging;" ${FALSE}
 
+QMAKEFLAGS+=	INSTALL_PREFIX="${PREFIX}"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-configure:
-	cd ${WRKSRC} && ${QMAKE}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} resources ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} translations ${DATADIR}
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	cd ${WRKSRC} && ${CP} -R plugins ${PREFIX}/lib/${PORTNAME}
-	${CP} ${WRKSRC}/src/libs/libvacuumutils.so.1.0.0 ${PREFIX}/lib
-	${LN} -s ${PREFIX}/lib/libvacuumutils.so.1.0.0 ${PREFIX}/lib/libvacuumutils.so
-	${LN} -s ${PREFIX}/lib/libvacuumutils.so.1.0.0 ${PREFIX}/lib/libvacuumutils.so.1
-	${LN} -s ${PREFIX}/lib/libvacuumutils.so.1.0.0 ${PREFIX}/lib/libvacuumutils.so.1.0
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} ${QMAKEFLAGS} vacuum.pro
 
 .include <bsd.port.mk>

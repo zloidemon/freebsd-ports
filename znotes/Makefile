@@ -2,11 +2,11 @@
 # Date created:		2009-11-12
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/deskutils/znotes/Makefile,v 1.1 2010/01/31 13:17:15 miwi Exp $
 #
 
 PORTNAME=	znotes
-PORTVERSION=	0.3.9
+PORTVERSION=	0.4.0
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,7 +15,8 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Simple notes based on QT4
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
+		linguist
 
 DESKTOP_ENTRIES="zNotes" "Simple notes" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
@@ -23,6 +24,10 @@ DESKTOP_ENTRIES="zNotes" "Simple notes" \
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
+
+post-patch:
+	    @${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \
+		${WRKSRC}/znotes.pro
 
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} ${QMAKE_PRO}
