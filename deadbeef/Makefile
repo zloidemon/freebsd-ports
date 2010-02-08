@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	audio
-MASTER_SITES=	http://tourservice.kz/zloidemon/distfiles/ \
-		http://fbsd.zlonet.ru/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-git
+MASTER_SITES=	SF/${PORTNAME}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player for GNU/Linux systems with X11
@@ -33,6 +32,5 @@ USE_GNOME=	gtk20 glib20
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 libtoolize autoconf:262 automake:110
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-a -c
-USE_BZIP2=	yes
 
 .include <bsd.port.mk>

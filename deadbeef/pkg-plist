@@ -36,10 +36,6 @@ lib/deadbeef/mpgmad.a
 lib/deadbeef/mpgmad.la
 lib/deadbeef/mpgmad.so
 lib/deadbeef/mpgmad.so.0
-lib/deadbeef/notification.a
-lib/deadbeef/notification.la
-lib/deadbeef/notification.so
-lib/deadbeef/notification.so.0
 lib/deadbeef/nullout.a
 lib/deadbeef/nullout.la
 lib/deadbeef/nullout.so
@@ -69,25 +65,26 @@ lib/deadbeef/wavpack.la
 lib/deadbeef/wavpack.so
 lib/deadbeef/wavpack.so.0
 share/applications/deadbeef.desktop
-%%DATADIR%%/pixmaps/buffering_16.png
-%%DATADIR%%/pixmaps/next_24.png
-%%DATADIR%%/pixmaps/pause_16.png
-%%DATADIR%%/pixmaps/pause_24.png
-%%DATADIR%%/pixmaps/play_16.png
-%%DATADIR%%/pixmaps/play_24.png
-%%DATADIR%%/pixmaps/prev_24.png
-%%DATADIR%%/pixmaps/random_24.png
-%%DATADIR%%/pixmaps/stop_24.png
-%%DOCSDIR%%/COPYING.GPLv2
-%%DOCSDIR%%/COPYING.LGPLv2.1
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/README
-%%DOCSDIR%%/about.txt
-%%DOCSDIR%%/help.txt
+share/deadbeef/pixmaps/buffering_16.png
+share/deadbeef/pixmaps/next_24.png
+share/deadbeef/pixmaps/pause_16.png
+share/deadbeef/pixmaps/pause_24.png
+share/deadbeef/pixmaps/play_16.png
+share/deadbeef/pixmaps/play_24.png
+share/deadbeef/pixmaps/prev_24.png
+share/deadbeef/pixmaps/random_24.png
+share/deadbeef/pixmaps/stop_24.png
+share/doc/deadbeef/COPYING.GPLv2
+share/doc/deadbeef/COPYING.LGPLv2.1
+share/doc/deadbeef/ChangeLog
+share/doc/deadbeef/README
+share/doc/deadbeef/about.txt
+share/doc/deadbeef/help.txt
 share/icons/hicolor/16x16/apps/deadbeef.png
 share/icons/hicolor/32x32/apps/deadbeef.png
 share/icons/hicolor/48x48/apps/deadbeef.png
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
+@dirrm share/doc/deadbeef
+@dirrm share/deadbeef/pixmaps
+@dirrm share/deadbeef
 @dirrm lib/deadbeef
+@dirrm include/deadbeef
