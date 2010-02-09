@@ -9,7 +9,6 @@ PORTNAME=	deadbeef
 PORTVERSION=	0.3.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player for GNU/Linux systems with X11
@@ -26,11 +25,9 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		avformat:${PORTSDIR}/multimedia/ffmpeg \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GNOME=	gtk20 glib20
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 libtoolize autoconf:262 automake:110
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	-a -c
 
 .include <bsd.port.mk>

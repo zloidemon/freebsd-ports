@@ -28,10 +28,6 @@ lib/deadbeef/hotkeys.a
 lib/deadbeef/hotkeys.la
 lib/deadbeef/hotkeys.so
 lib/deadbeef/hotkeys.so.0
-lib/deadbeef/lastfm.a
-lib/deadbeef/lastfm.la
-lib/deadbeef/lastfm.so
-lib/deadbeef/lastfm.so.0
 lib/deadbeef/mpgmad.a
 lib/deadbeef/mpgmad.la
 lib/deadbeef/mpgmad.so
@@ -88,3 +84,4 @@ share/icons/hicolor/48x48/apps/deadbeef.png
 @dirrm %%DATADIR%%
 @dirrm lib/deadbeef
 @dirrm include/deadbeef
+@dirrmtry share/applications
