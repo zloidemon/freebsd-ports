@@ -18,12 +18,12 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/wrapper.py:${PORTSDIR}/graphics/py-open
 		${PYTHON_SITELIBDIR}/pygame/surfarray.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/PIL/ImageGL.py:${PORTSDIR}/graphics/py-imaging \
 		xpdf:${PORTSDIR}/graphics/xpdf \
-		gs:${PORTSDIR}/print/ghostscript8 \
 		pdftk:${PORTSDIR}/print/pdftk \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_PYTHON=	yes
+USE_GHOSTSCRIPT_RUN=	yes
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
