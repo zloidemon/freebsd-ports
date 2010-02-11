@@ -40,7 +40,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}.py
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
-	@cd ${WRKSRC} && for i in impressive.html demo.pdf license.txt ; do \
+	@cd ${WRKSRC} && for i in ${PORTNAME}.html demo.pdf license.txt ; do \
 		${INSTALL_DATA} $$i ${DATADIR} ; \
 	done
 
