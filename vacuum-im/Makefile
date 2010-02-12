@@ -28,7 +28,7 @@ DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
 
 QMAKEFLAGS+=	INSTALL_PREFIX="${PREFIX}"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.999
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
