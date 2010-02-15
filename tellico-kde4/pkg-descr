@@ -1,0 +1,23 @@
+Tellico is a KDE application for organizing your collections. It provides
+default templates for books, bibliographies, videos, music, video games,
+coins, stamps, trading cards, comic books, and wines.
+
+Capabilities:
+ - Supports default collections of books, bibliographic entries, videos,
+music, video games, comic books, coins, stamps, trading cards, wines,
+board games, and file catalogs.
+ - Supports user-defined custom collections, as well
+ - Supports any number of user-defined fields, of several different types:
+text, paragraph, list, checkbox, number, URL, date, images, and combinations
+ - Handles entries with multiple authors, genres, keywords, etc.
+ - Automatically formats titles and names
+ - Supports collection searching and view filtering
+ - Sorts and groups collection by various properties
+ - Allows customizable entry templates through XSLT
+ - Imports MODS, Bibtex, RIS, CSV, PDF metadata, and many other formats
+ - Exports to Bibtex, ONIX, CSV, HTML, PilotDB, and other formats
+ - Imports information directly from Amazon.com
+ - Imports CDDB data for cataloging audio CDs
+ - Scans and imports audio file collections, such as mp3 or ogg
+
+WWW:	http://tellico-project.org/
