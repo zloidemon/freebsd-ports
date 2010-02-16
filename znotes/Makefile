@@ -2,11 +2,11 @@
 # Date created:		2009-11-12
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/deskutils/znotes/Makefile,v 1.1 2010/01/31 13:17:15 miwi Exp $
+# $FreeBSD: ports/deskutils/znotes/Makefile,v 1.2 2010/02/08 15:09:59 miwi Exp $
 #
 
 PORTNAME=	znotes
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
