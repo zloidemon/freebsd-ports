@@ -26,11 +26,11 @@ USE_PYTHON=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}.py \
-		share/${PORTNAME}/${PORTNAME}.html \
-		share/${PORTNAME}/demo.pdf \
-		share/${PORTNAME}/license.txt
+		share/doc/${PORTNAME}/${PORTNAME}.html \
+		share/doc/${PORTNAME}/demo.pdf \
+		share/doc/${PORTNAME}/license.txt
 
-PLIST_DIRS=	share/${PORTNAME}
+PLIST_DIRS=	share/doc/${PORTNAME}
 
 MAN1=		${PORTNAME}.1
 
@@ -38,10 +38,10 @@ WRKSRC=		${WRKDIR}/Impressive-0.10.2
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}.py
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
 	@cd ${WRKSRC} && for i in ${PORTNAME}.html demo.pdf license.txt ; do \
-		${INSTALL_DATA} $$i ${DATADIR} ; \
+		${INSTALL_DATA} $$i ${DOCSDIR} ; \
 	done
 
 .include <bsd.port.mk>

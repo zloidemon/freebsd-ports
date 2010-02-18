@@ -26,8 +26,9 @@ USE_RUBY_VER=	18
 .include <bsd.port.pre.mk>
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL}
-	@cd ${WRKSRC} && ${RUBY} genmk.rb < conf\/*.rmk
-	@cd ${WRKSRC} && ${REINPLACE_CMD} 's/\.conf/*.rmk/.mk/'
+	cd ${WRKSRC} && for i in conf/*.rmk; do \
+		${RUBY} genmk.rb < $$i > `echo $$i | ${REINPLACE_CMD} -e 's,$$i,.rmk,g'` ;\
+	done
 	${SH} ${WRKSRC}/gendistlist.sh > ${WRKSRC}/DISTLIST
 
 .include <bsd.port.post.mk>
