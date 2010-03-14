@@ -2,7 +2,7 @@
 # Date created:		2010-02-10
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/graphics/impressive/Makefile,v 1.1 2010/02/18 18:33:10 amdmi3 Exp $
 #
 
 PORTNAME=	impressive
@@ -25,23 +25,20 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/wrapper.py:${PORTSDIR}/graphics/py-open
 USE_PYTHON=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 NO_BUILD=	yes
-PLIST_FILES=	bin/${PORTNAME}.py \
-		share/doc/${PORTNAME}/${PORTNAME}.html \
-		share/doc/${PORTNAME}/demo.pdf \
-		share/doc/${PORTNAME}/license.txt
-
-PLIST_DIRS=	share/doc/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME}
 
 MAN1=		${PORTNAME}.1
 
-WRKSRC=		${WRKDIR}/Impressive-0.10.2
+PORTDOCS=	${PORTNAME}.html demo.pdf license.txt
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}.py
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
-	@cd ${WRKSRC} && for i in ${PORTNAME}.html demo.pdf license.txt ; do \
-		${INSTALL_DATA} $$i ${DOCSDIR} ; \
-	done
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.endif
 
 .include <bsd.port.mk>
