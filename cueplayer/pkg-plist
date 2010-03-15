@@ -1,12 +1,12 @@
 bin/cueplayer
 %%DATADIR%%/application-exit.png
 %%DATADIR%%/convertor.png
+%%DATADIR%%/cueplayer.png
 %%DATADIR%%/fileopen.png
 %%DATADIR%%/format-indent-more.png
 %%DATADIR%%/format-list-unordered.png
 %%DATADIR%%/help-about.png
 %%DATADIR%%/hint.png
-%%DATADIR%%/knotify.png
 %%DATADIR%%/media-optical.png
 %%DATADIR%%/net-stream.png
 %%DATADIR%%/next.png

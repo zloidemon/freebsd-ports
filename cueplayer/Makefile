@@ -2,11 +2,11 @@
 # Date created:		2010-01-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/audio/cueplayer/Makefile,v 1.1 2010/02/03 21:38:42 sylvio Exp $
 #
 
 PORTNAME=	cueplayer
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -19,7 +19,7 @@ QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
 USE_GSTREAMER=	flac good dvd lame ugly ffmpeg taglib ogg vorbis soup libmms wavpack
 
 DESKTOP_ENTRIES="Cueplayer" "Lightweight media player based on Qt and Gstreamer" \
-		"${DATADIR}/knotify.png" "${PORTNAME}" \
+		"${DATADIR}/${PORTNAME}.png" "${PORTNAME}" \
 		"AudioVideo;Audio;Video;" ${FALSE}
 
 post-patch:
