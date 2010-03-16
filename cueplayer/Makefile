@@ -23,15 +23,17 @@ DESKTOP_ENTRIES="Cueplayer" "Lightweight media player based on Qt and Gstreamer"
 		"AudioVideo;Audio;Video;" ${FALSE}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,images/,share/${PORTNAME}/,g' \
-		${WRKSRC}/*.cpp
+#	${REINPLACE_CMD} -e 's,images/,share/${PORTNAME}/,g' \
+#		${WRKSRC}/*.cpp
+	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX},g' \
+		${WRKSRC}/${PORTNAME}.pro
 
 do-configure:
 	cd ${WRKSRC} && ${QMAKE}
 
-do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/images/*.png ${DATADIR}
+#do-install:
+#	${MKDIR} ${DATADIR}
+#	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+#	${INSTALL_DATA} ${WRKSRC}/images/*.png ${DATADIR}
 
 .include <bsd.port.mk>
