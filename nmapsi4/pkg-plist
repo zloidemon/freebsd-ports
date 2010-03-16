@@ -20,4 +20,14 @@ share/icons/hicolor/64x64/apps/nmapsi4.png
 %%DATADIR%%/locale/nmapsi4_pt_BR.qm
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
-@dirrm share/applications
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
