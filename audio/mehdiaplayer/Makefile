@@ -2,7 +2,7 @@
 # Date created:		2009-11-12
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/audio/mehdiaplayer/Makefile,v 1.1 2009/12/13 00:26:54 miwi Exp $
 #
 
 PORTNAME=	mehdiaplayer
@@ -16,7 +16,8 @@ COMMENT=	A simple media player using Qt/Phonon
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build phonon
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build \
+		rcc_build phonon
 
 QMAKE_PRO=	${PORTNAME}.pro
 
