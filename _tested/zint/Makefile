@@ -17,6 +17,7 @@ COMMENT=	Zint Barcode Generator
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
+CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${PREFIX}/include"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
