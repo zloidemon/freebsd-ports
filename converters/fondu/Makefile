@@ -2,7 +2,7 @@
 # Date created:		2009-11-14
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/converters/fondu/Makefile,v 1.1 2010/02/12 17:21:06 miwi Exp $
 #
 
 PORTNAME=	fondu
