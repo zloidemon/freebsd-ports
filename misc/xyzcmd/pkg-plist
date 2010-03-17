@@ -215,7 +215,6 @@ bin/xyzcmd
 %%PYTHON_SITELIBDIR%%/libxyz/vfs/vfsobj.py
 %%PYTHON_SITELIBDIR%%/libxyz/vfs/vfsobj.pyc
 %%PYTHON_SITELIBDIR%%/libxyz/vfs/vfsobj.pyo
-%%PYTHON_SITELIBDIR%%/xyzcmd-0.0.3-py2.6.egg-info
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/api/api-objects.txt
 %%DOCSDIR%%/api/class-tree.html

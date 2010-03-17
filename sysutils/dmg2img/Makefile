@@ -2,7 +2,7 @@
 # Date created:		2009-11-27
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/sysutils/dmg2img/Makefile,v 1.1 2010/01/27 01:12:10 miwi Exp $
 #
 
 PORTNAME=	dmg2img
