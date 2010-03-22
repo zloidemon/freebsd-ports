@@ -14,12 +14,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Zint Barcode Generator
 
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 USE_CMAKE=	yes
+USE_LDCONFIG=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
-CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${PREFIX}/include"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

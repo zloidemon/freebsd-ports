@@ -1,1 +1,10 @@
-@comment $FreeBSD$
+bin/zint
+bin/zint-qt
+include/qzint.h
+include/zint.h
+lib/libQZint.so
+lib/libQZint.so.2.3
+lib/libQZint.so.2.3.1
+lib/libzint.so
+lib/libzint.so.2.3
+lib/libzint.so.2.3.1
