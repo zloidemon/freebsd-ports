@@ -1,0 +1,5 @@
+Cairo Composite Manager is a versatile and extensible composite manager
+which use cairo for rendering. Plugins can be used to add some cool
+effects to your desktop.
+
+WWW:	http://cairo-compmgr.tuxfamily.org/
