@@ -19,8 +19,14 @@ BUILD_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr \
 
 USE_XORG=	xdamage xext xi sm pixman
 USE_GNOME=	gtk20 gnomelibs
+USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
+CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/share
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
