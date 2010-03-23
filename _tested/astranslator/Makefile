@@ -1,12 +1,12 @@
-# New ports collection makefile for:	googletranslator
+# New ports collection makefile for:	astranslator
 # Date created:		2009-11-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	googletranslator
-PORTVERSION=	0.9.6.01
+PORTNAME=	astranslator
+PORTVERSION=	0.9.12.20
 CATEGORIES=	deskutils
 MASTER_SITES=	http://alexsnet.ru/wp-content/uploads/2009/02/
 DISTNAME=	astranslator-0961
