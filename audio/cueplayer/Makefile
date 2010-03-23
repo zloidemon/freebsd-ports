@@ -8,8 +8,7 @@
 PORTNAME=	cueplayer
 PORTVERSION=	0.23
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	CUE player
@@ -17,7 +16,6 @@ COMMENT=	CUE player
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
 USE_GSTREAMER=	flac good dvd lame ugly ffmpeg taglib ogg vorbis soup libmms wavpack
-QMAKE_ARGS=	PREFIX=${PREFIX}
 
 DESKTOP_ENTRIES="Cueplayer" "Lightweight media player based on Qt and Gstreamer" \
 		"${DATADIR}/${PORTNAME}.png" "${PORTNAME}" \
@@ -30,7 +28,7 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.pro
 
 do-configure:
-	cd ${WRKSRC} && ${QMAKE} ${QMAKE_ARGS}
+	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${DATADIR}
