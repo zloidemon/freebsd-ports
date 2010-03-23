@@ -23,7 +23,7 @@ USE_CMAKE=	yes
 USE_ICONV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
-		linguist network sql opengl
+		linguist network sql opengl dbus qtestlib corelib
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/clementine.desktop \
