@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	clementine-player
+PORTNAME=	clementine
 PORTVERSION=	0.2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
+PKGNAMESUFFIX=	-player
 DISTNAME=	clementine-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
@@ -17,16 +18,13 @@ COMMENT=	A cross-platform music player based on Amarok 1.4
 LIB_DEPENDS=	lastfm.0:${PORTSDIR}/audio/liblastfm \
 		tag.1:${PORTSDIR}/audio/taglib \
 		notify.1:${PORTSDIR}/devel/libnotify \
-		xine.1:${PORTSDIR}/multimedia/libxine
+		xine.1:${PORTSDIR}/multimedia/libxine \
+		boost_system.4:${PORTSDIR}/devel/boost-libs
 
 USE_CMAKE=	yes
 USE_ICONV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist network sql opengl dbus qtestlib corelib
-
-PLIST_FILES=	bin/${PORTNAME} \
-		share/applications/clementine.desktop \
-		share/icons/hicolor/64x64/apps/application-x-clementine.png
 
 .include <bsd.port.mk>
