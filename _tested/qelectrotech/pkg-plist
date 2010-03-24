@@ -1,9 +1,9 @@
 bin/qelectrotech
-share/doc/qelectrotech/CREDIT
-share/doc/qelectrotech/ChangeLog
-share/doc/qelectrotech/ELEMENTS.LICENSE
-share/doc/qelectrotech/LICENSE
-share/doc/qelectrotech/README
+%%DOCSDIR%%/CREDIT
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/ELEMENTS.LICENSE
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
 man/es/man1/qelectrotech.1.gz
 man/fr.ISO8859-1/man1/qelectrotech.1.gz
 man/fr.UTF-8/man1/qelectrotech.1.gz
@@ -305,4 +305,4 @@ share/icons/hicolor/64x64/mimetypes/application-x-qet-project.png
 @dirrm %%DATADIR%%/elements/automatisme
 @dirrm %%DATADIR%%/elements
 @dirrm %%DATADIR%%
-@dirrm share/doc/qelectrotech
+@dirrm %%DOCSDIR%%
