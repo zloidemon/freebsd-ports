@@ -72,7 +72,6 @@ share/icons/hicolor/24x24/apps/eiskaltdcpp.png
 share/icons/hicolor/32x32/apps/eiskaltdcpp.png
 share/icons/hicolor/48x48/apps/eiskaltdcpp.png
 share/icons/hicolor/64x64/apps/eiskaltdcpp.png
-man/man1/eiskaltdcpp.1.gz
 share/pixmaps/eiskaltdcpp.png
 @dirrm %%DATADIR%%/ts
 @dirrm %%DATADIR%%/icons/user/valknut

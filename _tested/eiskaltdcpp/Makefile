@@ -21,12 +21,14 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
-USE_LDCONFIG=	yes
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
-		dbus network sql linguist
+		dbus network sql linguist_build
 
 OPTIONS=	SPELL "Spell checking support" off \
 		BAR "Progress bar for free space" off
+
+MANCOMPRESSED=	yes
+MAN1=		${PORTNAME}.1
 
 .include <bsd.port.pre.mk>
 
