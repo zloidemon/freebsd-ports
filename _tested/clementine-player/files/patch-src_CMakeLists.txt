@@ -1,37 +1,10 @@
-
-$FreeBSD$
-
---- src/CMakeLists.txt.orig
-+++ src/CMakeLists.txt
-@@ -228,26 +228,26 @@
-   target_link_libraries(clementine_lib qsqlite)
- endif(WIN32)
- 
--add_executable(clementine
-+add_executable(clementine-player
-    MACOSX_BUNDLE
-    WIN32
+--- src/CMakeLists.txt.orig	2010-03-22 21:35:31.000000000 +0300
++++ src/CMakeLists.txt	2010-04-03 02:58:21.000000000 +0400
+@@ -234,6 +234,7 @@
     ${CLEMENTINE-WIN32-RESOURCES}
     main.cpp
  )
--target_link_libraries(clementine clementine_lib)
-+target_link_libraries(clementine-player clementine_lib)
++set_target_properties(clementine PROPERTIES OUTPUT_NAME clementine-player)
+ target_link_libraries(clementine clementine_lib)
  
--set_property(TARGET clementine
-+set_property(TARGET clementine-player
-     PROPERTY COMPILE_FLAGS
-     "-Wnon-virtual-dtor -Woverloaded-virtual -Wall"
- )
- 
--set_target_properties(clementine PROPERTIES
-+set_target_properties(clementine-player PROPERTIES
-     MACOSX_BUNDLE_INFO_STRING "Clementine 0.2"
-     MACOSX_BUNDLE_ICON_FILE "clementine"
-     MACOSX_BUNDLE_SHORT_VERSION_STRING "0.2"
- )
- 
--install(TARGETS clementine
-+install(TARGETS clementine-player
-   BUNDLE DESTINATION bin
-   RUNTIME DESTINATION bin
- )
+ set_property(TARGET clementine

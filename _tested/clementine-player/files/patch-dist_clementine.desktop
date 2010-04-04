@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- dist/clementine.desktop.orig
 +++ dist/clementine.desktop
 @@ -4,8 +4,8 @@
