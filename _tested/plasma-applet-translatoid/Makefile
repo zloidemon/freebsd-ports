@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}1-1
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Translator using google translator
 
+LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson
+
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT_VER=	4
