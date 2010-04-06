@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: ports/graphics/zint/files/patch-backend_maxicode.c,v 1.1 2010/03/26 07:21:07 wen Exp $
 
 --- backend/maxicode.c.orig
 +++ backend/maxicode.c
