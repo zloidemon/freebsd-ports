@@ -1,6 +1,0 @@
-JSON is a lightweight data-interchange format. It can represents integer, real
-number, string, an ordered sequence of value, and a collection of
-name/value pairs.QJson is a qt-based library that maps JSON data to QVariant
-objects.
-
-WWW:	http://qjson.sourceforge.net/
