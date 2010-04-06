@@ -1,7 +1,7 @@
-diff -ruN py-xmpppy.old/Makefile py-xmpppy/Makefile
---- py-xmpppy.old/Makefile	2010-04-03 21:44:23.000000000 +0800
-+++ py-xmpppy/Makefile	2010-04-03 21:44:11.000000000 +0800
-@@ -6,11 +6,11 @@
+diff -ruN py-xmpppy.orig/Makefile py-xmpppy/Makefile
+--- py-xmpppy.orig/Makefile	2010-04-06 21:11:02.000000000 +0800
++++ py-xmpppy/Makefile	2010-04-06 21:07:19.000000000 +0800
+@@ -6,18 +6,18 @@
  #
  
  PORTNAME=	xmpppy
@@ -16,9 +16,17 @@ diff -ruN py-xmpppy.old/Makefile py-xmpppy/Makefile
  
  MAINTAINER=	wenheping@gmail.com
  COMMENT=	A Python library that provides easy scripting with Jabber
-diff -ruN py-xmpppy.old/distinfo py-xmpppy/distinfo
---- py-xmpppy.old/distinfo	2010-04-03 21:44:23.000000000 +0800
-+++ py-xmpppy/distinfo	2010-04-03 21:44:11.000000000 +0800
+ 
+ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=1.7.1:${PORTSDIR}/dns/py-dnspython
+ 
+-USE_PYTHON=	2.4+
++USE_PYTHON=	2.6+
+ USE_PYDISTUTILS=	yes
+ 
+ post-patch:
+diff -ruN py-xmpppy.orig/distinfo py-xmpppy/distinfo
+--- py-xmpppy.orig/distinfo	2010-04-06 21:11:02.000000000 +0800
++++ py-xmpppy/distinfo	2010-04-06 20:48:25.000000000 +0800
 @@ -1,3 +1,3 @@
 -MD5 (xmpppy-0.4.1.tar.gz) = ca36d685643f2c56ab07323a09ece9e4
 -SHA256 (xmpppy-0.4.1.tar.gz) = 1724d3ffd3210b3ca48e218954d8c2c10821bce1d0f5c66ec3e70de6389b38eb
@@ -26,9 +34,9 @@ diff -ruN py-xmpppy.old/distinfo py-xmpppy/distinfo
 +MD5 (xmpppy-0.5.0rc1.tar.gz) = e0d2b3f9e4a278c163431e64adb0c861
 +SHA256 (xmpppy-0.5.0rc1.tar.gz) = 519b025b3c9600c26c5805d0c612fe01e61330d2b9869f05c7c416c627820b9a
 +SIZE (xmpppy-0.5.0rc1.tar.gz) = 84996
-diff -ruN py-xmpppy.old/files/patch-setup.py py-xmpppy/files/patch-setup.py
---- py-xmpppy.old/files/patch-setup.py	1970-01-01 07:00:00.000000000 +0700
-+++ py-xmpppy/files/patch-setup.py	2010-04-03 21:44:11.000000000 +0800
+diff -ruN py-xmpppy.orig/files/patch-setup.py py-xmpppy/files/patch-setup.py
+--- py-xmpppy.orig/files/patch-setup.py	1970-01-01 07:00:00.000000000 +0700
++++ py-xmpppy/files/patch-setup.py	2010-04-06 20:48:25.000000000 +0800
 @@ -0,0 +1,19 @@
 +--- setup.py.orig	2010-04-03 20:46:52.000000000 +0800
 ++++ setup.py	2010-04-03 20:47:04.000000000 +0800
@@ -49,9 +57,9 @@ diff -ruN py-xmpppy.old/files/patch-setup.py py-xmpppy/files/patch-setup.py
 +       author='Alexey Nezhdanov',
 +       author_email='snakeru@users.sourceforge.net',
 +       url='http://xmpppy.sourceforge.net/',
-diff -ruN py-xmpppy.old/files/patch-xmpp-auth.py py-xmpppy/files/patch-xmpp-auth.py
---- py-xmpppy.old/files/patch-xmpp-auth.py	2010-04-03 21:44:23.000000000 +0800
-+++ py-xmpppy/files/patch-xmpp-auth.py	2010-04-03 21:46:20.000000000 +0800
+diff -ruN py-xmpppy.orig/files/patch-xmpp-auth.py py-xmpppy/files/patch-xmpp-auth.py
+--- py-xmpppy.orig/files/patch-xmpp-auth.py	2010-04-06 21:11:02.000000000 +0800
++++ py-xmpppy/files/patch-xmpp-auth.py	2010-04-06 20:48:25.000000000 +0800
 @@ -1,14 +1,20 @@
 ---- xmpp/auth.py.orig	2009-12-10 20:43:19.000000000 +0800
 -+++ xmpp/auth.py	2009-12-10 20:44:17.000000000 +0800
@@ -79,3 +87,31 @@ diff -ruN py-xmpppy.old/files/patch-xmpp-auth.py py-xmpppy/files/patch-xmpp-auth
   def C(some): return ':'.join(some)
 + 
 + class NonSASL(PlugIn):
+diff -ruN py-xmpppy.orig/files/patch-xmpp-transports.py py-xmpppy/files/patch-xmpp-transports.py
+--- py-xmpppy.orig/files/patch-xmpp-transports.py	1970-01-01 07:00:00.000000000 +0700
++++ py-xmpppy/files/patch-xmpp-transports.py	2010-04-06 21:06:05.000000000 +0800
+@@ -0,0 +1,24 @@
++--- xmpp/transports.py.orig	2010-04-06 21:05:04.000000000 +0800
+++++ xmpp/transports.py	2010-04-06 21:05:20.000000000 +0800
++@@ -27,7 +27,7 @@ Transports are stackable so you - f.e. T
++ Also exception 'error' is defined to allow capture of this module specific exceptions.
++ """
++ 
++-import socket,select,base64,dispatcher,sys
+++import socket,ssl,select,base64,dispatcher,sys
++ from simplexml import ustr
++ from client import PlugIn
++ from protocol import *
++@@ -312,9 +312,9 @@ class TLS(PlugIn):
++         """ Immidiatedly switch socket to TLS mode. Used internally."""
++         """ Here we should switch pending_data to hint mode."""
++         tcpsock=self._owner.Connection
++-        tcpsock._sslObj    = socket.ssl(tcpsock._sock, None, None)
++-        tcpsock._sslIssuer = tcpsock._sslObj.issuer()
++-        tcpsock._sslServer = tcpsock._sslObj.server()
+++        tcpsock._sslObj    = ssl.wrap_socket(tcpsock._sock, None, None)
+++        tcpsock._sslIssuer = tcpsock._sslObj.getpeercert().get('issuer')
+++        tcpsock._sslServer = tcpsock._sslObj.getpeercert().get('server')
++         tcpsock._recv = tcpsock._sslObj.read
++         tcpsock._send = tcpsock._sslObj.write
++ 
