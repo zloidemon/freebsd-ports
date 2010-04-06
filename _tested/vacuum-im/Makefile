@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	vacuum
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-im
-DISTNAME=	${PORTNAME}_${PORTVERSION}.999-source
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Crossplatform Jabber client
@@ -28,7 +28,7 @@ DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
 
 QMAKEFLAGS+=	INSTALL_PREFIX="${PREFIX}"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.999
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
