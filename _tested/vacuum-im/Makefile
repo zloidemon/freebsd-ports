@@ -20,7 +20,7 @@ PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 USE_QT_VER=	4
 USE_LDCONFIG=	yes
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
-		network linguist webkit
+		network linguist_build webkit
 
 DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
 		"${DATADIR}/resources/menuicons/shared/mainwindowlogo96.png" "${PORTNAME}" \
@@ -32,6 +32,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} vacuum.pro
+		${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
 
 .include <bsd.port.mk>

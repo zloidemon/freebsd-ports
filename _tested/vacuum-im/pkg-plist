@@ -60,6 +60,11 @@ lib/vacuum/plugins/libtraymanager.so
 lib/vacuum/plugins/libvcard.so
 lib/vacuum/plugins/libxmppstreams.so
 lib/vacuum/plugins/libxmppuriqueries.so
+share/doc/vacuum/AUTHORS
+share/doc/vacuum/CHANGELOG
+share/doc/vacuum/COPYING
+share/doc/vacuum/README
+share/pixmaps/vacuum.png
 %%DATADIR%%/resources/adiummessagestyles/shared/Template.html
 %%DATADIR%%/resources/adiummessagestyles/yMous/Contents/Info.plist
 %%DATADIR%%/resources/adiummessagestyles/yMous/Contents/Resources/Footer.html
@@ -298,6 +303,7 @@ lib/vacuum/plugins/libxmppuriqueries.so
 %%DATADIR%%/resources/menuicons/shared/captchaforms.png
 %%DATADIR%%/resources/menuicons/shared/chatmessagehandler.def.xml
 %%DATADIR%%/resources/menuicons/shared/chatmessagehandlermessage.png
+%%DATADIR%%/resources/menuicons/shared/chatmessagehandlerusermenu.png
 %%DATADIR%%/resources/menuicons/shared/chatstates.def.xml
 %%DATADIR%%/resources/menuicons/shared/chatstatesactive.png
 %%DATADIR%%/resources/menuicons/shared/chatstatescomposing.png
@@ -363,6 +369,7 @@ lib/vacuum/plugins/libxmppuriqueries.so
 %%DATADIR%%/resources/menuicons/shared/messagestyles.def.xml
 %%DATADIR%%/resources/menuicons/shared/messagestyles.png
 %%DATADIR%%/resources/menuicons/shared/messagewidgets.def.xml
+%%DATADIR%%/resources/menuicons/shared/messagewidgetsquote.png
 %%DATADIR%%/resources/menuicons/shared/messagewidgetstabmenu.png
 %%DATADIR%%/resources/menuicons/shared/muc.def.xml
 %%DATADIR%%/resources/menuicons/shared/mucchangenick.png
@@ -383,12 +390,16 @@ lib/vacuum/plugins/libxmppuriqueries.so
 %%DATADIR%%/resources/menuicons/shared/mucmessage.png
 %%DATADIR%%/resources/menuicons/shared/mucprivatemessage.png
 %%DATADIR%%/resources/menuicons/shared/mucrequestvoice.png
+%%DATADIR%%/resources/menuicons/shared/muctoolsmenu.png
+%%DATADIR%%/resources/menuicons/shared/mucusermenu.png
 %%DATADIR%%/resources/menuicons/shared/normalmessagehandler.def.xml
 %%DATADIR%%/resources/menuicons/shared/normalmessagehandlermessage.png
 %%DATADIR%%/resources/menuicons/shared/notifications.def.xml
 %%DATADIR%%/resources/menuicons/shared/notifications.png
 %%DATADIR%%/resources/menuicons/shared/notificationsactivateall.png
 %%DATADIR%%/resources/menuicons/shared/notificationsremoveall.png
+%%DATADIR%%/resources/menuicons/shared/notificationssoundoff.png
+%%DATADIR%%/resources/menuicons/shared/notificationssoundon.png
 %%DATADIR%%/resources/menuicons/shared/pluginmanager.def.xml
 %%DATADIR%%/resources/menuicons/shared/pluginmanagerabout.png
 %%DATADIR%%/resources/menuicons/shared/pluginmanageraboutqt.png
@@ -426,6 +437,7 @@ lib/vacuum/plugins/libxmppuriqueries.so
 %%DATADIR%%/resources/menuicons/shared/rostersearch.def.xml
 %%DATADIR%%/resources/menuicons/shared/rostersearch.png
 %%DATADIR%%/resources/menuicons/shared/rosterview.def.xml
+%%DATADIR%%/resources/menuicons/shared/rosterviewclipboard.png
 %%DATADIR%%/resources/menuicons/shared/rosterviewhideoffline.png
 %%DATADIR%%/resources/menuicons/shared/rosterviewoptions.png
 %%DATADIR%%/resources/menuicons/shared/rosterviewshowoffline.png
@@ -448,6 +460,7 @@ lib/vacuum/plugins/libxmppuriqueries.so
 %%DATADIR%%/resources/menuicons/shared/snegotiationterminate.png
 %%DATADIR%%/resources/menuicons/shared/statusicons.def.xml
 %%DATADIR%%/resources/menuicons/shared/statusiconsoptions.png
+%%DATADIR%%/resources/menuicons/shared/vacuum.png
 %%DATADIR%%/resources/menuicons/shared/vcard.def.xml
 %%DATADIR%%/resources/menuicons/shared/vcard.png
 %%DATADIR%%/resources/serviceicons/shared/_empty_.png
@@ -491,14 +504,12 @@ lib/vacuum/plugins/libxmppuriqueries.so
 %%DATADIR%%/resources/serviceicons/shared/pubsub.png
 %%DATADIR%%/resources/serviceicons/shared/server.png
 %%DATADIR%%/resources/simplemessagestyles/chat/Incoming/Content.html
+%%DATADIR%%/resources/simplemessagestyles/chat/Incoming/NextContent.html
 %%DATADIR%%/resources/simplemessagestyles/chat/Info.plist
+%%DATADIR%%/resources/simplemessagestyles/chat/Outgoing/NextContent.html
 %%DATADIR%%/resources/simplemessagestyles/chat/Status.html
+%%DATADIR%%/resources/simplemessagestyles/chat/Topic.html
 %%DATADIR%%/resources/simplemessagestyles/chat/Variants/Default.css
-%%DATADIR%%/resources/simplemessagestyles/groupchat/Incoming/Content.html
-%%DATADIR%%/resources/simplemessagestyles/groupchat/Info.plist
-%%DATADIR%%/resources/simplemessagestyles/groupchat/Status.html
-%%DATADIR%%/resources/simplemessagestyles/groupchat/Topic.html
-%%DATADIR%%/resources/simplemessagestyles/groupchat/Variants/Default.css
 %%DATADIR%%/resources/simplemessagestyles/normal/Incoming/Content.html
 %%DATADIR%%/resources/simplemessagestyles/normal/Info.plist
 %%DATADIR%%/resources/simplemessagestyles/normal/Topic.html
@@ -602,6 +613,66 @@ lib/vacuum/plugins/libxmppuriqueries.so
 %%DATADIR%%/resources/statusicons/yahoo/online.png
 %%DATADIR%%/resources/statusicons/yahoo/statusicons.def.xml
 %%DATADIR%%/resources/statusicons/yahoo/xa.png
+%%DATADIR%%/translations/pl_PL/accountmanager.qm
+%%DATADIR%%/translations/pl_PL/adiummessagestyle.qm
+%%DATADIR%%/translations/pl_PL/annotations.qm
+%%DATADIR%%/translations/pl_PL/autostatus.qm
+%%DATADIR%%/translations/pl_PL/avatars.qm
+%%DATADIR%%/translations/pl_PL/bitsofbinary.qm
+%%DATADIR%%/translations/pl_PL/bookmarks.qm
+%%DATADIR%%/translations/pl_PL/captchaforms.qm
+%%DATADIR%%/translations/pl_PL/chatmessagehandler.qm
+%%DATADIR%%/translations/pl_PL/chatstates.qm
+%%DATADIR%%/translations/pl_PL/clientinfo.qm
+%%DATADIR%%/translations/pl_PL/commands.qm
+%%DATADIR%%/translations/pl_PL/compress.qm
+%%DATADIR%%/translations/pl_PL/connectionmanager.qm
+%%DATADIR%%/translations/pl_PL/console.qm
+%%DATADIR%%/translations/pl_PL/dataforms.qm
+%%DATADIR%%/translations/pl_PL/datastreamsmanager.qm
+%%DATADIR%%/translations/pl_PL/defaultconnection.qm
+%%DATADIR%%/translations/pl_PL/emoticons.qm
+%%DATADIR%%/translations/pl_PL/filestreamsmanager.qm
+%%DATADIR%%/translations/pl_PL/filetransfer.qm
+%%DATADIR%%/translations/pl_PL/gateways.qm
+%%DATADIR%%/translations/pl_PL/inbandstreams.qm
+%%DATADIR%%/translations/pl_PL/iqauth.qm
+%%DATADIR%%/translations/pl_PL/jabbersearch.qm
+%%DATADIR%%/translations/pl_PL/mainwindow.qm
+%%DATADIR%%/translations/pl_PL/messagearchiver.qm
+%%DATADIR%%/translations/pl_PL/messageprocessor.qm
+%%DATADIR%%/translations/pl_PL/messagestyles.qm
+%%DATADIR%%/translations/pl_PL/messagewidgets.qm
+%%DATADIR%%/translations/pl_PL/multiuserchat.qm
+%%DATADIR%%/translations/pl_PL/normalmessagehandler.qm
+%%DATADIR%%/translations/pl_PL/notifications.qm
+%%DATADIR%%/translations/pl_PL/presence.qm
+%%DATADIR%%/translations/pl_PL/privacylists.qm
+%%DATADIR%%/translations/pl_PL/privatestorage.qm
+%%DATADIR%%/translations/pl_PL/qt_pl.qm
+%%DATADIR%%/translations/pl_PL/registration.qm
+%%DATADIR%%/translations/pl_PL/roster.qm
+%%DATADIR%%/translations/pl_PL/rosterchanger.qm
+%%DATADIR%%/translations/pl_PL/rostersearch.qm
+%%DATADIR%%/translations/pl_PL/rostersmodel.qm
+%%DATADIR%%/translations/pl_PL/rostersview.qm
+%%DATADIR%%/translations/pl_PL/saslauth.qm
+%%DATADIR%%/translations/pl_PL/servicediscovery.qm
+%%DATADIR%%/translations/pl_PL/sessionnegotiation.qm
+%%DATADIR%%/translations/pl_PL/settings.qm
+%%DATADIR%%/translations/pl_PL/simplemessagestyle.qm
+%%DATADIR%%/translations/pl_PL/skinmanager.qm
+%%DATADIR%%/translations/pl_PL/socksstreams.qm
+%%DATADIR%%/translations/pl_PL/stanzaprocessor.qm
+%%DATADIR%%/translations/pl_PL/starttls.qm
+%%DATADIR%%/translations/pl_PL/statuschanger.qm
+%%DATADIR%%/translations/pl_PL/statusicons.qm
+%%DATADIR%%/translations/pl_PL/traymanager.qm
+%%DATADIR%%/translations/pl_PL/vacuum.qm
+%%DATADIR%%/translations/pl_PL/vacuumutils.qm
+%%DATADIR%%/translations/pl_PL/vcard.qm
+%%DATADIR%%/translations/pl_PL/xmppstreams.qm
+%%DATADIR%%/translations/pl_PL/xmppuriqueries.qm
 %%DATADIR%%/translations/ru_RU/accountmanager.qm
 %%DATADIR%%/translations/ru_RU/adiummessagestyle.qm
 %%DATADIR%%/translations/ru_RU/annotations.qm
@@ -663,6 +734,7 @@ lib/vacuum/plugins/libxmppuriqueries.so
 %%DATADIR%%/translations/ru_RU/xmppstreams.qm
 %%DATADIR%%/translations/ru_RU/xmppuriqueries.qm
 @dirrm %%DATADIR%%/translations/ru_RU
+@dirrm %%DATADIR%%/translations/pl_PL
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/resources/statusicons/yahoo
 @dirrm %%DATADIR%%/resources/statusicons/smtp
@@ -680,10 +752,8 @@ lib/vacuum/plugins/libxmppuriqueries.so
 @dirrm %%DATADIR%%/resources/simplemessagestyles/normal/Variants
 @dirrm %%DATADIR%%/resources/simplemessagestyles/normal/Incoming
 @dirrm %%DATADIR%%/resources/simplemessagestyles/normal
-@dirrm %%DATADIR%%/resources/simplemessagestyles/groupchat/Variants
-@dirrm %%DATADIR%%/resources/simplemessagestyles/groupchat/Incoming
-@dirrm %%DATADIR%%/resources/simplemessagestyles/groupchat
 @dirrm %%DATADIR%%/resources/simplemessagestyles/chat/Variants
+@dirrm %%DATADIR%%/resources/simplemessagestyles/chat/Outgoing
 @dirrm %%DATADIR%%/resources/simplemessagestyles/chat/Incoming
 @dirrm %%DATADIR%%/resources/simplemessagestyles/chat
 @dirrm %%DATADIR%%/resources/simplemessagestyles
@@ -705,5 +775,6 @@ lib/vacuum/plugins/libxmppuriqueries.so
 @dirrm %%DATADIR%%/resources/adiummessagestyles
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
+@dirrm share/doc/vacuum
 @dirrm lib/vacuum/plugins
 @dirrm lib/vacuum
