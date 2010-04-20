@@ -29,7 +29,7 @@ USE_GNOME=	gtk20 glib20
 OPTIONS=	PULSE "PulseAudio output plugin" off\
 		GTKUI "standard GTK2 user interface plugin" on\
 		VFS "HTTP streaming vfs plugin" on\
-		LASTFM "last.fm/libre.fm scrobbler plugin" on\
+		LFM "last.fm/libre.fm scrobbler plugin" on\
 		ART "album art loader plugin" on\
 		EQ "SuperEQ DSP plugin" on\
 		SID "commodore64 SID music player plugin" on\
@@ -55,53 +55,87 @@ CONFIGURE_ARGS+=	--disable-pulse
 
 .if defined(WITHOUT_GTKUI)
 CONFIGURE_ARGS+=	--disable-gtkui
+PLIST_SUB+=	GTKUI="@comment "
+.else
+PLIST_SUB+=	GKTUI=""
 .endif
 
 .if defined(WITHOUT_VFS)
 CONFIGURE_ARGS+=	--disable-vfs-curl
+PLIST_SUB+=	VFS="@comment "
+.else
+PLIST_SUB+=	VFS""
 .endif
 
-.if defined(WITHOUT_LASTFM)
+.if defined(WITHOUT_LFM)
 CONFIGURE_ARGS+=	--disable-lfm
+PLIST_SUB+=	LFM="@comment "
+.else
+PLIST_SUB+=	LFM=""
 .endif
 
 .if defined(WITHOUT_ART)
 CONFIGURE_ARGS+=	--disable-artwork
+PLIST_SUB+=	ART="@comment "
+.else
+PLIST_SUB+=	ART=""
 .endif
 
 .if defined(WITHOUT_EQ)
 CONFIGURE_ARGS+=	--disable-supereq
+PLIST_SUB+=	EQ="@comment "
+.else
+PLIST_SUB+=	EQ=""
 .endif
 
 .if defined(WITHOUT_SID)
 CONFIGURE_ARGS+=	--disable-sid
+PLIST_SUB+=	SID="@comment "
+.else
+PLIST_SUB+=	SID=""
 .endif
 
 .if defined(WITHOUT_FFAP)
 CONFIGURE_ARGS+=	--disable-ffap
+PLIST_SUB+=	FFAP="@comment "
+.else
+PLIST_SUB+=	FFAP=""
 .endif
 
 .if defined(WITHOUT_VTX)
 CONFIGURE_ARGS+=	--disable-vtx
+PLIST_SUB+=	VTX="@comment "
+.else
+PLIST_SUB+=	VTX=""
 .endif
 
 .if defined(WITHOUT_ADP)
 CONFIGURE_ARGS+=	--disable-adplug
+PLIST_SUB+=	ADP="@comment "
+.else
+PLIST_SUB+=	ADP=""
 .endif
 
 .if defined(WITHOUT_HOTKEYS)
 CONFIGURE_ARGS+=	--disable-hotkeys
+PLIST_SUB+=	HOTKEYS="@comment "
+.else
+PLIST_SUB+=	HOTKEYS=""
 .endif
 
 .if defined(WITHOUT_OGG)
 CONFIGURE_ARGS+=	--disable-vorbis
+PLIST_SUB+=	OGG="@comment "
 .else
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+PLIST_SUB+=	OGG=""
 .endif
 
 .if defined(WITHOUT_FFMPEG)
 CONFIGURE_ARGS+=	--disable-ffmpeg
+PLIST_SUB+=	FFMPEG="@comment "
 .else
+PLIST_SUB+=	FFMPEG=""
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		avformat:${PORTSDIR}/multimedia/ffmpeg \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
@@ -109,24 +143,33 @@ LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 
 .if defined(WITHOUT_FLAC)
 CONFIGURE_ARGS+=	--disable-flac
+PLIST_SUB+=	FLAC="@comment "
 .else
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+PLIST_SUB+=	FLAC=""
 .endif
 
 .if defined(WITHOUT_SNDFILE)
 CONFIGURE_ARGS+=	--disable-sndfile
+PLIST_SUB+=	SNDFILE="@comment "
 .else
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+PLIST_SUB+=	SNDFILE=""
 .endif
 
 .if defined(WITHOUT_WAV)
 CONFIGURE_ARGS+=	--disable-wavpack
+PLIST_SUB+=	WAV="@comment "
 .else
 LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+PLIST_SUB+=	WAV=""
 .endif
 
 .if defined(WITHOUT_CDDA)
 CONFIGURE_ARGS+=	--disable-cdda
+PLIST_SUB+=	CDDA="@comment"
+.else
+PLIST_SUB+=	CDDA=""
 .endif
 
 .if defined(WITHOUT_GME)
