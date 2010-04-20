@@ -161,7 +161,7 @@ PLIST_SUB+=	SNDFILE=""
 CONFIGURE_ARGS+=	--disable-wavpack
 PLIST_SUB+=	WAV="@comment "
 .else
-LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 PLIST_SUB+=	WAV=""
 .endif
 
