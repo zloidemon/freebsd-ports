@@ -1,0 +1,153 @@
+Files keepassx.orig/.swo and keepassx/.swo differ
+Files keepassx.orig/.swp and keepassx/.swp differ
+diff -ruN keepassx.orig/Makefile keepassx/Makefile
+--- keepassx.orig/Makefile	2010-05-03 13:33:36.000000000 +0800
++++ keepassx/Makefile	2010-05-03 12:46:50.000000000 +0800
+@@ -6,10 +6,9 @@
+ #
+ 
+ PORTNAME=	KeePassX
+-PORTVERSION=	0.4.1
+-PORTREVISION=	2
++PORTVERSION=	0.4.3
+ CATEGORIES=	security
+-MASTER_SITES=	SF/${PORTNAME:L}
++MASTER_SITES=	SF/${PORTNAME:L}/KeePassX/${PORTVERSION}/
+ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
+ 
+ MAINTAINER=	skv@FreeBSD.org
+diff -ruN keepassx.orig/distinfo keepassx/distinfo
+--- keepassx.orig/distinfo	2010-05-03 13:33:36.000000000 +0800
++++ keepassx/distinfo	2010-05-03 12:47:00.000000000 +0800
+@@ -1,3 +1,3 @@
+-MD5 (keepassx-0.4.1.tar.gz) = 96efdf5855703e3d2817973d5e2b0fcf
+-SHA256 (keepassx-0.4.1.tar.gz) = f9c1b17505430f68524ecc2be11930afa5d454097536c7a286355e1764b31429
+-SIZE (keepassx-0.4.1.tar.gz) = 1050175
++MD5 (keepassx-0.4.3.tar.gz) = 1df67bb22b2e08df49f09e61d156f508
++SHA256 (keepassx-0.4.3.tar.gz) = cd901a0611ce57e62cf6df7eeeb1b690b5232302bdad8626994eb54adcfa1e85
++SIZE (keepassx-0.4.3.tar.gz) = 1368766
+diff -ruN keepassx.orig/files/patch-from-trunk keepassx/files/patch-from-trunk
+--- keepassx.orig/files/patch-from-trunk	2010-05-03 13:33:36.000000000 +0800
++++ keepassx/files/patch-from-trunk	1970-01-01 07:00:00.000000000 +0700
+@@ -1,77 +0,0 @@
+-diff -urN --exclude=.svn ./CMakeLists.txt ./CMakeLists.txt
+---- ./CMakeLists.txt	2009-03-20 06:54:20.000000000 +1000
+-+++ ./CMakeLists.txt	2009-12-15 20:50:23.915416903 +1000
+-@@ -70,8 +70,8 @@
+- 	find_package(X11)
+- 	
+- 	IF( X11_XTest_FOUND )
+--		INCLUDE_DIRECTORIES( ${X11_XTest_INCLUDE_PATH} )
+--		SET(AUTOTYPE_LIBRARIES ${X11_XTest_LIB})
+-+		INCLUDE_DIRECTORIES( ${X11_X11_INCLUDE_PATH} ${X11_XTest_INCLUDE_PATH} )
+-+		SET(AUTOTYPE_LIBRARIES ${X11_X11_LIB} ${X11_XTest_LIB})
+- 		ADD_DEFINITIONS(-DAUTOTYPE -DGLOBAL_AUTOTYPE)
+- 	ELSE( X11_XTest_FOUND )
+- 		SET(AUTOTYPE FALSE)
+-diff -urN --exclude=.svn ./src/Database.h ./src/Database.h
+---- ./src/Database.h	2009-03-18 22:09:20.000000000 +1000
+-+++ ./src/Database.h	2009-12-15 20:50:22.627407114 +1000
+-@@ -233,7 +233,7 @@
+- /*!
+- This is the common base interface for databases. Every database class must implement this interface necessarily.
+- */
+--class IDatabase:public QObject{
+-+class IDatabase{
+- public:
+- 	virtual ~IDatabase(){};
+- 	
+-diff -urN --exclude=.svn ./src/Kdb3Database.cpp ./src/Kdb3Database.cpp
+---- ./src/Kdb3Database.cpp	2009-08-29 03:22:44.000000000 +1100
+-+++ ./src/Kdb3Database.cpp	2009-12-15 20:50:22.627407114 +1000
+-@@ -609,6 +609,7 @@
+- 	
+- 	if ((crypto_size > 2147483446) || (!crypto_size && NumGroups)){
+- 		error=tr("Decryption failed.\nThe key is wrong or the file is damaged.");
+-+		KeyError=true;
+- 		LOAD_RETURN_CLEANUP
+- 	}
+- 	SHA256::hashBuffer(buffer+DB_HEADER_SIZE,FinalKey,crypto_size);
+-diff -urN --exclude=.svn ./src/lib/FileDialogs.cpp ./src/lib/FileDialogs.cpp
+---- ./src/lib/FileDialogs.cpp	2008-03-13 06:37:54.000000000 +1000
+-+++ ./src/lib/FileDialogs.cpp	2009-12-15 20:50:19.906387263 +1000
+-@@ -18,6 +18,9 @@
+-  ***************************************************************************/
+- 
+- #include <QFileDialog>
+-+#if QT_VERSION >= 0x040400
+-+	#include <QDesktopServices>
+-+#endif
+- 
+- IFileDialog* KpxFileDialogs::iFileDialog=NULL;
+- QtStandardFileDialogs DefaultQtDlgs;
+-@@ -146,8 +149,13 @@
+- 
+- QString FileDlgHistory::getDir(const QString& name){
+- 	Entry e=History.value(name);
+--	if(e.isNull())
+-+	if(e.isNull()) {
+-+#if QT_VERSION >= 0x040400
+-+		return QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
+-+#else
+- 		return QDir::homePath();
+-+#endif
+-+	}
+- 	else
+- 		return e.Dir;
+- }
+-diff -urN --exclude=.svn ./src/src.pro ./src/src.pro
+---- ./src/src.pro	2009-09-14 01:54:12.000000000 +1100
+-+++ ./src/src.pro	2009-12-15 20:50:22.624407012 +1000
+-@@ -63,7 +63,7 @@
+- 	INSTALLS += shareapp shararemime sharemimelnk sharepixmaps
+- 	
+- 	contains(DEFINES,AUTOTYPE){
+--		LIBS += -lXtst
+-+		LIBS += -lX11 -lXtst
+- 		SOURCES += lib/HelperX11.cpp lib/AutoTypeX11.cpp
+- 		HEADERS += lib/HelperX11.h lib/AutoTypeX11.h
+- 	}
+diff -ruN keepassx.orig/pkg-plist keepassx/pkg-plist
+--- keepassx.orig/pkg-plist	2010-05-03 13:33:36.000000000 +0800
++++ keepassx/pkg-plist	2010-05-03 13:24:44.000000000 +0800
+@@ -7,16 +7,23 @@
+ %%DATADIR%%/i18n/keepassx-gl_ES.qm
+ %%DATADIR%%/i18n/keepassx-hu_HU.qm
+ %%DATADIR%%/i18n/keepassx-it_IT.qm
++%%DATADIR%%/i18n/keepassx-ja_JP.qm
+ %%DATADIR%%/i18n/keepassx-nb_NO.qm
+ %%DATADIR%%/i18n/keepassx-nl_NL.qm
+ %%DATADIR%%/i18n/keepassx-pl_PL.qm
++%%DATADIR%%/i18n/keepassx-pt_PT.qm
+ %%DATADIR%%/i18n/keepassx-ru_RU.qm
++%%DATADIR%%/i18n/keepassx-sk_SK.qm
++%%DATADIR%%/i18n/keepassx-sr_RS.qm
+ %%DATADIR%%/i18n/keepassx-tr_TR.qm
++%%DATADIR%%/i18n/keepassx-uk_UA.qm
+ %%DATADIR%%/i18n/keepassx-zh_CN.qm
+ %%DATADIR%%/i18n/qt_fi.qm
++%%DATADIR%%/i18n/qt_gl_ES.qm
+ %%DATADIR%%/i18n/qt_hu.qm
+ %%DATADIR%%/i18n/qt_it.qm
+ %%DATADIR%%/i18n/qt_nl.qm
++%%DATADIR%%/i18n/qt_sr.qm
+ %%DATADIR%%/i18n/qt_tr.qm
+ %%DATADIR%%/icons/alarmclock.png
+ %%DATADIR%%/icons/appsettings.png
+@@ -86,7 +93,6 @@
+ %%DATADIR%%/icons/trashcan.png
+ %%DATADIR%%/icons/up.png
+ %%DATADIR%%/license.html
+-share/mime/application/x-keepass.xml
+ share/mime/packages/keepassx.xml
+ share/mimelnk/application/x-keepass.desktop
+ share/pixmaps/keepassx.xpm
+@@ -97,6 +103,7 @@
+ @dirrmtry share/mimelnk
+ @dirrmtry share/mime/packages
+ @dirrmtry share/mime
+-@dirrmtry share/applications
++@dirrmtry share/pixmaps
++@dirrmtry share/application
+ @comment @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+ @comment @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
