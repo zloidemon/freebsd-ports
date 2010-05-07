@@ -4,15 +4,16 @@ bin/conkyForecast
 %%DATADIR%%/conkyForecast.py
 %%DATADIR%%/example/conkyForecast.template
 %%DATADIR%%/example/conkyrc
-%%DATADIR%%/fonts/truetype/conkyforecast/Arrows.sfd.tar.gz
-%%DATADIR%%/fonts/truetype/conkyforecast/Arrows.ttf
-%%DATADIR%%/fonts/truetype/conkyforecast/ConkyWeather.otf
-%%DATADIR%%/fonts/truetype/conkyforecast/ConkyWind.otf
-%%DATADIR%%/fonts/truetype/conkyforecast/ConkyWind.sfd.tar.gz
-%%DATADIR%%/fonts/truetype/conkyforecast/ConkyWindN.otf
-%%DATADIR%%/fonts/truetype/conkyforecast/ConkyWindNESW.otf
-%%DATADIR%%/fonts/truetype/conkyforecast/Moon Phases.ttf
-%%DATADIR%%/fonts/truetype/conkyforecast/StyleBats.ttf
+%%FONTSDIR%%/Arrows.sfd.tar.gz
+%%FONTSDIR%%/Arrows.ttf
+%%FONTSDIR%%/ConkyWeather.otf
+%%FONTSDIR%%/ConkyWind.otf
+%%FONTSDIR%%/ConkyWind.sfd.tar.gz
+%%FONTSDIR%%/ConkyWindN.otf
+%%FONTSDIR%%/ConkyWindNESW.otf
+%%FONTSDIR%%/Moon Phases.ttf
+%%FONTSDIR%%/StyleBats.ttf
+%%FONTSDIR%%/fonts.dir
 %%DATADIR%%/images/bearingicons/00.png
 %%DATADIR%%/images/bearingicons/01.png
 %%DATADIR%%/images/bearingicons/02.png
@@ -202,8 +203,8 @@ bin/conkyForecast
 @dirrm %%DATADIR%%/images/moonicons
 @dirrm %%DATADIR%%/images/bearingicons
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts/truetype/conkyforecast
-@dirrm %%DATADIR%%/fonts/truetype
-@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/example
 @dirrm %%DATADIR%%
+@unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
