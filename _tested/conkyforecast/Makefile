@@ -13,7 +13,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/37518633/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	Conkyforecast Weather forecast script
+COMMENT=	Weather forecast script for conky
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky \
@@ -37,7 +37,6 @@ post-patch:
 	@cd ${WRKSRC} && ${RM} -fr test/conkyrc.bak example/conkyrc.bak
 	@${MKDIR} ${FONTSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/fonts/* ${FONTSDIR}
-	@${LOCALBASE}/bin/mkfontdir ${FONTSDIR}
 
 post-install:
 	@${ECHO_MSG} "===> Running fc-cache"
