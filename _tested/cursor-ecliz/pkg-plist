@@ -74,4 +74,4 @@ lib/X11/icons/ecliz/cursors/watch
 lib/X11/icons/ecliz/cursors/xterm
 @dirrm lib/X11/icons/ecliz/cursors
 @dirrm lib/X11/icons/ecliz
-@dirrm lib/X11/icons/
+@dirrmtry lib/X11/icons/
