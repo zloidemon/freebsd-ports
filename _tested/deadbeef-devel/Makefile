@@ -9,7 +9,7 @@ PORTNAME=	deadbeef
 PORTVERSION=	0.4
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-beta1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rc3
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player for GNU/Linux systems with X11
