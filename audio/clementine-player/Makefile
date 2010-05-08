@@ -2,16 +2,14 @@
 # Date created:		2010-03-23
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/clementine-player/Makefile,v 1.1 2010/04/04 01:22:23 amdmi3 Exp $
+# $FreeBSD: ports/audio/clementine-player/Makefile,v 1.3 2010/04/24 09:38:39 ehaupt Exp $
 #
 
 PORTNAME=	clementine
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
-DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	A cross-platform music player based on Amarok 1.4
