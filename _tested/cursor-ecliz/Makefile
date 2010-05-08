@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	cursor-
 DISTNAME=	76605-Ecliz_Port
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	This is only a port from a cursorxp theme made by JJ. Ying
+COMMENT=	Ecliz X cursor theme
 
 NO_BUILD=	yes
 
