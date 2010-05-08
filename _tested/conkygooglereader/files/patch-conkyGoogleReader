@@ -1,0 +1,7 @@
+--- conkyGoogleReader.orig	2009-02-27 18:18:18.000000000 +0700
++++ conkyGoogleReader	2010-05-09 01:46:08.000000000 +0800
+@@ -1,3 +1,3 @@
+ #! /bin/sh
+ cd /usr/share/conkygooglereader/
+-$PYTHONPATH /usr/bin/python /usr/share/conkygooglereader/conkyGoogleReader.py "$@"
++$PYTHONPATH /usr/bin/env python /usr/share/conkygooglereader/conkyGoogleReader.py "$@"
