@@ -613,6 +613,18 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/statusicons/yahoo/online.png
 %%DATADIR%%/resources/statusicons/yahoo/statusicons.def.xml
 %%DATADIR%%/resources/statusicons/yahoo/xa.png
+%%DATADIR%%/resources/menuicons/shared/messagewidgetssend.png
+%%DATADIR%%/resources/statusicons/vkontakte/chatty.png
+%%DATADIR%%/resources/statusicons/vkontakte/noauth.png
+%%DATADIR%%/resources/statusicons/vkontakte/xa.png
+%%DATADIR%%/resources/statusicons/vkontakte/invisible.png
+%%DATADIR%%/resources/statusicons/vkontakte/away.png
+%%DATADIR%%/resources/statusicons/vkontakte/offline.png
+%%DATADIR%%/resources/statusicons/vkontakte/icon.def.xml
+%%DATADIR%%/resources/statusicons/vkontakte/ask.png
+%%DATADIR%%/resources/statusicons/vkontakte/dnd.png
+%%DATADIR%%/resources/statusicons/vkontakte/online.png
+%%DATADIR%%/resources/statusicons/vkontakte/statusicons.def.xml
 %%DATADIR%%/translations/pl_PL/accountmanager.qm
 %%DATADIR%%/translations/pl_PL/adiummessagestyle.qm
 %%DATADIR%%/translations/pl_PL/annotations.qm
@@ -736,6 +748,7 @@ share/pixmaps/vacuum.png
 @dirrm %%DATADIR%%/translations/ru_RU
 @dirrm %%DATADIR%%/translations/pl_PL
 @dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/resources/statusicons/vkontakte
 @dirrm %%DATADIR%%/resources/statusicons/yahoo
 @dirrm %%DATADIR%%/resources/statusicons/smtp
 @dirrm %%DATADIR%%/resources/statusicons/sms
