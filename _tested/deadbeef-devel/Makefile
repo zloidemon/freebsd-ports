@@ -14,7 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player for GNU/Linux systems with X11
 
-LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
+		mad.2:${PORTSDIR}/audio/libmad
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -32,7 +33,6 @@ OPTIONS=	PULSE "PulseAudio output plugin" off\
 		ART "album art loader plugin" on\
 		EQ "SuperEQ DSP plugin" on\
 		SID "commodore64 SID music player plugin" on\
-		MPGMAD "mpeg (mad) plugin" on\
 		FFAP "Monkey's Audio plugin" on\
 		VTX "libayemy VTX ZX-Spectrum music player plugin" on\
 		ADP "adplug plugin" on\
@@ -43,7 +43,7 @@ OPTIONS=	PULSE "PulseAudio output plugin" off\
 		SNDFILE "libsndfile plugin for PCM wave files" on\
 		WAV "wavpack plugin" on\
 		CDDA "CD-Audio plugin" on\
-		GME "Game Music Emu plugin for NFS, AY, etc" on\
+		GME "Game Music Emu plugin for NSF, AY, etc" on\
 		DUMB "D.U.M.B. plugin for MOD, S3M and other" on\
 		NOTIFY "support for OSD notifications into GTKUI plugin" on
 
@@ -61,7 +61,6 @@ LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--disable-gtkui
 PLIST_SUB+=	GUI="@comment "
 .else
-!defined(WITHOUT_MPGMAD)
 PLIST_SUB+=	GUI=""
 USE_GNOME=	gtk20 glib20
 .endif
@@ -78,7 +77,7 @@ LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--disable-lfm
 PLIST_SUB+=	LFM="@comment "
 .else
-PLIST_SUB+=	LFM=""
+LIST_SUB+=	LFM=""
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
@@ -102,14 +101,6 @@ CONFIGURE_ARGS+=	--disable-sid
 PLIST_SUB+=	SID="@comment "
 .else
 PLIST_SUB+=	SID=""
-.endif
-
-.if defined(WITHOUT_MPGMAD)
-CONFIGURE_ARGS+=	--disable-mpgmad
-PLIST_SUB+=	MPGMAD="@comment "
-.else
-PLIST_SUB+=	MPGMAD=""
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 .endif
 
 .if defined(WITHOUT_FFAP)
@@ -205,7 +196,7 @@ PLIST_SUB+=	DUMB="@comment "
 PLIST_SUB+=	DUMB=""
 .endif
 
-.if defined(WITH_NOTIFY)
+.if defined(WITHOUT_NOTIFY)
 CONFIGURE_ARGS+=	--disable-notify
 PLIST_SUB+=	NOTIFY="@comment "
 .else
