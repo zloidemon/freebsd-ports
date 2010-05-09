@@ -60,10 +60,10 @@ lib/vacuum/plugins/libtraymanager.so
 lib/vacuum/plugins/libvcard.so
 lib/vacuum/plugins/libxmppstreams.so
 lib/vacuum/plugins/libxmppuriqueries.so
-share/doc/vacuum/AUTHORS
-share/doc/vacuum/CHANGELOG
-share/doc/vacuum/COPYING
-share/doc/vacuum/README
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/CHANGELOG
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
 share/pixmaps/vacuum.png
 %%DATADIR%%/resources/adiummessagestyles/shared/Template.html
 %%DATADIR%%/resources/adiummessagestyles/yMous/Contents/Info.plist
@@ -788,6 +788,6 @@ share/pixmaps/vacuum.png
 @dirrm %%DATADIR%%/resources/adiummessagestyles
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
-@dirrm share/doc/vacuum
+@dirrm %%DOCSDIR%%
 @dirrm lib/vacuum/plugins
 @dirrm lib/vacuum
