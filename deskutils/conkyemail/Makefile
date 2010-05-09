@@ -2,7 +2,7 @@
 # Date created:		2010-05-08
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/deskutils/conkyemail/Makefile,v 1.1 2010/05/09 07:50:34 miwi Exp $
 #
 
 PORTNAME=	conkyemail
