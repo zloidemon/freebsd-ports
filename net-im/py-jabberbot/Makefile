@@ -2,7 +2,7 @@
 # Date created:		2010-04-04
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/net-im/py-jabberbot/Makefile,v 1.1 2010/04/07 01:58:56 wen Exp $
 #
 
 PORTNAME=	jabberbot
