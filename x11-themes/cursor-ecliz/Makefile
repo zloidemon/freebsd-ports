@@ -2,7 +2,7 @@
 # Date created:		2009-11-13
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/x11-themes/cursor-ecliz/Makefile,v 1.1 2010/05/09 07:49:36 miwi Exp $
 #
 
 PORTNAME=	ecliz
