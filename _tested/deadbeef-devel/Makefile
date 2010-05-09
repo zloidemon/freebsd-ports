@@ -32,7 +32,7 @@ OPTIONS=	PULSE "PulseAudio output plugin" off\
 		ART "album art loader plugin" on\
 		EQ "SuperEQ DSP plugin" on\
 		SID "commodore64 SID music player plugin" on\
-		MAD "mpeg (mad) plugin" on\
+		MPGMAD "mpeg (mad) plugin" on\
 		FFAP "Monkey's Audio plugin" on\
 		VTX "libayemy VTX ZX-Spectrum music player plugin" on\
 		ADP "adplug plugin" on\
@@ -61,6 +61,7 @@ LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--disable-gtkui
 PLIST_SUB+=	GUI="@comment "
 .else
+!defined(WITHOUT_MPGMAD)
 PLIST_SUB+=	GUI=""
 USE_GNOME=	gtk20 glib20
 .endif
@@ -103,11 +104,11 @@ PLIST_SUB+=	SID="@comment "
 PLIST_SUB+=	SID=""
 .endif
 
-.if defined(WITHOUT_MAD)
+.if defined(WITHOUT_MPGMAD)
 CONFIGURE_ARGS+=	--disable-mpgmad
-PLIST_SUB+=	MAD="@commeng "
+PLIST_SUB+=	MPGMAD="@comment "
 .else
-PLIST_SUB+=	MAD=""
+PLIST_SUB+=	MPGMAD=""
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 .endif
 
@@ -183,7 +184,7 @@ PLIST_SUB+=	WAV=""
 
 .if defined(WITHOUT_CDDA)
 CONFIGURE_ARGS+=	--disable-cdda
-PLIST_SUB+=	CDDA="@comment"
+PLIST_SUB+=	CDDA="@comment "
 .else
 PLIST_SUB+=	CDDA=""
 LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio \
