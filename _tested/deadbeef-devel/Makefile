@@ -9,22 +9,19 @@ PORTNAME=	deadbeef
 PORTVERSION=	0.4.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
-#DISTNAME=	${PORTNAME}-${PORTVERSION}-rc4
+#DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player for GNU/Linux systems with X11
 
-LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		curl.6:${PORTSDIR}/ftp/curl \
-		mad.2:${PORTSDIR}/audio/libmad \
-		cdio.12:${PORTSDIR}/sysutils/libcdio \
+LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout
-USE_GNOME=	gtk20 glib20
+WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAGE=	yes
 
@@ -35,6 +32,7 @@ OPTIONS=	PULSE "PulseAudio output plugin" off\
 		ART "album art loader plugin" on\
 		EQ "SuperEQ DSP plugin" on\
 		SID "commodore64 SID music player plugin" on\
+		MAD "mpeg (mad) plugin" on\
 		FFAP "Monkey's Audio plugin" on\
 		VTX "libayemy VTX ZX-Spectrum music player plugin" on\
 		ADP "adplug plugin" on\
@@ -47,7 +45,7 @@ OPTIONS=	PULSE "PulseAudio output plugin" off\
 		CDDA "CD-Audio plugin" on\
 		GME "Game Music Emu plugin for NFS, AY, etc" on\
 		DUMB "D.U.M.B. plugin for MOD, S3M and other" on\
-		NOTIFY "support for OSD notifications into GTKUI plugin" off
+		NOTIFY "support for OSD notifications into GTKUI plugin" on
 
 .include <bsd.port.pre.mk>
 
@@ -56,6 +54,7 @@ CONFIGURE_ARGS+=	--disable-pulse
 PLIST_SUB+=	PULSE="@comment "
 .else
 PLIST_SUB+=	PULSE=""
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .endif
 
 .if defined(WITHOUT_GUI)
@@ -63,6 +62,7 @@ CONFIGURE_ARGS+=	--disable-gtkui
 PLIST_SUB+=	GUI="@comment "
 .else
 PLIST_SUB+=	GUI=""
+USE_GNOME=	gtk20 glib20
 .endif
 
 .if defined(WITHOUT_VFS)
@@ -70,6 +70,7 @@ CONFIGURE_ARGS+=	--disable-vfs-curl
 PLIST_SUB+=	VFS="@comment "
 .else
 PLIST_SUB+=	VFS=""
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITHOUT_LFM)
@@ -77,6 +78,7 @@ CONFIGURE_ARGS+=	--disable-lfm
 PLIST_SUB+=	LFM="@comment "
 .else
 PLIST_SUB+=	LFM=""
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITHOUT_ART)
@@ -84,6 +86,7 @@ CONFIGURE_ARGS+=	--disable-artwork
 PLIST_SUB+=	ART="@comment "
 .else
 PLIST_SUB+=	ART=""
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITHOUT_EQ)
@@ -98,6 +101,14 @@ CONFIGURE_ARGS+=	--disable-sid
 PLIST_SUB+=	SID="@comment "
 .else
 PLIST_SUB+=	SID=""
+.endif
+
+.if defined(WITHOUT_MAD)
+CONFIGURE_ARGS+=	--disable-mpgmad
+PLIST_SUB+=	MAD="@commeng "
+.else
+PLIST_SUB+=	MAD=""
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 .endif
 
 .if defined(WITHOUT_FFAP)
@@ -175,6 +186,8 @@ CONFIGURE_ARGS+=	--disable-cdda
 PLIST_SUB+=	CDDA="@comment"
 .else
 PLIST_SUB+=	CDDA=""
+LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio \
+		cddb.4:${PORTSDIR}:audio/libcddb
 .endif
 
 .if defined(WITHOUT_GME)
@@ -196,6 +209,7 @@ CONFIGURE_ARGS+=	--disable-notify
 PLIST_SUB+=	NOTIFY="@comment "
 .else
 PLIST_SUB+=	NOTIFY=""
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
 .include <bsd.port.post.mk>
