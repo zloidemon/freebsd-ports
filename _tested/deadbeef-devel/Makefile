@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.4
+PORTVERSION=	0.4.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rc3
+#DISTNAME=	${PORTNAME}-${PORTVERSION}-rc4
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player for GNU/Linux systems with X11
@@ -19,15 +19,17 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		mad.2:${PORTSDIR}/audio/libmad \
 		cdio.12:${PORTSDIR}/sysutils/libcdio \
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout
 USE_GNOME=	gtk20 glib20
+INSTALLS_ICONS=	yes
+MAKE_JOBS_SAGE=	yes
 
 OPTIONS=	PULSE "PulseAudio output plugin" off\
-		GTKUI "standard GTK2 user interface plugin" on\
+		GUI "standard GTK2 user interface plugin" on\
 		VFS "HTTP streaming vfs plugin" on\
 		LFM "last.fm/libre.fm scrobbler plugin" on\
 		ART "album art loader plugin" on\
@@ -51,20 +53,23 @@ OPTIONS=	PULSE "PulseAudio output plugin" off\
 
 .if defined(WITHOUT_PULSE)
 CONFIGURE_ARGS+=	--disable-pulse
+PLIST_SUB+=	PULSE="@comment "
+.else
+PLIST_SUB+=	PULSE=""
 .endif
 
-.if defined(WITHOUT_GTKUI)
+.if defined(WITHOUT_GUI)
 CONFIGURE_ARGS+=	--disable-gtkui
-PLIST_SUB+=	GTKUI="@comment "
+PLIST_SUB+=	GUI="@comment "
 .else
-PLIST_SUB+=	GKTUI=""
+PLIST_SUB+=	GUI=""
 .endif
 
 .if defined(WITHOUT_VFS)
 CONFIGURE_ARGS+=	--disable-vfs-curl
 PLIST_SUB+=	VFS="@comment "
 .else
-PLIST_SUB+=	VFS""
+PLIST_SUB+=	VFS=""
 .endif
 
 .if defined(WITHOUT_LFM)
@@ -174,14 +179,23 @@ PLIST_SUB+=	CDDA=""
 
 .if defined(WITHOUT_GME)
 CONFIGURE_ARGS+=	--disable-gme
+PLIST_SUB+=	GME="@comment "
+.else
+PLIST_SUB+=	GME=""
 .endif
 
 .if defined(WITHOUT_DUMB)
 CONFIGURE_ARGS+=	--disable-dumb
+PLIST_SUB+=	DUMB="@comment "
+.else
+PLIST_SUB+=	DUMB=""
 .endif
 
 .if defined(WITH_NOTIFY)
-CONFIGURE_ARGS+=	--enable-libnotify
+CONFIGURE_ARGS+=	--disable-notify
+PLIST_SUB+=	NOTIFY="@comment "
+.else
+PLIST_SUB+=	NOTIFY=""
 .endif
 
 .include <bsd.port.post.mk>
