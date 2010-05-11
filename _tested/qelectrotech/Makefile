@@ -18,6 +18,7 @@ USE_CUPS=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 		network svg
+INSTALLS_ICONS=	yes
 
 do-configure:
 	${MV} ${WRKSRC}/man/files/pt ${WRKSRC}/man/files/pt_PT
