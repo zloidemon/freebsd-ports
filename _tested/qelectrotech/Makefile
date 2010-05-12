@@ -26,6 +26,8 @@ do-configure:
 		${WRKSRC}/${PORTNAME}.pro
 	${REINPLACE_CMD} -e 's,doc/,share/doc/,g' \
 		${WRKSRC}/${PORTNAME}.pro
+	${REINPLACE_CMD} -e 's,../share,share,g' \
+		${WRKSRC}/${PORTNAME}.pro
 	cd ${WRKSRC} && ${QMAKE} ${PORTNAME}.pro
 
 .include <bsd.port.mk>
