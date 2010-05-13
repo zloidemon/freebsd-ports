@@ -14,9 +14,10 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Scan Tailor is an interactive post-processing tool for scanned pages
 
 USE_CMAKE=	yes
-QT_COMPONENTS=  gui xml qmake_build uic_build moc_build rcc_build \
+USE_ICONV=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
-
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
