@@ -2,7 +2,7 @@
 # Date created:		2010-05-09
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/audio/cuberok/Makefile,v 1.1 2010/05/13 06:05:30 wen Exp $
 #
 
 PORTNAME=	cuberok
@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	Is a music player and a collection manager based on Qt4
+COMMENT=	A music player and a collection manager based on Qt4
 
 BUILD_DEPENDS=	audiere-config:${PORTSDIR}/audio/audiere \
 		${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
