@@ -2,7 +2,7 @@
 # Date created:		2010-05-07
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/deskutils/conkyforecast/Makefile,v 1.1 2010/05/10 15:59:08 makc Exp $
 #
 
 PORTNAME=	conkyforecast
@@ -20,7 +20,6 @@ RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky \
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_PYTHON=	yes
-NO_BUILD=	yes
 USE_PYDISTUTILS=yes
 INSTALL_EGGINFO=yes
 USE_GETTEXT=	yes
@@ -35,10 +34,10 @@ post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/usr/share/${PORTNAME},${DATADIR},g' \
 		setup.py test/conkyrc example/conkyrc conkyForecast.py conkyForecast
 	@cd ${WRKSRC} && ${RM} -fr test/conkyrc.bak example/conkyrc.bak
-	@${MKDIR} ${FONTSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/fonts/* ${FONTSDIR}
 
 post-install:
+	@${MKDIR} ${FONTSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/fonts/* ${FONTSDIR}
 	@${ECHO_MSG} "===> Running fc-cache"
 	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
 	@${ECHO_MSG}
