@@ -2,7 +2,7 @@
 # Date created:		2010-05-06
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/audio/rubygem-librmpd/Makefile,v 1.1 2010/05/16 09:15:38 miwi Exp $
 #
 
 PORTNAME=	librmpd
