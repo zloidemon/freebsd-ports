@@ -6,25 +6,59 @@
 #
 
 PORTNAME=	activemq
-PORTVERSION=	5.3.0
-#PORTREVISION=	0
-#PORTEPOCH=	0
-CATEGORIES=	www
-MASTER_SITES=	http://www.sai.msu.su/apache/${PORTNAME}/apache-${PORTNAME}/${PORTVERSION}/ \
-		ftp://apache.rinet.ru/pub/mirror/apache.org/dist/${PORTNAME}/apache-${PORTNAME}/${PORTVERSION}/ \
-		http://www.apache.org/dist/${PORTNAME}/apache-${PORTNAME}/${PORTVERSION}/ \
-		http://www.eu.apache.org/dist/${PORTNAME}/apache-${PORTNAME}/${PORTVERSION}/
-#MASTER_SITE_SUBDIR=
-#PKGNAMEPREFIX=
-#PKGNAMESUFFIX=
+PORTVERSION=	5.3.2
+CATEGORIES=	net java
+MASTER_SITES=	http://www.sai.msu.su/apache/ \
+		ftp://apache.rinet.ru/pub/mirror/apache.org/dist/ \
+		http://www.apache.org/dist/ \
+		http://www.eu.apache.org/dist/
+MASTER_SITE_SUBDIR=${PORTNAME}/apache-${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
-#EXTRACT_SUFX=
-#DISTFILES=
-#DIST_SUBDIR=	${PORTNAME}
-#EXTRACT_ONLY=
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=
+COMMENT=	Apache ActiveMQ is messaging and Integration Patterns provider
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+NO_BUILD=	yes
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.5+
+DATADIR=	${PREFIX}/lib/${PORTNAME}
+VARDB=		/var/db/${PORTNAME}
+ETCC=		${PREFIX}/etc/${PORTNAME}
+EXAMPLES=	${PREFIX}/share/examples/${PORTNAME}
+PUSER=		activemq
+PGROUP=		${PUSER}
+
+PORTDOCS=	LICENSE NOTICE README.txt WebConsole-README.txt user-guide.html
+
+WRKSRC=		${WRKDIR}/apache-${PORTNAME}-${PORTVERSION}
+
+do-install:
+.for f in linux-x86-32 linux-x86-64 macosx
+	${RM} -fr ${WRKSRC}/bin/${f}
+.endfor
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.endif
+
+post-install:
+.for f in ${DATADIR} ${VARDB} ${ETCC} ${EXAMPLES}
+	${MKDIR} ${f}
+.endfor
+	${LN} -sf ${VARDB} ${DATADIR}/data
+	${LN} -sf ${ETCC} ${DATADIR}/conf
+	${LN} -sf ${EXAMPLES} ${DATADIR}/examles
+	cd ${WRKSRC} && ${COPYTREE_SHARE} webapps ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} bin ${DATADIR}
+
+.for f in ${VARDB} ${ETCC} ${EXAMPLES} ${DATADIR}
+	${CHOWN} -Rh ${PUSER}:${PGROUP} ${f}
+.endfor
+
+.include <bsd.port.mk>
