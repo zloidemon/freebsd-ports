@@ -29,6 +29,7 @@ QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl dbus qtestlib corelib
 USE_GCC=	4.2+
 INSTALLS_ICONS=	yes
+USE_GSTREAMER=	gio ogg mp3 flac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
