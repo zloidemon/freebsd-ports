@@ -57,8 +57,8 @@ post-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} bin ${DATADIR}
 
-.for f in ${VARDB} ${ETCC} ${EXAMPLES} ${DATADIR}
-	${CHOWN} -Rh ${PUSER}:${PGROUP} ${f}
-.endfor
+#.for f in ${VARDB} ${ETCC} ${EXAMPLES} ${DATADIR}
+#	${CHOWN} -Rh ${PUSER}:${PGROUP} ${f}
+#.endfor
 
 .include <bsd.port.mk>
