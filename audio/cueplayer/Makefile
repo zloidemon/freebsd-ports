@@ -2,11 +2,11 @@
 # Date created:		2010-01-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/cueplayer/Makefile,v 1.3 2010/03/28 06:30:49 dinoex Exp $
+# $FreeBSD: ports/audio/cueplayer/Makefile,v 1.4 2010/05/09 08:17:11 miwi Exp $
 #
 
 PORTNAME=	cueplayer
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
