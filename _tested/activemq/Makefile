@@ -38,32 +38,32 @@ WRKSRC=		${WRKDIR}/apache-${PORTNAME}-${PORTVERSION}
 
 do-install:
 .for f in linux-x86-32 linux-x86-64 macosx
-	${RM} -fr ${WRKSRC}/bin/${f}
+	@${RM} -fr ${WRKSRC}/bin/${f}
 .endfor
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 
 post-install:
 .for f in ${DATADIR} ${VARDB} ${ETCC} ${EXAMPLES}
-	${MKDIR} ${f}
+	@${MKDIR} ${f}
 .endfor
-	${LN} -sf ${VARDB} ${DATADIR}/data
-	${LN} -sf ${ETCC} ${DATADIR}/conf
-	${LN} -sf ${EXAMPLES} ${DATADIR}/examles
-	cd ${WRKSRC} && ${COPYTREE_SHARE} webapps ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} bin ${DATADIR}
+	@${LN} -sf ${VARDB} ${DATADIR}/data
+	@${LN} -sf ${ETCC} ${DATADIR}/conf
+	@${LN} -sf ${EXAMPLES} ${DATADIR}/examles
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} webapps ${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} bin ${DATADIR}
 
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .for f in ${VARDB} ${ETCC} ${EXAMPLES} ${DATADIR}
-	${CHOWN} -Rh ${PUSER}:${PGROUP} ${f}
+	@${CHOWN} -Rh ${PUSER}:${PGROUP} ${f}
 .endfor
 
 .include <bsd.port.mk>
