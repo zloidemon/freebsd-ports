@@ -32,7 +32,7 @@ load_rc_config $name
 : ${activemq_user:=${name}}
 : ${activemq_group:=${name}}
 : ${activemq_classpath:=%%ETCC%%}
-: ${activemq_home:=%%DATADIR%%}
+: ${activemq_home:=%%MQDIR%%}
 : ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties'}
 
 pidfile=/var/run/${name}.pid
