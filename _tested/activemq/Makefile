@@ -9,9 +9,7 @@ PORTNAME=	activemq
 PORTVERSION=	5.3.2
 CATEGORIES=	net java
 MASTER_SITES=	http://www.sai.msu.su/apache/${MASTER_SITE_SUBDIR}/ \
-		${MASTER_SITE_APACHE}/${MASTER_SITE_SUBDIR}/ \
-		${MASTER_SITE_APACHE}/${MASTER_SITE_SUBDIR}/ \
-		http://www.eu.apache.org/dist/${MASTER_SITE_SUBDIR}/
+		${MASTER_SITE_APACHE}/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=${PORTNAME}/apache-${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
 
@@ -22,12 +20,11 @@ NO_BUILD=	yes
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
-DATADIR=	${PREFIX}/lib/${PORTNAME}
-VARDB=		/var/db/${PORTNAME}
+MQDATA=		${PREFIX}/lib/${PORTNAME}
+MQDB=		/var/db/${PORTNAME}
 ETCC=		${PREFIX}/etc/${PORTNAME}
-EXAMPLES=	${PREFIX}/share/examples/${PORTNAME}
-PUSER=		activemq
-PGROUP=		${PUSER}
+MQUSER=		activemq
+MQGROUP=	${PUSER}
 
 ALL_TARGET=	${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
@@ -43,27 +40,29 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 
 post-install:
-.for f in ${DATADIR} ${VARDB} ${ETCC} ${EXAMPLES}
-	@${MKDIR} ${f}
+.for f in ${MQDATA} ${MQDB} ${ETCC}
+	@${MKDIR} ${PREFIX}${f}
 .endfor
-	@${LN} -sf ${VARDB} ${DATADIR}/data
-	@${LN} -sf ${ETCC} ${DATADIR}/conf
-	@${LN} -sf ${EXAMPLES} ${DATADIR}/examles
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} webapps ${DATADIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${DATADIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} bin ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} example ${EXAMPLESDIR}/
+.for f in webapps lib bin
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${MQDATA}
+.endfor
+
+	${LN} -sf ${PREFIX}${MQDB} ${MQDATA}/data
+	${LN} -sf ${PREFIX}${ETCC} ${MQDATA}/conf
+	${LN} -sf ${EXAMPLESDIR} ${MQDATA}/example
 
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.for f in ${VARDB} ${ETCC} ${EXAMPLES} ${DATADIR}
-	@${CHOWN} -Rh ${PUSER}:${PGROUP} ${f}
+.for f in ${MQDB} ${ETCC} ${EXAMPLES} ${MQDATA}
+	@${CHOWN} -Rh ${MQUSER}:${MQGROUP} ${PREFIX}${f}
 .endfor
 
 .include <bsd.port.mk>

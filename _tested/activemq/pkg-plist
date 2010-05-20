@@ -1,6 +1,6 @@
 lib/activemq/data
 lib/activemq/conf
-lib/activemq/examles
+lib/activemq/example
 lib/activemq/webapps/camel/META-INF/MANIFEST.MF
 lib/activemq/webapps/camel/META-INF/DEPENDENCIES
 lib/activemq/webapps/camel/META-INF/LICENSE
@@ -355,8 +355,36 @@ lib/activemq/bin/run.jar
 lib/activemq/bin/activemq
 lib/activemq/bin/activemq-admin
 lib/activemq/bin/wrapper.jar
+%%EXAMPLESDIR%%/example/conf/activemq.xml
+%%EXAMPLESDIR%%/example/conf/log4j.properties
+%%EXAMPLESDIR%%/example/conf/resin-web.xml
+%%EXAMPLESDIR%%/example/conf/web.xml
+%%EXAMPLESDIR%%/example/perfharness/perfharness-activemq.sh
+%%EXAMPLESDIR%%/example/ruby/catstomp.rb
+%%EXAMPLESDIR%%/example/ruby/listener.rb
+%%EXAMPLESDIR%%/example/ruby/publisher.rb
+%%EXAMPLESDIR%%/example/ruby/README.txt
+%%EXAMPLESDIR%%/example/ruby/stompcat.rb
+%%EXAMPLESDIR%%/example/src/CommandLineSupport.java
+%%EXAMPLESDIR%%/example/src/ConsumerTool.java
+%%EXAMPLESDIR%%/example/src/EmbeddedBroker.java
+%%EXAMPLESDIR%%/example/src/jndi.properties
+%%EXAMPLESDIR%%/example/src/log4j-jms.properties
+%%EXAMPLESDIR%%/example/src/Log4jJMSAppenderExample.java
+%%EXAMPLESDIR%%/example/src/ProducerAndConsumerTool.java
+%%EXAMPLESDIR%%/example/src/ProducerTool.java
+%%EXAMPLESDIR%%/example/src/RequesterTool.java
+%%EXAMPLESDIR%%/example/src/StompExample.java
+%%EXAMPLESDIR%%/example/src/TopicListener.java
+%%EXAMPLESDIR%%/example/src/TopicPublisher.java
+%%EXAMPLESDIR%%/example/transactions/src/Retailer.java
+%%EXAMPLESDIR%%/example/transactions/src/Supplier.java
+%%EXAMPLESDIR%%/example/transactions/src/TransactionsDemo.java
+%%EXAMPLESDIR%%/example/transactions/src/Vendor.java
+%%EXAMPLESDIR%%/example/transactions/build.xml
+%%EXAMPLESDIR%%/example/transactions/README.txt
+%%EXAMPLESDIR%%/example/build.xml
 %%DOCSDIR%%/docs/index.html
-@dirrm share/examples/activemq
 @dirrm %%DOCSDIR%%/docs
 @dirrm lib/activemq/webapps/static
 @dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util
@@ -450,6 +478,14 @@ lib/activemq/bin/wrapper.jar
 @dirrm lib/activemq/webapps/admin/META-INF
 @dirrm lib/activemq/webapps/admin
 @dirrm lib/activemq/webapps
+@dirrm %%EXAMPLESDIR%%/example/transactions/src
+@dirrm %%EXAMPLESDIR%%/example/transactions
+@dirrm %%EXAMPLESDIR%%/example/src
+@dirrm %%EXAMPLESDIR%%/example/ruby
+@dirrm %%EXAMPLESDIR%%/example/perfharness
+@dirrm %%EXAMPLESDIR%%/example/conf
+@dirrm %%EXAMPLESDIR%%/example
+@dirrm %%EXAMPLESDIR%%
 @dirrm lib/activemq/lib/web
 @dirrm lib/activemq/lib/optional
 @dirrm lib/activemq/lib
