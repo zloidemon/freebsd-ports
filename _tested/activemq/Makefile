@@ -8,10 +8,10 @@
 PORTNAME=	activemq
 PORTVERSION=	5.3.2
 CATEGORIES=	net java
-MASTER_SITES=	http://www.sai.msu.su/apache/ \
-		ftp://apache.rinet.ru/pub/mirror/apache.org/dist/ \
-		http://www.apache.org/dist/ \
-		http://www.eu.apache.org/dist/
+MASTER_SITES=	http://www.sai.msu.su/apache/${MASTER_SITE_SUBDIR}/ \
+		${MASTER_SITE_APACHE}/${MASTER_SITE_SUBDIR}/ \
+		${MASTER_SITE_APACHE}/${MASTER_SITE_SUBDIR}/ \
+		http://www.eu.apache.org/dist/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=${PORTNAME}/apache-${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
 
