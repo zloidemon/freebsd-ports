@@ -29,6 +29,9 @@ EXAMPLES=	${PREFIX}/share/examples/${PORTNAME}
 PUSER=		activemq
 PGROUP=		${PUSER}
 
+ALL_TARGET=	${PORTNAME}
+USE_RC_SUBR=	${PORTNAME}
+
 PORTDOCS=	LICENSE NOTICE README.txt WebConsole-README.txt user-guide.html
 
 WRKSRC=		${WRKDIR}/apache-${PORTNAME}-${PORTVERSION}
@@ -57,8 +60,10 @@ post-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} bin ${DATADIR}
 
-#.for f in ${VARDB} ${ETCC} ${EXAMPLES} ${DATADIR}
-#	${CHOWN} -Rh ${PUSER}:${PGROUP} ${f}
-#.endfor
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.for f in ${VARDB} ${ETCC} ${EXAMPLES} ${DATADIR}
+	${CHOWN} -Rh ${PUSER}:${PGROUP} ${f}
+.endfor
 
 .include <bsd.port.mk>
