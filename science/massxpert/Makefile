@@ -2,7 +2,7 @@
 # Date created:		2010-05-14
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/science/massxpert/Makefile,v 1.1 2010/05/20 09:43:14 wen Exp $
 #
 
 PORTNAME=	massxpert
@@ -19,4 +19,10 @@ USE_LDCONFIG=	yes
 QT_COMPONENTS=	gui xml rcc_build qmake_build uic_build moc_build \
 		svg
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+CMAKE_USE_PTHREAD=	yes
+.endif
+
+.include <bsd.port.post.mk>
