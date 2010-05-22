@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}/apache-${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	Apache ActiveMQ is messaging and Integration Patterns provider
+COMMENT=	Messaging and Integration Patterns provider
 
 NO_BUILD=	yes
 
@@ -22,7 +22,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 MQDATA=		${PREFIX}/lib/${PORTNAME}
 MQDB=		/var/db/${PORTNAME}
-ETCC=		${PREFIX}/etc/${PORTNAME}
+ETCC=		${ETCDIR}/${PORTNAME}
 MQUSER=		activemq
 MQGROUP=	${MQUSER}
 
