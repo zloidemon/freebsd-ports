@@ -17,6 +17,8 @@ COMMENT=	The update utility for Kaspersky applications
 
 NO_BUILD=	yes
 USE_LDCONIFIG=	yes
+PLIST_FILES=	bin/${PORTNAME} \
+		etc/${PORTNAME}.conf.sample
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -37,15 +39,18 @@ do-configure:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.bin \
-		${PREFIX}/bin/
+		${PREFIX}/bin/${PORTNAME}
 
 post-install:
-
-.for f in ${PORTNAME} ${PORTNAME}/bases ${PORTNAME}/backup
-	@${MKDIR} /var/db/${f}
-.endfor
-
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
 		${PREFIX}/etc/${PORTNAME}.conf.sample
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " Usage: "
+	@${ECHO_MSG} " Copy and edit ${PORTNAME}.conf.sample "
+	@${ECHO_MSG} " cp ${ETCDIR}/${PORTNAME}.conf.sample ${ETCDIR}/${PORTNAME}.conf "
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " ${PORTNAME} -l /var/log/${PORTNAME}.log -c ${ETCDIR}/${PORTNAME}.conf \ "
+	@${ECHO_MSG} " -b /var/db/${PORTNAME}/backup "
+	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
