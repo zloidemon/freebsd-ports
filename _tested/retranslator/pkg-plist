@@ -1,0 +1,5 @@
+bin/retranslator.bin
+etc/retranslator.conf.sample
+@dirrmtry /var/db/retranslator/backup
+@dirrmtry /var/db/retranslator/bases
+@dirrmtry /var/db/retranslator
