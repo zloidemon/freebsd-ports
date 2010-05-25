@@ -16,9 +16,7 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	The update utility for Kaspersky applications
 
 NO_BUILD=	yes
-USE_LDCONIFIG=	yes
-PLIST_FILES=	bin/${PORTNAME} \
-		etc/${PORTNAME}.conf.sample
+ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -44,14 +42,8 @@ do-install:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
 		${PREFIX}/etc/${PORTNAME}.conf.sample
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " Usage: "
-	@${ECHO_MSG} " Copy and edit ${PORTNAME}.conf.sample "
-	@${ECHO_MSG} " cp ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf "
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " Example runnig: "
-	@${ECHO_MSG} " ${PORTNAME} -l /var/log/${PORTNAME}.log -c ${PREFIX}/etc/${PORTNAME}.conf \ "
-	@${ECHO_MSG} " -b /var/db/${PORTNAME}/backup "
-	@${ECHO_MSG} ""
+	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
+		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf ; \
+	fi
 
 .include <bsd.port.post.mk>
