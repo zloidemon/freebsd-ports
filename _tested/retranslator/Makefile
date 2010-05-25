@@ -47,9 +47,9 @@ post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " Usage: "
 	@${ECHO_MSG} " Copy and edit ${PORTNAME}.conf.sample "
-	@${ECHO_MSG} " cp ${ETCDIR}/${PORTNAME}.conf.sample ${ETCDIR}/${PORTNAME}.conf "
+	@${ECHO_MSG} " cp ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf "
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " ${PORTNAME} -l /var/log/${PORTNAME}.log -c ${ETCDIR}/${PORTNAME}.conf \ "
+	@${ECHO_MSG} " ${PORTNAME} -l /var/log/${PORTNAME}.log -c ${PREFIX}/etc/${PORTNAME}.conf \ "
 	@${ECHO_MSG} " -b /var/db/${PORTNAME}/backup "
 	@${ECHO_MSG} ""
 
