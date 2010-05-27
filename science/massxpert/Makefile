@@ -2,7 +2,7 @@
 # Date created:		2010-05-14
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/science/massxpert/Makefile,v 1.1 2010/05/20 09:43:14 wen Exp $
+# $FreeBSD: ports/science/massxpert/Makefile,v 1.2 2010/05/27 06:07:40 wen Exp $
 #
 
 PORTNAME=	massxpert
