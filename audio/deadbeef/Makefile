@@ -2,11 +2,11 @@
 # Date created:		2010-01-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.4 2010/04/10 14:38:26 sylvio Exp $
+# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.6 2010/06/07 06:56:56 miwi Exp $
 #
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 #DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,13 +15,14 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		mad.2:${PORTSDIR}/audio/libmad
+		mad.2:${PORTSDIR}/audio/libmad \
+		lexecinfo.1:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
@@ -150,7 +151,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 .else
 PLIST_SUB+=	FFMPEG=""
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		avformat:${PORTSDIR}/multimedia/ffmpeg \
+		avformat.1:${PORTSDIR}/multimedia/ffmpeg \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
