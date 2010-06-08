@@ -1,5 +1,0 @@
-VolumeControl is a audio mixer for GNU/Linux. It requires OSS or ALSA
-with OSS /dev/mixer compatibility from the Linux kernel. The GTK interface
-provides ease of use in adjusting volume levels.
-
-WWW:	http://volumecontrol.sourceforge.net
