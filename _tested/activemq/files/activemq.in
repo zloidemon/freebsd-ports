@@ -31,8 +31,8 @@ load_rc_config $name
 : ${activemq_enable:=NO}
 : ${activemq_user:=${name}}
 : ${activemq_group:=${name}}
-: ${activemq_classpath:=%%ETCC%%}
-: ${activemq_home:=%%MQDIR%%}
+: ${activemq_classpath:=%%ETCDIR%%}
+: ${activemq_home:=%%DATADIR%%}
 : ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties'}
 
 pidfile=/var/run/${name}.pid
@@ -43,8 +43,7 @@ java_options=" 	-server -jar ${activemq_javargs} \
 		-Dactivemq.home=${activemq_home} \
 		-Dactivemq.base=${activemq_home}"
 
-java_command="	%%LOCALBASE%%/bin/java ${java_options} \
-		%%DATADIR%%/bin/run.jar" start $@
+java_command="%%LOCALBASE%%/bin/java ${java_options} %%DATADIR%%/bin/run.jar $@"
 
 # Subvert the check_pid_file procname check.
 if [ -f $pidfile ]; then

@@ -385,6 +385,29 @@ lib/activemq/bin/wrapper.jar
 %%EXAMPLESDIR%%/example/transactions/README.txt
 %%EXAMPLESDIR%%/example/build.xml
 %%DOCSDIR%%/docs/index.html
+%%ETCDIR%%/activemq-command.xml
+%%ETCDIR%%/activemq-demo.xml
+%%ETCDIR%%/activemq-dynamic-network-broker1.xml
+%%ETCDIR%%/activemq-dynamic-network-broker2.xml
+%%ETCDIR%%/activemq-jdbc.xml
+%%ETCDIR%%/activemq-scalability.xml
+%%ETCDIR%%/activemq-security.xml
+%%ETCDIR%%/activemq-static-network-broker1.xml
+%%ETCDIR%%/activemq-static-network-broker2.xml
+%%ETCDIR%%/activemq-stomp.xml
+%%ETCDIR%%/activemq-throughput.xml
+%%ETCDIR%%/activemq.xml
+%%ETCDIR%%/broker-localhost.cert
+%%ETCDIR%%/broker.ks
+%%ETCDIR%%/broker.ts
+%%ETCDIR%%/camel.xml
+%%ETCDIR%%/client.ks
+%%ETCDIR%%/client.ts
+%%ETCDIR%%/credentials.properties
+%%ETCDIR%%/jetty.xml
+%%ETCDIR%%/log4j.properties
+%%ETCDIR%%/logging.properties
+@dirrm %%ETCDIR%%
 @dirrm %%DOCSDIR%%/docs
 @dirrm lib/activemq/webapps/static
 @dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util
@@ -491,5 +514,5 @@ lib/activemq/bin/wrapper.jar
 @dirrm lib/activemq/lib
 @dirrm lib/activemq/bin
 @dirrm lib/activemq
-@dirrmtry etc/activemq
-@dirrmtry /var/db/activemq
+@dirrmtry %%ETCDIR%%
+@dirrmtry activemq

@@ -21,8 +21,8 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 MQDATA=		${PREFIX}/lib/${PORTNAME}
-MQDB=		/var/db/${PORTNAME}
-ETCC=		${ETCDIR}/${PORTNAME}
+MQDB=		${PREFIX}/${PORTNAME}
+DATADIR=	${MQDATA}
 MQUSER=		activemq
 MQGROUP=	${MQUSER}
 
@@ -40,29 +40,31 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 
 post-install:
-.for f in ${MQDATA} ${MQDB} ${ETCC}
-	@${MKDIR} ${PREFIX}${f}
+	@${MKDIR} ${MQDATA} ${MQDB} ${MQDATA}/bin ${ETCDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} example ${EXAMPLESDIR}/
+	@cd ${WRKSRC}/conf && ${INSTALL_DATA} * ${ETCDIR}/
+
+.for f in ${PORTNAME} ${PORTNAME}-admin
+	@cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${f} ${MQDATA}/bin
 .endfor
-	cd ${WRKSRC} && ${COPYTREE_SHARE} example ${EXAMPLESDIR}/
-.for f in webapps lib bin
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${MQDATA}
+.for f in run.jar wrapper.jar
+	cd ${WRKSRC}/bin && ${INSTALL_DATA} ${f} ${MQDATA}/bin
+.endfor
+.for f in webapps lib
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${MQDATA}
 .endfor
 
-	${LN} -sf ${PREFIX}${MQDB} ${MQDATA}/data
-	${LN} -sf ${PREFIX}${ETCC} ${MQDATA}/conf
-	${LN} -sf ${EXAMPLESDIR} ${MQDATA}/example
-
+	@${LN} -sf ${MQDB} ${MQDATA}/data
+	@${LN} -sf ${ETCDIR} ${MQDATA}/conf
+	@${LN} -sf ${EXAMPLESDIR}/example ${MQDATA}/example
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-.for f in ${MQDB} ${ETCC} ${EXAMPLES} ${MQDATA}
-	@${CHOWN} -Rh ${MQUSER}:${MQGROUP} ${PREFIX}${f}
-.endfor
+	@${CHOWN} -Rh ${MQUSER}:${MQGROUP} ${MQDB} ${ETCDIR} ${EXAMPLES} ${MQDATA}
 
 .include <bsd.port.mk>
