@@ -1,0 +1,137 @@
+diff -ruN qjson.orig/Makefile qjson/Makefile
+--- qjson.orig/Makefile	2010-06-11 00:01:41.000000000 +0800
++++ qjson/Makefile	2010-06-10 22:50:51.000000000 +0800
+@@ -6,6 +6,7 @@
+ 
+ PORTNAME=	qjson
+ PORTVERSION=	0.7.1
++PORTREVISION=	1
+ CATEGORIES=	devel
+ MASTER_SITES=	SF
+ 
+@@ -21,8 +22,30 @@
+ 
+ WRKSRC=		${WRKDIR}/${PORTNAME}
+ 
++OPTIONS=	PORTDOCS	"Insstall documentation" on
++
+ pre-configure:
+ 	@${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_SUFFIX}/data/' \
+ 		${WRKSRC}/CMakeLists.txt
+ 
+-.include <bsd.port.mk>
++.include <bsd.port.pre.mk>
++
++.if !defined(WITHOUT_PORTDOCS)
++BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
++PLIST_SUB+=	PORTDOCS=""
++.else
++PLIST_SUB+=	PORTDOCS="@comment "
++.endif
++
++post-build:
++.if !defined(WITHOUT_PORTDOCS)
++	@cd ${WRKSRC}/doc && doxygen
++.endif
++
++post-install:
++.if !defined(WITHOUT_PORTDOCS)
++	${MKDIR} ${DOCSDIR}
++	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}/
++.endif
++
++.include <bsd.port.post.mk>
+diff -ruN qjson.orig/files/patch-CMakeLists.txt qjson/files/patch-CMakeLists.txt
+--- qjson.orig/files/patch-CMakeLists.txt	1970-01-01 07:00:00.000000000 +0700
++++ qjson/files/patch-CMakeLists.txt	2010-06-10 22:22:02.000000000 +0800
+@@ -0,0 +1,11 @@
++--- CMakeLists.txt.orig	2009-12-04 07:02:16.000000000 +0700
+++++ CMakeLists.txt	2010-06-10 22:22:02.000000000 +0800
++@@ -39,7 +39,7 @@
++ SET (LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
++ SET (LIB_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}" CACHE STRING "Directory where lib will install")
++ SET (INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "The directory the headers are installed in")
++-SET (CMAKE_MODULES_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/apps/cmake/modules" CACHE PATH "The directory to install FindQRpc.cmake to")
+++SET (CMAKE_MODULES_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/cmake/Modules" CACHE PATH "The directory to install FindQRpc.cmake to")
++ 
++ 
++ set(QJSON_LIB_MAJOR_VERSION "0")
+diff -ruN qjson.orig/pkg-plist qjson/pkg-plist
+--- qjson.orig/pkg-plist	2010-06-11 00:01:41.000000000 +0800
++++ qjson/pkg-plist	2010-06-10 22:49:25.000000000 +0800
+@@ -8,8 +8,71 @@
+ lib/libqjson.so.0
+ lib/libqjson.so.0.7.1
+ libdata/pkgconfig/QJson.pc
+-share/apps/cmake/modules/FindQJSON.cmake
+-@dirrmtry share/apps/cmake/modules
+-@dirrmtry share/apps/cmake
+-@dirrmtry share/apps
++share/cmake/Modules/FindQJSON.cmake
++%%PORTDOCS%%%%DOCSDIR%%/Doxyfile
++%%PORTDOCS%%%%DOCSDIR%%/footer.html
++%%PORTDOCS%%%%DOCSDIR%%/header.html
++%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
++%%PORTDOCS%%%%DOCSDIR%%/html/tab_b.gif
++%%PORTDOCS%%%%DOCSDIR%%/html/tab_l.gif
++%%PORTDOCS%%%%DOCSDIR%%/html/tab_r.gif
++%%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
++%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
++%%PORTDOCS%%%%DOCSDIR%%/html/index.html
++%%PORTDOCS%%%%DOCSDIR%%/html/json__parser_8cc_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/json__parser_8hh_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/json__scanner_8cpp_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/json__scanner_8h_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/location_8hh_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/moc__parserrunnable_8cxx_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/moc__serializerrunnable_8cxx_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/location_8hh.html
++%%PORTDOCS%%%%DOCSDIR%%/html/parser_8cpp_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/parser_8h_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/parser__p_8h_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/parserrunnable_8cpp_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/parserrunnable_8h_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/position_8hh_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/qjson__debug_8h_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/qjson__export_8h_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/qobjecthelper_8cpp_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/qobjecthelper_8h_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/serializer_8cpp_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/serializer_8h_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/serializerrunnable_8cpp_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
++%%PORTDOCS%%%%DOCSDIR%%/html/serializerrunnable_8h_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/stack_8hh_source.html
++%%PORTDOCS%%%%DOCSDIR%%/html/position_8hh.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classes.html
++%%PORTDOCS%%%%DOCSDIR%%/html/functions.html
++%%PORTDOCS%%%%DOCSDIR%%/html/functions_func.html
++%%PORTDOCS%%%%DOCSDIR%%/html/functions_vars.html
++%%PORTDOCS%%%%DOCSDIR%%/html/functions_type.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1Parser.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1Parser-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1ParserRunnable.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1ParserRunnable-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1QObjectHelper.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1QObjectHelper-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1Serializer.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1Serializer-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1SerializerRunnable.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classQJson_1_1SerializerRunnable-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classyy_1_1json__parser.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classyy_1_1json__parser-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/structyy_1_1json__parser_1_1token.html
++%%PORTDOCS%%%%DOCSDIR%%/html/structyy_1_1json__parser_1_1token-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classyy_1_1location.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classyy_1_1location-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classyy_1_1position.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classyy_1_1position-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classyy_1_1slice.html
++%%PORTDOCS%%%%DOCSDIR%%/html/classyy_1_1slice-members.html
++%%PORTDOCS%%%%DOCSDIR%%/html/files.html
++%%PORTDOCS%%%%DOCSDIR%%/qjson.dox
++@dirrmtry share/cmake/Modules
++@dirrmtry share/cmake
+ @dirrm include/qjson
++%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
++%%PORTDOCS%%@dirrm %%DOCSDIR%%
