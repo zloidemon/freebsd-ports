@@ -7,7 +7,7 @@
 
 PORTNAME=	cpassman
 PORTVERSION=	1.52
-CATEGORIES=	www
+CATEGORIES=	www security
 MASTER_SITES=	SF/communitypasswo/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
