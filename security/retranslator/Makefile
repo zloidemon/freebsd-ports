@@ -2,7 +2,7 @@
 # Date created:		2010-05-25
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/security/retranslator/Makefile,v 1.1 2010/06/05 21:22:25 miwi Exp $
 #
 
 PORTNAME=	retranslator
