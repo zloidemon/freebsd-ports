@@ -17,15 +17,11 @@ COMMENT=	GRand Unified Bootloader
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_AUTOTOOLS=	autoconf:262 autoheader:262
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I/${LOCALBASE}/include" \
 		LDFLAGS="-L/${LOCALBASE}/lib"
-
-USE_RUBY=	yes
-USE_RUBY_VER=	18
 
 INFO=	grub
 MAN1=	grub-mkimage.1 \
@@ -47,8 +43,21 @@ MAN8=	grub-setup.8 \
 	grub-set-default.8 \
 	grub-reboot.8
 
+OPTIONS=	DEBUG	"Include memory manager debugging" off \
+		EFIEMU	"efiemu runtimes (only i386)" off
+
 .include <bsd.port.pre.mk>
-pre-configure:
-	cd ${WRKSRC} && ${SH} ./autogen.sh
+
+.if !defined(WITHOUT_DEBUG)
+CONFIGURE_ARGS+=	--enable-mm-debug
+.endif
+
+.if !defined(WITHOUT_EFIEMU)
+.if ${ARCH} == "amd64"
+BROKEN=		efiemu runtimes is not support for amd64
+.else
+CONFIGURE_ARGS+==	--enable-efiemu
+.endif
+.endif
 
 .include <bsd.port.post.mk>
