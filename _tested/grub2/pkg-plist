@@ -14,8 +14,6 @@ etc/grub.d/30_os-prober
 etc/grub.d/40_custom
 etc/grub.d/10_kfreebsd
 etc/grub.d/README
-info/grub.info
-info/dir
 lib/grub/i386-pc/boot.img
 lib/grub/i386-pc/cdboot.img
 lib/grub/i386-pc/diskboot.img

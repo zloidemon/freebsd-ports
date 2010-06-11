@@ -27,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I/${LOCALBASE}/include" \
 USE_RUBY=	yes
 USE_RUBY_VER=	18
 
+INFO=	grub
 MAN1=	grub-mkimage.1 \
 	grub-mkelfimage.1 \
 	grub-fstest.1 \
