@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fancytasks
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.93
 CATEGORIES=	deskutils
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
@@ -19,6 +19,7 @@ LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
+USE_GETTEXT=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs kdebase workspace
 USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network opengl svg phonon webkit xml \
