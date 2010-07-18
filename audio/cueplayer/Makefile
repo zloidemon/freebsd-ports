@@ -2,20 +2,24 @@
 # Date created:		2010-01-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/cueplayer/Makefile,v 1.5 2010/05/19 18:06:06 makc Exp $
+# $FreeBSD: ports/audio/cueplayer/Makefile,v 1.6 2010/06/03 08:54:54 netchild Exp $
 #
 
 PORTNAME=	cueplayer
-PORTVERSION=	0.25
+PORTVERSION=	0.27
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	CUE player
 
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
+
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
 USE_GSTREAMER=	flac good dvd lame ugly ffmpeg taglib ogg vorbis soup libmms wavpack
+
+LICENSE=	GPLv3
 
 DESKTOP_ENTRIES="Cueplayer" "Lightweight media player based on Qt and Gstreamer" \
 		"${DATADIR}/${PORTNAME}.png" "${PORTNAME}" \
