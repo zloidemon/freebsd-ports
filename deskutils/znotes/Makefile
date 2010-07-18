@@ -2,11 +2,11 @@
 # Date created:		2009-11-12
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/deskutils/znotes/Makefile,v 1.2 2010/02/08 15:09:59 miwi Exp $
+# $FreeBSD: ports/deskutils/znotes/Makefile,v 1.4 2010/03/28 06:32:53 dinoex Exp $
 #
 
 PORTNAME=	znotes
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -17,6 +17,8 @@ COMMENT=	Simple notes based on QT4
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist
+
+LICENSE=	GPLv3
 
 DESKTOP_ENTRIES="zNotes" "Simple notes" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
@@ -46,7 +48,9 @@ do-install:
 	${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
 PLIST_FILES+=	share/${PORTNAME}/translations/${PORTNAME}_cs.qm \
-		share/${PORTNAME}/translations/${PORTNAME}_ru.qm
+		share/${PORTNAME}/translations/${PORTNAME}_ru.qm \
+		share/${PORTNAME}/translations/${PORTNAME}_pt_BR.qm \
+		share/${PORTNAME}/translations/${PORTNAME}_uk.qm
 PLIST_DIRS+=	share/${PORTNAME}/translations \
 		share/${PORTNAME}
 .else
