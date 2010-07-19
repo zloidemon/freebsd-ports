@@ -2,11 +2,11 @@
 # Date created:		2010-03-23
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/clementine-player/Makefile,v 1.3 2010/04/24 09:38:39 ehaupt Exp $
+# $FreeBSD: ports/audio/clementine-player/Makefile,v 1.4 2010/06/14 18:25:19 makc Exp $
 #
 
 PORTNAME=	clementine
-PORTVERSION=	0.3
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -24,13 +24,23 @@ PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_CMAKE=	yes
 USE_ICONV=	yes
+USE_GL=		glew
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl dbus qtestlib corelib
 USE_GCC=	4.2+
 INSTALLS_ICONS=	yes
-USE_GSTREAMER=	gio ogg mp3 flac
+USE_GSTREAMER=	gio ogg mp3 flac soup
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+OPTIONS=	VSL "Visualisations from projectM. Does not work now" off
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_VSL)
+PLIST_SUB+=	VSL=""
+.else
+CMAKE_ARGS+=	-DENABLE_VISUALISATIONS=OFF
+PLIST_SUB+=	VSL="@comment "
+.endif
+
+.include <bsd.port.post.mk>
