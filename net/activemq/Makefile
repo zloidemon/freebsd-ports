@@ -2,11 +2,12 @@
 # Date created:		2010-02-07
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/net/activemq/Makefile,v 1.2 2010/06/13 08:05:07 wen Exp $
 #
 
 PORTNAME=	activemq
 PORTVERSION=	5.3.2
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://www.sai.msu.su/apache/${MASTER_SITE_SUBDIR}/ \
 		${MASTER_SITE_APACHE}/${MASTER_SITE_SUBDIR}/
@@ -55,7 +56,7 @@ post-install:
 	@cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${f} ${MQDATA}/bin
 .endfor
 .for f in run.jar wrapper.jar
-	cd ${WRKSRC}/bin && ${INSTALL_DATA} ${f} ${MQDATA}/bin
+	@cd ${WRKSRC}/bin && ${INSTALL_DATA} ${f} ${MQDATA}/bin
 .endfor
 .for f in webapps lib
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${MQDATA}
