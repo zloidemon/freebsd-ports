@@ -2,11 +2,12 @@
 # Date created:		2010-01-15
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/x11-fonts/font-gost/Makefile,v 1.1 2010/02/12 17:19:08 miwi Exp $
 #
 
 PORTNAME=	gost
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://sd.ascon.ru/ftp/Public/Utils/DWG-DXF/ \
 		http://fbsd.zlonet.ru/distfiles/
@@ -22,8 +23,13 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTSDIR=	${PREFIX}/lib/X11/fonts/gost
+MSG_FILE=	${PKGDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 WRKSRC=		${WRKDIR}/Fonts
+
+post-patch:
+	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${FONTSDIR}
