@@ -8,7 +8,7 @@
 PORTNAME=	leechcraft
 PORTVERSION=	0.3.75
 CATEGORIES=	misc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/LeechCraft/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_rc${LC_DATE}
 
 MAINTAINER=	g.veniamin@googlemail.com
@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
+USE_GCC=	4.2+
 QT_COMPONENTS=	corelib gui network script sql sql-sqlite3 xml
 
 OPTIONS=	SUMMARY "shows a handy summary of the stuff going on" on \
@@ -34,7 +35,7 @@ OPTIONS=	SUMMARY "shows a handy summary of the stuff going on" on \
 		LMP "LeechCraft Media Previewer" on \
 		DBUSMANAGER "D-Bus support for the LeechCraft" on \
 		DEADLYRICS "client for the lyricwiki.org site" on \
-		SEEKTHRU "client for the OpenSearch-aware web sites" on\
+		SEEKTHRU "client for the OpenSearch-aware(dont work)" off\
 		NETWORKMONITOR "monitor for HTTP requests" on \
 		HISTORYHOLDER "keeper of the history" on \
 		CHATTER "simple IRC client" on \
@@ -48,7 +49,7 @@ OPTIONS=	SUMMARY "shows a handy summary of the stuff going on" on \
 		AUSCRIE "auto screenshooter" on \
 		TABPP "enhanced tab manager" on \
 		EISKALTDCPP "EiskaltDC++ client (devel)" off \
-		AZOTH "IM client" off \
+		AZOTH "IM client (devel)" off \
 		SECMAN "security & personal data manager (devel)" off \
 		QROSP "scripting support plugin (devel)" off \
 		POPISHU "scripting support plugin (devel)" off \
@@ -70,7 +71,7 @@ CMAKE_ARGS+=	-DENABLE_TORRENT=OFF
 PLIST_SUB+=	TORRENT="@comment "
 .else
 PLIST_SUB+=	TORRENT=""
-LIB_DEPENDS+=	torrent.11:${PORTSDIR}/net-p2p/libtorrent
+LIB_DEPENDS+=	torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
 .endif
 
 .if defined(WITHOUT_AGGREGATOR)
@@ -139,6 +140,8 @@ CMAKE_ARGS+=	-DENABLE_SEEKTHRU=OFF
 PLIST_SUB+=	SEEKTHRU="@comment "
 .else
 PLIST_SUB+=	SEEKTHRU=""
+CPPFLAGS+=	-fvisibility-hidden
+CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}"
 .endif
 
 .if defined(WITHOUT_NETWORKMONITOR)

@@ -13,20 +13,28 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Volume mixer
 
+LICENSE=	GPLv3
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-
-OPTIONS=	NLS "native language support" off
+USE_GNOME=	gnomehack
 
 .include <bsd.port.pre.mk>
 
+pre-configure:
+	${REINPLACE_CMD} -e 's|linux/soundcard|sys/soundcard|g' \
+		${WRKSRC}/src/callbacks.c ${WRKSRC}/src/actions.c
+
+.if !defined(NOPORTDOCS)
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
-USE_GETTEXT=	yes
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
 .endif
 
 .include <bsd.port.post.mk>

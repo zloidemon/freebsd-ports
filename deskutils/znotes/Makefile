@@ -2,11 +2,11 @@
 # Date created:		2009-11-12
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/deskutils/znotes/Makefile,v 1.4 2010/03/28 06:32:53 dinoex Exp $
+# $FreeBSD: ports/deskutils/znotes/Makefile,v 1.5 2010/07/18 21:39:37 makc Exp $
 #
 
 PORTNAME=	znotes
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,8 +15,8 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Simple notes based on QT4
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
-		linguist
+QT_COMPONENTS=	gui network xml qmake_build uic_build moc_build rcc_build \
+		linguist_build
 
 LICENSE=	GPLv3
 
@@ -38,7 +38,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 do-configure:
-	cd ${WRKSRC} && ${QMAKE} ${QMAKE_PRO}
+	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
@@ -47,12 +47,12 @@ do-install:
 .if defined(WITH_NLS)
 	${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
-PLIST_FILES+=	share/${PORTNAME}/translations/${PORTNAME}_cs.qm \
-		share/${PORTNAME}/translations/${PORTNAME}_ru.qm \
-		share/${PORTNAME}/translations/${PORTNAME}_pt_BR.qm \
-		share/${PORTNAME}/translations/${PORTNAME}_uk.qm
-PLIST_DIRS+=	share/${PORTNAME}/translations \
-		share/${PORTNAME}
+PLIST_FILES+=	%%DATADIR%%/translations/${PORTNAME}_cs.qm \
+		%%DATADIR%%/translations/${PORTNAME}_ru.qm \
+		%%DATADIR%%/translations/${PORTNAME}_pt_BR.qm \
+		%%DATADIR%%/translations/${PORTNAME}_uk.qm
+PLIST_DIRS+=	%%DATADIR%%/translations \
+		%%DATADIR%%
 .else
 .endif
 

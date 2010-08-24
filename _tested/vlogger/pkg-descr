@@ -1,0 +1,10 @@
+vlogger is a little piece of code i wrote to handle dealing with large amounts
+of virtualhost logs. its bad news to let apache deal with these itself (ask anyone who
+runs a large webfarm about the interesting things apache does when it has 500 open logfiles)
+so vlogger was born. it takes piped output from apache, splits off
+the first field, and writes the logs to logfiles in subdirectories. it uses a file handle
+cache so it can't run out of file descriptors. it will also start a new logfile every night
+at midnight, and maintain a symlink to the most recent file. for security, it can drop privileges
+and do a chroot to the logs directory.
+
+WWW:	http://n0rp.chemlab.org/vlogger/

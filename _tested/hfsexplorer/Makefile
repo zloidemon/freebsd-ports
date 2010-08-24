@@ -12,24 +12,46 @@ MASTER_SITES=	SF/catacombae/HFSExplorer/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-0_21-src
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images.
+COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images
 
-RUN_DEPENDS=	pushd:${PORTSDIR}/devel/p5-File-pushd
+RUN_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
+
+LICENSE=	GPLv3
+
+DESKTOP_ENTRIES="hfsexplorer" "reader Mac-formatted harddisk" \
+		"${DATADIR}/res/icon.png" "${PORTNAME}" \
+		"System;Utility;Java;" false
 
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}
+
+do-configure:
+	@cd ${WRKSRC}/dist && ${REINPLACE_CMD} -e 's|lib/|${DATADIR}/lib/|g' \
+		hfsx.sh resview.sh unhfs.sh
+	@${REINPLACE_CMD} -e 's|lib|${DATADIR}/lib|g' \
+		${WRKSRC}/dist/runfsb.sh
 
 post-configure:
-	cd ${WRKDIR} && ${SH} buildall.sh
+	@cd ${WRKSRC} && ${SH} buildall.sh
 
 do-install:
-	@${MKDIR} ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/dist/doc && ${COPYTREE_SHARE} html ${DOCSDIR}/
+.endif
+
+post-install:
 	@${MKDIR} ${DATADIR}/lib
 	@${MKDIR} ${DATADIR}/res
-	@${MKDIR} ${DATADIR}/doc
+.for f in hfsx.sh resview.sh unhfs.sh
+	@cd ${WRKSRC} && ${INSTALL_SCRIPT} dist/${f} ${PREFIX}/bin
+.endfor
+	@cd ${WRKSRC} && ${INSTALL_SCRIPT} dist/runfsb.sh ${PREFIX}/bin/${PORTNAME}
+	@cd ${WRKSRC} && ${INSTALL_DATA} dist/lib/*.jar ${DATADIR}/lib
+	@cd ${WRKSRC} && ${INSTALL_DATA} dist/res/icon.png ${DATADIR}/res
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

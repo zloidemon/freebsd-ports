@@ -40,7 +40,7 @@ SUB_LIST+=	PTDIR=${PTDIR}
 
 DESKTOP_ENTRIES="PacketTracer" "Cisco Packet Tracer" \
 		"${PREFIX}/${PTDIR}/art/app.png" "${PORTNAME}" \
-		"Application;Network;" ${FALSE}
+		"Application;Network;" false
 
 post-extract:
 	@${REINPLACE_CMD} -e 's,III,${PREFIX}/${PTDIR},g' \

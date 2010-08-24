@@ -16,7 +16,7 @@ COMMENT=	DeaDBeeF is an audio player
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		mad.2:${PORTSDIR}/audio/libmad \
-		lexecinfo.1:${PORTSDIR}/devel/libexecinfo
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

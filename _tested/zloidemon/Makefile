@@ -38,6 +38,8 @@ RUN_DEPENDS=	axel:${PORTSDIR}/ftp/axel \
 		wget:${POTSDIR}/ftp/wget \
 		zsh:${PORTSDIR}/shells/zsh
 
+NO_BUILD=	yes
+
 OPTIONS=	DEV "Devloper stuff" on \
 		DES "Some desktop stuff" on \
 		IM "Chating stuff" on \

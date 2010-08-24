@@ -203,6 +203,7 @@ lib/libxmlsettingsdialog.so
 %%SECMAN%%lib/leechcraft/plugins/libleechcraft_secman.so
 %%POPISHU%%lib/leechcraft/plugins/libleechcraft_popishu.so
 %%LACKMAN%%lib/leechcraft/plugins/libleechcraft_lackman.so
+%%TORRENT%%lib/leechcraft/plugins/libleechcraft_bittorrent.so
 %%DATADIR%%/translations/leechcraft_ru_RU.qm
 %%DATADIR%%/translations/leechcraft_de.qm
 %%DATADIR%%/translations/leechcraft_uk_UA.qm
@@ -353,6 +354,18 @@ lib/libxmlsettingsdialog.so
 %%LMP%%%%DATADIR%%/translations/leechcraft_lmp_en.qm
 %%LMP%%%%DATADIR%%/translations/leechcraft_lmp_eo.qm
 %%LMP%%%%DATADIR%%/translations/leechcraft_lmp_fr.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_ru_RU.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_uk_UA.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_de.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_ar.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_pl.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_es.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_fr.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_oc.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_en.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_be.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_eo.qm
+%%TORRENT%%%%DATADIR%%/settings/torrentsettings.xml
 %%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_ru_RU.qm
 %%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_uk_UA.qm
 %%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_eo.qm
@@ -547,7 +560,7 @@ share/man/man1/leechcraft.1.gz
 @dirrm share/icons/Pevzi/scalable
 @dirrm share/icons/Pevzi
 @dirrmtry lib/leechcraft/plugins
-@dirrm lib/leechcraft
+@dirrmtry lib/leechcraft
 @dirrm include/leechcraft/xmlsettingsdialog
 @dirrm include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir
 @dirrm include/leechcraft/plugininterface/CMakeFiles

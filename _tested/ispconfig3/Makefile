@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ispconfig
-PORTVERSION=	3.0.1.4
+PORTVERSION=	3.0.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/ISPConfig%203/ISPConfig-${PORTVERSION}/
 DISTNAME=	ISPConfig-${PORTVERSION}
@@ -41,7 +41,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAs
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
-USE_APACHE=	yes
 WITH_APACHE2=	yes
 USE_MYSQL=	yes
 USE_PGSQL=	yes

@@ -1,0 +1,22 @@
+USE_BZIP2=	yes
+NO_BUILD=	yes
+PKGMESSAGE?=	${.CURDIR}/../../x11-themes/cursor-chameleon-white/files/pkg-message
+
+LICENSE=	GPLv2
+
+do-install:
+	@${MKDIR} ${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-large \
+		${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-regular \
+		${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-small
+	@cd ${WRKDIR}/Chameleon-${THEME}-Large-${PORTVERSION} && ${CP} -R * \
+		${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-large
+	@cd ${WRKDIR}/Chameleon-${THEME}-Regular-${PORTVERSION} && ${CP} -R * \
+		${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-regular
+	@cd ${WRKDIR}/Chameleon-${THEME}-Small-${PORTVERSION} && ${CP} -R * \
+		${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-small
+
+
+post-install:	echo-pkgmessage
+
+echo-pkgmessage:
+	@${CAT} ${PKGMESSAGE}
