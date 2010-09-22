@@ -2,7 +2,7 @@
 # Date created:		2010-07-20
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/x11-fonts/pingwi/Makefile,v 1.1 2010/08/02 20:15:45 makc Exp $
 #
 
 PORTNAME=	pingwi
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	font-
 DISTNAME=	fonts_test
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	Fonts package PingWi Typography
+COMMENT=	PingWi Typography fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
@@ -22,21 +22,16 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTSDIR=	${PREFIX}/lib/X11/fonts/pingwi
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-post-patch:
-	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
+SUB_FILES=	pkg-message
+SUB_LIST=	FONTSDIR=${FONTSDIR}
 
 do-install:
 	${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
 
 post-install:
-	${ECHO_MSG} "===> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
-	${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
+	@${ECHO_MSG} "===> Running fc-cache"
+	@-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
