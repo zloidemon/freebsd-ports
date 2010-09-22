@@ -1,0 +1,7 @@
+bin/iproxy
+include/usbmuxd.h
+include/usbmuxd-proto.h
+lib/libusbmuxd.so.UNKNOWN
+lib/libusbmuxd.so.1
+lib/libusbmuxd.so
+sbin/usbmuxd
