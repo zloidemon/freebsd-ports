@@ -14,7 +14,9 @@ PKGNAMESUFFIX=	-player
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	A cross-platform music player based on Amarok 1.4
 
-LIB_DEPENDS=	lastfm.0:${PORTSDIR}/audio/liblastfm \
+LIB_DEPENDS=	gpod.5:${PORTSDIR}/audio/libgpod \
+		lastfm.0:${PORTSDIR}/audio/liblastfm \
+		mtp.11:${PORTSDIR}/audio/libmtp \
 		tag.1:${PORTSDIR}/audio/taglib \
 		notify.1:${PORTSDIR}/devel/libnotify \
 		xine.1:${PORTSDIR}/multimedia/libxine
