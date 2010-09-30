@@ -2,14 +2,14 @@
 # Date created:		2010-01-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.6 2010/06/07 06:56:56 miwi Exp $
+# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.9 2010/07/24 16:38:09 mm Exp $
 #
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
-#DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player
@@ -22,11 +22,11 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo -lintl"
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAGE=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		GUI "standard GTK2 user interface plugin" on\
@@ -49,7 +49,7 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		DUMB "D.U.M.B. plugin for MOD, S3M and other" on\
 		NOTIFY "support for OSD notifications into GTKUI plugin" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_PULSE)
 CONFIGURE_ARGS+=	--disable-pulse
@@ -91,7 +91,7 @@ PLIST_SUB+=	ART="@comment "
 PLIST_SUB+=	ART=""
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .else
-BROKEN=		Please enable VFS plugin
+BROKEN=		VFS plugin required for album art loader, please rerun 'make config' and either disable ART or enable VFS
 .endif
 .endif
 
@@ -185,7 +185,7 @@ PLIST_SUB+=	CDDA="@comment "
 .else
 PLIST_SUB+=	CDDA=""
 LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio \
-		cddb.4:${PORTSDIR}:audio/libcddb
+		cddb.4:${PORTSDIR}/audio/libcddb
 .endif
 
 .if defined(WITHOUT_GME)
@@ -210,4 +210,4 @@ PLIST_SUB+=	NOTIFY=""
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
