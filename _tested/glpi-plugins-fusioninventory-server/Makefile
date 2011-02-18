@@ -43,17 +43,17 @@ PLIST_SUB+=	SNMP=""
 
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${GLPIPLUGINDIR}
-	${CP} -R ${WRKSRC}/fusioninventory ${PREFIX}/${GLPIPLUGINDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusioninventory
+	@${CP} -R ${WRKSRC}/fusioninventory ${PREFIX}/${GLPIPLUGINDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusioninventory
 
 .if !defined(WITHOUT_INVENTORY)
-	${CP} -R ${WRKSRC}/fusinvinventory ${PREFIX}/${GLPIPLUGINDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvinventory
+	@${CP} -R ${WRKSRC}/fusinvinventory ${PREFIX}/${GLPIPLUGINDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvinventory
 .endif
 
 .if !defined(WITHOUT_SNMP)
-	${CP} -R ${WRKSRC}/fusinvsnmp ${PREFIX}/${GLPIPLUGINDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvsnmp
+	@${CP} -R ${WRKSRC}/fusinvsnmp ${PREFIX}/${GLPIPLUGINDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvsnmp
 .endif
 
 .include <bsd.port.post.mk>
