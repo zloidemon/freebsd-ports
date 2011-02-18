@@ -24,13 +24,30 @@ NO_BUILD=	yes
 
 GLPIPLUGINDIR?=	www/glpi/plugins
 
+OPTIONS=	INVENTORY "Additional features" on\
+		SNMP "SNMP support" off
+
 .include <bsd.port.pre.mk>
 
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${GLPIPLUGINDIR}
-.for f in fusinvinventory fusinvsnmp fusioninventory
-	@cd ${WRKSRC} && cp -R ${f} ${PREFIX}/${GLPIPLUGINDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${f}
-.endfor
+	${CP} -R ${WRKSRC}/fusioninventory ${PREFIX}/${GLPIPLUGINDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusioninventory 
+
+.if defined(WITHOUT_INVENTORY)
+PLIST_SUB+=	INVENTORY="@comment "
+.else
+PLIST_SUB+=	INVENTORY=""
+		${CP} -R ${WRKSRC}/fusinvinventory ${PREFIX}/${GLPIPLUGINDIR}
+		${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvinventory 
+.endif
+
+.if defined(WITHOUT_SNMP)
+PLIST_SUB+=	SNMP="@comment "
+.else
+PLIST_SUB+=	SNMP=""
+		${CP} -R ${WRKSRC}/fusinvsnmp ${PREFIX}/${GLPIPLUGINDIR}
+		${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvsnmp 
+.endif
 
 .include <bsd.port.post.mk>
