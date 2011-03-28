@@ -2,36 +2,35 @@
 # Date created:		2009-12-09
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/net-im/vacuum-im/Makefile,v 1.1 2010/05/09 07:52:10 miwi Exp $
+# $FreeBSD: ports/net-im/vacuum-im/Makefile,v 1.2 2010/05/10 16:01:33 makc Exp $
 #
 
 PORTNAME=	vacuum
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-im
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Crossplatform Jabber client
 
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
+LICENSE=	GPLv3
+
+USE_XZ=	yes
+USE_CMAKE=	yes
+USE_XORG=	xscrnsaver
+
 USE_QT_VER=	4
 USE_LDCONFIG=	yes
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
-		network linguist_build webkit
+QT_COMPONENTS=	gui linguist_build moc_build \
+		network rcc_build uic_build webkit xml
 
 DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
-		"${DATADIR}/resources/menuicons/shared/mainwindowlogo96.png" "${PORTNAME}" \
+		"${PREFIX}/share/pixmaps/vacuum.png" "${PORTNAME}" \
 		"Qt;Network;InstantMessaging;" ${FALSE}
 
-QMAKEFLAGS+=	INSTALL_PREFIX="${PREFIX}"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
-
+QT_COMPONENTS=	gui
+QT_COMPONENTS=	gui
 .include <bsd.port.mk>

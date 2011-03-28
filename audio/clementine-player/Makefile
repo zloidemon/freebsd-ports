@@ -2,11 +2,11 @@
 # Date created:		2010-03-23
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/clementine-player/Makefile,v 1.5 2010/07/23 18:02:22 makc Exp $
+# $FreeBSD: ports/audio/clementine-player/Makefile,v 1.7 2011/03/25 20:12:06 pav Exp $
 #
 
 PORTNAME=	clementine
-PORTVERSION=	0.5.1
+PORTVERSION=	0.7
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -14,13 +14,14 @@ PKGNAMESUFFIX=	-player
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	A cross-platform music player based on Amarok 1.4
 
-LIB_DEPENDS=	gpod.5:${PORTSDIR}/audio/libgpod \
-		lastfm.0:${PORTSDIR}/audio/liblastfm \
-		mtp.11:${PORTSDIR}/audio/libmtp \
+LIB_DEPENDS=	lastfm.0:${PORTSDIR}/audio/liblastfm \
 		tag.1:${PORTSDIR}/audio/taglib \
 		notify.1:${PORTSDIR}/devel/libnotify \
-		xine.1:${PORTSDIR}/multimedia/libxine
+		xine.1:${PORTSDIR}/multimedia/libxine \
+		mtp:${PORTSDIR}/audio/libmtp
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+
+LICENSE=	GPLv3
 
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -33,7 +34,7 @@ QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 USE_GCC=	4.2+
 INSTALLS_ICONS=	yes
 USE_GSTREAMER=	gio ogg mp3 flac soup
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	VISUALISATION "Visualisations from projectM" off
 

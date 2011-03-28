@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2010-06-30 16:09:59.000000000 +0800
-+++ src/CMakeLists.txt	2010-06-30 16:13:10.000000000 +0800
-@@ -509,6 +509,7 @@ add_executable(clementine
+--- src/CMakeLists.txt.orig	2011-03-27 21:44:29.000000000 +0800
++++ src/CMakeLists.txt	2011-03-27 21:46:38.000000000 +0800
+@@ -1012,6 +1012,7 @@
    ${CLEMENTINE-WIN32-RESOURCES}
    main.cpp
  )
