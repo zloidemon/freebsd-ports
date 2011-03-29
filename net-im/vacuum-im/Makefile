@@ -24,13 +24,11 @@ USE_XORG=	xscrnsaver
 
 USE_QT_VER=	4
 USE_LDCONFIG=	yes
-QT_COMPONENTS=	gui linguist_build moc_build \
-		network rcc_build uic_build webkit xml
+QT_COMPONENTS=	gui linguist_build moc_build network \
+		qmake_build rcc_build uic_build webkit xml
 
 DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
 		"${PREFIX}/share/pixmaps/vacuum.png" "${PORTNAME}" \
 		"Qt;Network;InstantMessaging;" ${FALSE}
 
-QT_COMPONENTS=	gui
-QT_COMPONENTS=	gui
 .include <bsd.port.mk>

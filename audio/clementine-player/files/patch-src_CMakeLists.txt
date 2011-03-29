@@ -1,6 +1,44 @@
---- src/CMakeLists.txt.orig	2011-03-27 21:44:29.000000000 +0800
-+++ src/CMakeLists.txt	2011-03-27 21:46:38.000000000 +0800
-@@ -1012,6 +1012,7 @@
+--- src/CMakeLists.txt.orig	2011-03-14 05:46:25.000000000 +0700
++++ src/CMakeLists.txt	2011-03-29 00:48:19.000000000 +0800
+@@ -2,9 +2,9 @@
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverloaded-virtual -Wall -Wno-sign-compare")
+ 
+-if (LINUX)
++if (UNIX AND NOT APPLE)
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+-endif (LINUX)
++endif (UNIX AND NOT APPLE)
+ 
+ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+ include_directories(../3rdparty/gmock/gtest/include)
+@@ -879,7 +879,6 @@
+   ${QTSINGLECOREAPPLICATION_LIBRARIES}
+   ${QTIOCOMPRESSOR_LIBRARIES}
+   ${CMAKE_THREAD_LIBS_INIT}
+-  dl
+   z
+ )
+ 
+@@ -978,14 +977,14 @@
+   )
+ endif (WIN32)
+ 
+-if (LINUX)
++if (UNIX AND NOT APPLE)
+   # Hack: the Gold linker pays attention to the order that libraries are
+   # specified on the link line.  -lX11 and -ldl are provided earlier in the link
+   # command but they're actually used by libraries that appear after them, so
+   # they end up getting ignored.  This appends them to the very end of the link
+   # line, ensuring they're always used.
+-  target_link_libraries(clementine_lib -lX11 -ldl)
+-endif (LINUX)
++  target_link_libraries(clementine_lib -lX11)
++endif (UNIX AND NOT APPLE)
+ 
+ add_dependencies(clementine_lib qtsingleapplication)
+ 
+@@ -1012,6 +1011,7 @@
    ${CLEMENTINE-WIN32-RESOURCES}
    main.cpp
  )
