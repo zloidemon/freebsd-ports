@@ -2,11 +2,12 @@
 # Date created:		2010-04-13
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/graphics/scantailor/Makefile,v 1.1 2010/05/16 09:16:46 miwi Exp $
+# $FreeBSD: ports/graphics/scantailor/Makefile,v 1.2 2010/05/31 01:59:23 ade Exp $
 #
 
 PORTNAME=	scantailor
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -18,6 +19,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		png.6:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+
+LICENSE=	GPLv3
 
 USE_CMAKE=	yes
 USE_ICONV=	yes
