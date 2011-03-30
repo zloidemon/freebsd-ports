@@ -2,28 +2,29 @@
 # Date created:		2009-12-06
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/multimedia/clipgrab/Makefile,v 1.2 2010/01/23 15:59:16 beat Exp $
+# $FreeBSD: ports/multimedia/clipgrab/Makefile,v 1.5 2010/12/29 20:04:24 pgollucci Exp $
 #
 
 PORTNAME=	clipgrab
-PORTVERSION=	3.0.5
+PORTVERSION=	3.1.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://clipgrab.de/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Program to download videos from YouTube and etc
 
+LICENSE=	GPLv3
+
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build \
-		rcc_build network
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+		rcc_build network webkit
 
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/icon.png \
 		%%DATADIR%%/logo.png \
+		%%DATADIR%%/logo-gpl.png \
+		%%DATADIR%%/logo-qt.png \
 		%%DATADIR%%/splash.png
 PLIST_DIRS=	%%DATADIR%%
 

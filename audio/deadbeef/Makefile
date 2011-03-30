@@ -17,6 +17,8 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		mad.2:${PORTSDIR}/audio/libmad \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -292,10 +294,4 @@ PLIST_SUB+=	NLS="@comment "
 PLIST_SUB+=	NLS=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} >= 802502 && ${OSVERSION} < 900000 ) || ${OSVERSION} >= 900027
-BROKEN=		does not build after log2 addition
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

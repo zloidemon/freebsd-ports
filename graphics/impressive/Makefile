@@ -2,11 +2,11 @@
 # Date created:		2010-02-10
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/graphics/impressive/Makefile,v 1.1 2010/02/18 18:33:10 amdmi3 Exp $
+# $FreeBSD: ports/graphics/impressive/Makefile,v 1.2 2010/03/28 06:36:51 dinoex Exp $
 #
 
 PORTNAME=	impressive
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Impressive/${PORTVERSION}/
 DISTNAME=	Impressive-${PORTVERSION}
@@ -21,6 +21,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/wrapper.py:${PORTSDIR}/graphics/py-open
 		pdftk:${PORTSDIR}/print/pdftk \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		mplayer:${PORTSDIR}/multimedia/mplayer
+
+LICENSE=	GPLv2
 
 USE_PYTHON=	yes
 USE_GHOSTSCRIPT_RUN=	yes
