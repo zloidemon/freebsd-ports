@@ -37,10 +37,4 @@ do-configure:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${DATADIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

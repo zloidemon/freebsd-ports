@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cuberok
-PORTVERSION=	0.0.11
+PORTVERSION=	0.1.0
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -18,7 +18,10 @@ BUILD_DEPENDS=	audiere-config:${PORTSDIR}/audio/audiere \
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		avformat.1:${PORTSDIR}/multimedia/ffmpeg \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg \
-		tag.1:${PORTSDIR}/audio/taglib
+		tag.1:${PORTSDIR}/audio/taglib \
+		yajl.1:${PORTSDIR}/devel/yajl
+
+LICENSE=	GPLv3
 
 USE_QT_VER=	4
 USE_LDCONFIG=	yes
