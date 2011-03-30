@@ -2,11 +2,11 @@
 # Date created:		2010-05-18
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/tepsonic/Makefile,v 1.1 2010/05/19 20:43:01 makc Exp $
+# $FreeBSD: ports/audio/tepsonic/Makefile,v 1.2 2010/07/19 14:54:31 makc Exp $
 #
 
 PORTNAME=	tepsonic
-PORTVERSION=	0.97.0
+PORTVERSION=	0.98.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tepsonic.org/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -24,8 +24,8 @@ CMAKE_USE_PTHREAD=	yes
 QT_COMPONENTS=	gui xml sql phonon network linguist_build \
 		rcc_build qmake_build uic_build moc_build
 
-LICENSE=	GPLv3
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+LICENSE=	GPLv3
 
 .include <bsd.port.mk>

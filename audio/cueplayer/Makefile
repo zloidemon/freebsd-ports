@@ -2,11 +2,11 @@
 # Date created:		2010-01-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/cueplayer/Makefile,v 1.6 2010/06/03 08:54:54 netchild Exp $
+# $FreeBSD: ports/audio/cueplayer/Makefile,v 1.8 2010/09/23 16:40:29 erwin Exp $
 #
 
 PORTNAME=	cueplayer
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -37,4 +37,10 @@ do-configure:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>

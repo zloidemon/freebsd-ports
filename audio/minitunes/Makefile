@@ -2,7 +2,7 @@
 # Date created:		2010-07-06
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/minitunes/Makefile,v 1.1 2010/07/07 15:27:20 ashish Exp $
+# $FreeBSD: ports/audio/minitunes/Makefile,v 1.2 2010/07/23 19:35:12 sylvio Exp $
 #
 
 PORTNAME=	minitunes
