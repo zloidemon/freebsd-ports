@@ -1,8 +1,5 @@
-
-$FreeBSD: ports/graphics/zint/files/patch-backend_maxicode.c,v 1.1 2010/03/26 07:21:07 wen Exp $
-
---- backend/maxicode.c.orig
-+++ backend/maxicode.c
+--- backend/maxicode.c.orig	2011-03-30 15:17:49.000000000 +0800
++++ backend/maxicode.c	2011-03-30 15:18:15.000000000 +0800
 @@ -29,7 +29,6 @@
  #ifdef __APPLE__
  #include <sys/malloc.h> 
