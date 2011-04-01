@@ -16,8 +16,19 @@ COMMENT=	Open supervisory control and data acquisition project
 LICENSE=	GPLv2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/qt4" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		--with-qt4-dir=${LOCALBASE}/qt4 \
+		--with-firebird=no \
+		--disable-PostgreSQL \
+		--disable-FireBird \
+		--disable-System \
+		--disable-Siemens \
+		--disable-SoundCard \
+		--disable-Serial \
+		--disable-DiamondBoards \
+		--disable-DCON \
+		--disable-ICP_DAS
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

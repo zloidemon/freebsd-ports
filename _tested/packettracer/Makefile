@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	packettracer
-PORTVERSION=	5.2.1
+PORTVERSION=	5.3.2
 CATEGORIES=	emulators
 MASTER_SITES=	#
-DISTNAME=	PacketTracer521
+DISTNAME=	PacketTracer532_Generic_Fedora
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Graphical Cisco network simulator
@@ -42,6 +42,8 @@ DESKTOP_ENTRIES="PacketTracer" "Cisco Packet Tracer" \
 		"${PREFIX}/${PTDIR}/art/app.png" "${PORTNAME}" \
 		"Application;Network;" false
 
+WRKSRC=		${WRKDIR}/PacketTracer53
+
 post-extract:
 	@${REINPLACE_CMD} -e 's,III,${PREFIX}/${PTDIR},g' \
 		${WRKSRC}/tpl.*
@@ -51,7 +53,7 @@ post-extract:
 
 do-install:
 	@cd ${WRKSRC}/ && ${MKDIR} ${PREFIX}/${PTDIR} && \
-		${COPYTREE_SHARE} "LANGUAGES backgrounds extensions lib templates Sounds bin help saves art" ${PREFIX}/${PTDIR}/
+		${COPYTREE_SHARE} "LANGUAGES backgrounds extensions lib templates sounds bin help saves art" ${PREFIX}/${PTDIR}/
 	@${INSTALL_SCRIPT} ${WRKSRC}/tpl.linguist ${PREFIX}/${PTDIR}/linguist
 	@${INSTALL_SCRIPT} ${WRKSRC}/tpl.${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 

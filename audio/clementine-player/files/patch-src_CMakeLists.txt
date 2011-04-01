@@ -1,18 +1,18 @@
---- src/CMakeLists.txt.orig	2011-03-14 05:46:25.000000000 +0700
-+++ src/CMakeLists.txt	2011-03-29 00:48:19.000000000 +0800
-@@ -2,9 +2,9 @@
- set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
- set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverloaded-virtual -Wall -Wno-sign-compare")
+--- src/CMakeLists.txt.orig	2011-04-02 01:17:22.000000000 +0800
++++ src/CMakeLists.txt	2011-04-02 01:20:20.000000000 +0800
+@@ -5,9 +5,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} 
+ option(BUILD_WERROR "Build with -Werror" ON)
  
--if (LINUX)
-+if (UNIX AND NOT APPLE)
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
--endif (LINUX)
-+endif (UNIX AND NOT APPLE)
+ if(BUILD_WERROR)
+-  if (LINUX)
++  if (UNIX AND NOT APPLE)
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+-  endif (LINUX)
++  endif (UNIX AND NOT APPLE)
+ endif(BUILD_WERROR)
  
  include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
- include_directories(../3rdparty/gmock/gtest/include)
-@@ -879,7 +879,6 @@
+@@ -883,7 +883,6 @@ target_link_libraries(clementine_lib
    ${QTSINGLECOREAPPLICATION_LIBRARIES}
    ${QTIOCOMPRESSOR_LIBRARIES}
    ${CMAKE_THREAD_LIBS_INIT}
@@ -20,7 +20,7 @@
    z
  )
  
-@@ -978,14 +977,14 @@
+@@ -982,14 +981,14 @@ if (WIN32)
    )
  endif (WIN32)
  
@@ -38,10 +38,11 @@
  
  add_dependencies(clementine_lib qtsingleapplication)
  
-@@ -1012,6 +1011,7 @@
+@@ -1016,6 +1015,8 @@ add_executable(clementine
    ${CLEMENTINE-WIN32-RESOURCES}
    main.cpp
  )
++
 +set_target_properties(clementine PROPERTIES OUTPUT_NAME clementine-player)
  target_link_libraries(clementine
    clementine_lib
