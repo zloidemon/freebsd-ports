@@ -2,7 +2,7 @@
 # Date created:		2009-11-27
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/sysutils/hfsexplorer/Makefile,v 1.2 2010/11/27 17:26:26 rene Exp $
 #
 
 PORTNAME=	hfsexplorer
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-0_21-src
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images
 
-RUN_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 
 LICENSE=	GPLv3
 
@@ -25,7 +25,6 @@ DESKTOP_ENTRIES="hfsexplorer" "reader Mac-formatted harddisk" \
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
-NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}
 
@@ -35,7 +34,7 @@ do-configure:
 	@${REINPLACE_CMD} -e 's|lib|${DATADIR}/lib|g' \
 		${WRKSRC}/dist/runfsb.sh
 
-post-configure:
+do-build:
 	@cd ${WRKSRC} && ${SH} buildall.sh
 
 do-install:

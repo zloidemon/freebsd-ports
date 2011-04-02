@@ -2,12 +2,12 @@
 # Date created:		2010-03-24
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/cad/qelectrotech/Makefile,v 1.2 2010/09/28 13:07:47 ashish Exp $
 #
 
 PORTNAME=	qelectrotech
 PORTVERSION=	0.22
-CATEGORIES=	science
+CATEGORIES=	cad
 MASTER_SITES=	http://download.tuxfamily.org/qet/tags/20100313/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
@@ -15,9 +15,16 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	QElectroTech is application to design electric diagrams
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
-		network svg
+QT_COMPONENTS=	gui network svg xml \
+		moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+MAN1=		qelectrotech.1
+MANLANG=	"" es fr.ISO8859-1 fr.UTF-8 fr pt_PT
+MANCOMPRESSED=	yes
 
 do-configure:
 	${MV} ${WRKSRC}/man/files/pt ${WRKSRC}/man/files/pt_PT

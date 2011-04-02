@@ -4,12 +4,6 @@ bin/qelectrotech
 %%DOCSDIR%%/ELEMENTS.LICENSE
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/README
-man/es/man1/qelectrotech.1.gz
-man/fr.ISO8859-1/man1/qelectrotech.1.gz
-man/fr.UTF-8/man1/qelectrotech.1.gz
-man/fr/man1/qelectrotech.1.gz
-man/man1/qelectrotech.1.gz
-man/pt_PT/man1/qelectrotech.1.gz
 share/applications/qelectrotech.desktop
 share/icons/hicolor/128x128/apps/qelectrotech.png
 share/icons/hicolor/128x128/mimetypes/application-x-qet-element.png
@@ -309,12 +303,6 @@ share/mimelnk/application/x-qet-element.desktop
 @dirrm %%DATADIR%%/elements/automatisme/fonction
 @dirrm %%DATADIR%%/elements/automatisme
 @dirrm %%DATADIR%%/elements
-@dirrmtry man/fr.ISO8859-1/man1
-@dirrmtry man/fr.ISO8859-1
-@dirrmtry man/fr.UTF-8/man1
-@dirrmtry man/fr.UTF-8
-@dirrmtry man/pt_PT/man1
-@dirrmtry man/pt_PT
 @dirrmtry share/mime/application
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
@@ -344,5 +332,11 @@ share/mimelnk/application/x-qet-element.desktop
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry man/fr.ISO8859-1/man1
+@dirrmtry man/fr.ISO8859-1
+@dirrmtry man/fr.UTF-8/man1
+@dirrmtry man/fr.UTF-8
+@dirrmtry man/pt_PT/man1
+@dirrmtry man/pt_PT
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%

@@ -2,7 +2,7 @@
 # Date created:		2011-02-18
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/net-mgmt/glpi-plugins-fusioninventory-server/Makefile,v 1.1 2011/03/18 04:15:18 miwi Exp $
 #
 
 PORTNAME=	server

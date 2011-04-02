@@ -2,24 +2,27 @@
 # Date created:		2009-10-30
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/security/nmapsi4/Makefile,v 1.1 2010/01/31 13:43:16 miwi Exp $
+# $FreeBSD: ports/security/nmapsi4/Makefile,v 1.3 2010/12/13 00:11:29 pav Exp $
 #
 
 PORTNAME=	nmapsi4
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha3
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	GUI frontend for the nmap scanning utility
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
 
+LICENSE=	GPLv2
+
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
+INSTALLS_ICONS=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network linguist
+QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network \
+		linguist webkit
 
 post-install:
 	${CHMOD} 755 ${PREFIX}/bin/${PORTNAME}
