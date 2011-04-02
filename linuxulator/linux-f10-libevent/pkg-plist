@@ -1,8 +1,0 @@
-usr/lib/libevent-1.4.so.2
-usr/lib/libevent-1.4.so.2.1.0
-usr/lib/libevent_core-1.4.so.2
-usr/lib/libevent_core-1.4.so.2.1.0
-usr/lib/libevent_extra-1.4.so.2
-usr/lib/libevent_extra-1.4.so.2.1.0
-usr/share/doc/libevent-1.4.5/README
-@dirrm usr/share/doc/libevent-1.4.5
