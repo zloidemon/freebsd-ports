@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mediadownloader
-PORTVERSION=	1.4
+PORTVERSION=	1.5.0
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/googleimagedown/project/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
+MASTER_SITES=	SF/googleimagedown/project/v${PORTVERSION}-2/
+DISTNAME=	${PORTNAME}-v${PORTVERSION}-1-src
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Search and download as many images or videos
@@ -19,12 +19,13 @@ LICENSE=	GPLv3
 USE_BZIP2=	yes
 USE_GL=		gl glu
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui network moc_build opengl phonon \
-		rcc_build xml xmlpatterns webkit
-QMAKEPRO=	MediaDownloader.pro
-PLIST_FILES=	bin/MediaDownloader
+USE_GSTREAMER=	ffmpeg
+QT_COMPONENTS=	corelib dbus gui qmake network moc_build opengl \
+		phonon phonon-gst rcc_build xml xmlpatterns webkit
+QMAKEPRO=	${PORTNAME}.pro
+PLIST_FILES=	bin/${PORTNAME}
 
-WRKSRC=		${WRKDIR}/MediaDownloader
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}-src
 
 DESKTOP_ENTRIES="MediaDownloadre" "Search and download as many images \
 		or videos that fit your search criteria" \
