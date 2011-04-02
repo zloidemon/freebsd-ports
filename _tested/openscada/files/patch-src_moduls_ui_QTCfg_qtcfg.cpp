@@ -1,0 +1,79 @@
+--- src/moduls/ui/QTCfg/qtcfg.cpp.orig	2011-04-02 06:36:24.000000000 +0800
++++ src/moduls/ui/QTCfg/qtcfg.cpp	2011-04-02 06:38:48.000000000 +0800
+@@ -25,41 +25,41 @@
+ 
+ #include <config.h>
+ 
+-#include <QApplication>
+-#include <QToolTip>
+-#include <QTreeWidget>
+-#include <QHeaderView>
+-#include <QVBoxLayout>
+-#include <QPixmap>
+-#include <QSplitter>
+-#include <QLabel>
+-#include <QPushButton>
+-#include <QWhatsThis>
+-#include <QTabWidget>
+-#include <QGridLayout>
+-#include <QStatusBar>
+-#include <QAction>
+-#include <QMenuBar>
+-#include <QToolBar>
+-#include <QMenu>
+-#include <QTimer>
+-#include <QMessageBox>
+-#include <QGroupBox>
+-#include <QListWidget>
+-#include <QTableWidget>
+-#include <QComboBox>
+-#include <QHBoxLayout>
+-#include <QCheckBox>
+-#include <QTextEdit>
+-#include <QDateTime>
+-#include <QLineEdit>
+-#include <QErrorMessage>
+-#include <QScrollArea>
+-#include <QCloseEvent>
+-#include <QFileDialog>
+-#include <QScrollBar>
+-#include <QClipboard>
+-#include <QTextBrowser>
++#include <QtGui/QApplication>
++#include <QtGui/QToolTip>
++#include <QtGui/QTreeWidget>
++#include <QtGui/QHeaderView>
++#include <QtGui/QVBoxLayout>
++#include <QtGui/QPixmap>
++#include <QtGui/QSplitter>
++#include <QtGui/QLabel>
++#include <QtGui/QPushButton>
++#include <QtGui/QWhatsThis>
++#include <QtGui/QTabWidget>
++#include <QtGui/QGridLayout>
++#include <QtGui/QStatusBar>
++#include <QtGui/QAction>
++#include <QtGui/QMenuBar>
++#include <QtGui/QToolBar>
++#include <QtGui/QMenu>
++#include <QtCore/QTimer>
++#include <QtGui/QMessageBox>
++#include <QtGui/QGroupBox>
++#include <QtGui/QListWidget>
++#include <QtGui/QTableWidget>
++#include <QtGui/QComboBox>
++#include <QtGui/QHBoxLayout>
++#include <QtGui/QCheckBox>
++#include <QtGui/QTextEdit>
++#include <QtCore/QDateTime>
++#include <QtGui/QLineEdit>
++#include <QtGui/QErrorMessage>
++#include <QtGui/QScrollArea>
++#include <QtGui/QCloseEvent>
++#include <QtGui/QFileDialog>
++#include <QtGui/QScrollBar>
++#include <QtGui/QClipboard>
++#include <QtGui/QTextBrowser>
+ 
+ #include <tmess.h>
+ #include <tsys.h>

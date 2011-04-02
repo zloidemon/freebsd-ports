@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/qt4" \
 		--disable-Serial \
 		--disable-DiamondBoards \
 		--disable-DCON \
-		--disable-ICP_DAS
+		--disable-ICP_DAS \
+		--disable-SystemTests
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
