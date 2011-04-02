@@ -28,4 +28,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 LICENSE=	GPLv3
 
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/3rdparty/qxt/CMakeLists.txt
+
 .include <bsd.port.mk>
