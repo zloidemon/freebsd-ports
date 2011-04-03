@@ -2,28 +2,45 @@ bin/packettracer
 %%PTDIR%%/LANGUAGES/default.ptl
 %%PTDIR%%/LANGUAGES/default.ts
 %%PTDIR%%/LANGUAGES/template.ts
-%%PTDIR%%/Sounds/addPacketButton.wav
-%%PTDIR%%/Sounds/addPacketDevice.wav
-%%PTDIR%%/Sounds/cancelButton.wav
-%%PTDIR%%/Sounds/colorChangeButton.wav
-%%PTDIR%%/Sounds/connect1.wav
-%%PTDIR%%/Sounds/connect2.wav
-%%PTDIR%%/Sounds/deleteScenarioButton.wav
-%%PTDIR%%/Sounds/devicePlacement.wav
-%%PTDIR%%/Sounds/devicePower.wav
-%%PTDIR%%/Sounds/errorMsg.wav
-%%PTDIR%%/Sounds/movieControlButton.wav
-%%PTDIR%%/Sounds/newScenarioButton.wav
-%%PTDIR%%/Sounds/packetCrash.wav
-%%PTDIR%%/Sounds/packetMove.wav
-%%PTDIR%%/Sounds/popUp.wav
-%%PTDIR%%/Sounds/pullDown.wav
-%%PTDIR%%/Sounds/removeDevice.wav
-%%PTDIR%%/Sounds/removeLink.wav
-%%PTDIR%%/Sounds/removePacketButton.wav
-%%PTDIR%%/Sounds/rollOverIcon.wav
-%%PTDIR%%/Sounds/simulationTab.wav
-%%PTDIR%%/Sounds/topologyTab.wav
+%%PTDIR%%/sounds/addPacketButton.wav
+%%PTDIR%%/sounds/addPacketDevice.wav
+%%PTDIR%%/sounds/cancelButton.wav
+%%PTDIR%%/sounds/colorChangeButton.wav
+%%PTDIR%%/sounds/connect1.wav
+%%PTDIR%%/sounds/connect2.wav
+%%PTDIR%%/sounds/deleteScenarioButton.wav
+%%PTDIR%%/sounds/devicePlacement.wav
+%%PTDIR%%/sounds/devicePower.wav
+%%PTDIR%%/sounds/errorMsg.wav
+%%PTDIR%%/sounds/movieControlButton.wav
+%%PTDIR%%/sounds/newScenarioButton.wav
+%%PTDIR%%/sounds/packetCrash.wav
+%%PTDIR%%/sounds/packetMove.wav
+%%PTDIR%%/sounds/popUp.wav
+%%PTDIR%%/sounds/pullDown.wav
+%%PTDIR%%/sounds/removeDevice.wav
+%%PTDIR%%/sounds/removeLink.wav
+%%PTDIR%%/sounds/removePacketButton.wav
+%%PTDIR%%/sounds/rollOverIcon.wav
+%%PTDIR%%/sounds/simulationTab.wav
+%%PTDIR%%/sounds/topologyTab.wav
+%%PTDIR%%/sounds/do.wav
+%%PTDIR%%/sounds/mi.wav
+%%PTDIR%%/sounds/re.wav
+%%PTDIR%%/sounds/busy.wav
+%%PTDIR%%/sounds/dialtone.wav
+%%PTDIR%%/sounds/ipPhoneringIn.wav
+%%PTDIR%%/sounds/ipPhoneringOut.wav
+%%PTDIR%%/sounds/phone-0.wav
+%%PTDIR%%/sounds/phone-1.wav
+%%PTDIR%%/sounds/phone-2.wav
+%%PTDIR%%/sounds/phone-3.wav
+%%PTDIR%%/sounds/phone-4.wav
+%%PTDIR%%/sounds/phone-5.wav
+%%PTDIR%%/sounds/phone-6.wav
+%%PTDIR%%/sounds/phone-7.wav
+%%PTDIR%%/sounds/phone-8.wav
+%%PTDIR%%/sounds/phone-9.wav
 %%PTDIR%%/art/Activity/gActivityWizardHat.xpm
 %%PTDIR%%/art/Activity/gLockOff.png
 %%PTDIR%%/art/Activity/gLockOn.png
@@ -242,7 +259,6 @@ bin/packettracer
 %%PTDIR%%/art/PhysicalView/Devices/iRealFrontRouter2811.png
 %%PTDIR%%/art/PhysicalView/Devices/iRealFrontRouter2811_50.png
 %%PTDIR%%/art/PhysicalView/Devices/iRealIPPhone7960.png
-%%PTDIR%%/art/PhysicalView/Devices/iRealIPPhone7960_50.png
 %%PTDIR%%/art/PhysicalView/Devices/iRealLaptop.png
 %%PTDIR%%/art/PhysicalView/Devices/iRealLinkSysRouter.png
 %%PTDIR%%/art/PhysicalView/Devices/iRealLinkSysRouter_50.png
@@ -270,7 +286,6 @@ bin/packettracer
 %%PTDIR%%/art/PhysicalView/Devices/iRealSwitch3560Back.png
 %%PTDIR%%/art/PhysicalView/Devices/iRealSwitch3560Front.png
 %%PTDIR%%/art/PhysicalView/Devices/iRealWorkstation.png
-%%PTDIR%%/art/PhysicalView/Devices/iRealWorkstation_50.png
 %%PTDIR%%/art/PhysicalView/gModuleNM-16AM-V2.xpm
 %%PTDIR%%/art/PhysicalView/gModuleNM-16AM.xpm
 %%PTDIR%%/art/PhysicalView/gModuleNM-1E-1.xpm
@@ -590,6 +605,107 @@ bin/packettracer
 %%PTDIR%%/art/userCreatedPDU/iAddComplexPacket.png
 %%PTDIR%%/art/userCreatedPDU/iAddSimplePacket.png
 %%PTDIR%%/art/userCreatedPDU/iOpenListWindowBtn.png
+%%PTDIR%%/art/Workstation/TextEditor.xpm
+%%PTDIR%%/art/Workstation/PPPoEDialer.xpm
+%%PTDIR%%/art/Workstation/PPPoE.xpm
+%%PTDIR%%/art/Workstation/EmailClient.xpm
+%%PTDIR%%/art/Workstation/IPCommunicatorRingOut.png
+%%PTDIR%%/art/Workstation/IPCommunicatorReceivedCallsMore.png
+%%PTDIR%%/art/Workstation/IPCommunicatorReceivedCalls.png
+%%PTDIR%%/art/Workstation/IPCommunicatorPlacedCallsMore.png
+%%PTDIR%%/art/Workstation/IPCommunicatorPlacedCalls.png
+%%PTDIR%%/art/Workstation/IPCommunicatorNewCall.png
+%%PTDIR%%/art/Workstation/IPCommunicatorMissedCallsMore.png
+%%PTDIR%%/art/Workstation/IPCommunicatorMissedCalls.png
+%%PTDIR%%/art/Workstation/IPCommunicatorMenu.png
+%%PTDIR%%/art/Workstation/IPCommunicatorInitScreen.png
+%%PTDIR%%/art/Workstation/IPCommunicatorEnterNumber.png
+%%PTDIR%%/art/Workstation/IPCommunicatorBusy.png
+%%PTDIR%%/art/Workstation/IPCommunicatorAnsweredCall.png
+%%PTDIR%%/art/Workstation/IPCommunicatorAnswer.png
+%%PTDIR%%/art/Workstation/IPCommunicator.xpm
+%%PTDIR%%/art/Workstation/DSLDialer.xpm
+%%PTDIR%%/art/Workspace/Logical/iWirelessEndDevice.png
+%%PTDIR%%/art/Workspace/Logical/iWiredEndDevice.png
+%%PTDIR%%/art/Workspace/Logical/iWebcam.png
+%%PTDIR%%/art/Workspace/Logical/iTabletPC.png
+%%PTDIR%%/art/Workspace/Logical/iTV.png
+%%PTDIR%%/art/Workspace/Logical/iPda.png
+%%PTDIR%%/art/Workspace/Logical/iMicrophone.png
+%%PTDIR%%/art/Workspace/Logical/iHomeVoip.png
+%%PTDIR%%/art/Workspace/Logical/iHeadset.png
+%%PTDIR%%/art/Workspace/Logical/iHeadphone.png
+%%PTDIR%%/art/Workspace/Logical/iHardDrive.png
+%%PTDIR%%/art/Workspace/Logical/iCoaxialSplitter.png
+%%PTDIR%%/art/Workspace/Logical/iAnalogPhone.png
+%%PTDIR%%/art/Simulation/PDUGraphics/gPacketqosEmptyMask.xpm
+%%PTDIR%%/art/PhysicalView/Devices/iRealWirelessEndDevice.png
+%%PTDIR%%/art/PhysicalView/Devices/iRealWiredEndDevice.png
+%%PTDIR%%/art/PhysicalView/Devices/iRealTabletPC.png
+%%PTDIR%%/art/PhysicalView/Devices/iRealTV-Front.png
+%%PTDIR%%/art/PhysicalView/Devices/iRealTV-Back.png
+%%PTDIR%%/art/PhysicalView/Devices/iRealPda.png
+%%PTDIR%%/art/PhysicalView/Devices/iRealHomeVoip.png
+%%PTDIR%%/art/PhysicalView/Devices/iRealAnalogPhone.png
+%%PTDIR%%/art/PhysicalView/Devices/iPTCoaxialSplitter.png
+%%PTDIR%%/art/PhysicalView/Devices/PowerOnWirelessEndDevice.png
+%%PTDIR%%/art/PhysicalView/Devices/PowerOnWiredEndDevice.png
+%%PTDIR%%/art/PhysicalView/Devices/PowerOnTabletPC.png
+%%PTDIR%%/art/PhysicalView/Devices/PowerOnPda.png
+%%PTDIR%%/art/PhysicalView/Devices/PowerOffWirelessEndDevice.png
+%%PTDIR%%/art/PhysicalView/Devices/PowerOffWiredEndDevice.png
+%%PTDIR%%/art/PhysicalView/Devices/PowerOffTabletPC.png
+%%PTDIR%%/art/PhysicalView/Devices/PowerOffPda.png
+%%PTDIR%%/art/PhysicalView/Devices/IPPhonePowerOn.png
+%%PTDIR%%/art/PhysicalView/Devices/HandsetPowerOn.png
+%%PTDIR%%/art/PhysicalView/gPTWirelessEndDeviceNM-1W.xpm
+%%PTDIR%%/art/PhysicalView/gPTWirelessEndDeviceNM-1FGE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWirelessEndDeviceNM-1FFE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWirelessEndDeviceNM-1CGE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWirelessEndDeviceNM-1CFE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWirelessEndDeviceNM-1CE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWirelessEndDeviceNM-1AM.xpm
+%%PTDIR%%/art/PhysicalView/gPTWiredEndDeviceNM-1W.xpm
+%%PTDIR%%/art/PhysicalView/gPTWiredEndDeviceNM-1FGE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWiredEndDeviceNM-1FFE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWiredEndDeviceNM-1CGE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWiredEndDeviceNM-1CFE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWiredEndDeviceNM-1CE.xpm
+%%PTDIR%%/art/PhysicalView/gPTWiredEndDeviceNM-1AM.xpm
+%%PTDIR%%/art/PhysicalView/gPTTabletPCNM-1W.xpm
+%%PTDIR%%/art/PhysicalView/gPTTabletPCNM-1FGE.xpm
+%%PTDIR%%/art/PhysicalView/gPTTabletPCNM-1FFE.xpm
+%%PTDIR%%/art/PhysicalView/gPTTabletPCNM-1CGE.xpm
+%%PTDIR%%/art/PhysicalView/gPTTabletPCNM-1CFE.xpm
+%%PTDIR%%/art/PhysicalView/gPTTabletPCNM-1CE.xpm
+%%PTDIR%%/art/PhysicalView/gPTTabletPCNM-1AM.xpm
+%%PTDIR%%/art/PhysicalView/gPTPdaNM-1W.xpm
+%%PTDIR%%/art/PhysicalView/gPTPdaNM-1FGE.xpm
+%%PTDIR%%/art/PhysicalView/gPTPdaNM-1FFE.xpm
+%%PTDIR%%/art/PhysicalView/gPTPdaNM-1CGE.xpm
+%%PTDIR%%/art/PhysicalView/gPTPdaNM-1CFE.xpm
+%%PTDIR%%/art/PhysicalView/gPTPdaNM-1CE.xpm
+%%PTDIR%%/art/PhysicalView/gPTPdaNM-1AM.xpm
+%%PTDIR%%/art/PhysicalView/gPTIPPhone_PowerSupply.png
+%%PTDIR%%/art/PhysicalView/gPTHostMicrophone.png
+%%PTDIR%%/art/PhysicalView/gPTHostHeadset.png
+%%PTDIR%%/art/PhysicalView/gPTHostHardDrive.png
+%%PTDIR%%/art/PhysicalView/gPTHostCamera.png
+%%PTDIR%%/art/PhysicalView/gModuleHWIC-AP-AG-B.xpm
+%%PTDIR%%/art/IPPhone/IPPhoneFrontNoHandset.png
+%%PTDIR%%/art/IPPhone/IPPhoneFront.png
+%%PTDIR%%/art/IPPhone/Handset.png
+%%PTDIR%%/art/IPPhone/AnalogPhoneNoHandset.png
+%%PTDIR%%/art/IPPhone/AnalogPhone.png
+%%PTDIR%%/art/ComponentBox/SpecificHomeVoip_40x40.png
+%%PTDIR%%/art/ComponentBox/SpecificArtificialWirelessEndDevice_40x40.xpm
+%%PTDIR%%/art/ComponentBox/SpecificArtificialWiredEndDevice_40x40.xpm
+%%PTDIR%%/art/ComponentBox/SpecificArtificialTabletPC_40x40.xpm
+%%PTDIR%%/art/ComponentBox/SpecificArtificialTV_40x40.xpm
+%%PTDIR%%/art/ComponentBox/SpecificArtificialPda_40x40.xpm
+%%PTDIR%%/art/ComponentBox/SpecificAnalogPhone_40x40.png
+%%PTDIR%%/art/ComponentBox/CoaxialSplitter.png
+%%PTDIR%%/art/CloseButton.xpm
 %%PTDIR%%/backgrounds/building/gGeoViewBuilding.png
 %%PTDIR%%/backgrounds/city/gCiscoCampus.jpg
 %%PTDIR%%/backgrounds/city/gGeoViewCity.png
@@ -615,13 +731,20 @@ bin/packettracer
 %%PTDIR%%/bin/linguist
 %%PTDIR%%/bin/unzip
 %%PTDIR%%/bin/zip
+%%PTDIR%%/extensions/scriptTemplates/StpTree.ptst
+%%PTDIR%%/extensions/scriptTemplates/PcSoftware.ptst
+%%PTDIR%%/extensions/scriptTemplates/PT52Activity.ptst
+%%PTDIR%%/extensions/scriptTemplates/MuGameServer.ptst
+%%PTDIR%%/extensions/scriptTemplates/MuGameClient.ptst
+%%PTDIR%%/extensions/scriptTemplates/Chat.ptst
+%%PTDIR%%/extensions/PcSoftware/PcSoftware.pts
+%%PTDIR%%/extensions/ptaplayer/ptaplayer-014.02.jar
 %%PTDIR%%/extensions/PTUpdater/PTUpdater
 %%PTDIR%%/extensions/PTUpdater/PTUpdater.pta
 %%PTDIR%%/extensions/PTUpdater/files/updates.xml
 %%PTDIR%%/extensions/PTUpdater/patch
 %%PTDIR%%/extensions/PTUpdater/update_url.txt
 %%PTDIR%%/extensions/meta
-%%PTDIR%%/extensions/ptaplayer/ptaplayer-011.01.jar
 %%PTDIR%%/extensions/ptaplayer/ptaplayer.pta
 %%PTDIR%%/extensions/upnp/LICENSE
 %%PTDIR%%/extensions/upnp/upnp
@@ -653,6 +776,15 @@ bin/packettracer
 %%PTDIR%%/help/default/config_servers.htm
 %%PTDIR%%/help/default/config_switches.htm
 %%PTDIR%%/help/default/config_wrt300n.htm
+%%PTDIR%%/help/default/images/config_servers_11.jpg
+%%PTDIR%%/help/default/images/config_servers_10.jpg
+%%PTDIR%%/help/default/images/config_PCs_15.jpg
+%%PTDIR%%/help/default/images/config_PCs_14.jpg
+%%PTDIR%%/help/default/images/config_PCs_13.jpg
+%%PTDIR%%/help/default/images/config_PCs_12.jpg
+%%PTDIR%%/help/default/images/config_clouds_4.jpg
+%%PTDIR%%/help/default/images/activityWizard_initialNetwork_3.jpg
+%%PTDIR%%/help/default/images/Thumbs.db
 %%PTDIR%%/help/default/configuringDevices.htm
 %%PTDIR%%/help/default/connectionsLinks.htm
 %%PTDIR%%/help/default/copyrights.htm
@@ -737,6 +869,21 @@ bin/packettracer
 %%PTDIR%%/help/default/flowcharts/outside_nat_send.jpg
 %%PTDIR%%/help/default/flowcharts/qos.jpg
 %%PTDIR%%/help/default/flowcharts/tcp_sending.jpg
+%%PTDIR%%/help/default/flowcharts/VoIP_remote_call_flowchart.jpg
+%%PTDIR%%/help/default/flowcharts/VoIP_registration_flowchart.jpg
+%%PTDIR%%/help/default/flowcharts/Thumbs.db
+%%PTDIR%%/help/default/flowcharts/SMTPServerReceivePacket.jpg
+%%PTDIR%%/help/default/flowcharts/SMTPClientReceivePacket.jpg
+%%PTDIR%%/help/default/flowcharts/pppoeNegotiation.jpg
+%%PTDIR%%/help/default/flowcharts/POP3ServerReceivePacket.jpg
+%%PTDIR%%/help/default/flowcharts/POP3ClientReceivePacket.jpg
+%%PTDIR%%/help/default/flowcharts/FTPServerReceivePacket.jpg
+%%PTDIR%%/help/default/flowcharts/FTPClientReceivePacket.jpg
+%%PTDIR%%/help/default/flowcharts/bgp_rcvd_update.jpg
+%%PTDIR%%/help/default/flowcharts/bgp_rcvd_open.jpg
+%%PTDIR%%/help/default/flowcharts/bgp_rcvd_notice.jpg
+%%PTDIR%%/help/default/flowcharts/bgp_rcvd_keepalive.jpg
+%%PTDIR%%/help/default/flowcharts/bgp_decision_process.jpg
 %%PTDIR%%/help/default/gettingStarted.htm
 %%PTDIR%%/help/default/images/100x100grid.jpg
 %%PTDIR%%/help/default/images/10x10grid.jpg
@@ -761,7 +908,6 @@ bin/packettracer
 %%PTDIR%%/help/default/images/activityWizard_answerNetwork_3.jpg
 %%PTDIR%%/help/default/images/activityWizard_answerNetwork_4.jpg
 %%PTDIR%%/help/default/images/activityWizard_answerNetwork_5.jpg
-%%PTDIR%%/help/default/images/activityWizard_answerNetwork_6.jpg
 %%PTDIR%%/help/default/images/activityWizard_initialNetwork_1.jpg
 %%PTDIR%%/help/default/images/activityWizard_initialNetwork_2.jpg
 %%PTDIR%%/help/default/images/activityWizard_instructions_1.jpg
@@ -874,10 +1020,8 @@ bin/packettracer
 %%PTDIR%%/help/default/images/myFirstPTLab_5.jpg
 %%PTDIR%%/help/default/images/myFirstPTLab_6.jpg
 %%PTDIR%%/help/default/images/phone.jpg
-%%PTDIR%%/help/default/images/physical/7960.jpg
 %%PTDIR%%/help/default/images/physical/WF_gModuleNM-1E2W.jpg
 %%PTDIR%%/help/default/images/physical/WF_gModuleNM-1FE2W.jpg
-%%PTDIR%%/help/default/images/physical/big/7960.jpg
 %%PTDIR%%/help/default/images/physical/big/PowerOff.jpg
 %%PTDIR%%/help/default/images/physical/big/PowerOffHor.jpg
 %%PTDIR%%/help/default/images/physical/big/PowerOffPC.jpg
@@ -985,6 +1129,38 @@ bin/packettracer
 %%PTDIR%%/help/default/images/physical/big/iRealSwitch2960_24TT.jpg
 %%PTDIR%%/help/default/images/physical/big/iRealSwitch3560.jpg
 %%PTDIR%%/help/default/images/physical/big/iRealWorkstation.jpg
+%%PTDIR%%/help/default/images/physical/big/Thumbs.db
+%%PTDIR%%/help/default/images/physical/big/iRealWirelessEndDevice.jpg
+%%PTDIR%%/help/default/images/physical/big/iRealWiredEndDevice.jpg
+%%PTDIR%%/help/default/images/physical/big/iRealTV-Front.jpg
+%%PTDIR%%/help/default/images/physical/big/iRealTabletPC.jpg
+%%PTDIR%%/help/default/images/physical/big/iRealPda.jpg
+%%PTDIR%%/help/default/images/physical/big/iRealIPPhone7960.jpg
+%%PTDIR%%/help/default/images/physical/big/iRealHomeVoip.jpg
+%%PTDIR%%/help/default/images/physical/big/iRealAnalogPhone.jpg
+%%PTDIR%%/help/default/images/physical/big/iPTCoaxialSplitter.jpg
+%%PTDIR%%/help/default/images/physical/big/gPTIPPhone_PowerSupply.jpg
+%%PTDIR%%/help/default/images/physical/big/gPTHostMicrophone.jpg
+%%PTDIR%%/help/default/images/physical/big/gPTHostHeadset.jpg
+%%PTDIR%%/help/default/images/physical/big/gPTHostHardDrive.jpg
+%%PTDIR%%/help/default/images/physical/big/gPTHostCamera.jpg
+%%PTDIR%%/help/default/images/physical/big/gModuleHWIC-AP-AG-B.jpg
+%%PTDIR%%/help/default/images/physical/Thumbs.db
+%%PTDIR%%/help/default/images/physical/iRealWirelessEndDevice.jpg
+%%PTDIR%%/help/default/images/physical/iRealWiredEndDevice.jpg
+%%PTDIR%%/help/default/images/physical/iRealTV-Front.jpg
+%%PTDIR%%/help/default/images/physical/iRealTabletPC.jpg
+%%PTDIR%%/help/default/images/physical/iRealPda.jpg
+%%PTDIR%%/help/default/images/physical/iRealIPPhone7960.jpg
+%%PTDIR%%/help/default/images/physical/iRealHomeVoip.jpg
+%%PTDIR%%/help/default/images/physical/iRealAnalogPhone.jpg
+%%PTDIR%%/help/default/images/physical/iPTCoaxialSplitter.jpg
+%%PTDIR%%/help/default/images/physical/gPTIPPhone_PowerSupply.jpg
+%%PTDIR%%/help/default/images/physical/gPTHostMicrophone.jpg
+%%PTDIR%%/help/default/images/physical/gPTHostHeadset.jpg
+%%PTDIR%%/help/default/images/physical/gPTHostHardDrive.jpg
+%%PTDIR%%/help/default/images/physical/gPTHostCamera.jpg
+%%PTDIR%%/help/default/images/physical/gModuleHWIC-AP-AG-B.jpg
 %%PTDIR%%/help/default/images/physical/gModuleNM-16AM-V2.jpg
 %%PTDIR%%/help/default/images/physical/gModuleNM-16AM.jpg
 %%PTDIR%%/help/default/images/physical/gModuleNM-1E-1.jpg
@@ -1265,6 +1441,47 @@ bin/packettracer
 %%PTDIR%%/help/default/zoom.zcfg
 %%PTDIR%%/help/default/zoom_index.js
 %%PTDIR%%/help/default/zoom_pageinfo.js
+%%PTDIR%%/saves/Wireless/802_11a_b_g_n.pkt
+%%PTDIR%%/saves/Voice_IPPhone/voip_remote.pkt
+%%PTDIR%%/saves/Voice_IPPhone/voip_local_all_phone_devices.pkt
+%%PTDIR%%/saves/Voice_IPPhone/voip_local_4.pkt
+%%PTDIR%%/saves/Voice_IPPhone/voip_local.pkt
+%%PTDIR%%/saves/Voice_IPPhone/linksys.pkt
+%%PTDIR%%/saves/Voice_IPPhone/Voip_registration_usingServerAsDhcpServer.pkt
+%%PTDIR%%/saves/Voice_IPPhone/VoipUsingDhcpServer_local_all_phone_devices.pkt
+%%PTDIR%%/saves/TV/tvcoaxiatpcserver.pkt
+%%PTDIR%%/saves/TV/logo.gif
+%%PTDIR%%/saves/TV/image.jpg
+%%PTDIR%%/saves/TCP_IP/TCP_IP.pkt
+%%PTDIR%%/saves/Server/TFTP/TFTP.pkt
+%%PTDIR%%/saves/Server/Mail/mail_2Server_2PC.pkt
+%%PTDIR%%/saves/Server/HTTPS/logo.gif
+%%PTDIR%%/saves/Server/HTTPS/image.jpg
+%%PTDIR%%/saves/Server/HTTPS/HTTPS.pkt
+%%PTDIR%%/saves/Server/FTP/FTP.pkt
+%%PTDIR%%/saves/Server/DNS/Multilevel_DNS.pkt
+%%PTDIR%%/saves/Server/AAA/AAA_Tacas_Server.pkt
+%%PTDIR%%/saves/Server/AAA/AAA_Simple_Authentication.pkt
+%%PTDIR%%/saves/Server/AAA/AAA_Radius_Server.pkt
+%%PTDIR%%/saves/Security/Tunnel_No_Ipsec.pkt
+%%PTDIR%%/saves/Security/Ipsec2.pkt
+%%PTDIR%%/saves/Security/Ipsec.pkt
+%%PTDIR%%/saves/Security/GRE_Over_IPSec_EIGRP.pkt
+%%PTDIR%%/saves/Router/ZFW/ZFW.pkt
+%%PTDIR%%/saves/Router/Wireless/wpa_psk_test.pkt
+%%PTDIR%%/saves/Router/Wireless/wpa_eap_test.pkt
+%%PTDIR%%/saves/Router/Wireless/wep_test.pkt
+%%PTDIR%%/saves/Router/QoS/QoS.pkt
+%%PTDIR%%/saves/Router/PPPOE/wireless.pppoe.pkt
+%%PTDIR%%/saves/Router/PPPOE/client.server.modem.pppoe.pkt
+%%PTDIR%%/saves/Router/NAT/Outside_Nat.pkt
+%%PTDIR%%/saves/Router/DHCP/DHCP.pkt
+%%PTDIR%%/saves/Router/CBAC/CBAC_3Routers.pkt
+%%PTDIR%%/saves/Router/CBAC/CBAC_3Interface.pkt
+%%PTDIR%%/saves/PC/VPN/Vpn_Easy.pkt
+%%PTDIR%%/saves/PC/MIB_Browser/SNMP_Router.pkt
+%%PTDIR%%/saves/Linksys/dhcp_linksys_server.pkt
+%%PTDIR%%/saves/Linksys/Linksys_Access_Restriction.pkt
 %%PTDIR%%/lib/libQt3Support.so
 %%PTDIR%%/lib/libQt3Support.so.4
 %%PTDIR%%/lib/libQt3Support.so.4.4
@@ -1302,34 +1519,35 @@ bin/packettracer
 %%PTDIR%%/lib/libQtXml.so.4.4
 %%PTDIR%%/lib/libQtXml.so.4.4.3
 %%PTDIR%%/linguist
-%%PTDIR%%/saves/802_11a_b_g_n.pkt
-%%PTDIR%%/saves/AAA_Radius_Server.pkt
-%%PTDIR%%/saves/AAA_Simple_Authentication.pkt
-%%PTDIR%%/saves/AAA_Tacas_Server.pkt
-%%PTDIR%%/saves/CBAC_3Interface.pkt
-%%PTDIR%%/saves/CBAC_3Routers.pkt
-%%PTDIR%%/saves/DHCP.pkt
-%%PTDIR%%/saves/GRE_Over_IPSec_EIGRP.pkt
-%%PTDIR%%/saves/HTTPS.pkt
-%%PTDIR%%/saves/Ipsec.pkt
-%%PTDIR%%/saves/Ipsec2.pkt
-%%PTDIR%%/saves/Linksys_Access_Restriction.pkt
-%%PTDIR%%/saves/Multilevel_DNS.pkt
-%%PTDIR%%/saves/Outside_Nat.pkt
-%%PTDIR%%/saves/QoS.pkt
-%%PTDIR%%/saves/SNMP_Router.pkt
-%%PTDIR%%/saves/TCP_IP.pkt
-%%PTDIR%%/saves/TFTP.pkt
-%%PTDIR%%/saves/Tunnel_No_Ipsec.pkt
-%%PTDIR%%/saves/Vpn_Easy.pkt
-%%PTDIR%%/saves/ZFW.pkt
-%%PTDIR%%/saves/image.jpg
-%%PTDIR%%/saves/logo.gif
 %%PTDIR%%/templates/1841_WIC_2T.ptd
 %%PTDIR%%/templates/2621XM_NM_2FE2W_2_WIC_2T.ptd
 %%PTDIR%%/templates/2811_NM_ESW_161_2_WIC_2T.ptd
 %%PTDIR%%/templates/Wireless_PC.ptd
 @dirrm %%PTDIR%%/templates
+@dirrm %%PTDIR%%/saves/Wireless
+@dirrm %%PTDIR%%/saves/Voice_IPPhone
+@dirrm %%PTDIR%%/saves/TV
+@dirrm %%PTDIR%%/saves/TCP_IP
+@dirrm %%PTDIR%%/saves/Server/TFTP
+@dirrm %%PTDIR%%/saves/Server/Mail
+@dirrm %%PTDIR%%/saves/Server/HTTPS
+@dirrm %%PTDIR%%/saves/Server/FTP
+@dirrm %%PTDIR%%/saves/Server/DNS
+@dirrm %%PTDIR%%/saves/Server/AAA
+@dirrm %%PTDIR%%/saves/Server
+@dirrm %%PTDIR%%/saves/Security
+@dirrm %%PTDIR%%/saves/Router/ZFW
+@dirrm %%PTDIR%%/saves/Router/Wireless
+@dirrm %%PTDIR%%/saves/Router/QoS
+@dirrm %%PTDIR%%/saves/Router/PPPOE
+@dirrm %%PTDIR%%/saves/Router/NAT
+@dirrm %%PTDIR%%/saves/Router/DHCP
+@dirrm %%PTDIR%%/saves/Router/CBAC
+@dirrm %%PTDIR%%/saves/Router
+@dirrm %%PTDIR%%/saves/PC/VPN
+@dirrm %%PTDIR%%/saves/PC/MIB_Browser
+@dirrm %%PTDIR%%/saves/PC
+@dirrm %%PTDIR%%/saves/Linksys
 @dirrm %%PTDIR%%/saves
 @dirrm %%PTDIR%%/lib
 @dirrm %%PTDIR%%/help/default/tutorials/RealtimeAndSimulation
@@ -1348,6 +1566,8 @@ bin/packettracer
 @dirrm %%PTDIR%%/help/default
 @dirrm %%PTDIR%%/help
 @dirrm %%PTDIR%%/extensions/upnp
+@dirrm %%PTDIR%%/extensions/scriptTemplates
+@dirrm %%PTDIR%%/extensions/PcSoftware
 @dirrm %%PTDIR%%/extensions/ptaplayer
 @dirrm %%PTDIR%%/extensions/PTUpdater/files
 @dirrm %%PTDIR%%/extensions/PTUpdater
@@ -1361,6 +1581,11 @@ bin/packettracer
 @dirrm %%PTDIR%%/backgrounds/city
 @dirrm %%PTDIR%%/backgrounds/building
 @dirrm %%PTDIR%%/backgrounds
+@dirrm %%PTDIR%%/art/nwc/controls
+@dirrm %%PTDIR%%/art/nwc/awards
+@dirrm %%PTDIR%%/art/nwc/arrows
+@dirrm %%PTDIR%%/art/nwc
+@dirrm %%PTDIR%%/art/IPPhone
 @dirrm %%PTDIR%%/art/userCreatedPDU
 @dirrm %%PTDIR%%/art/html/linksys
 @dirrm %%PTDIR%%/art/html
@@ -1405,6 +1630,6 @@ bin/packettracer
 @dirrm %%PTDIR%%/art/Background
 @dirrm %%PTDIR%%/art/Activity
 @dirrm %%PTDIR%%/art
-@dirrm %%PTDIR%%/Sounds
+@dirrm %%PTDIR%%/sounds
 @dirrm %%PTDIR%%/LANGUAGES
 @dirrm %%PTDIR%%
