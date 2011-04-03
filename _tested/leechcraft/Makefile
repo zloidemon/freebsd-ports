@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	leechcraft
-PORTVERSION=	0.3.75
+PORTVERSION=	0.4.75
 CATEGORIES=	misc
-MASTER_SITES=	SF/${PORTNAME}/LeechCraft/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/LeechCraft/snapshots/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_rc${LC_DATE}
 
 MAINTAINER=	g.veniamin@googlemail.com
@@ -16,7 +16,7 @@ COMMENT=	Cross-platform modular internet-client
 
 LICENSE=	GPLv3
 
-LC_DATE=	20100713
+LC_DATE=	20110329
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
@@ -29,26 +29,19 @@ OPTIONS=	SUMMARY "shows a handy summary of the stuff going on" on \
 		TORRENT "BitTorrent client" on \
 		AGGREGATOR "RSS/Atom feed reader" on \
 		POSHUKU "WWW Browser" on \
-		NUFELLA "Gnutella/Gnutella2 client (devel)" off \
 		HTTP "HTTP implementation" on \
-		FTP "FTP client" on \
 		LMP "LeechCraft Media Previewer" on \
 		DBUSMANAGER "D-Bus support for the LeechCraft" on \
 		DEADLYRICS "client for the lyricwiki.org site" on \
 		SEEKTHRU "client for the OpenSearch-aware(dont work)" off\
 		NETWORKMONITOR "monitor for HTTP requests" on \
 		HISTORYHOLDER "keeper of the history" on \
-		CHATTER "simple IRC client" on \
-		YASD "Yet Another Site Downloader (devel)" off \
-		REMOTER "remote access manager (devel)" off \
 		NEWLIFE "settings importer" on \
 		ANHERO "crash handler" on \
 		VGRABBER "vkontakte.ru music/video getter" on \
-		POC "text editor (devel)" off \
 		KINOTIFY "fancy kinetic notifications" on \
 		AUSCRIE "auto screenshooter" on \
 		TABPP "enhanced tab manager" on \
-		EISKALTDCPP "EiskaltDC++ client (devel)" off \
 		AZOTH "IM client (devel)" off \
 		SECMAN "security & personal data manager (devel)" off \
 		QROSP "scripting support plugin (devel)" off \
@@ -89,27 +82,11 @@ PLIST_SUB+=	POSHUKU=""
 QT_COMPONENTS+=	webkit
 .endif
 
-.if defined(WITHOUT_NUFELLA)
-PLIST_SUB+=	NUFELLA="@comment "
-.else
-PLIST_SUB+=	NUFELLA=""
-CMAKE_ARGS+=	-DENABLE_NUFELLA=ON
-IGNORE=		Sorry does not work now
-.endif
-
 .if defined(WITHOUT_HTTP)
 CMAKE_ARGS+=	-DENABLE_HTTP=OFF
 PLIST_SUB+=	HTTP="@comment "
 .else
 PLIST_SUB+=	HTTP=""
-.endif
-
-.if defined(WITHOUT_FTP)
-CMAKE_ARGS+=	-DENABLE_FTP=OFF
-PLIST_SUB+=	FTP="@comment "
-.else
-PLIST_SUB+=	FTP=""
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITHOUT_LMP)
@@ -158,28 +135,6 @@ PLIST_SUB+=	HISTORYHOLDER="@comment "
 PLIST_SUB+=	HISTORYHOLDER=""
 .endif
 
-.if defined(WITHOUT_CHATTER)
-CMAKE_ARGS+=	-DENABLE_CHATTER=OFF
-PLIST_SUB+=	CHATTER="@comment "
-.else
-PLIST_SUB+=	CHATTER=""
-.endif
-
-.if defined(WITHOUT_YASD)
-PLIST_SUB+=	YASD="@comment "
-.else
-CMAKE_ARGS+=	-DENABLE_YASD=ON
-PLIST_SUB+=	YASD=""
-.endif
-
-.if defined(WITHOUT_REMOTER)
-PLIST_SUB+=	REMOTER="@comment "
-.else
-CMAKE_ARGS+=	-DENABLE_REMOTER=ON
-PLIST_SUB+=	REMOTER=""
-IGNORE=		Sorry does not work now
-.endif
-
 .if defined(WITHOUT_NEWLIFE)
 CMAKE_ARGS+=	-DENABLE_NEWLIFE=OFF
 PLIST_SUB+=	NEWLIFE="@comment "
@@ -201,13 +156,6 @@ PLIST_SUB+=	VGRABBER="@comment "
 PLIST_SUB+=	VGRABBER=""
 .endif
 
-.if defined(WITHOUT_POC)
-PLIST_SUB+=	POC="@comment "
-.else
-CMAKE_ARGS+=	-DENABLE_POC=ON
-PLIST_SUB+=	POC=""
-.endif
-
 .if defined(WITHOUT_KINOTIFY)
 CMAKE_ARGS+=	-DENABLE_KINOTIFY=OFF
 PLIST_SUB+=	KINOTIFY="@comment "
@@ -227,13 +175,6 @@ CMAKE_ARGS+=	-DENABLE_TABPP=OFF
 PLIST_SUB+=	TABPP="@comment "
 .else
 PLIST_SUB+=	TABPP=""
-.endif
-
-.if defined(WITHOUT_EISKALTDCPP)
-PLIST_SUB+=	EISKALTDCPP="@comment "
-.else
-CMAKE_ARGS+=	-DENABLE_EISKALTDCPP=ON
-PLIST_SUB+=	EISKALTDCPP=""
 .endif
 
 .if defined(WITHOUT_AZOTH)

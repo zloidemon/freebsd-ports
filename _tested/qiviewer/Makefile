@@ -17,15 +17,35 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml dbus qmake_build moc_build rcc_build
+QT_COMPONENTS=	gui xml dbus linguist qmake_build moc_build \
+		rcc_build
+QMAKEFLAGS+=	PREFIX="${PREFIX}"
+
+PLIST_FILES=	bin/qiviewer \
+		share/applications/qiviewer.desktop \
+		%%DATADIR%%/locale/es_AR.qm \
+		%%DATADIR%%/locale/es_ES.qm \
+
+PLIST_DIRS=	share/qiviewer/locale \
+		share/qiviewer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
+OPTIONS=	WEBP "support webp (experemental)" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_WEBP)
+PLIST_SUB+=	WEBP="@comment "
+.else
+QMAKEFLAGS+=	CONFIG+=enable-webp
+PLIST_SUB+=	WEBP=""
+.endif
+
 do-configure:
-	@cd ${WRKSRC} && ${QMAKE} ${QMAKEPRO}
-	
-post-configure:	
+	@cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
+post-configure:
 	${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
