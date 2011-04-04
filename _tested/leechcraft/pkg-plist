@@ -372,56 +372,56 @@ lib/libxmlsettingsdialog.so
 %%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_es.qm
 %%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_fr.qm
 %%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_pl.qm
-share/leechcraft/translations/leechcraft_summary_fr.qm
-share/leechcraft/translations/leechcraft_summary_it.qm
-share/leechcraft/translations/leechcraft_bittorrent_it.qm
-share/leechcraft/translations/leechcraft_aggregator_fr.qm
-share/leechcraft/translations/leechcraft_aggregator_it.qm
-share/leechcraft/translations/leechcraft_chatter_ru_RU.qm
-share/leechcraft/translations/leechcraft_chatter_uk_UA.qm
-share/leechcraft/translations/leechcraft_chatter_ar.qm
-share/leechcraft/translations/leechcraft_chatter_en.qm
-share/leechcraft/translations/leechcraft_chatter_pl.qm
-share/leechcraft/translations/leechcraft_cstp_it.qm
-share/leechcraft/translations/leechcraft_lcftp_ru_RU.qm
-share/leechcraft/translations/leechcraft_lcftp_uk_UA.qm
-share/leechcraft/translations/leechcraft_lcftp_de.qm
-share/leechcraft/translations/leechcraft_lcftp_oc.qm
-share/leechcraft/translations/leechcraft_lcftp_pl.qm
-share/leechcraft/translations/leechcraft_lcftp_en.qm
-share/leechcraft/translations/leechcraft_lcftp_ar.qm
-share/leechcraft/translations/leechcraft_lcftp_eo.qm
-share/leechcraft/translations/leechcraft_lcftp_fr.qm
-share/leechcraft/translations/leechcraft_lmp_ru_RU.qm
-share/leechcraft/translations/leechcraft_lmp_uk_UA.qm
-share/leechcraft/translations/leechcraft_lmp_ar.qm
-share/leechcraft/translations/leechcraft_lmp_de.qm
-share/leechcraft/translations/leechcraft_lmp_es.qm
-share/leechcraft/translations/leechcraft_lmp_pl.qm
-share/leechcraft/translations/leechcraft_lmp_en.qm
-share/leechcraft/translations/leechcraft_lmp_eo.qm
-share/leechcraft/translations/leechcraft_lmp_fr.qm
-share/leechcraft/translations/leechcraft_dbusmanager_it.qm
-share/leechcraft/translations/leechcraft_deadlyrics_it.qm
-share/leechcraft/translations/leechcraft_networkmonitor_it.qm
-share/leechcraft/translations/leechcraft_historyholder_it.qm
-share/leechcraft/translations/leechcraft_newlife_fr.qm
-share/leechcraft/translations/leechcraft_newlife_it.qm
-share/leechcraft/translations/leechcraft_vgrabber_fr.qm
-share/leechcraft/translations/leechcraft_auscrie_fr.qm
-share/leechcraft/translations/leechcraft_auscrie_it.qm
-share/leechcraft/translations/leechcraft_tabpp_fr.qm
-share/leechcraft/translations/leechcraft_shellopen_uk_UA.qm
-share/leechcraft/translations/leechcraft_shellopen_ru_RU.qm
-share/leechcraft/translations/leechcraft_shellopen_en.qm
+%%DATADIR%%/translations/leechcraft_summary_fr.qm
+%%DATADIR%%/translations/leechcraft_summary_it.qm
+%%DATADIR%%/translations/leechcraft_bittorrent_it.qm
+%%DATADIR%%/translations/leechcraft_aggregator_fr.qm
+%%DATADIR%%/translations/leechcraft_aggregator_it.qm
+%%DATADIR%%/translations/leechcraft_chatter_ru_RU.qm
+%%DATADIR%%/translations/leechcraft_chatter_uk_UA.qm
+%%DATADIR%%/translations/leechcraft_chatter_ar.qm
+%%DATADIR%%/translations/leechcraft_chatter_en.qm
+%%DATADIR%%/translations/leechcraft_chatter_pl.qm
+%%DATADIR%%/translations/leechcraft_cstp_it.qm
+%%DATADIR%%/translations/leechcraft_lcftp_ru_RU.qm
+%%DATADIR%%/translations/leechcraft_lcftp_uk_UA.qm
+%%DATADIR%%/translations/leechcraft_lcftp_de.qm
+%%DATADIR%%/translations/leechcraft_lcftp_oc.qm
+%%DATADIR%%/translations/leechcraft_lcftp_pl.qm
+%%DATADIR%%/translations/leechcraft_lcftp_en.qm
+%%DATADIR%%/translations/leechcraft_lcftp_ar.qm
+%%DATADIR%%/translations/leechcraft_lcftp_eo.qm
+%%DATADIR%%/translations/leechcraft_lcftp_fr.qm
+%%DATADIR%%/translations/leechcraft_lmp_ru_RU.qm
+%%DATADIR%%/translations/leechcraft_lmp_uk_UA.qm
+%%DATADIR%%/translations/leechcraft_lmp_ar.qm
+%%DATADIR%%/translations/leechcraft_lmp_de.qm
+%%DATADIR%%/translations/leechcraft_lmp_es.qm
+%%DATADIR%%/translations/leechcraft_lmp_pl.qm
+%%DATADIR%%/translations/leechcraft_lmp_en.qm
+%%DATADIR%%/translations/leechcraft_lmp_eo.qm
+%%DATADIR%%/translations/leechcraft_lmp_fr.qm
+%%DATADIR%%/translations/leechcraft_dbusmanager_it.qm
+%%DATADIR%%/translations/leechcraft_deadlyrics_it.qm
+%%DATADIR%%/translations/leechcraft_networkmonitor_it.qm
+%%DATADIR%%/translations/leechcraft_historyholder_it.qm
+%%DATADIR%%/translations/leechcraft_newlife_fr.qm
+%%DATADIR%%/translations/leechcraft_newlife_it.qm
+%%DATADIR%%/translations/leechcraft_vgrabber_fr.qm
+%%DATADIR%%/translations/leechcraft_auscrie_fr.qm
+%%DATADIR%%/translations/leechcraft_auscrie_it.qm
+%%DATADIR%%/translations/leechcraft_tabpp_fr.qm
+%%DATADIR%%/translations/leechcraft_shellopen_uk_UA.qm
+%%DATADIR%%/translations/leechcraft_shellopen_ru_RU.qm
+%%DATADIR%%/translations/leechcraft_shellopen_en.qm
 lib/leechcraft/plugins/libleechcraft_chatter.so
 lib/leechcraft/plugins/libleechcraft_lcftp.so
 lib/leechcraft/plugins/libleechcraft_lmp.so
 lib/leechcraft/plugins/libleechcraft_shellopen.so
-share/leechcraft/settings/chattersettings.xml
-share/leechcraft/settings/lcftpsettings.xml
-share/leechcraft/settings/lmpsettings.xml
-share/leechcraft/settings/kinotifysettings.xml
+%%DATADIR%%/settings/chattersettings.xml
+%%DATADIR%%/settings/lcftpsettings.xml
+%%DATADIR%%/settings/lmpsettings.xml
+%%DATADIR%%/settings/kinotifysettings.xml
 %%DATADIR%%/settings/coresettings.xml
 %%DATADIR%%/cmake/FindLeechCraft.cmake
 %%DATADIR%%/icons/oxygen.mapping
@@ -565,15 +565,15 @@ share/icons/Pevzi/scalable/actions/lc_torrent_create.svg
 share/icons/Pevzi/scalable/actions/lc_torrent_ipfilter.svg
 share/applications/leechcraft.desktop
 share/man/man1/leechcraft.1.gz
-share/leechcraft/kinotify/themes/notification/Adaptive/tmp.html
-share/leechcraft/kinotify/themes/notification/Commie/img/back.png
-share/leechcraft/kinotify/themes/notification/Commie/tmp.html
-@dirrm share/leechcraft/kinotify/themes/notification/Commie/img
-@dirrm share/leechcraft/kinotify/themes/notification/Commie
-@dirrm share/leechcraft/kinotify/themes/notification/Adaptive
-@dirrm share/leechcraft/kinotify/themes/notification
-@dirrm share/leechcraft/kinotify/themes
-@dirrm share/leechcraft/kinotify
+%%DATADIR%%/kinotify/themes/notification/Adaptive/tmp.html
+%%DATADIR%%/kinotify/themes/notification/Commie/img/back.png
+%%DATADIR%%/kinotify/themes/notification/Commie/tmp.html
+@dirrm %%DATADIR%%/kinotify/themes/notification/Commie/img
+@dirrm %%DATADIR%%/kinotify/themes/notification/Commie
+@dirrm %%DATADIR%%/kinotify/themes/notification/Adaptive
+@dirrm %%DATADIR%%/kinotify/themes/notification
+@dirrm %%DATADIR%%/kinotify/themes
+@dirrm %%DATADIR%%/kinotify
 @dirrm share/man/man1
 @dirrm share/man
 @dirrm %%DATADIR%%/translations

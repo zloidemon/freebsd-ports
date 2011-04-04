@@ -28,7 +28,7 @@ QT_COMPONENTS=	corelib gui network script sql sql-sqlite3 xml
 OPTIONS=	SUMMARY "shows a handy summary of the stuff going on" on \
 		TORRENT "BitTorrent client" on \
 		AGGREGATOR "RSS/Atom feed reader" on \
-		POSHUKU "WWW Browser" on \
+		POSHUKU "WWW Browser" off \
 		HTTP "HTTP implementation" on \
 		LMP "LeechCraft Media Previewer" on \
 		DBUSMANAGER "D-Bus support for the LeechCraft" on \
@@ -196,7 +196,7 @@ PLIST_SUB+=	QROSP="@comment "
 .else
 CMAKE_ARGS+=	-DENABLE_QROSP=ON
 PLIST_SUB+=	QROSP=""
-IGNORE=		Sorry does not work now
+IGNORE=		sorry does not work now
 .endif
 
 .if defined(WITHOUT_POPISHU)
