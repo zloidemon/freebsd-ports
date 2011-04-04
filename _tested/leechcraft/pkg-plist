@@ -565,6 +565,15 @@ share/icons/Pevzi/scalable/actions/lc_torrent_create.svg
 share/icons/Pevzi/scalable/actions/lc_torrent_ipfilter.svg
 share/applications/leechcraft.desktop
 share/man/man1/leechcraft.1.gz
+share/leechcraft/kinotify/themes/notification/Adaptive/tmp.html
+share/leechcraft/kinotify/themes/notification/Commie/img/back.png
+share/leechcraft/kinotify/themes/notification/Commie/tmp.html
+@dirrm share/leechcraft/kinotify/themes/notification/Commie/img
+@dirrm share/leechcraft/kinotify/themes/notification/Commie
+@dirrm share/leechcraft/kinotify/themes/notification/Adaptive
+@dirrm share/leechcraft/kinotify/themes/notification
+@dirrm share/leechcraft/kinotify/themes
+@dirrm share/leechcraft/kinotify
 @dirrm share/man/man1
 @dirrm share/man
 @dirrm %%DATADIR%%/translations
