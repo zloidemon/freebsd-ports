@@ -24,6 +24,7 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 USE_GCC=	4.2+
 QT_COMPONENTS=	corelib gui network script sql sql-sqlite3 xml
+CMAKE_ARGS+=	-DQJSON_LIBRARIES=/usr/local/lib/libqjson.so.0
 
 OPTIONS=	SUMMARY "shows a handy summary of the stuff going on" on \
 		TORRENT "BitTorrent client" on \
@@ -212,5 +213,9 @@ PLIST_SUB+=	LACKMAN="@comment "
 CMAKE_ARGS+=	-DENABLE_LACKMAN=ON
 PLIST_SUB+=	LACKMAN=""
 .endif
+
+#post-patch:
+#	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+#		${WRKSRC}/plugins/poshuku/plugins/onlinebookmarks/CMakeLists.txt
 
 .include <bsd.port.post.mk>

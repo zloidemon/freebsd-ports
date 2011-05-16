@@ -2,11 +2,11 @@
 # Date created:		2010-01-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.10 2011/03/25 20:19:50 pav Exp $
+# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.11 2011/04/01 12:29:11 dhn Exp $
 #
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.4.4
+PORTVERSION=	0.5.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -60,7 +60,8 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		SHN "shorten plugin" on\
 		AO "audio overload plugin" on\
 		SHELLEXEC "shell commands plugin" on\
-		NLS "Native Language Support" on
+		NLS "Native Language Support" on \
+		VFS_ZIP "ZIP support" on
 
 .include <bsd.port.options.mk>
 
@@ -292,6 +293,14 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITHOUT_VFS_ZIP)
+CONFIGURE_ARGS+=	--disable-zip
+PLIST_SUB+=	VFS_ZIP="@comment "
+.else
+PLIST_SUB+=	VFS_ZIP=""
+LIB_DEPENDS+=	zip.3:${PORTSDIR}/archivers/libzip
 .endif
 
 .include <bsd.port.mk>
