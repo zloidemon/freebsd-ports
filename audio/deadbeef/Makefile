@@ -60,7 +60,9 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		SHN "shorten plugin" on\
 		AO "audio overload plugin" on\
 		SHELLEXEC "shell commands plugin" on\
-		NLS "Native Language Support" on \
+		NLS "Native Language Support" on\
+		M3U "m3u plugin" on\
+		CONVERTER "Build converter" on\
 		VFS_ZIP "ZIP support" on
 
 .include <bsd.port.options.mk>
@@ -293,6 +295,20 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITHOUT_CONVERTER)
+CONFIGURE_ARGS+=	--disable-converter
+PLIST_SUB+=	CONVERTER="@comment "
+.else
+PLIST_SUB+=	CONVERTER=""
+.endif
+
+.if defined(WITHOUT_M3U)
+CONFIGURE_ARGS+=	--disable-m3u
+PLIST_SUB+=	M3U="@comment "
+.else
+PLIST_SUB+=	M3U=""
 .endif
 
 .if defined(WITHOUT_VFS_ZIP)

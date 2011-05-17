@@ -1,6 +1,6 @@
 bin/deadbeef
 include/deadbeef/deadbeef.h
-include/deadbeef/gtkui_api.h
+%%GUI%%include/deadbeef/gtkui_api.h
 %%ADP%%lib/deadbeef/adplug.a
 %%ADP%%lib/deadbeef/adplug.la
 %%ADP%%lib/deadbeef/adplug.so
@@ -118,35 +118,35 @@ share/applications/deadbeef.desktop
 %%DOCSDIR%%/translators.txt
 %%DOCSDIR%%/help.ru.txt
 %%DOCSDIR%%/help.pt_BR.txt
-lib/deadbeef/ddb_gui_GTK2.so.0
-lib/deadbeef/ddb_gui_GTK2.so
-lib/deadbeef/ddb_gui_GTK2.la
-lib/deadbeef/ddb_gui_GTK2.a
-lib/deadbeef/m3u.so
+%%GUI%%lib/deadbeef/ddb_gui_GTK2.so.0
+%%GUI%%lib/deadbeef/ddb_gui_GTK2.so
+%%GUI%%lib/deadbeef/ddb_gui_GTK2.la
+%%GUI%%lib/deadbeef/ddb_gui_GTK2.a
 lib/deadbeef/dsp_libsrc.so.0
 lib/deadbeef/dsp_libsrc.so
 lib/deadbeef/dsp_libsrc.la
 lib/deadbeef/dsp_libsrc.a
-lib/deadbeef/m3u.so.0
-lib/deadbeef/m3u.la
-lib/deadbeef/m3u.a
-lib/deadbeef/converter.so.0
-lib/deadbeef/converter.so
-lib/deadbeef/converter.la
-lib/deadbeef/converter_gtkui.so.0
-lib/deadbeef/converter_gtkui.so
-lib/deadbeef/converter_gtkui.la
-lib/deadbeef/converter.a
-lib/deadbeef/converter_gtkui.a
-lib/deadbeef/convpresets/AAC_(Nero_FAAC).txt
-lib/deadbeef/convpresets/FLAC_(compression_level_5).txt
-lib/deadbeef/convpresets/MP3_CBR_320_Kbps_(Lame).txt
-lib/deadbeef/convpresets/MP3_VBR_192Kbps_(Lame).txt
-lib/deadbeef/convpresets/MS_RIFF_WAV.txt
-lib/deadbeef/convpresets/MusePack.txt
-lib/deadbeef/convpresets/Ogg_Vorbis_(-q_5).txt
-lib/deadbeef/convpresets/TTA.txt
-lib/deadbeef/convpresets/WavPack.txt
+%%M3U%%lib/deadbeef/m3u.so
+%%M3U%%lib/deadbeef/m3u.so.0
+%%M3U%%lib/deadbeef/m3u.la
+%%M3U%%lib/deadbeef/m3u.a
+%%CONVERTER%%lib/deadbeef/converter.so.0
+%%CONVERTER%%lib/deadbeef/converter.so
+%%CONVERTER%%lib/deadbeef/converter.la
+%%CONVERTER%%lib/deadbeef/converter_gtkui.so.0
+%%CONVERTER%%lib/deadbeef/converter_gtkui.so
+%%CONVERTER%%lib/deadbeef/converter_gtkui.la
+%%CONVERTER%%lib/deadbeef/converter.a
+%%CONVERTER%%lib/deadbeef/converter_gtkui.a
+%%CONVERTER%%lib/deadbeef/convpresets/AAC_(Nero_FAAC).txt
+%%CONVERTER%%lib/deadbeef/convpresets/FLAC_(compression_level_5).txt
+%%CONVERTER%%lib/deadbeef/convpresets/MP3_CBR_320_Kbps_(Lame).txt
+%%CONVERTER%%lib/deadbeef/convpresets/MP3_VBR_192Kbps_(Lame).txt
+%%CONVERTER%%lib/deadbeef/convpresets/MS_RIFF_WAV.txt
+%%CONVERTER%%lib/deadbeef/convpresets/MusePack.txt
+%%CONVERTER%%lib/deadbeef/convpresets/Ogg_Vorbis_(-q_5).txt
+%%CONVERTER%%lib/deadbeef/convpresets/TTA.txt
+%%CONVERTER%%lib/deadbeef/convpresets/WavPack.txt
 %%VFS_ZIP%%lib/deadbeef/vfs_zip.so.0
 %%VFS_ZIP%%lib/deadbeef/vfs_zip.so
 %%VFS_ZIP%%lib/deadbeef/vfs_zip.la
@@ -233,7 +233,7 @@ share/icons/hicolor/scalable/apps/deadbeef.svg
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrm lib/deadbeef/convpresets
+%%CONVERTER%%@dirrm lib/deadbeef/convpresets
 @dirrm lib/deadbeef
 @dirrm include/deadbeef
 @dirrmtry share/applications
