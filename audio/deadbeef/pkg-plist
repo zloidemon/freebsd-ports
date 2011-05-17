@@ -122,10 +122,10 @@ share/applications/deadbeef.desktop
 %%GUI%%lib/deadbeef/ddb_gui_GTK2.so
 %%GUI%%lib/deadbeef/ddb_gui_GTK2.la
 %%GUI%%lib/deadbeef/ddb_gui_GTK2.a
-lib/deadbeef/dsp_libsrc.so.0
-lib/deadbeef/dsp_libsrc.so
-lib/deadbeef/dsp_libsrc.la
-lib/deadbeef/dsp_libsrc.a
+%%DSP%%lib/deadbeef/dsp_libsrc.so.0
+%%DSP%%lib/deadbeef/dsp_libsrc.so
+%%DSP%%lib/deadbeef/dsp_libsrc.la
+%%DSP%%lib/deadbeef/dsp_libsrc.a
 %%M3U%%lib/deadbeef/m3u.so
 %%M3U%%lib/deadbeef/m3u.so.0
 %%M3U%%lib/deadbeef/m3u.la

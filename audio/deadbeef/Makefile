@@ -62,6 +62,7 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		SHELLEXEC "shell commands plugin" on\
 		NLS "Native Language Support" on\
 		M3U "m3u plugin" on\
+		DSP "libsamplerate (SRC) plugin" on\
 		CONVERTER "Build converter" on\
 		VFS_ZIP "ZIP support" on
 
@@ -104,8 +105,10 @@ CONFIGURE_ARGS+=	--disable-artwork
 PLIST_SUB+=	ART="@comment "
 .else
 .if !defined(WITHOUT_VFS)
+CONFIGURE_ARTS+=	--disable-artwork-imlib2
 PLIST_SUB+=	ART=""
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl \
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 .else
 BROKEN=		VFS plugin required for album art loader, please rerun 'make config' and either disable ART or enable VFS
 .endif
@@ -301,7 +304,12 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-converter
 PLIST_SUB+=	CONVERTER="@comment "
 .else
+.if !defined(WITHOUT_GUI)
 PLIST_SUB+=	CONVERTER=""
+USE_GNOME=	gtk20 glib20
+.else
+BROKEN=		CONVERTER plugin required for gui, please rerun 'make config' and either disable CONVERTER or enable GUI
+.endif
 .endif
 
 .if defined(WITHOUT_M3U)
@@ -311,8 +319,16 @@ PLIST_SUB+=	M3U="@comment "
 PLIST_SUB+=	M3U=""
 .endif
 
+.if defined(WITHOUT_DSP)
+CONFIGURE_ARGS+=	--disable-src
+PLIST_SUB+=	DSP="@comment "
+.else
+PLIST_SUB+=	DSP=""
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+.endif
+
 .if defined(WITHOUT_VFS_ZIP)
-CONFIGURE_ARGS+=	--disable-zip
+CONFIGURE_ARGS+=	--disable-vfs-zip
 PLIST_SUB+=	VFS_ZIP="@comment "
 .else
 PLIST_SUB+=	VFS_ZIP=""
