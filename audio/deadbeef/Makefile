@@ -35,12 +35,12 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		GUI "standard GTK2 user interface plugin" on\
 		VFS "HTTP streaming vfs plugin" on\
 		LASTFM "last.fm/libre.fm scrobbler plugin" on\
-		ART "album art loader plugin" on\
-		EQ "SuperEQ DSP plugin" on\
-		SID "commodore64 SID music player plugin" on\
+		ART "album art loader plugin(not work now)" off\
+		EQ "SuperEQ DSP plugin(broken with amd64)" off\
+		SID "SID music player plugin(broken with amd64)" off\
 		FFAP "Monkey's Audio plugin" on\
 		VTX "libayemy VTX ZX-Spectrum music player plugin" on\
-		ADP "adplug plugin" on\
+		ADP "adplug plugin(broken with amd64)" off\
 		HOTKEYS "global hotkeys plugin" on\
 		OGG "Ogg Vorbis player plugin" on\
 		FFMPEG "FFMPEG plugin for WMA, MPC, TTA, etc" on\
@@ -48,7 +48,7 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		SNDFILE "libsndfile plugin for PCM wave files" on\
 		WAV "wavpack plugin" on\
 		CDDA "CD-Audio plugin" on\
-		GME "Game Music Emu plugin for NSF, AY, etc" on\
+		GME "Game Music Emu plugin(broken with amd64)" off\
 		DUMB "D.U.M.B. plugin for MOD, S3M and other" on\
 		NOTIFY "support for OSD notifications into GTKUI plugin" on\
 		MUSEPACK "musepack plugin" on\
@@ -119,6 +119,9 @@ CONFIGURE_ARGS+=	--disable-supereq
 PLIST_SUB+=	EQ="@comment "
 .else
 PLIST_SUB+=	EQ=""
+.if ${ARCH} == amd64
+BROKEN=		EQ do not support ${ARCH}
+.endif
 .endif
 
 .if defined(WITHOUT_SID)
@@ -126,6 +129,9 @@ CONFIGURE_ARGS+=	--disable-sid
 PLIST_SUB+=	SID="@comment "
 .else
 PLIST_SUB+=	SID=""
+.if ${ARCH} == amd64
+BROKEN=		SID do not support ${ARCH}
+.endif
 .endif
 
 .if defined(WITHOUT_FFAP)
@@ -147,6 +153,9 @@ CONFIGURE_ARGS+=	--disable-adplug
 PLIST_SUB+=	ADP="@comment "
 .else
 PLIST_SUB+=	ADP=""
+.if ${ARCH} == amd64
+BROKEN=		ADP do not support ${ARCH}
+.endif
 .endif
 
 .if defined(WITHOUT_HOTKEYS)
@@ -212,6 +221,9 @@ CONFIGURE_ARGS+=	--disable-gme
 PLIST_SUB+=	GME="@comment "
 .else
 PLIST_SUB+=	GME=""
+.if ${ARCH} == amd64
+BROKEN=		GME do not support ${ARCH}
+.endif
 .endif
 
 .if defined(WITHOUT_DUMB)
