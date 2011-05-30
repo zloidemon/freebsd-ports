@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# PROVIDE: erlyvideo
+# REQUIRE: LOGIN
+#
+# Add the following line to /etc/rc.conf to enable epmd:
+#
+# erlyvideo_enable="YES"
+#
+
+erlyvideo_enable=${erlyvideo_enable:-"NO"}
+
+. /etc/rc.subr
+
+name=erlyvideo
+rcvar=`set_rcvar`
+
+procname=/usr/local/bin/erlyctl
+start_cmd="/usr/local/bin/erlyctl start"
+stop_cmd="/usr/local/bin/erlyctl stop >/dev/null"
+
+load_rc_config ${name}
+run_rc_command "$1"
