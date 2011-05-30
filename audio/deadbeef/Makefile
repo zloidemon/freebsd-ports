@@ -2,11 +2,11 @@
 # Date created:		2010-01-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.10 2011/03/25 20:19:50 pav Exp $
+# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.11 2011/04/01 12:29:11 dhn Exp $
 #
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.4.4
+PORTVERSION=	0.5.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -35,12 +35,12 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		GUI "standard GTK2 user interface plugin" on\
 		VFS "HTTP streaming vfs plugin" on\
 		LASTFM "last.fm/libre.fm scrobbler plugin" on\
-		ART "album art loader plugin" on\
-		EQ "SuperEQ DSP plugin" on\
-		SID "commodore64 SID music player plugin" on\
+		ART "album art loader plugin(not work now)" off\
+		EQ "SuperEQ DSP plugin(broken with amd64)" off\
+		SID "SID music player plugin(broken with amd64)" off\
 		FFAP "Monkey's Audio plugin" on\
 		VTX "libayemy VTX ZX-Spectrum music player plugin" on\
-		ADP "adplug plugin" on\
+		ADP "adplug plugin(broken with amd64)" off\
 		HOTKEYS "global hotkeys plugin" on\
 		OGG "Ogg Vorbis player plugin" on\
 		FFMPEG "FFMPEG plugin for WMA, MPC, TTA, etc" on\
@@ -48,7 +48,7 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		SNDFILE "libsndfile plugin for PCM wave files" on\
 		WAV "wavpack plugin" on\
 		CDDA "CD-Audio plugin" on\
-		GME "Game Music Emu plugin for NSF, AY, etc" on\
+		GME "Game Music Emu plugin(broken with amd64)" off\
 		DUMB "D.U.M.B. plugin for MOD, S3M and other" on\
 		NOTIFY "support for OSD notifications into GTKUI plugin" on\
 		MUSEPACK "musepack plugin" on\
@@ -60,7 +60,11 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		SHN "shorten plugin" on\
 		AO "audio overload plugin" on\
 		SHELLEXEC "shell commands plugin" on\
-		NLS "Native Language Support" on
+		NLS "Native Language Support" on\
+		M3U "m3u plugin" on\
+		DSP "libsamplerate (SRC) plugin" on\
+		CONVERTER "Build converter" on\
+		VFS_ZIP "ZIP support" on
 
 .include <bsd.port.options.mk>
 
@@ -101,8 +105,10 @@ CONFIGURE_ARGS+=	--disable-artwork
 PLIST_SUB+=	ART="@comment "
 .else
 .if !defined(WITHOUT_VFS)
+CONFIGURE_ARTS+=	--disable-artwork-imlib2
 PLIST_SUB+=	ART=""
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl \
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 .else
 BROKEN=		VFS plugin required for album art loader, please rerun 'make config' and either disable ART or enable VFS
 .endif
@@ -113,6 +119,9 @@ CONFIGURE_ARGS+=	--disable-supereq
 PLIST_SUB+=	EQ="@comment "
 .else
 PLIST_SUB+=	EQ=""
+.if ${ARCH} == amd64
+BROKEN=		EQ do not support ${ARCH}
+.endif
 .endif
 
 .if defined(WITHOUT_SID)
@@ -120,6 +129,9 @@ CONFIGURE_ARGS+=	--disable-sid
 PLIST_SUB+=	SID="@comment "
 .else
 PLIST_SUB+=	SID=""
+.if ${ARCH} == amd64
+BROKEN=		SID do not support ${ARCH}
+.endif
 .endif
 
 .if defined(WITHOUT_FFAP)
@@ -141,6 +153,9 @@ CONFIGURE_ARGS+=	--disable-adplug
 PLIST_SUB+=	ADP="@comment "
 .else
 PLIST_SUB+=	ADP=""
+.if ${ARCH} == amd64
+BROKEN=		ADP do not support ${ARCH}
+.endif
 .endif
 
 .if defined(WITHOUT_HOTKEYS)
@@ -206,6 +221,9 @@ CONFIGURE_ARGS+=	--disable-gme
 PLIST_SUB+=	GME="@comment "
 .else
 PLIST_SUB+=	GME=""
+.if ${ARCH} == amd64
+BROKEN=		GME do not support ${ARCH}
+.endif
 .endif
 
 .if defined(WITHOUT_DUMB)
@@ -292,6 +310,41 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITHOUT_CONVERTER)
+CONFIGURE_ARGS+=	--disable-converter
+PLIST_SUB+=	CONVERTER="@comment "
+.else
+.if !defined(WITHOUT_GUI)
+PLIST_SUB+=	CONVERTER=""
+USE_GNOME=	gtk20 glib20
+.else
+BROKEN=		CONVERTER plugin required for gui, please rerun 'make config' and either disable CONVERTER or enable GUI
+.endif
+.endif
+
+.if defined(WITHOUT_M3U)
+CONFIGURE_ARGS+=	--disable-m3u
+PLIST_SUB+=	M3U="@comment "
+.else
+PLIST_SUB+=	M3U=""
+.endif
+
+.if defined(WITHOUT_DSP)
+CONFIGURE_ARGS+=	--disable-src
+PLIST_SUB+=	DSP="@comment "
+.else
+PLIST_SUB+=	DSP=""
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+.endif
+
+.if defined(WITHOUT_VFS_ZIP)
+CONFIGURE_ARGS+=	--disable-vfs-zip
+PLIST_SUB+=	VFS_ZIP="@comment "
+.else
+PLIST_SUB+=	VFS_ZIP=""
+LIB_DEPENDS+=	zip.3:${PORTSDIR}/archivers/libzip
 .endif
 
 .include <bsd.port.mk>
