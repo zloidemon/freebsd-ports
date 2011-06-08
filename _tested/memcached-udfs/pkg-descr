@@ -1,0 +1,12 @@
+This is a set of MySQL UDFs (user defined functions) to work with
+memcached using libmemcached. With these functions you get, set,
+cas, append, prepend, delete, increment, decrement objects in
+memcached, as well as set which servers to use and which behavior
+the server connections will use. Combine these functions with
+MySQL triggers and you can manage your memcached cache. The
+library makes use of libmemcached. You can also use memcached
+as a global sequence generator for MySQL by making use of the
+increment function. These functions are compatible with all
+versions of MySQL.
+
+WWW:	https://launchpad.net/memcached-udfs
