@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rc1
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player
