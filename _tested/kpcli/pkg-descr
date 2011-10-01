@@ -1,0 +1,5 @@
+KeePass Command Line Interface (CLI) / interactive shell.
+Use this program to access and manage your KeePass 1.x
+database from a Unix-like command line.
+
+WWW:	http://kpcli.sourceforge.net/
