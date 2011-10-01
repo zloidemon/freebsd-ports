@@ -1,0 +1,96 @@
+bin/razor-appswitcher
+bin/razor-desktop
+bin/razor-panel
+bin/razor-session
+include/razorqt/addplugindialog.h
+include/razorqt/battery.h
+include/razorqt/defs.h
+include/razorqt/domhelper.h
+include/razorqt/powermanager.h
+include/razorqt/razoraboutdlg.h
+include/razorqt/razormime.h
+include/razorqt/razorplugininfo.h
+include/razorqt/readsettings.h
+include/razorqt/ucpufreq.h
+include/razorqt/upower.h
+include/razorqt/xdgaction.h
+include/razorqt/xdgautostart.h
+include/razorqt/xdgdesktopfile.h
+include/razorqt/xdgenv.h
+include/razorqt/xdgicon.h
+include/razorqt/xdgiconthemefile.h
+include/razorqt/xdgiconthememanager.h
+include/razorqt/xdgmenu.h
+include/razorqt/xdgmenuwidget.h
+include/razorqt/xfitman.h
+lib/librazorqt.so
+lib/librazorqt.so.0
+lib/librazorqt.so.0.1.0
+lib/razor-desktop/libanalogclock.so
+lib/razor-desktop/libdesktop-razor.so
+lib/razor-desktop/libdesktop-wm_native.so
+lib/razor-desktop/libhelloworld.so
+lib/razor-desktop/libiconview.so
+lib/razor-panel/libclock.so
+lib/razor-panel/libdesktopswitch.so
+lib/razor-panel/libmainmenu.so
+lib/razor-panel/libquicklaunch.so
+lib/razor-panel/libtaskbar.so
+lib/razor-panel/libtray.so
+lib/razor-xdg-tools/xdg-mime
+lib/razor-xdg-tools/xdg-open
+share/razor/desktop.conf
+share/razor/graphics/README
+share/razor/graphics/razor_logo.png
+share/razor/graphics/rqt.png
+share/razor/graphics/rqt.svg
+share/razor/razor-desktop/analogclock.desktop
+share/razor/razor-desktop/analogclock/analogclock_ru_RU.qm
+share/razor/razor-desktop/helloworld.desktop
+share/razor/razor-desktop/iconview.desktop
+share/razor/razor-panel/clock.desktop
+share/razor/razor-panel/desktopswitch.desktop
+share/razor/razor-panel/mainmenu.desktop
+share/razor/razor-panel/panel.conf
+share/razor/razor-panel/quicklaunch.desktop
+share/razor/razor-panel/razor-panel_ru_RU.qm
+share/razor/razor-panel/taskbar.desktop
+share/razor/razor-panel/taskbar/taskbar_ru_RU.qm
+share/razor/razor-panel/tray.desktop
+share/razor/razor.conf
+share/razor/session-eggwm.conf
+share/razor/session-openbox.conf
+share/razor/session.conf
+share/razor/themes/CMakeFiles/CMakeDirectoryInformation.cmake
+share/razor/themes/CMakeFiles/progress.marks
+share/razor/themes/CMakeLists.txt
+share/razor/themes/Makefile
+share/razor/themes/cmake_install.cmake
+share/razor/themes/green/118222-Just_Green_Curls.svgz
+share/razor/themes/green/default.qss
+share/razor/themes/green/index.theme
+share/razor/themes/green/just_green_curls.png
+share/razor/themes/green/just_green_curls_reverse.png
+share/razor/themes/green/mainmenu.png
+share/razor/themes/light/96640-simple_blue_widescreen.svg
+share/razor/themes/light/default.qss
+share/razor/themes/light/index.theme
+share/razor/themes/light/mainmenu.png
+share/razor/themes/light/simple_blue_widescreen.png
+share/xsessions/razor-eggwm.desktop
+share/xsessions/razor-openbox.desktop
+share/xsessions/razor.desktop
+@dirrm share/razor/themes/light
+@dirrm share/razor/themes/green
+@dirrm share/razor/themes/CMakeFiles
+@dirrm share/razor/themes
+@dirrm share/razor/razor-panel/taskbar
+@dirrm share/razor/razor-panel
+@dirrm share/razor/razor-desktop/analogclock
+@dirrm share/razor/razor-desktop
+@dirrm share/razor/graphics
+@dirrm share/razor
+@dirrm lib/razor-xdg-tools
+@dirrm lib/razor-panel
+@dirrm lib/razor-desktop
+@dirrm include/razorqt
