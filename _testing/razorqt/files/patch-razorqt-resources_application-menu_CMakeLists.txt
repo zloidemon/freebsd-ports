@@ -1,0 +1,8 @@
+--- razorqt-resources/application-menu/CMakeLists.txt.orig	2013-01-31 16:09:35.412960804 +0400
++++ razorqt-resources/application-menu/CMakeLists.txt	2013-01-31 16:10:14.888500852 +0400
+@@ -28,4 +28,4 @@
+ 
+ add_subdirectory(desktop-directories)
+ 
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/razor-applications.menu DESTINATION /etc/xdg/menus/)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/razor-applications.menu DESTINATION ${RAZOR_ETC_XDG_DIRECTORY}/razor/menus/)

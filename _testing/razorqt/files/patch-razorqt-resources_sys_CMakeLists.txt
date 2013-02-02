@@ -1,0 +1,13 @@
+--- razorqt-resources/sys/CMakeLists.txt.orig	2013-01-31 11:45:51.778628229 +0400
++++ razorqt-resources/sys/CMakeLists.txt	2013-01-31 11:46:42.478724749 +0400
+@@ -22,8 +22,8 @@
+ 
+ #INSTALL_SESSION_FILES("/etc/X11/sessions")
+ #INSTALL_SESSION_FILES("/usr/share/sessions")
+-INSTALL_SESSION_FILES("/usr/share/xsessions")
+-INSTALL_SESSION_FILES("/usr/share/apps/kdm/sessions")
++INSTALL_SESSION_FILES("${CMAKE_INSTALL_PREFIX}/share/xsessions")
++#INSTAL_SESSION_FILES("/usr/share/apps/kdm/sessions")
+ #INSTALL_SESSION_FILES("/usr/local/share/apps/kdm/sessions")
+ #INSTALL_SESSION_FILES("/usr/share/config/kdm/sessions")
+ #INSTALL_SESSION_FILES("/usr/local/share/config/kdm/sessions")

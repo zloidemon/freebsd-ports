@@ -1,0 +1,8 @@
+--- razorqt-resources/autostart/CMakeLists.txt.orig	2013-01-31 11:02:52.974215098 +0400
++++ razorqt-resources/autostart/CMakeLists.txt	2013-01-31 11:03:38.614107319 +0400
+@@ -11,4 +11,4 @@
+ add_custom_target(autostart_desktop_files ALL DEPENDS ${DESKTOP_FILES})
+ #************************************************
+ 
+-install(FILES ${DESKTOP_FILES} DESTINATION /etc/xdg/autostart)
++install(FILES ${DESKTOP_FILES} DESTINATION ${RAZOR_ETC_XDG_DIRECTORY}/razor/autostart)

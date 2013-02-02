@@ -1,3 +1,12 @@
-[description of the port]
+Razor-qt is an advanced, easy-to-use, and fast desktop environment based on Qt
+technologies. It has been tailored for users who value simplicity, speed, and
+an intuitive interface. Unlike most desktop environments, Razor-qt also works
+fine with weak machines.
+While still a new project, Razor-qt already contains the key DE components:
+* Panel
+* Desktop
+* Application launcher
+* Settings center
+* Sessions
 
-WWW:	http://port.home.page/
+WWW:	http://razor-qt.org/

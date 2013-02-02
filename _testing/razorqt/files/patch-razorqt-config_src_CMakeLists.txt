@@ -1,0 +1,8 @@
+--- razorqt-config/src/CMakeLists.txt.orig	2013-01-30 19:09:01.307225861 +0400
++++ razorqt-config/src/CMakeLists.txt	2013-01-30 19:09:41.661254655 +0400
+@@ -52,4 +52,4 @@
+ 
+ INSTALL(TARGETS razor-config RUNTIME DESTINATION bin)
+ install(FILES ${DESKTOP_FILES} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+-install(FILES razor-config.menu DESTINATION /etc/xdg/menus/)
++install(FILES razor-config.menu DESTINATION ${CMAKE_INSTALL_PREFIX}/etc/xdg/razor/menus/)
