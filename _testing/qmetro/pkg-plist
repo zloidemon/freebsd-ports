@@ -1,0 +1,17 @@
+share/icons/hicolor/scalable/apps/qmetro.svg
+share/icons/hicolor/64x64/apps/qmetro.png
+share/applications/qmetro.desktop
+bin/qmetro
+%%DATADIR%%/map/Moscow.pmz
+%%DATADIR%%/locale/fr.lng
+%%DATADIR%%/locale/es.lng
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
+@dirrmtry %%DATADIR%%/map
+@dirrmtry %%DATADIR%%/locale
+@dirrmtry %%DATADIR%%
