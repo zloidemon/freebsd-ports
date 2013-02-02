@@ -2,7 +2,7 @@
 # Date created:		2011-09-12
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD$
+# $FreeBSD: ports/security/libkpass/Makefile,v 1.3 2012/11/17 06:01:07 svnexp Exp $
 #
 
 PORTNAME=	libkpass
@@ -18,6 +18,7 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+CFLAGS+=	-Dbswap_32=bswap32 -Dbswap_16=bswap16
 
 PLIST_FILES=	include/kpass.h \
 		lib/libkpass.so \
