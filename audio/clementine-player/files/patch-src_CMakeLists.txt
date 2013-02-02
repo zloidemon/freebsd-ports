@@ -1,49 +1,43 @@
---- src/CMakeLists.txt.orig	2011-04-02 01:17:22.000000000 +0800
-+++ src/CMakeLists.txt	2011-04-02 01:20:20.000000000 +0800
-@@ -5,9 +5,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} 
- option(BUILD_WERROR "Build with -Werror" ON)
- 
- if(BUILD_WERROR)
--  if (LINUX)
-+  if (UNIX AND NOT APPLE)
-     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
--  endif (LINUX)
-+  endif (UNIX AND NOT APPLE)
- endif(BUILD_WERROR)
- 
- include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
-@@ -883,7 +883,6 @@ target_link_libraries(clementine_lib
-   ${QTSINGLECOREAPPLICATION_LIBRARIES}
-   ${QTIOCOMPRESSOR_LIBRARIES}
-   ${CMAKE_THREAD_LIBS_INIT}
--  dl
-   z
- )
- 
-@@ -982,14 +981,14 @@ if (WIN32)
-   )
+--- src/CMakeLists.txt.orig	2012-10-25 09:57:06.000000000 +0400
++++ src/CMakeLists.txt	2012-10-31 17:12:22.608404870 +0400
+@@ -1192,15 +1192,23 @@
+   endif (HAVE_SAC)
  endif (WIN32)
  
 -if (LINUX)
-+if (UNIX AND NOT APPLE)
++if (LINUX AND NOT APPLE)
    # Hack: the Gold linker pays attention to the order that libraries are
    # specified on the link line.  -lX11 and -ldl are provided earlier in the link
    # command but they're actually used by libraries that appear after them, so
    # they end up getting ignored.  This appends them to the very end of the link
    # line, ensuring they're always used.
--  target_link_libraries(clementine_lib -lX11 -ldl)
+   find_package(X11)
+-  target_link_libraries(clementine_lib ${X11_X11_LIB} ${CMAKE_DL_LIBS})
 -endif (LINUX)
-+  target_link_libraries(clementine_lib -lX11)
-+endif (UNIX AND NOT APPLE)
++  if (LINUX)
++    target_link_libraries(clementine_lib ${X11_X11_LIB} ${CMAKE_DL_LIBS})
++  else (LINUX)
++    if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++      target_link_libraries(clementine_lib ${X11_X11_LIB})
++    else (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++      target_link_libraries(clementine_lib ${X11_X11_LIB} ${CMAKE_DL_LIBS})
++    endif (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++  endif (LINUX)
++endif (LINUX AND NOT APPLE)
  
  add_dependencies(clementine_lib qtsingleapplication)
  
-@@ -1016,6 +1015,8 @@ add_executable(clementine
+@@ -1227,6 +1235,13 @@
    ${CLEMENTINE-WIN32-RESOURCES}
    main.cpp
  )
++if (UNIX AND NOT APPLE)
++  if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    target_link_libraries(clementine execinfo)
++    set_target_properties(clementine PROPERTIES OUTPUT_NAME clementine-player)
++  endif (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++endif (UNIX AND NOT APPLE)
 +
-+set_target_properties(clementine PROPERTIES OUTPUT_NAME clementine-player)
  target_link_libraries(clementine
    clementine_lib
  )
