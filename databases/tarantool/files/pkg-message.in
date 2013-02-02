@@ -1,0 +1,13 @@
+#########################################################
+#
+#
+#        After install you'll need:
+#
+#    Edit example config:
+#    %%ETCDIR%%/tarantool.cfg.sample
+#    Init storage:
+#    %%PREFIX%%/bin/tarantool_box --init-storage \
+#      -c %%ETCDIR%%/tarantool.cfg
+#
+#
+#########################################################
