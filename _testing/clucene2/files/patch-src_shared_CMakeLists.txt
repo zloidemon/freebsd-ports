@@ -1,0 +1,11 @@
+--- src/shared/CMakeLists.txt.orig	2012-12-25 15:22:51.073227823 +0400
++++ src/shared/CMakeLists.txt	2012-12-25 15:23:00.202237515 +0400
+@@ -98,7 +98,7 @@
+                            wcscmp wcsncmp wcscspn )
+ 
+ #todo: wcstoq is bsd equiv of wcstoll, we can use that...
+-CHECK_OPTIONAL_FUNCTIONS( wcsupr wcscasecmp wcsicmp wcstoll wprintf lltow 
++CHECK_OPTIONAL_FUNCTIONS( wcsupr wcscasecmp wcsicmp wprintf lltow 
+     wcstod wcsdup strupr strlwr lltoa strtoll gettimeofday _vsnwprintf mmap "MapViewOfFile(0,0,0,0,0)"
+ )
+ 
