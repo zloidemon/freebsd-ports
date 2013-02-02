@@ -1,599 +1,1577 @@
-bin/leechcraft
-include/leechcraft/plugininterface/CMakeLists.txt
-include/leechcraft/plugininterface/backendselector.cpp
-include/leechcraft/plugininterface/backendselector.h
-include/leechcraft/plugininterface/backendselector.ui
-include/leechcraft/plugininterface/basehookinterconnector.cpp
-include/leechcraft/plugininterface/basehookinterconnector.h
-include/leechcraft/plugininterface/categoryselector.cpp
-include/leechcraft/plugininterface/categoryselector.h
-include/leechcraft/plugininterface/customcookiejar.cpp
-include/leechcraft/plugininterface/customcookiejar.h
-include/leechcraft/plugininterface/dblock.cpp
-include/leechcraft/plugininterface/dblock.h
-include/leechcraft/plugininterface/defaulthookproxy.cpp
-include/leechcraft/plugininterface/defaulthookproxy.h
-include/leechcraft/plugininterface/exceptions.cpp
-include/leechcraft/plugininterface/exceptions.h
-include/leechcraft/plugininterface/fileremoveguard.cpp
-include/leechcraft/plugininterface/util.h
-include/leechcraft/plugininterface/fileremoveguard.h
-include/leechcraft/plugininterface/flattofoldersproxymodel.cpp
-include/leechcraft/plugininterface/flattofoldersproxymodel.h
-include/leechcraft/plugininterface/guarded.h
-include/leechcraft/plugininterface/idpool.h
-include/leechcraft/plugininterface/listmodel.cpp
-include/leechcraft/plugininterface/listmodel.h
-include/leechcraft/plugininterface/mergemodel.cpp
-include/leechcraft/plugininterface/mergemodel.h
-include/leechcraft/plugininterface/modeltest.cpp
-include/leechcraft/plugininterface/modeltest.h
-include/leechcraft/plugininterface/piconfig.h
-include/leechcraft/plugininterface/selectablebrowser.cpp
-include/leechcraft/plugininterface/selectablebrowser.h
-include/leechcraft/plugininterface/structuresops.cpp
-include/leechcraft/plugininterface/structuresops.h
-include/leechcraft/plugininterface/tagscompleter.cpp
-include/leechcraft/plugininterface/tagscompleter.h
-include/leechcraft/plugininterface/tagscompletionmodel.cpp
-include/leechcraft/plugininterface/treeitem.h
-include/leechcraft/plugininterface/tagscompletionmodel.h
-include/leechcraft/plugininterface/tagsfiltermodel.cpp
-include/leechcraft/plugininterface/tagsfiltermodel.h
-include/leechcraft/plugininterface/tagslineedit.cpp
-include/leechcraft/plugininterface/tagslineedit.h
-include/leechcraft/plugininterface/treeitem.cpp
-include/leechcraft/plugininterface/util.cpp
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/flags.make
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/tagscompleter.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/depend.make
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/build.make
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/link.txt
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/cmake_clean.cmake
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/progress.make
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/DependInfo.cmake
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/treeitem.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/CXX.includecache
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/depend.internal
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/tagscompletionmodel.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/tagslineedit.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/tagsfiltermodel.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/util.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/categoryselector.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/mergemodel.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/dblock.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_util.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/customcookiejar.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/modeltest.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/backendselector.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/structuresops.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/listmodel.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/selectablebrowser.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/flattofoldersproxymodel.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/defaulthookproxy.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/basehookinterconnector.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/fileremoveguard.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/exceptions.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_tagscompleter.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_tagscompletionmodel.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_treeitem.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_tagslineedit.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_tagsfiltermodel.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_categoryselector.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_mergemodel.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_dblock.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_customcookiejar.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_modeltest.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_backendselector.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_structuresops.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_listmodel.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_selectablebrowser.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_flattofoldersproxymodel.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_defaulthookproxy.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_basehookinterconnector.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_fileremoveguard.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_exceptions.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_idpool.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/CMakeDirectoryInformation.cmake
-include/leechcraft/plugininterface/CMakeFiles/progress.marks
-include/leechcraft/plugininterface/moc_util.cxx
-include/leechcraft/plugininterface/Makefile
-include/leechcraft/plugininterface/moc_tagscompleter.cxx
-include/leechcraft/plugininterface/cmake_install.cmake
-include/leechcraft/plugininterface/moc_tagscompletionmodel.cxx
-include/leechcraft/plugininterface/moc_treeitem.cxx
-include/leechcraft/plugininterface/moc_tagslineedit.cxx
-include/leechcraft/plugininterface/moc_tagsfiltermodel.cxx
-include/leechcraft/plugininterface/moc_categoryselector.cxx
-include/leechcraft/plugininterface/moc_mergemodel.cxx
-include/leechcraft/plugininterface/moc_dblock.cxx
-include/leechcraft/plugininterface/moc_customcookiejar.cxx
-include/leechcraft/plugininterface/moc_modeltest.cxx
-include/leechcraft/plugininterface/moc_backendselector.cxx
-include/leechcraft/plugininterface/moc_structuresops.cxx
-include/leechcraft/plugininterface/moc_listmodel.cxx
-include/leechcraft/plugininterface/moc_selectablebrowser.cxx
-include/leechcraft/plugininterface/moc_flattofoldersproxymodel.cxx
-include/leechcraft/plugininterface/moc_defaulthookproxy.cxx
-include/leechcraft/plugininterface/moc_basehookinterconnector.cxx
-include/leechcraft/plugininterface/moc_fileremoveguard.cxx
-include/leechcraft/plugininterface/moc_exceptions.cxx
-include/leechcraft/plugininterface/moc_idpool.cxx
-include/leechcraft/plugininterface/ui_backendselector.h
-include/leechcraft/plugininterface/libplugininterface.so.0.3.0
-include/leechcraft/plugininterface/libplugininterface.so
-include/leechcraft/plugininterface/customnetworkreply.cpp
-include/leechcraft/plugininterface/customnetworkreply.h
-include/leechcraft/plugininterface/resourceloader.cpp
-include/leechcraft/plugininterface/resourceloader.h
-include/leechcraft/plugininterface/syncops.cpp
-include/leechcraft/plugininterface/syncops.h
-include/leechcraft/plugininterface/versionactionmapper.h
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/syncops.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/customnetworkreply.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/resourceloader.cpp.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_syncops.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_customnetworkreply.cxx.o
-include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir/moc_resourceloader.cxx.o
-include/leechcraft/plugininterface/moc_syncops.cxx
-include/leechcraft/plugininterface/moc_customnetworkreply.cxx
-include/leechcraft/plugininterface/moc_resourceloader.cxx
-include/leechcraft/interfaces/idownload.h
-include/leechcraft/interfaces/iembedtab.h
-include/leechcraft/interfaces/ientityhandler.h
-include/leechcraft/interfaces/ifinder.h
-include/leechcraft/interfaces/ihavesettings.h
-include/leechcraft/interfaces/ihaveshortcuts.h
-include/leechcraft/interfaces/iimportexport.h
-include/leechcraft/interfaces/iinfo.h
-include/leechcraft/interfaces/ijobholder.h
-include/leechcraft/interfaces/imediaplayer.h
-include/leechcraft/interfaces/imultitabs.h
-include/leechcraft/interfaces/iplugin2.h
-include/leechcraft/interfaces/ipluginadaptor.h
-include/leechcraft/interfaces/ipluginready.h
-include/leechcraft/interfaces/istartupwizard.h
-include/leechcraft/interfaces/isummaryrepresentation.h
-include/leechcraft/interfaces/itaggablejobs.h
-include/leechcraft/interfaces/iwebbrowser.h
-include/leechcraft/interfaces/iwindow.h
-include/leechcraft/interfaces/structures.h
-include/leechcraft/interfaces/moc_structures.cxx
-include/leechcraft/interfaces/iactionsexporter.h
-include/leechcraft/interfaces/isyncable.h
+share/icons/hicolor/96x96/apps/leechcraft_main.png
+share/icons/hicolor/72x72/apps/leechcraft_main.png
+share/icons/hicolor/64x64/apps/leechcraft_main.png
+share/icons/hicolor/48x48/apps/leechcraft_main.png
+share/icons/hicolor/36x36/apps/leechcraft_main.png
+share/icons/hicolor/32x32/apps/leechcraft_main.png
+share/icons/hicolor/24x24/apps/leechcraft_main.png
+share/icons/hicolor/22x22/apps/leechcraft_main.png
+share/icons/hicolor/192x192/apps/leechcraft_main.png
+share/icons/hicolor/16x16/apps/leechcraft_main.png
+share/icons/hicolor/14x14/apps/leechcraft_main.png
+share/icons/hicolor/128x128/apps/leechcraft_main.png
+share/cmake/Modules/InitLCPlugin.cmake
+share/applications/leechcraft.desktop
+lib/libxmlsettingsdialog.so.0.3.0
+lib/libxmlsettingsdialog.so
+lib/liblcutil.so.0.5.0
+lib/liblcutil.so
+include/leechcraft/xmlsettingsdialog/xsdconfig.h
 include/leechcraft/xmlsettingsdialog/xmlsettingsdialog.h
 include/leechcraft/xmlsettingsdialog/datasourceroles.h
 include/leechcraft/xmlsettingsdialog/basesettingsmanager.h
-include/leechcraft/xmlsettingsdialog/xsdconfig.h
+include/leechcraft/util/utilconfig.h
+include/leechcraft/util/util.h
+include/leechcraft/util/util.cpp
+include/leechcraft/util/ui_backendselector.h
+include/leechcraft/util/tags/tagslineedit.h
+include/leechcraft/util/tags/tagslineedit.cpp
+include/leechcraft/util/tags/tagsfiltermodel.h
+include/leechcraft/util/tags/tagsfiltermodel.cpp
+include/leechcraft/util/tags/tagscompletionmodel.h
+include/leechcraft/util/tags/tagscompletionmodel.cpp
+include/leechcraft/util/tags/tagscompleter.h
+include/leechcraft/util/tags/tagscompleter.cpp
+include/leechcraft/util/tags/categoryselector.h
+include/leechcraft/util/tags/categoryselector.cpp
+include/leechcraft/util/sysinfo.h
+include/leechcraft/util/sysinfo.cpp
+include/leechcraft/util/sync/versionactionmapper.h
+include/leechcraft/util/sync/syncops.h
+include/leechcraft/util/sync/syncops.cpp
+include/leechcraft/util/sync/syncdeltamanager.h
+include/leechcraft/util/sync/syncdeltamanager.cpp
+include/leechcraft/util/structuresops.h
+include/leechcraft/util/structuresops.cpp
+include/leechcraft/util/socketerrorstrings.h
+include/leechcraft/util/socketerrorstrings.cpp
+include/leechcraft/util/shortcuts/shortcutmanager.h
+include/leechcraft/util/shortcuts/shortcutmanager.cpp
+include/leechcraft/util/resourceloader.h
+include/leechcraft/util/resourceloader.cpp
+include/leechcraft/util/passutils.h
+include/leechcraft/util/passutils.cpp
+include/leechcraft/util/notificationactionhandler.h
+include/leechcraft/util/notificationactionhandler.cpp
+include/leechcraft/util/models/treeitem.h
+include/leechcraft/util/models/treeitem.cpp
+include/leechcraft/util/models/mergemodel.h
+include/leechcraft/util/models/mergemodel.cpp
+include/leechcraft/util/models/listmodel.h
+include/leechcraft/util/models/listmodel.cpp
+include/leechcraft/util/models/flattofoldersproxymodel.h
+include/leechcraft/util/models/flattofoldersproxymodel.cpp
+include/leechcraft/util/models/flattenfiltermodel.h
+include/leechcraft/util/models/flattenfiltermodel.cpp
+include/leechcraft/util/moc_tagslineedit.cpp
+include/leechcraft/util/moc_tagsfiltermodel.cpp
+include/leechcraft/util/moc_tagscompletionmodel.cpp
+include/leechcraft/util/moc_tagscompleter.cpp
+include/leechcraft/util/moc_syncdeltamanager.cpp
+include/leechcraft/util/moc_shortcutmanager.cpp
+include/leechcraft/util/moc_selectablebrowser.cpp
+include/leechcraft/util/moc_resourceloader.cpp
+include/leechcraft/util/moc_notificationactionhandler.cpp
+include/leechcraft/util/moc_mergemodel.cpp
+include/leechcraft/util/moc_listmodel.cpp
+include/leechcraft/util/moc_flattofoldersproxymodel.cpp
+include/leechcraft/util/moc_flattenfiltermodel.cpp
+include/leechcraft/util/moc_customnetworkreply.cpp
+include/leechcraft/util/moc_customcookiejar.cpp
+include/leechcraft/util/moc_categoryselector.cpp
+include/leechcraft/util/moc_basehookinterconnector.cpp
+include/leechcraft/util/moc_backendselector.cpp
+include/leechcraft/util/liblcutil.so.0.5.0
+include/leechcraft/util/liblcutil.so
+include/leechcraft/util/lcutil_automoc.cpp
+include/leechcraft/util/idpool.h
+include/leechcraft/util/gui/selectablebrowser.h
+include/leechcraft/util/gui/selectablebrowser.cpp
+include/leechcraft/util/gui/flowlayout.h
+include/leechcraft/util/gui/flowlayout.cpp
+include/leechcraft/util/guarded.h
+include/leechcraft/util/fileremoveguard.h
+include/leechcraft/util/fileremoveguard.cpp
+include/leechcraft/util/exceptions.h
+include/leechcraft/util/exceptions.cpp
+include/leechcraft/util/defaulthookproxy.h
+include/leechcraft/util/defaulthookproxy.cpp
+include/leechcraft/util/dblock.h
+include/leechcraft/util/dblock.cpp
+include/leechcraft/util/customnetworkreply.h
+include/leechcraft/util/customnetworkreply.cpp
+include/leechcraft/util/customcookiejar.h
+include/leechcraft/util/customcookiejar.cpp
+include/leechcraft/util/cmake_install.cmake
+include/leechcraft/util/basehookinterconnector.h
+include/leechcraft/util/basehookinterconnector.cpp
+include/leechcraft/util/backendselector.ui
+include/leechcraft/util/backendselector.h
+include/leechcraft/util/backendselector.cpp
+include/leechcraft/util/Makefile
+include/leechcraft/util/CMakeLists.txt
+include/leechcraft/util/CMakeFiles/progress.marks
+include/leechcraft/util/CMakeFiles/lcutil_automoc.dir/progress.make
+include/leechcraft/util/CMakeFiles/lcutil_automoc.dir/depend.make
+include/leechcraft/util/CMakeFiles/lcutil_automoc.dir/depend.internal
+include/leechcraft/util/CMakeFiles/lcutil_automoc.dir/cmake_clean.cmake
+include/leechcraft/util/CMakeFiles/lcutil_automoc.dir/build.make
+include/leechcraft/util/CMakeFiles/lcutil_automoc.dir/DependInfo.cmake
+include/leechcraft/util/CMakeFiles/lcutil_automoc.dir/AutomocOldMocDefinitions.cmake
+include/leechcraft/util/CMakeFiles/lcutil_automoc.dir/AutomocInfo.cmake
+include/leechcraft/util/CMakeFiles/lcutil.dir/util.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/tags/tagslineedit.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/tags/tagsfiltermodel.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/tags/tagscompletionmodel.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/tags/tagscompleter.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/tags/categoryselector.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/sysinfo.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/sync/syncops.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/sync/syncdeltamanager.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/structuresops.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/socketerrorstrings.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/shortcuts/shortcutmanager.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/resourceloader.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/progress.make
+include/leechcraft/util/CMakeFiles/lcutil.dir/passutils.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/notificationactionhandler.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/models/treeitem.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/models/mergemodel.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/models/listmodel.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/models/flattofoldersproxymodel.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/models/flattenfiltermodel.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/link.txt
+include/leechcraft/util/CMakeFiles/lcutil.dir/lcutil_automoc.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/gui/selectablebrowser.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/gui/flowlayout.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/flags.make
+include/leechcraft/util/CMakeFiles/lcutil.dir/fileremoveguard.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/exceptions.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/depend.make
+include/leechcraft/util/CMakeFiles/lcutil.dir/depend.internal
+include/leechcraft/util/CMakeFiles/lcutil.dir/defaulthookproxy.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/dblock.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/customnetworkreply.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/customcookiejar.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/cmake_clean.cmake
+include/leechcraft/util/CMakeFiles/lcutil.dir/build.make
+include/leechcraft/util/CMakeFiles/lcutil.dir/basehookinterconnector.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/backendselector.cpp.o
+include/leechcraft/util/CMakeFiles/lcutil.dir/DependInfo.cmake
+include/leechcraft/util/CMakeFiles/lcutil.dir/CXX.includecache
+include/leechcraft/util/CMakeFiles/CMakeDirectoryInformation.cmake
+include/leechcraft/interfaces/vfs/iprotocolengine.h
+include/leechcraft/interfaces/vfs/iengineprovider.h
+include/leechcraft/interfaces/vfs/ienginebase.h
+include/leechcraft/interfaces/vfs/icontainerengine.h
+include/leechcraft/interfaces/structures.h
+include/leechcraft/interfaces/media/isimilarartists.h
+include/leechcraft/interfaces/media/irecommendedartists.h
+include/leechcraft/interfaces/media/irecentreleases.h
+include/leechcraft/interfaces/media/iradiostationprovider.h
+include/leechcraft/interfaces/media/iradiostation.h
+include/leechcraft/interfaces/media/ipendingsimilarartists.h
+include/leechcraft/interfaces/media/ilyricsfinder.h
+include/leechcraft/interfaces/media/iaudioscrobbler.h
+include/leechcraft/interfaces/media/iartistbiofetcher.h
+include/leechcraft/interfaces/media/ialbumartprovider.h
+include/leechcraft/interfaces/media/audiostructs.h
+include/leechcraft/interfaces/iwindow.h
+include/leechcraft/interfaces/iwebbrowser.h
+include/leechcraft/interfaces/itexteditor.h
+include/leechcraft/interfaces/itaggablejobs.h
+include/leechcraft/interfaces/isyncable.h
+include/leechcraft/interfaces/isummaryrepresentation.h
+include/leechcraft/interfaces/istartupwizard.h
+include/leechcraft/interfaces/iscriptloader.h
+include/leechcraft/interfaces/iremovabledevmanager.h
+include/leechcraft/interfaces/ipluginready.h
+include/leechcraft/interfaces/ipluginadaptor.h
+include/leechcraft/interfaces/iplugin2.h
+include/leechcraft/interfaces/imwproxy.h
+include/leechcraft/interfaces/imediaplayer.h
+include/leechcraft/interfaces/ijobholder.h
+include/leechcraft/interfaces/iinfo.h
+include/leechcraft/interfaces/iimportexport.h
+include/leechcraft/interfaces/ihavetabs.h
+include/leechcraft/interfaces/ihaveshortcuts.h
+include/leechcraft/interfaces/ihavesettings.h
+include/leechcraft/interfaces/ihaverecoverabletabs.h
+include/leechcraft/interfaces/ihavediaginfo.h
+include/leechcraft/interfaces/ifinder.h
+include/leechcraft/interfaces/ientityhandler.h
+include/leechcraft/interfaces/idownload.h
+include/leechcraft/interfaces/ianemitter.h
+include/leechcraft/interfaces/iactionsexporter.h
+include/leechcraft/interfaces/entitytesthandleresult.h
+include/leechcraft/interfaces/core/itagsmanager.h
+include/leechcraft/interfaces/core/ipluginsmanager.h
+include/leechcraft/interfaces/core/ihookproxy.h
+include/leechcraft/interfaces/core/icoretabwidget.h
+include/leechcraft/interfaces/core/icoreproxy.h
 include/leechcraft/config.h
-lib/libplugininterface.so.0.3.0
-lib/libplugininterface.so
-lib/libxmlsettingsdialog.so.0.3.0
-lib/libxmlsettingsdialog.so
+bin/leechcraft-add-file
+bin/leechcraft
+%%YANDEXDISK%%lib/leechcraft/plugins/libleechcraft_netstoremanager_yandexdisk.so
+%%YANDEXDISK%%%%DATADIR%%/translations/leechcraft_netstoremanager_yandexdisk_uk_UA.qm
+%%YANDEXDISK%%%%DATADIR%%/translations/leechcraft_netstoremanager_yandexdisk_ru_RU.qm
+%%YANDEXDISK%%%%DATADIR%%/translations/leechcraft_netstoremanager_yandexdisk_es.qm
+%%YANDEXDISK%%%%DATADIR%%/translations/leechcraft_netstoremanager_yandexdisk_en.qm
+%%XPROXY%%lib/leechcraft/plugins/libleechcraft_xproxy.so
+%%XPROXY%%%%DATADIR%%/translations/leechcraft_xproxy_ru_RU.qm
+%%XPROXY%%%%DATADIR%%/translations/leechcraft_xproxy_en.qm
+%%XPROXY%%%%DATADIR%%/settings/xproxysettings.xml
+%%VROOBY%%lib/leechcraft/plugins/libleechcraft_vrooby.so
+%%VROOBY%%%%DATADIR%%/translations/leechcraft_vrooby_ru_RU.qm
+%%VROOBY%%%%DATADIR%%/translations/leechcraft_vrooby_en.qm
+%%VGRABBER%%lib/leechcraft/plugins/libleechcraft_vgrabber.so
+%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_uk_UA.qm
+%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_ru_RU.qm
+%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_pl.qm
+%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_oc.qm
+%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_it.qm
+%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_fr.qm
+%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_en.qm
+%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_de.qm
+%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_ar.qm
+%%VGRABBER%%%%DATADIR%%/settings/vgrabbersettings.xml
+%%TORRENT%%lib/leechcraft/plugins/libleechcraft_bittorrent.so
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_uk_UA.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_ru_RU.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_pl.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_oc.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_it.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_fr.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_es.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_eo.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_en.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_de.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_be.qm
+%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_ar.qm
+%%TORRENT%%%%DATADIR%%/settings/torrentsettings.xml
+%%TABSLIST%%lib/leechcraft/plugins/libleechcraft_tabslist.so
+%%TABSLIST%%%%DATADIR%%/translations/leechcraft_tabslist_uk_UA.qm
+%%TABSLIST%%%%DATADIR%%/translations/leechcraft_tabslist_ru_RU.qm
+%%TABSLIST%%%%DATADIR%%/translations/leechcraft_tabslist_en.qm
+%%TABSESSMANAGER%%lib/leechcraft/plugins/libleechcraft_tabsessmanager.so
+%%TABSESSMANAGER%%%%DATADIR%%/translations/leechcraft_tabsessmanager_ru_RU.qm
+%%TABSESSMANAGER%%%%DATADIR%%/translations/leechcraft_tabsessmanager_en.qm
+%%SYNCER%%lib/leechcraft/plugins/libleechcraft_syncer.so
+%%SYNCER%%%%DATADIR%%/translations/leechcraft_syncer_ru_RU.qm
+%%SYNCER%%%%DATADIR%%/translations/leechcraft_syncer_en.qm
+%%SYNCER%%%%DATADIR%%/settings/syncersettings.xml
 %%SUMMARY%%lib/leechcraft/plugins/libleechcraft_summary.so
-%%AGGREGATOR%%lib/leechcraft/plugins/libleechcraft_aggregator.so
-%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku.so
-%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_cleanweb.so
+%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_uk_UA.qm
+%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_ru_RU.qm
+%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_it.qm
+%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_fr.qm
+%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_es.qm
+%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_en.qm
+%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_de.qm
+%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_be.qm
+%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_ar.qm
+%%SNAILS%%lib/leechcraft/plugins/libleechcraft_snails.so
+%%SNAILS%%%%DATADIR%%/translations/leechcraft_snails_ru_RU.qm
+%%SNAILS%%%%DATADIR%%/translations/leechcraft_snails_en.qm
+%%SNAILS%%%%DATADIR%%/translations/leechcraft_popishu_es.qm
+%%SNAILS%%%%DATADIR%%/translations/leechcraft_glance_es.qm
+%%SNAILS%%%%DATADIR%%/snails/msgview/default/msgview.html
+%%SNAILS%%%%DATADIR%%/settings/snailssettings.xml
+%%SIDEBAR%%lib/leechcraft/plugins/libleechcraft_sidebar.so
+%%SHELLOPEN%%lib/leechcraft/plugins/libleechcraft_shellopen.so
+%%SHELLOPEN%%%%DATADIR%%/translations/leechcraft_shellopen_uk_UA.qm
+%%SHELLOPEN%%%%DATADIR%%/translations/leechcraft_shellopen_ru_RU.qm
+%%SHELLOPEN%%%%DATADIR%%/translations/leechcraft_shellopen_en.qm
+%%SEEKTHRU%%lib/leechcraft/plugins/libleechcraft_seekthru.so
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_uk_UA.qm
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_ru_RU.qm
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_pl.qm
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_fr.qm
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_es.qm
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_eo.qm
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_en.qm
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_de.qm
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_be.qm
+%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_ar.qm
+%%SEEKTHRU%%%%DATADIR%%/settings/seekthrusettings.xml
+%%SECMAN%%lib/leechcraft/plugins/libleechcraft_secman_simplestorage.so
+%%SECMAN%%lib/leechcraft/plugins/libleechcraft_secman.so
+%%SECMAN%%include/leechcraft/interfaces/secman/istorageplugin.h
+%%QROSP%%lib/leechcraft/plugins/libleechcraft_qrosp.so
+%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_pogooglue.so
+%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_onlinebookmarks_readitlater.so
+%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_onlinebookmarks_delicious.so
+%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_onlinebookmarks.so
+%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_keywords.so
 %%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_fua.so
 %%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_filescheme.so
-%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_wyfv.so
-%%HTTP%%lib/leechcraft/plugins/libleechcraft_cstp.so
-%%DBUSMANAGER%%lib/leechcraft/plugins/libleechcraft_dbusmanager.so
-%%DEADLYRICS%%lib/leechcraft/plugins/libleechcraft_deadlyrics.so
-%%SEEKTHRU%%lib/leechcraft/plugins/libleechcraft_seekthru.so
-%%NETWORKMONITOR%%lib/leechcraft/plugins/libleechcraft_networkmonitor.so
-%%HISTORYHOLDER%%lib/leechcraft/plugins/libleechcraft_historyholder.so
-%%NEWLIFE%%lib/leechcraft/plugins/libleechcraft_newlife.so
-%%VGRABBER%%lib/leechcraft/plugins/libleechcraft_vgrabber.so
-%%KINOTIFY%%lib/leechcraft/plugins/libleechcraft_kinotify.so
-%%AUSCRIE%%lib/leechcraft/plugins/libleechcraft_auscrie.so
-%%TABPP%%lib/leechcraft/plugins/libleechcraft_tabpp.so
-%%AZOTH%%bin/leechcraft_azoth_server
-%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth.so
-%%SECMAN%%lib/leechcraft/plugins/libleechcraft_secman.so
-%%POPISHU%%lib/leechcraft/plugins/libleechcraft_popishu.so
-%%LACKMAN%%lib/leechcraft/plugins/libleechcraft_lackman.so
-%%TORRENT%%lib/leechcraft/plugins/libleechcraft_bittorrent.so
-%%DATADIR%%/translations/leechcraft_ru_RU.qm
-%%DATADIR%%/translations/leechcraft_de.qm
-%%DATADIR%%/translations/leechcraft_uk_UA.qm
-%%DATADIR%%/translations/leechcraft_it.qm
-%%DATADIR%%/translations/leechcraft_ar.qm
-%%DATADIR%%/translations/leechcraft_eo.qm
-%%DATADIR%%/translations/leechcraft_es.qm
-%%DATADIR%%/translations/leechcraft_tr.qm
-%%DATADIR%%/translations/leechcraft_en.qm
-%%DATADIR%%/translations/leechcraft_be.qm
-%%DATADIR%%/translations/leechcraft_fr.qm
-%%DATADIR%%/translations/leechcraft_pl.qm
-%%POPISHU%%%%DATADIR%%/translations/leechcraft_popishu_ru_RU.qm
-%%POPISHU%%%%DATADIR%%/translations/leechcraft_popishu_uk_UA.qm
-%%POPISHU%%%%DATADIR%%/translations/leechcraft_popishu_en.qm
-%%POPISHU%%%%DATADIR%%/settings/popishusettings.xml
-%%TABPP%%%%DATADIR%%/translations/leechcraft_tabpp_uk_UA.qm
-%%TABPP%%%%DATADIR%%/translations/leechcraft_tabpp_ru_RU.qm
-%%TABPP%%%%DATADIR%%/translations/leechcraft_tabpp_de.qm
-%%TABPP%%%%DATADIR%%/translations/leechcraft_tabpp_en.qm
-%%TABPP%%%%DATADIR%%/translations/leechcraft_tabpp_oc.qm
-%%TABPP%%%%DATADIR%%/settings/tabppsettings.xml
-%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_ru_RU.qm
-%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_uk_UA.qm
-%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_de.qm
-%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_es.qm
-%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_oc.qm
-%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_en.qm
-%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_ru_RU.qm
-%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_uk_UA.qm
-%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_ar.qm
-%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_de.qm
-%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_en.qm
-%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_oc.qm
-%%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_pl.qm
-%%VGRABBER%%%%DATADIR%%/settings/vgrabbersettings.xml
-%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_ru_RU.qm
-%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_uk_UA.qm
-%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_ar.qm
-%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_be.qm
-%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_de.qm
-%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_en.qm
-%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_pl.qm
-%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_ru_RU.qm
-%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_uk_UA.qm
-%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_ar.qm
-%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_de.qm
-%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_es.qm
-%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_oc.qm
-%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_en.qm
-%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_fr.qm
-%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_pl.qm
-%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_ru_RU.qm
-%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_uk_UA.qm
-%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_ar.qm
-%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_be.qm
-%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_de.qm
-%%SUMMARY%%%%DATADIR%%/translations/leechcraft_summary_en.qm
-%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_ru_RU.qm
-%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_de.qm
-%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_uk_UA.qm
-%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_ar.qm
-%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_eo.qm
-%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_pl.qm
-%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_es.qm
-%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_oc.qm
-%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_en.qm
-%%AGGREGATOR%%%%DATADIR%%/settings/aggregatorsettings.xml
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_ru_RU.qm
+%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_fatape.so
+%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku_cleanweb.so
+%%POSHUKU%%lib/leechcraft/plugins/libleechcraft_poshuku.so
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_uk_UA.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_ar.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_be.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_de.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_pogooglue_uk_UA.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_pogooglue_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_pogooglue_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_pl.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_uk_UA.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_readitlater_uk_UA.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_readitlater_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_readitlater_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_it.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_fr.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_delicious_uk_UA.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_delicious_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_delicious_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_de.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_it.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_uk_UA.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_pl.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_it.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_fr.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_es.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_eo.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_de.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_ar.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fr.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_uk_UA.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_pl.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_it.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_fr.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_es.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_eo.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_de.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_ar.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fatape_uk_UA.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fatape_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fatape_it.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fatape_en.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_es.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_eo.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fr.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_pl.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_de.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_uk_UA.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_ar.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_eo.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_de.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_es.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_en.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_fr.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_ru_RU.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_pl.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_ru_RU.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_uk_UA.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_ar.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_de.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_en.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_eo.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_es.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_fr.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_fua_pl.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_ru_RU.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_uk_UA.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_ar.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_de.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_en.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_eo.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_es.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_fr.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_filescheme_pl.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_wyfv_ru_RU.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_wyfv_uk_UA.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_wyfv_ar.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_wyfv_de.qm
-%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_wyfv_en.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_ru_RU.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_uk_UA.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_ar.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_de.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_eo.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_es.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_fr.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_oc.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_en.qm
-%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_pl.qm
-%%HTTP%%%%DATADIR%%/settings/cstpsettings.xml
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_ru_RU.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_uk_UA.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_de.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_ar.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_pl.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_es.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_fr.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_oc.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_en.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_be.qm
-%%TORRENT%%%%DATADIR%%/translations/leechcraft_bittorrent_eo.qm
-%%TORRENT%%%%DATADIR%%/settings/torrentsettings.xml
-%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_ru_RU.qm
-%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_uk_UA.qm
-%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_eo.qm
-%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_de.qm
-%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_es.qm
-%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_en.qm
-%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_ar.qm
-%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_fr.qm
-%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_pl.qm
-%%DBUSMANAGER%%%%DATADIR%%/settings/dbusmanagersettings.xml
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_ru_RU.qm
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_uk_UA.qm
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_ar.qm
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_eo.qm
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_de.qm
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_es.qm
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_fr.qm
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_oc.qm
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_pl.qm
-%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_en.qm
-%%DEADLYRICS%%%%DATADIR%%/settings/deadlyricssettings.xml
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_ru_RU.qm
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_uk_UA.qm
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_ar.qm
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_be.qm
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_de.qm
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_en.qm
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_eo.qm
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_es.qm
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_fr.qm
-%%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_pl.qm
-%%SEEKTHRU%%%%DATADIR%%/settings/seekthrusettings.xml
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_it.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_fr.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_es.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_eo.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_de.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_ar.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_be.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_ar.qm
 %%POSHUKU%%%%DATADIR%%/settings/poshukusettings.xml
-%%POSHUKU%%%%DATADIR%%/settings/poshukucleanwebsettings.xml
+%%POSHUKU%%%%DATADIR%%/settings/poshukuonlinebookmarkssettings.xml
+%%POSHUKU%%%%DATADIR%%/settings/poshukukeywordssettings.xml
 %%POSHUKU%%%%DATADIR%%/settings/poshukufuasettings.xml
-%%POSHUKU%%%%DATADIR%%/settings/poshukuwyfvsettings.xml
-%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/settings/poshukufatapesettings.xml
+%%POSHUKU%%%%DATADIR%%/settings/poshukucleanwebsettings.xml
+%%POSHUKU%%%%DATADIR%%/installed/poshuku/LeechCraft.Poshuku
+%%POPISHU%%lib/leechcraft/plugins/libleechcraft_popishu.so
+%%POPISHU%%%%DATADIR%%/translations/leechcraft_popishu_uk_UA.qm
+%%POPISHU%%%%DATADIR%%/translations/leechcraft_popishu_ru_RU.qm
+%%POPISHU%%%%DATADIR%%/translations/leechcraft_popishu_it.qm
+%%POPISHU%%%%DATADIR%%/translations/leechcraft_popishu_fr.qm
+%%POPISHU%%%%DATADIR%%/translations/leechcraft_popishu_en.qm
+%%POPISHU%%%%DATADIR%%/translations/leechcraft_popishu_de.qm
+%%POPISHU%%%%DATADIR%%/settings/popishusettings.xml
+%%PINTAB%%lib/leechcraft/plugins/libleechcraft_pintab.so
+%%PINTAB%%%%DATADIR%%/translations/leechcraft_pintab_ru_RU.qm
+%%PINTAB%%%%DATADIR%%/translations/leechcraft_pintab_en.qm
+%%OTZERKALU%%lib/leechcraft/plugins/libleechcraft_otzerkalu.so
+%%NEWLIFE%%lib/leechcraft/plugins/libleechcraft_newlife.so
+%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_uk_UA.qm
+%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_ru_RU.qm
+%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_pl.qm
+%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_it.qm
+%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_fr.qm
+%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_en.qm
+%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_de.qm
+%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_be.qm
+%%NEWLIFE%%%%DATADIR%%/translations/leechcraft_newlife_ar.qm
+%%NETWORKMONITOR%%lib/leechcraft/plugins/libleechcraft_networkmonitor.so
 %%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_uk_UA.qm
-%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_ar.qm
-%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_de.qm
+%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_ru_RU.qm
+%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_pl.qm
+%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_it.qm
+%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_fr.qm
+%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_es.qm
 %%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_eo.qm
 %%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_en.qm
-%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_es.qm
-%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_fr.qm
-%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_pl.qm
-%%DATADIR%%/translations/leechcraft_summary_fr.qm
-%%DATADIR%%/translations/leechcraft_summary_it.qm
-%%DATADIR%%/translations/leechcraft_bittorrent_it.qm
-%%DATADIR%%/translations/leechcraft_aggregator_fr.qm
-%%DATADIR%%/translations/leechcraft_aggregator_it.qm
-%%DATADIR%%/translations/leechcraft_chatter_ru_RU.qm
-%%DATADIR%%/translations/leechcraft_chatter_uk_UA.qm
-%%DATADIR%%/translations/leechcraft_chatter_ar.qm
-%%DATADIR%%/translations/leechcraft_chatter_en.qm
-%%DATADIR%%/translations/leechcraft_chatter_pl.qm
-%%DATADIR%%/translations/leechcraft_cstp_it.qm
-%%DATADIR%%/translations/leechcraft_lcftp_ru_RU.qm
-%%DATADIR%%/translations/leechcraft_lcftp_uk_UA.qm
-%%DATADIR%%/translations/leechcraft_lcftp_de.qm
-%%DATADIR%%/translations/leechcraft_lcftp_oc.qm
-%%DATADIR%%/translations/leechcraft_lcftp_pl.qm
-%%DATADIR%%/translations/leechcraft_lcftp_en.qm
-%%DATADIR%%/translations/leechcraft_lcftp_ar.qm
-%%DATADIR%%/translations/leechcraft_lcftp_eo.qm
-%%DATADIR%%/translations/leechcraft_lcftp_fr.qm
-%%DATADIR%%/translations/leechcraft_lmp_ru_RU.qm
-%%DATADIR%%/translations/leechcraft_lmp_uk_UA.qm
-%%DATADIR%%/translations/leechcraft_lmp_ar.qm
-%%DATADIR%%/translations/leechcraft_lmp_de.qm
-%%DATADIR%%/translations/leechcraft_lmp_es.qm
-%%DATADIR%%/translations/leechcraft_lmp_pl.qm
-%%DATADIR%%/translations/leechcraft_lmp_en.qm
-%%DATADIR%%/translations/leechcraft_lmp_eo.qm
-%%DATADIR%%/translations/leechcraft_lmp_fr.qm
-%%DATADIR%%/translations/leechcraft_dbusmanager_it.qm
-%%DATADIR%%/translations/leechcraft_deadlyrics_it.qm
-%%DATADIR%%/translations/leechcraft_networkmonitor_it.qm
-%%DATADIR%%/translations/leechcraft_historyholder_it.qm
-%%DATADIR%%/translations/leechcraft_newlife_fr.qm
-%%DATADIR%%/translations/leechcraft_newlife_it.qm
-%%DATADIR%%/translations/leechcraft_vgrabber_fr.qm
-%%DATADIR%%/translations/leechcraft_auscrie_fr.qm
-%%DATADIR%%/translations/leechcraft_auscrie_it.qm
-%%DATADIR%%/translations/leechcraft_tabpp_fr.qm
-%%DATADIR%%/translations/leechcraft_shellopen_uk_UA.qm
-%%DATADIR%%/translations/leechcraft_shellopen_ru_RU.qm
-%%DATADIR%%/translations/leechcraft_shellopen_en.qm
-lib/leechcraft/plugins/libleechcraft_chatter.so
-lib/leechcraft/plugins/libleechcraft_lcftp.so
-lib/leechcraft/plugins/libleechcraft_lmp.so
-lib/leechcraft/plugins/libleechcraft_shellopen.so
-%%DATADIR%%/settings/chattersettings.xml
-%%DATADIR%%/settings/lcftpsettings.xml
-%%DATADIR%%/settings/lmpsettings.xml
-%%DATADIR%%/settings/kinotifysettings.xml
+%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_de.qm
+%%NETWORKMONITOR%%%%DATADIR%%/translations/leechcraft_networkmonitor_ar.qm
+%%NETSTOREMANAGER%%lib/leechcraft/plugins/libleechcraft_netstoremanager.so
+%%NETSTOREMANAGER%%%%DATADIR%%/translations/leechcraft_netstoremanager_uk_UA.qm
+%%NETSTOREMANAGER%%%%DATADIR%%/translations/leechcraft_netstoremanager_ru_RU.qm
+%%NETSTOREMANAGER%%%%DATADIR%%/translations/leechcraft_netstoremanager_es.qm
+%%NETSTOREMANAGER%%%%DATADIR%%/translations/leechcraft_netstoremanager_en.qm
+%%NETSTOREMANAGER%%%%DATADIR%%/settings/netstoremanagersettings.xml
+%%NACHEKU%%lib/leechcraft/plugins/libleechcraft_nacheku.so
+%%NACHEKU%%%%DATADIR%%/settings/nachekusettings.xml
+%%MONOCLE%%lib/leechcraft/plugins/libleechcraft_monocle_pdf.so
+%%MONOCLE%%lib/leechcraft/plugins/libleechcraft_monocle_fxb.so
+%%MONOCLE%%lib/leechcraft/plugins/libleechcraft_monocle.so
+%%MONOCLE%%%%DATADIR%%/translations/leechcraft_monocle_ru_RU.qm
+%%MONOCLE%%%%DATADIR%%/translations/leechcraft_monocle_en.qm
+%%MONOCLE%%%%DATADIR%%/settings/monoclesettings.xml
+%%LMP%%lib/leechcraft/plugins/libleechcraft_lmp_mp3tunes.so
+%%LMP%%lib/leechcraft/plugins/libleechcraft_lmp_dumbsync.so
+%%LMP%%lib/leechcraft/plugins/libleechcraft_lmp.so
+%%LMP%%include/leechcraft/interfaces/lmp/isyncplugin.h
+%%LMP%%include/leechcraft/interfaces/lmp/iplaylistprovider.h
+%%LMP%%include/leechcraft/interfaces/lmp/ilocalcollection.h
+%%LMP%%include/leechcraft/interfaces/lmp/ilmpproxy.h
+%%LMP%%include/leechcraft/interfaces/lmp/ilmpplugin.h
+%%LMP%%include/leechcraft/interfaces/lmp/icloudstorageplugin.h
+%%LMP%%%%DATADIR%%/translations/leechcraft_lmp_ru_RU.qm
+%%LMP%%%%DATADIR%%/translations/leechcraft_lmp_es.qm
+%%LMP%%%%DATADIR%%/translations/leechcraft_lmp_en.qm
+%%LMP%%%%DATADIR%%/settings/lmpsettings.xml
+%%LMP%%%%DATADIR%%/settings/lmpmp3tunessettings.xml
+%%LHTR%%lib/leechcraft/plugins/libleechcraft_lhtr.so
+%%LHTR%%%%DATADIR%%/translations/leechcraft_lhtr_uk_UA.qm
+%%LHTR%%%%DATADIR%%/translations/leechcraft_lhtr_ru_RU.qm
+%%LHTR%%%%DATADIR%%/translations/leechcraft_lhtr_es.qm
+%%LHTR%%%%DATADIR%%/translations/leechcraft_lhtr_en.qm
+%%LAURE%%lib/leechcraft/plugins/libleechcraft_laure.so
+%%LAURE%%%%DATADIR%%/translations/leechcraft_laure_uk_UA.qm
+%%LAURE%%%%DATADIR%%/translations/leechcraft_laure_ru_RU.qm
+%%LAURE%%%%DATADIR%%/translations/leechcraft_laure_en.qm
+%%LAURE%%%%DATADIR%%/settings/lauresettings.xml
+%%LACKMAN%%lib/leechcraft/plugins/libleechcraft_lackman.so
+%%LACKMAN%%%%DATADIR%%/translations/leechcraft_lackman_uk_UA.qm
+%%LACKMAN%%%%DATADIR%%/translations/leechcraft_lackman_ru_RU.qm
+%%LACKMAN%%%%DATADIR%%/translations/leechcraft_lackman_it.qm
+%%LACKMAN%%%%DATADIR%%/translations/leechcraft_lackman_fr.qm
+%%LACKMAN%%%%DATADIR%%/translations/leechcraft_lackman_es.qm
+%%LACKMAN%%%%DATADIR%%/translations/leechcraft_lackman_en.qm
+%%LACKMAN%%%%DATADIR%%/translations/leechcraft_lackman_de.qm
+%%LACKMAN%%%%DATADIR%%/settings/lackmansettings.xml
+%%KNOWHOW%%lib/leechcraft/plugins/libleechcraft_knowhow.so
+%%KNOWHOW%%%%DATADIR%%/settings/knowhowsettings.xml
+%%KNOWHOW%%%%DATADIR%%/knowhow/tips/tips_ru.xml
+%%KNOWHOW%%%%DATADIR%%/knowhow/tips/tips_en.xml
+%%KINOTIFY%%lib/leechcraft/plugins/libleechcraft_kinotify.so
+%%KINOTIFY%%%%DATADIR%%/settings/kinotifysettings.xml
+%%KINOTIFY%%%%DATADIR%%/kinotify/themes/notification/Commie/tmp.html
+%%KINOTIFY%%%%DATADIR%%/kinotify/themes/notification/Commie/img/back.png
+%%KINOTIFY%%%%DATADIR%%/kinotify/themes/notification/Adaptive/tmp.html
+%%HTTP%%lib/leechcraft/plugins/libleechcraft_cstp.so
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_uk_UA.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_ru_RU.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_pl.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_oc.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_it.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_fr.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_es.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_eo.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_en.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_de.qm
+%%HTTP%%%%DATADIR%%/translations/leechcraft_cstp_ar.qm
+%%HTTP%%%%DATADIR%%/settings/cstpsettings.xml
+%%HISTORYHOLDER%%lib/leechcraft/plugins/libleechcraft_historyholder.so
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_uk_UA.qm
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_ru_RU.qm
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_pl.qm
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_oc.qm
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_it.qm
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_fr.qm
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_es.qm
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_en.qm
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_de.qm
+%%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_ar.qm
+%%GNOTIFI%%lib/leechcraft/plugins/libleechcraft_gmailnotifier.so
+%%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_uk_UA.qm
+%%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_ru_RU.qm
+%%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_it.qm
+%%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_fr.qm
+%%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_es.qm
+%%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_en.qm
+%%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_de.qm
+%%GNOTIFI%%%%DATADIR%%/settings/gmailnotifiersettings.xml
+%%GLANCE%%lib/leechcraft/plugins/libleechcraft_glance.so
+%%GLANCE%%%%DATADIR%%/translations/leechcraft_glance_uk_UA.qm
+%%GLANCE%%%%DATADIR%%/translations/leechcraft_glance_ru_RU.qm
+%%GLANCE%%%%DATADIR%%/translations/leechcraft_glance_en.qm
+%%DOLOZHEE%%lib/leechcraft/plugins/libleechcraft_dolozhee.so
+%%DOLOZHEE%%%%DATADIR%%/translations/leechcraft_dolozhee_ru_RU.qm
+%%DOLOZHEE%%%%DATADIR%%/translations/leechcraft_dolozhee_en.qm
+%%DEADLYRICS%%lib/leechcraft/plugins/libleechcraft_deadlyrics.so
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_uk_UA.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_ru_RU.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_pl.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_oc.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_it.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_fr.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_es.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_eo.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_en.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_de.qm
+%%DEADLYRICS%%%%DATADIR%%/translations/leechcraft_deadlyrics_ar.qm
+%%DEADLYRICS%%%%DATADIR%%/settings/deadlyricssettings.xml
+%%DBUSMANAGER%%lib/leechcraft/plugins/libleechcraft_dbusmanager.so
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_uk_UA.qm
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_ru_RU.qm
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_pl.qm
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_it.qm
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_fr.qm
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_es.qm
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_eo.qm
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_en.qm
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_de.qm
+%%DBUSMANAGER%%%%DATADIR%%/translations/leechcraft_dbusmanager_ar.qm
+%%DBUSMANAGER%%%%DATADIR%%/settings/dbusmanagersettings.xml
+%%DATADIR%%/translations/leechcraft_uk_UA.qm
+%%DATADIR%%/translations/leechcraft_tt.qm
+%%DATADIR%%/translations/leechcraft_tr.qm
+%%DATADIR%%/translations/leechcraft_ru_RU.qm
+%%DATADIR%%/translations/leechcraft_pl.qm
+%%DATADIR%%/translations/leechcraft_it.qm
+%%DATADIR%%/translations/leechcraft_fr.qm
+%%DATADIR%%/translations/leechcraft_es.qm
+%%DATADIR%%/translations/leechcraft_eo.qm
+%%DATADIR%%/translations/leechcraft_en.qm
+%%DATADIR%%/translations/leechcraft_de.qm
+%%DATADIR%%/translations/leechcraft_be.qm
+%%DATADIR%%/translations/leechcraft_ar.qm
 %%DATADIR%%/settings/coresettings.xml
 %%DATADIR%%/cmake/FindLeechCraft.cmake
-%%DATADIR%%/icons/oxygen.mapping
-%%DATADIR%%/icons/Tango.mapping
-%%DATADIR%%/icons/Pevzi.mapping
-share/icons/hicolor/128x128/apps/leechcraft_main.png
-share/icons/hicolor/14x14/apps/leechcraft_main.png
-share/icons/hicolor/16x16/apps/leechcraft_main.png
-share/icons/hicolor/192x192/apps/leechcraft_main.png
-share/icons/hicolor/22x22/apps/leechcraft_main.png
-share/icons/hicolor/24x24/apps/leechcraft_main.png
-share/icons/hicolor/32x32/apps/leechcraft_main.png
-share/icons/oxygen/32x32/actions/lc_apply.png
-share/icons/oxygen/32x32/actions/lc_cancel.png
-share/icons/oxygen/32x32/actions/lc_fetchall.png
-share/icons/oxygen/32x32/actions/lc_lackman_data.png
-share/icons/oxygen/32x32/actions/lc_lackman_theme.png
-share/icons/oxygen/32x32/actions/lc_poshuku_onlinebookmarks_download.png
-share/icons/oxygen/32x32/actions/lc_poshuku_onlinebookmarks_downloadall.png
-share/icons/oxygen/32x32/actions/lc_poshuku_onlinebookmarks_sync.png
-share/icons/oxygen/32x32/actions/lc_poshuku_onlinebookmarks_upload.png
-share/icons/oxygen/32x32/actions/lc_refreshall.png
-share/icons/hicolor/36x36/apps/leechcraft_main.png
-share/icons/hicolor/48x48/apps/leechcraft_main.png
-share/icons/hicolor/64x64/apps/leechcraft_main.png
-share/icons/hicolor/72x72/apps/leechcraft_main.png
-share/icons/hicolor/96x96/apps/leechcraft_main.png
-share/icons/oxygen/32x32/actions/lc_about.png
-share/icons/oxygen/32x32/actions/lc_addjob.png
-share/icons/oxygen/32x32/actions/lc_addtofavorites.png
-share/icons/oxygen/32x32/actions/lc_aggregator_fb2.png
-share/icons/oxygen/32x32/actions/lc_aggregator_remove.png
-share/icons/oxygen/32x32/actions/lc_aggregator_rsshide.png
-share/icons/oxygen/32x32/actions/lc_aggregator_rssshow.png
-share/icons/oxygen/32x32/actions/lc_aggregator_tapemode_on.png
-share/icons/oxygen/32x32/actions/lc_aggregator_updateselectedfeed.png
-share/icons/oxygen/32x32/actions/lc_back.png
-share/icons/oxygen/32x32/actions/lc_closeallbutcurrent.png
-share/icons/oxygen/32x32/actions/lc_closetab.png
-share/icons/oxygen/32x32/actions/lc_configureshortcuts.png
-share/icons/oxygen/32x32/actions/lc_copy.png
-share/icons/oxygen/32x32/actions/lc_cstp_startall.png
-share/icons/oxygen/32x32/actions/lc_cstp_stopall.png
-share/icons/oxygen/32x32/actions/lc_cut.png
-share/icons/oxygen/32x32/actions/lc_documentexport.png
-share/icons/oxygen/32x32/actions/lc_documentimport.png
-share/icons/oxygen/32x32/actions/lc_documentnew.png
-share/icons/oxygen/32x32/actions/lc_documentopen.png
-share/icons/oxygen/32x32/actions/lc_documentsave.png
-share/icons/oxygen/32x32/actions/lc_documentsaveas.png
-share/icons/oxygen/32x32/actions/lc_error.png
-share/icons/oxygen/32x32/actions/lc_exit.png
-share/icons/oxygen/32x32/actions/lc_export.png
-share/icons/oxygen/32x32/actions/lc_favorites.png
-share/icons/oxygen/32x32/actions/lc_filter.png
-share/icons/oxygen/32x32/actions/lc_find.png
-share/icons/oxygen/32x32/actions/lc_folder.png
-share/icons/oxygen/32x32/actions/lc_forward.png
-share/icons/oxygen/32x32/actions/lc_fullscreen.png
-share/icons/oxygen/32x32/actions/lc_glance.png
-share/icons/oxygen/32x32/actions/lc_import.png
-share/icons/oxygen/32x32/actions/lc_information.png
-share/icons/oxygen/32x32/actions/lc_lackman_iconset.png
-share/icons/oxygen/32x32/actions/lc_lackman_plugin.png
-share/icons/oxygen/32x32/actions/lc_lackman_translation.png
-share/icons/oxygen/32x32/actions/lc_lmp_viewersettings.png
-share/icons/oxygen/32x32/actions/lc_logger.png
-share/icons/oxygen/32x32/actions/lc_menu.png
-share/icons/oxygen/32x32/actions/lc_networkmonitor_plugin.png
-share/icons/oxygen/32x32/actions/lc_paste.png
-share/icons/oxygen/32x32/actions/lc_pause.png
-share/icons/oxygen/32x32/actions/lc_pluginmanager.png
-share/icons/oxygen/32x32/actions/lc_poshuku_checkfavorites.png
-share/icons/oxygen/32x32/actions/lc_poshuku_externalentities.png
-share/icons/oxygen/32x32/actions/lc_poshuku_newtab.png
-share/icons/oxygen/32x32/actions/lc_poshuku_takescreenshot.png
-share/icons/oxygen/32x32/actions/lc_poshuku_unknownurlicon.png
-share/icons/oxygen/32x32/actions/lc_poshuku_viewsources.png
-share/icons/oxygen/32x32/actions/lc_preferences.png
-share/icons/oxygen/32x32/actions/lc_print.png
-share/icons/oxygen/32x32/actions/lc_printpreview.png
-share/icons/oxygen/32x32/actions/lc_refresh.png
-share/icons/oxygen/32x32/actions/lc_remove.png
-share/icons/oxygen/32x32/actions/lc_screenshot.png
-share/icons/oxygen/32x32/actions/lc_start.png
-share/icons/oxygen/32x32/actions/lc_stop.png
-share/icons/oxygen/32x32/actions/lc_subscribe.png
-share/icons/oxygen/32x32/actions/lc_torrent_addmulti.png
-share/icons/oxygen/32x32/actions/lc_torrent_addpeer.png
-share/icons/oxygen/32x32/actions/lc_torrent_banpeer.png
-share/icons/oxygen/32x32/actions/lc_torrent_changetrackers.png
-share/icons/oxygen/32x32/actions/lc_torrent_create.png
-share/icons/oxygen/32x32/actions/lc_torrent_forcereannounce.png
-share/icons/oxygen/32x32/actions/lc_torrent_forcerecheck.png
-share/icons/oxygen/32x32/actions/lc_torrent_insertmagnetlink.png
-share/icons/oxygen/32x32/actions/lc_torrent_movebottom.png
-share/icons/oxygen/32x32/actions/lc_torrent_movedown.png
-share/icons/oxygen/32x32/actions/lc_torrent_movefiles.png
-share/icons/oxygen/32x32/actions/lc_torrent_movetop.png
-share/icons/oxygen/32x32/actions/lc_torrent_moveup.png
-share/icons/oxygen/32x32/actions/lc_update.png
-share/icons/oxygen/32x32/actions/lc_warning.png
-share/icons/oxygen/32x32/actions/lc_zoomin.png
-share/icons/oxygen/32x32/actions/lc_zoomout.png
-share/icons/oxygen/32x32/actions/lc_zoomreset.png
-share/icons/Pevzi/scalable/actions/lc_about.svg
-share/icons/Pevzi/scalable/actions/lc_addjob.svg
-share/icons/Pevzi/scalable/actions/lc_lackman_iconset.svg
-share/icons/Pevzi/scalable/actions/lc_lackman_plugin.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_add.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_exportbinary.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_exportopml.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_favorites.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_fb2.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_filter.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_importbinary.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_importopml.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_remove.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_rsshide.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_rssshow.svg
-share/icons/Pevzi/scalable/actions/lc_closeallbutcurrent.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_updateallfeeds.svg
-share/icons/Pevzi/scalable/actions/lc_aggregator_updateselectedfeed.svg
-share/icons/Pevzi/scalable/actions/lc_closetab.svg
-share/icons/Pevzi/scalable/actions/lc_exit.svg
-share/icons/Pevzi/scalable/actions/lc_fullscreen.svg
-share/icons/Pevzi/scalable/actions/lc_glance.svg
-share/icons/Pevzi/scalable/actions/lc_logger.svg
-share/icons/Pevzi/scalable/actions/lc_menu.svg
-share/icons/Pevzi/scalable/actions/lc_newtab.svg
-share/icons/Pevzi/scalable/actions/lc_pluginmanager.svg
-share/icons/Pevzi/scalable/actions/lc_poshuku_back.svg
-share/icons/Pevzi/scalable/actions/lc_poshuku_forward.svg
-share/icons/Pevzi/scalable/actions/lc_poshuku_reload.svg
-share/icons/Pevzi/scalable/actions/lc_poshuku_stop.svg
-share/icons/Pevzi/scalable/actions/lc_poshuku_takescreenshot.svg
-share/icons/Pevzi/scalable/actions/lc_settings.svg
-share/icons/Pevzi/scalable/actions/lc_showstatusbar.svg
-share/icons/Pevzi/scalable/actions/lc_torrent_addmulti.svg
-share/icons/Pevzi/scalable/actions/lc_torrent_create.svg
-share/icons/Pevzi/scalable/actions/lc_torrent_ipfilter.svg
-share/applications/leechcraft.desktop
-share/man/man1/leechcraft.1.gz
-%%DATADIR%%/kinotify/themes/notification/Adaptive/tmp.html
-%%DATADIR%%/kinotify/themes/notification/Commie/img/back.png
-%%DATADIR%%/kinotify/themes/notification/Commie/tmp.html
-@dirrm %%DATADIR%%/kinotify/themes/notification/Commie/img
-@dirrm %%DATADIR%%/kinotify/themes/notification/Commie
-@dirrm %%DATADIR%%/kinotify/themes/notification/Adaptive
-@dirrm %%DATADIR%%/kinotify/themes/notification
-@dirrm %%DATADIR%%/kinotify/themes
-@dirrm %%DATADIR%%/kinotify
-@dirrm share/man/man1
-@dirrm share/man
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/settings
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/cmake
-@dirrm %%DATADIR%%
-@dirrm share/icons/oxygen/32x32/actions
-@dirrm share/icons/oxygen/32x32
-@dirrm share/icons/oxygen
-@dirrm share/icons/hicolor/14x14/apps
-@dirrm share/icons/hicolor/14x14
-@dirrm share/icons/Pevzi/scalable/actions
-@dirrm share/icons/Pevzi/scalable
-@dirrm share/icons/Pevzi
-@dirrmtry lib/leechcraft/plugins
-@dirrmtry lib/leechcraft
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_xtazy.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_xoox.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_vader.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_standardstyles.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_rosenthal.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_p100q.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_nativeemoticons.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_modnok.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_metacontacts.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_lastseen.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_keeso.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_juick.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_isterique.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_hili.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_herbicide.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_embedmedia.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_depester.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_chathistory.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_autopaste.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_autoidler.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_adiumstyles.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_acetamide.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth.so
+%%AZOTH%%include/leechcraft/interfaces/azoth/iurihandler.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/itransfermanager.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupporttune.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportriex.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportpgp.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportmood.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportmicroblogs.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportmediacalls.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportimport.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportgeolocation.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportbookmarks.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportactivity.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/irichtextmessage.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iresourceplugin.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iproxyobject.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iprotocolplugin.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iprotocol.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/imucperms.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/imucjoinwidget.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/imucentry.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/imucbookmarkeditorwidget.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/imessage.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/imediacall.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ilastactivityprovider.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ihistoryplugin.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ihaveservicediscovery.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ihavesearch.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ihavemicroblogs.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ihavedirectedstatus.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ihaveconsole.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iextselfinfoaccount.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iconfigurablemuc.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iclentry.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ichatstyleresourcesource.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iauthable.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iadvancedmessage.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iadvancedclentry.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iaccount.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/azothutil.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/azothcommon.h
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xtazy_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xtazy_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xtazy_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xtazy_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xoox_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xoox_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xoox_it.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xoox_fr.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xoox_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xoox_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xoox_de.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_vader_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_vader_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_vader_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_vader_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_rosenthal_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_rosenthal_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_rosenthal_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_rosenthal_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_p100q_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_p100q_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_p100q_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_p100q_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_modnok_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_modnok_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_modnok_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_modnok_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_metacontacts_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_metacontacts_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_metacontacts_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_metacontacts_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_lastseen_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_lastseen_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_lastseen_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_lastseen_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_isterique_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_isterique_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_isterique_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_hili_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_hili_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_hili_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_hili_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_herbicide_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_herbicide_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_herbicide_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_herbicide_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_depester_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_depester_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_depester_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_depester_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_chathistory_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_chathistory_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_chathistory_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_chathistory_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_autopaste_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_autopaste_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_autopaste_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_autopaste_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_autoidler_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_autoidler_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_autoidler_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_autoidler_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_acetamide_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_acetamide_ru_RU.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_acetamide_it.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_acetamide_fr.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_acetamide_es.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_acetamide_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_acetamide_de.qm
+%%AZOTH%%%%DATADIR%%/settings/azothxtazysettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothvadersettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothsettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothrosenthalsettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothp100qsettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothmodnoksettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothisteriquesettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothhilisettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothherbicidesettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothautopastesettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothautoidlersettings.xml
+%%AZOTH%%%%DATADIR%%/settings/azothacetamidesettings.xml
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/streaky/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/hoar/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/hacker clone/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/black-and-white/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Slim/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Rinc_black/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Rinc/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Plazma/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Mint/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Marine/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Hello-LC/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Gajim/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Black/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/standard/Basic/viewcontents.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/main.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/images/system.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/images/state-sending.gif
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/images/state-error.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/images/important.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/images/action.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Variants/_compact_Contact_color.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Variants/_compact_.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Variants/Contact_color.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Variants/Big_pictures.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Status.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Outgoing/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Outgoing/StateSending.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Outgoing/StateError.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Outgoing/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Outgoing/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Outgoing/Action.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Incoming/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Incoming/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Incoming/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Incoming/Action.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Header.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Footer.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/gpl.txt
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/README
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/main.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/images/state-sending.gif
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/images/state-sending-white.gif
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/images/state-error.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/images/kopete.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/images/background2.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/images/background.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants/Light2.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants/Light2-Noback.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants/Light.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants/Light-Noback.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants/Dark2.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants/Dark2-Noback.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants/Dark.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants/Dark-Noback.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Status.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing/StateSending.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing/StateError.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing/NextContext.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing/Context.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing/Action.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Incoming/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Incoming/NextContext.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Incoming/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Incoming/Context.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Incoming/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Incoming/Action.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Header.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Footer.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/Contents/Info.plist
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Hacker/COPYRIGHT
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/main.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/incoming_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/transGrey.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/messageShadow.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/gloss.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/divider.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageUndersea.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageSteel.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageMutation.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageLava.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageDelaware.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageCrimson.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageCosmic.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundUserImage.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundUndersea.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundSteel.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundMutation.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundLava.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundHeader.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundDelaware.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundCrimson.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundCosmic.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundBarGreen.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/backgroundBarBlue.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images/background.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Undersea.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Steel.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Standard.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Mutation.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Lava Flow.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Delaware Punch.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Crimson.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Cosmic.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/Undersea.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/Steel.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/Mutation.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/Lava Flow.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/Delaware Punch.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/Crimson.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants/Cosmic.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Status.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Outgoing/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Outgoing/NextContext.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Outgoing/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Outgoing/Context.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Outgoing/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Incoming/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Incoming/NextContext.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Incoming/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Incoming/Context.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Incoming/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Header.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Footer.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Info.plist
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/main.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/incoming_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/transGrey.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/messageShadow.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/gloss.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/divider.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageMarg.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageFire.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageCosmos.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundUserImageArctic.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundUserImage.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundMargarita.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundHeader.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundFirelight.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundCosmos.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundBarGreen.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundBarBlue.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/backgroundArctic.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images/background.jpg
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Standard.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Margarita.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Firelight.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Cosmos.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants/no gloss - Arctic.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants/Margarita.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants/Firelight.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants/Cosmos.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants/Arctic.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Status.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Outgoing/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Outgoing/NextContext.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Outgoing/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Outgoing/Context.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Outgoing/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Incoming/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Incoming/NextContext.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Incoming/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Incoming/Context.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Incoming/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Header.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Footer.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Info.plist
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/main.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/state-sending.gif
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/state-error.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/icon-you.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/icon-time.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/icon-me.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/icon-internal.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/icon-highlighted.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/icon-action.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/header-outbound-right.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/header-outbound-left.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/header-outbound-background.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/header-inbound-right.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/header-inbound-left.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/header-inbound-background.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/footer-outbound-right.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/footer-outbound-left.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/footer-outbound-background.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/footer-inbound-right.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/footer-inbound-left.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/footer-inbound-background.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-outbound-right.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-outbound-left.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-outbound-avatar.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-outbound-arrow.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-inbound-right.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-inbound-left.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-inbound-background.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-inbound-avatar.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-inbound-arrow.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images/body-background.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Variants/No_avatars.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Status.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Outgoing/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Outgoing/StateSending.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Outgoing/StateError.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Outgoing/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Outgoing/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Outgoing/Action.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Incoming/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Incoming/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Incoming/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Incoming/Action.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Header.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Footer.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/main.css
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/images/state-sending.gif
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/images/state-error.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/images/internal.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/images/important.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/images/action.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Status.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Outgoing/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Outgoing/StateSending.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Outgoing/StateError.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Outgoing/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Outgoing/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Outgoing/Action.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Incoming/buddy_icon.png
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Incoming/NextContent.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Incoming/Content.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Incoming/Action.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Header.html
+%%AZOTH%%%%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Footer.html
+%%AZOTH%%%%DATADIR%%/azoth/lc_azoth_modnok_latexconvert.sh
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/system/default/notification_roster_tune.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/system/default/notification_chat_send.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/system/default/notification_chat_receive.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/system/default/notification_chat_info.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/system/default/notification_chat_delivery_ok.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/system/default/geolocation.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/system/default/default_avatar.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Worried.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Weak.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Undefined.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Tired.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Thirsty.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Thankful.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Surprised.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Strong.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Stressed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Spontaneous.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Sleepy.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Sick.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Shy.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Shocked.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Serious.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Sarcastic.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Sad.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Restless.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Remorseful.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Relieved.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Relaxed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Readme.txt
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Proud.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Playful.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Outraged.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Offended.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Neutral.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Nervous.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Moody.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Mean.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Lucky.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Lonely.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Jealous.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Invincible.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Intoxicated.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Interested.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Indignant.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/In_love.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/In_awe.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Impressed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Hurt.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Hungry.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Humiliated.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Humbled.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Hot.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Hopeful.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Happy.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Guilty.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Grumpy.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Frustrated.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Flirtatious.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Excited.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Envious.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Embarrassed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Distracted.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Dismayed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Disgusted.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Disappointed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Depressed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Dejected.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Curious.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Creative.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Crazy.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Cranky.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Contented.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Contemplative.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Confused.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Confident.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Cold.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Cautious.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Calm.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Brave.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Bored.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Ashamed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Aroused.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Anxious.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Annoyed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Angry.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Amorous.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Amazed.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/moods/default/Afraid.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/xa.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/system.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/ready2chat.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/perr.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/online.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/offline.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/noauth.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/message.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/invisible.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/file.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/dnd.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/connect.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/chatty.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/chat.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/away.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/oxygen/ask.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/Likey/xa.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/Likey/perr.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/Likey/online.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/Likey/offline.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/Likey/dnd.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/Likey/connect.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/Likey/chatty.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/contactlist/Likey/away.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/yapp.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/yaonlinesymbian.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/yaonlinej2me.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/yaonline.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/yahoo.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/yabber.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/xfire.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/xeus.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/webicq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/weather.com.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/wannachat.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/vmicq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/vkontakte.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/vacuum.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/unknown.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/uim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/twitter.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/trillianpro.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/trillianbasic.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/trillian.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/tkabber.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/tipicim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/telepathy.freedesktop.org.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/talkonaut.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/talkgadget.google.com.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/talk.google.com.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/swift.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/sticq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/spectrum.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/spark.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/smaper.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/smack.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/smack-api.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/slick.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/sip-communicator.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/sim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/siejc.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/sapo.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/sameplace.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/rss.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/rq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/rnq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/radio-t.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/qxmpp.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/qutim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/qq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/qnext.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/qippda.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/qipmobile.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/qipinfium.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/qip2010.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/pyvk-t.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/pymsnt.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/pyicq-t.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/pyaim-t.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/psto.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/psiplus.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/psi.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/pjc_lib.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/pigeon.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/pidgin.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/phpicq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/papla.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/pandion.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/palringo.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/ovi-chat.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/osiris.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/oneteamiphone.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/oneteam.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/omnipresence.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/om.beeonline.ru.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/nimbuzz.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/nicq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/naticq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/msnwebmessenger.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/msnmessenger.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/movamessenger.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/morange.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mirandahotcoffee.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/miranda.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mip.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mig33.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/meetro.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/meebo.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mchat.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mcabber.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mailruagent.sis.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mailruagent.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mailruagent.mob.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mail.google.com.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/magnet.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/mabber.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/libpurple.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/leechcraft-azoth.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/lampiro.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/kopete.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/koolim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/juick.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jubo.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jtalk.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jmiranda.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jit.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jimm.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jimm-aspro.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jicq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jeti.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jbother.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jasmine.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/japyt.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jappix.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jajc.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabiru.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabbroid.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabbin.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabbim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/jabber.el.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/isida-bot.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/instango.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/inluxmessenger.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/implus.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/imov.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/imadering.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/icq-mobile.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/ichat.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/ichabber.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/gush.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/gossip.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/google.com.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/google-talkwidget.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/google-mail.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/goim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/gluxibot.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/glu.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/gizmo.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/gismeteo.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/gajim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/gaim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/gadugadu.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/gabber.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/fring.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/freqbot.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/fatal-bot.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/facebook.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/exodus.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/emess.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/ebuddy.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/digsby.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/dictbot.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/dichat.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/corepager.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/colibry.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/coccinella.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/centerim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/centericq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/buddydroid.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bot.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bombusqd.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bombusplus.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bombuspl.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bombusng.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bombusng-md.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bombusmod.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bombus.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bombus-klub.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bombus-avalon.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bluejabb.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bitlbee.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/beejive.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/bayanicq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/barracuda-im.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/ayttm.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/asterisk.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/aqq.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/apple.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/android.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/anastasiya.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/akeni.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/aim.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/agilemessenger.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/adium.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/clients/default/1end1.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/psi/owner.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/psi/outcast.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/psi/noaffiliation.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/psi/member.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/psi/admin.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/default/owner.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/default/outcast.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/default/noaffiliation.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/default/member.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/affiliations/default/admin.svg
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/working_writing.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/working_working.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/working_studying.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/working_in_a_meeting.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/working_coding.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/unknown.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling_walking.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling_on_a_trip.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling_on_a_train.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling_on_a_plane.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling_on_a_bus.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling_in_a_car.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling_driving.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling_cycling.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling_commuting.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/traveling.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/talking_on_video_phone.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/talking_on_the_phone.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/talking_in_real_life.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/talking.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_watching_tv.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_watching_a_movie.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_sunbathing.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_socializing.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_smoking.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_shopping.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_rehearsing.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_reading.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_partying.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_going_out.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_gaming.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing_fishing.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/relaxing.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/inactive_thinking.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/inactive_sleeping.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/inactive_scheduled_holiday.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/inactive_praying.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/inactive_on_vacation.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/inactive_hiding.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/inactive_hanging_out.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/inactive_day_off.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/inactive.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/icondef.xml
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/having_appointment.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/grooming_taking_a_shower.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/grooming_taking_a_bath.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/grooming_shaving.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/grooming_getting_a_haircut.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/grooming_brushing_teeth.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/grooming_at_the_spa.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/grooming.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising_working_out.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising_swimming.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising_skiing.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising_running.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising_playing_sports.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising_jogging.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising_hiking.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising_dancing.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising_cycling.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/exercising.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/eating_having_lunch.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/eating_having_dinner.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/eating_having_breakfast.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/eating_having_a_snack.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/eating.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/drinking_having_tea.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/drinking_having_coffee.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/drinking_having_a_beer.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/drinking.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores_walking_the_dog.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores_running_an_errand.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores_gardening.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores_doing_the_laundry.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores_doing_the_dishes.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores_doing_maintenance.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores_cooking.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores_cleaning.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores_buying_groceries.png
+%%AZOTH%%%%DATADIR%%/azoth/iconsets/activities/default/doing_chores.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/yes.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/wink.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/unhappy.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/tongue.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/stare.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/star.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/smile.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/rainbow.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/pussy.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/photo.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/phone.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/oh.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/no.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/music.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/mapping.txt
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/mail.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/lamp.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/kiss.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/hugright.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/hugleft.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/heart.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/girl.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/frowning.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/flower.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/drink.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/devil.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/cuffs.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/cry.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/coolglasses.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/coffee.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/brheart.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/brflower.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/boy.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/blush.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/biggrin.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/beer.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/bat.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Default/angry.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/mapping.txt
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/27.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/26.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/25.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/24.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/23.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/22.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/21.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/20.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/19.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/18.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/17.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/16.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/15.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/14.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/13.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/12.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/11.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/10.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/09.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/08.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/07.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/06.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/05.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/04.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/03.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/02.png
+%%AZOTH%%%%DATADIR%%/azoth/emoticons/native/Android/01.png
+%%AUSCRIE%%lib/leechcraft/plugins/libleechcraft_auscrie.so
+%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_uk_UA.qm
+%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_ru_RU.qm
+%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_oc.qm
+%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_it.qm
+%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_fr.qm
+%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_es.qm
+%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_en.qm
+%%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_de.qm
+%%ANOTIFI%%lib/leechcraft/plugins/libleechcraft_advancednotifications.so
+%%ANOTIFI%%%%DATADIR%%/translations/leechcraft_advancednotifications_uk_UA.qm
+%%ANOTIFI%%%%DATADIR%%/translations/leechcraft_advancednotifications_ru_RU.qm
+%%ANOTIFI%%%%DATADIR%%/translations/leechcraft_advancednotifications_es.qm
+%%ANOTIFI%%%%DATADIR%%/translations/leechcraft_advancednotifications_en.qm
+%%ANOTIFI%%%%DATADIR%%/sounds/oxygen/org-event-due.ogg
+%%ANOTIFI%%%%DATADIR%%/sounds/oxygen/im-muc-highlight.ogg
+%%ANOTIFI%%%%DATADIR%%/sounds/oxygen/im-incoming-message.ogg
+%%ANOTIFI%%%%DATADIR%%/sounds/oxygen/im-contact-out.ogg
+%%ANOTIFI%%%%DATADIR%%/sounds/oxygen/im-contact-in.ogg
+%%ANOTIFI%%%%DATADIR%%/sounds/oxygen/im-auth-requested.ogg
+%%ANOTIFI%%%%DATADIR%%/sounds/oxygen/im-attention.ogg
+%%ANOTIFI%%%%DATADIR%%/settings/advancednotificationssettings.xml
+%%ANOTIFI%%%%DATADIR%%/qml/advancednotifications/visualnotificationsview.qml
+%%ANOTIFI%%%%DATADIR%%/qml/advancednotifications/TextButton.qml
+%%AGGREGATOR%%lib/leechcraft/plugins/libleechcraft_aggregator_bodyfetch.so
+%%AGGREGATOR%%lib/leechcraft/plugins/libleechcraft_aggregator.so
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_uk_UA.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_ru_RU.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_pl.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_oc.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_it.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_fr.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_es.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_eo.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_en.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_de.qm
+%%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_ar.qm
+%%AGGREGATOR%%%%DATADIR%%/settings/aggregatorsettings.xml
+%%AGGREGATOR%%%%DATADIR%%/scripts/aggregator/recipes/qtscript/opennet.ru.js
+%%AGGREGATOR%%%%DATADIR%%/scripts/aggregator/recipes/qtscript/membrana.ru.js
+%%AGGREGATOR%%%%DATADIR%%/scripts/aggregator/recipes/qtscript/ixbt.com.js
+%%AGGREGATOR%%%%DATADIR%%/scripts/aggregator/recipes/qtscript/habrahabr.js
+%%AGGREGATOR%%%%DATADIR%%/scripts/aggregator/recipes/qtscript/3dnews.ru.js
+%%SNAILS%%@dirrm %%DATADIR%%/snails/msgview/default
+%%SNAILS%%@dirrm %%DATADIR%%/snails/msgview
+%%SNAILS%%@dirrm %%DATADIR%%/snails
+%%SECMAN%%@dirrm include/leechcraft/interfaces/secman
+%%POSHUKU%%@dirrm %%DATADIR%%/installed/poshuku
+%%POSHUKU%%@dirrm %%DATADIR%%/installed
+%%LMP%%@dirrm include/leechcraft/interfaces/lmp
+%%KNOWHOW%%@dirrm %%DATADIR%%/knowhow/tips
+%%KNOWHOW%%@dirrm %%DATADIR%%/knowhow
+%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes/notification/Commie/img
+%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes/notification/Commie
+%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes/notification/Adaptive
+%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes/notification
+%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes
+%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify
+%%AZOTH%%@dirrm include/leechcraft/interfaces/azoth
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/streaky
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/hoar
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/hacker clone
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/black-and-white
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Slim
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Rinc_black
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Rinc
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Plazma
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Mint
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Marine
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Hello-LC
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Gajim
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Black
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Basic
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/images
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Variants
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Outgoing
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Incoming
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/images
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Incoming
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Outgoing
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Incoming
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Outgoing
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Incoming
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Variants
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Outgoing
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Incoming
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/images
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Outgoing
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Incoming
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/system/default
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/system
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/moods/default
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/moods
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/contactlist/oxygen
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/contactlist/Likey
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/contactlist
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/clients/default
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/clients
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/affiliations/psi
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/affiliations/default
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/affiliations
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/activities/default
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/activities
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/emoticons/native/Default
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/emoticons/native/Android
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/emoticons/native
+%%AZOTH%%@dirrm %%DATADIR%%/azoth/emoticons
+%%AZOTH%%@dirrm %%DATADIR%%/azoth
+%%ANOTIFI%%@dirrm %%DATADIR%%/qml/advancednotifications
+%%AGGREGATOR%%@dirrm %%DATADIR%%/scripts/aggregator/recipes/qtscript
+%%AGGREGATOR%%@dirrm %%DATADIR%%/scripts/aggregator/recipes
+%%AGGREGATOR%%@dirrm %%DATADIR%%/scripts/aggregator
+%%AGGREGATOR%%@dirrm %%DATADIR%%/scripts
+@dirrmtry share/icons/oxygen/32x32/actions
+@dirrmtry share/icons/oxygen/32x32
+@dirrmtry share/icons/oxygen
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/36x36/apps
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/192x192/apps
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/14x14/apps
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/36x36
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/192x192
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/14x14
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/cmake/Modules
+@dirrmtry share/cmake
+@dirrm lib/leechcraft/plugins
+@dirrm lib/leechcraft
 @dirrm include/leechcraft/xmlsettingsdialog
-@dirrm include/leechcraft/plugininterface/CMakeFiles/plugininterface.dir
-@dirrm include/leechcraft/plugininterface/CMakeFiles
-@dirrm include/leechcraft/plugininterface
+@dirrm include/leechcraft/util/tags
+@dirrm include/leechcraft/util/sync
+@dirrm include/leechcraft/util/shortcuts
+@dirrm include/leechcraft/util/models
+@dirrm include/leechcraft/util/gui
+@dirrm include/leechcraft/util/CMakeFiles/lcutil_automoc.dir
+@dirrm include/leechcraft/util/CMakeFiles/lcutil.dir/tags
+@dirrm include/leechcraft/util/CMakeFiles/lcutil.dir/sync
+@dirrm include/leechcraft/util/CMakeFiles/lcutil.dir/shortcuts
+@dirrm include/leechcraft/util/CMakeFiles/lcutil.dir/models
+@dirrm include/leechcraft/util/CMakeFiles/lcutil.dir/gui
+@dirrm include/leechcraft/util/CMakeFiles/lcutil.dir
+@dirrm include/leechcraft/util/CMakeFiles
+@dirrm include/leechcraft/util
+@dirrm include/leechcraft/interfaces/vfs
+@dirrm include/leechcraft/interfaces/media
+@dirrm include/leechcraft/interfaces/core
 @dirrm include/leechcraft/interfaces
 @dirrm include/leechcraft
+@dirrm %%DATADIR%%/translations
+%%ANOTIFI%%@dirrm %%DATADIR%%/sounds/oxygen
+%%ANOTIFI%%@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/settings
+%%ANOTIFI%%@dirrm %%DATADIR%%/qml

@@ -6,216 +6,460 @@
 #
 
 PORTNAME=	leechcraft
-PORTVERSION=	0.4.75
+PORTVERSION=	0.5.75
 CATEGORIES=	misc
-MASTER_SITES=	SF/${PORTNAME}/LeechCraft/snapshots/
-DISTNAME=	${PORTNAME}-${PORTVERSION}_rc${LC_DATE}
+MASTER_SITES=	SF/${PORTNAME}/LeechCraft/0.5.75/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${LC_REV}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Cross-platform modular internet-client
 
 LICENSE=	GPLv3
 
-LC_DATE=	20110329
-INSTALLS_ICONS=	yes
-USE_LDCONFIG=	yes
-USE_BZIP2=	yes
-USE_CMAKE=	yes
-USE_QT_VER=	4
-USE_GCC=	4.2+
-QT_COMPONENTS=	corelib gui network script sql sql-sqlite3 xml
-CMAKE_ARGS+=	-DQJSON_LIBRARIES=/usr/local/lib/libqjson.so.0
+BUILD_DEPENDS=	chrpath:${PORTSDIR}/devel/chrpath
+LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
+		qca:${PORTSDIR}/devel/qca \
+		hunspell-1.3:${PORTSDIR}/textproc/hunspell \
+		boost_program_options:${PORTSDIR}/devel/boost-libs
 
-OPTIONS=	SUMMARY "shows a handy summary of the stuff going on" on \
-		TORRENT "BitTorrent client" on \
-		AGGREGATOR "RSS/Atom feed reader" on \
-		POSHUKU "WWW Browser" off \
-		HTTP "HTTP implementation" on \
-		LMP "LeechCraft Media Previewer" on \
-		DBUSMANAGER "D-Bus support for the LeechCraft" on \
-		DEADLYRICS "client for the lyricwiki.org site" on \
-		SEEKTHRU "client for the OpenSearch-aware(dont work)" off\
-		NETWORKMONITOR "monitor for HTTP requests" on \
-		HISTORYHOLDER "keeper of the history" on \
-		NEWLIFE "settings importer" on \
-		ANHERO "crash handler" on \
-		VGRABBER "vkontakte.ru music/video getter" on \
-		KINOTIFY "fancy kinetic notifications" on \
-		AUSCRIE "auto screenshooter" on \
-		TABPP "enhanced tab manager" on \
-		AZOTH "IM client (devel)" off \
-		SECMAN "security & personal data manager (devel)" off \
-		QROSP "scripting support plugin (devel)" off \
-		POPISHU "scripting support plugin (devel)" off \
-		LACKMAN "package manager for LeechCraft (devel)" off
+LC_REV=		145-g5f6d720
+INSTALLS_ICONS=	yes
+USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
+USE_XZ=		yes
+USE_CMAKE=	yes
+USE_GCC=	4.6+
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui linguist moc network qmake rcc script sql \
+		sql-sqlite3 svg uic xml
+CMAKE_ARGS+=	-DQJSON_LIBRARIES=${LOCALBASE}/lib/libqjson.so.0 \
+		-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib:${PREFIX}/lib" \
+		-DCMAKE_SKIP_RPATH:BOOL=ON \
+		-DENABLE_LIZNOO=OFF \
+		-DENABLE_LADS=OFF
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+GCC_LIBS=	${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
+MAN1=		${PORTNAME}.1
 
-.if defined(WITHOUT_SUMMARY)
+OPTIONS_DEFINE=	AGGREGATOR ANHERO ANOTIFI AUSCRIE AZOTH DBUSMANAGER DEADLYRICS \
+		DOLOZHEE GLANCE GNOTIFI HISTORYHOLDER HTTP KINOTIFY KNOWHOW \
+		LACKMAN LAURE LHTR LMP MONOCLE NACHEKU NETSTOREMANAGER NETWORKMONITOR \
+		NEWLIFE OTZERKALU PINTAB POPISHU POSHUKU QROSP SECMAN SEEKTHRU \
+		SHELLOPEN SIDEBAR SNAILS SUMMARY SYNCER TABSESSMANAGER TABSLIST \
+		TORRENT VGRABBER VROOBY XPROXY YANDEXDISK
+
+AGGREGATOR_DESC=	RSS/Atom feed reader
+ANHERO_DESC=	Crash handler
+ANOTIFI_DESC=	Advanced Notifications module
+AUSCRIE_DESC=	Auto screenshooter
+AZOTH_DESC=	IM client
+DBUSMANAGER_DESC=	D-Bus support for the LeechCraft
+DEADLYRICS_DESC=	client for the lyricwiki.org site
+DOLOZHEE_DESC=	The feature request and bug reporter
+GLANCE_DESC=	Quick overview of tabs
+GNOTIFI_DESC=	Build GMail Notifier
+HISTORYHOLDER_DESC=	Keeper of the history
+HTTP_DESC=	HTTP implementation
+KINOTIFY_DESC=	Fancy kinetic notifications
+KNOWHOW_DESC=	KnowHow for displaying tips of the day
+LACKMAN_DESC=	Package manager for LeechCraft
+LAURE_DESC=	Laure audio/video player
+LHTR_DESC=	LeechCraft HTML Text editoR
+LMP_DESC=	LeechCraft Media Previewer
+MONOCLE_DESC=	Monocle, modular document viewer
+NACHEKU_DESC=	Nacheku, clipboard/download dir watcher
+NETSTOREMANAGER_DESC=	Managing data storages like Yandex.Disk
+NETWORKMONITOR_DESC=	Monitor for HTTP requests
+NEWLIFE_DESC=	Settings importer
+OTZERKALU_DESC=	Otzerkalu, download web sites recursively
+PINTAB_DESC=	Pintab for pinning important tabs
+POPISHU_DESC=	Scripting support plugin (devel)
+POSHUKU_DESC=	WWW Browser
+QROSP_DESC=	Scripting support plugin (devel)
+SECMAN_DESC=	Security & personal data manager
+SEEKTHRU_DESC=	Client for the OpenSearch-aware
+SHELLOPEN_DESC=	Handling entities external applications
+SIDEBAR_DESC=	Sidebar, a nice side bar with quick launch
+SNAILS_DESC=	(need new qt)Snails, LeechCraft mail client
+SUMMARY_DESC=	Shows a handy summary of the stuff going on
+SYNCER_DESC=	Syncer, the synchronization plugin
+TABSESSMANAGER_DESC=	Tab Session Manager
+TABSLIST_DESC=	Quick overview of tabs
+TORRENT_DESC=	BitTorrent client
+VGRABBER_DESC=	Vkontakte.ru music/video getter
+VROOBY_DESC=	Vrooby, removable storage devices manager
+XPROXY_DESC=	XProxy, the advanced proxy manager
+YANDEXDISK_DESC=Yandex disk support
+
+OPTIONS_DEFAULT=AGGREGATOR ANHERO ANOTIFI AUSCRIE AZOTH DBUSMANAGER DEADLYRICS \
+		DOLOZHEE GLANCE GNOTIFI HISTORYHOLDER HTTP KINOTIFY KNOWHOW \
+		LACKMAN LAURE LHTR LMP MONOCLE NACHEKU NETSTOREMANAGER NETWORKMONITOR \
+		NEWLIFE OTZERKALU PINTAB POPISHU POSHUKU QROSP SECMAN SEEKTHRU \
+		SHELLOPEN SIDEBAR SNAILS SUMMARY SYNCER TABSESSMANAGER TABSLIST \
+		VGRABBER VROOBY XPROXY YANDEXDISK
+
+.include <bsd.port.options.mk>
+
+pre-configure:
+	@${REINPLACE_CMD} -e '/man1/d' \
+		${WRKSRC}/CMakeLists.txt \
+		${WRKSRC}/plugins/eiskaltdcpp/eiskaltdcpp-qt/CMakeLists.txt
+
+post-build:
+	@${LOCALBASE}/bin/chrpath -r "${GCC_LIBS}" "${WRKSRC}/${PORTNAME}"
+
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/data/${PORTNAME}.1 ${MANPREFIX}/man/man1/
+
+.if ${PORT_OPTIONS:MSUMMARY}
+PLIST_SUB+=	SUMMARY=""
+.else
 CMAKE_ARGS+=	-DENABLE_SUMMARY=OFF
 PLIST_SUB+=	SUMMARY="@comment "
-.else
-PLIST_SUB+=	SUMMARY=""
 .endif
 
-.if defined(WITHOUT_TORRENT)
+.if ${PORT_OPTIONS:MTORRENT}
+PLIST_SUB+=	TORRENT=""
+LIB_DEPENDS+=	torrent-rasterbar:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
+.else
 CMAKE_ARGS+=	-DENABLE_TORRENT=OFF
 PLIST_SUB+=	TORRENT="@comment "
-.else
-PLIST_SUB+=	TORRENT=""
-LIB_DEPENDS+=	torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
 .endif
 
-.if defined(WITHOUT_AGGREGATOR)
+.if ${PORT_OPTIONS:MSHELLOPEN}
+CMAKE_ARGS+=	-DENABLE_SHELLOPEN=ON
+PLIST_SUB+=	SHELLOPEN=""
+.else
+CMAKE_ARGS+=	-DENABLE_SHELLOPEN=OFF
+PLIST_SUB+=	SHELLOPEN="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MAGGREGATOR}
+CMAKE_ARGS+=	-DENABLE_AGGREGATOR=ON
+PLIST_SUB+=	AGGREGATOR=""
+.else
 CMAKE_ARGS+=	-DENABLE_AGGREGATOR=OFF
 PLIST_SUB+=	AGGREGATOR="@comment "
-.else
-PLIST_SUB+=	AGGREGATOR=""
 .endif
 
-.if defined(WITHOUT_POSHUKU)
+.if ${PORT_OPTIONS:MPOSHUKU}
+CMAKE_ARGS+=	-DENABLE_POSHUKU=ON
+PLIST_SUB+=	POSHUKU=""
+LIB_DEPENDS+=	qjson:${PORTSDIR}/devel/qjson
+QT_COMPONENTS+=	webkit
+.else
 CMAKE_ARGS+=	-DENABLE_POSHUKU=OFF
 PLIST_SUB+=	POSHUKU="@comment "
-.else
-PLIST_SUB+=	POSHUKU=""
-QT_COMPONENTS+=	webkit
 .endif
 
-.if defined(WITHOUT_HTTP)
+.if ${PORT_OPTIONS:MHTTP}
+CMAKE_ARGS+=	-DENABLE_HTTP=ON
+PLIST_SUB+=	HTTP=""
+.else
 CMAKE_ARGS+=	-DENABLE_HTTP=OFF
 PLIST_SUB+=	HTTP="@comment "
-.else
-PLIST_SUB+=	HTTP=""
 .endif
 
-.if defined(WITHOUT_LMP)
+.if ${PORT_OPTIONS:MLMP}
+CMAKE_ARGS+=	-DENABLE_LMP=ON
+PLIST_SUB+=	LMP=""
+LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
+QT_COMPONENTS+=	phonon
+.else
 CMAKE_ARGS+=	-DENABLE_LMP=OFF
 PLIST_SUB+=	LMP="@comment "
-.else
-PLIST_SUB+=	LMP=""
-QT_COMPONENTS+=	phonon
 .endif
 
-.if defined(WITHOUT_DBUSMANAGER)
-CMAKE_ARGS+=	-DENABLE_DBUSMANAGER=OFF
-PLIST_SUB+=	DBUSMANAGER="@comment "
-.else
+.if ${PORT_OPTIONS:MDBUSMANAGER}
+CMAKE_ARGS+=	-DENABLE_DBUSMANAGER=ON
 PLIST_SUB+=	DBUSMANAGER=""
 QT_COMPONENTS+=	dbus
+.else
+CMAKE_ARGS+=	-DENABLE_DBUSMANAGER=OFF
+PLIST_SUB+=	DBUSMANAGER="@comment "
 .endif
 
-.if defined(WITHOUT_DEADLYRICS)
+.if ${PORT_OPTIONS:MDEADLYRICS}
+CMAKE_ARGS+=	-DENABLE_DEADLYRICS=ON
+PLIST_SUB+=	DEADLYRICS=""
+.else
 CMAKE_ARGS+=	-DENABLE_DEADLYRICS=OFF
 PLIST_SUB+=	DEADLYRICS="@comment "
-.else
-PLIST_SUB+=	DEADLYRICS=""
 .endif
 
-.if defined(WITHOUT_SEEKTHRU)
-CMAKE_ARGS+=	-DENABLE_SEEKTHRU=OFF
-PLIST_SUB+=	SEEKTHRU="@comment "
-.else
+.if ${PORT_OPTIONS:MSEEKTHRU}
+CMAKE_ARGS+=	-DENABLE_SEEKTHRU=ON
 PLIST_SUB+=	SEEKTHRU=""
 CPPFLAGS+=	-fvisibility-hidden
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}"
+.else
+CMAKE_ARGS+=	-DENABLE_SEEKTHRU=OFF
+PLIST_SUB+=	SEEKTHRU="@comment "
 .endif
 
-.if defined(WITHOUT_NETWORKMONITOR)
+.if ${PORT_OPTIONS:MNETWORKMONITOR}
+CMAKE_ARGS+=	-DENABLE_NETWORKMONITOR=ON
+PLIST_SUB+=	NETWORKMONITOR=""
+.else
 CMAKE_ARGS+=	-DENABLE_NETWORKMONITOR=OFF
 PLIST_SUB+=	NETWORKMONITOR="@comment "
-.else
-PLIST_SUB+=	NETWORKMONITOR=""
 .endif
 
-.if defined(WITHOUT_HISTORYHOLDER)
+.if ${PORT_OPTIONS:MHISTORYHOLDER}
+CMAKE_ARGS+=	-DENABLE_HISTORYHOLDER=ON
+PLIST_SUB+=	HISTORYHOLDER=""
+.else
 CMAKE_ARGS+=	-DENABLE_HISTORYHOLDER=OFF
 PLIST_SUB+=	HISTORYHOLDER="@comment "
-.else
-PLIST_SUB+=	HISTORYHOLDER=""
 .endif
 
-.if defined(WITHOUT_NEWLIFE)
+.if ${PORT_OPTIONS:MNEWLIFE}
+CMAKE_ARGS+=	-DENABLE_NEWLIFE=ON
+PLIST_SUB+=	NEWLIFE=""
+.else
 CMAKE_ARGS+=	-DENABLE_NEWLIFE=OFF
 PLIST_SUB+=	NEWLIFE="@comment "
-.else
-PLIST_SUB+=	NEWLIFE=""
 .endif
 
-.if defined(WITHOUT_ANHERO)
+.if ${PORT_OPTIONS:MANHERO}
+CMAKE_ARGS+=	-DENABLE_ANHERO=ON
+.else
 CMAKE_ARGS+=	-DENABLE_ANHERO=OFF
-PLIST_SUB+=	ANHERO="@comment "
-.else
-PLIST_SUB+=	ANHERO=""
 .endif
 
-.if defined(WITHOUT_VGRABBER)
+.if ${PORT_OPTIONS:MVGRABBER}
+PLIST_SUB+=	VGRABBER=""
+.else
 CMAKE_ARGS+=	-DENABLE_VGRABBER=OFF
 PLIST_SUB+=	VGRABBER="@comment "
-.else
-PLIST_SUB+=	VGRABBER=""
 .endif
 
-.if defined(WITHOUT_KINOTIFY)
+.if ${PORT_OPTIONS:MKINOTIFY}
+CMAKE_ARGS+=	-DENABLE_KINOTIFY=ON
+PLIST_SUB+=	KINOTIFY=""
+.else
 CMAKE_ARGS+=	-DENABLE_KINOTIFY=OFF
 PLIST_SUB+=	KINOTIFY="@comment "
-.else
-PLIST_SUB+=	KINOTIFY=""
 .endif
 
-.if defined(WITHOUT_AUSCRIE)
+.if ${PORT_OPTIONS:MAUSCRIE}
+CMAKE_ARGS+=	-DENABLE_AUSCRIE=ON
+PLIST_SUB+=	AUSCRIE=""
+.else
 CMAKE_ARGS+=	-DENABLE_AUSCRIE=OFF
 PLIST_SUB+=	AUSCRIE="@comment "
-.else
-PLIST_SUB+=	AUSCRIE=""
 .endif
 
-.if defined(WITHOUT_TABPP)
-CMAKE_ARGS+=	-DENABLE_TABPP=OFF
-PLIST_SUB+=	TABPP="@comment "
-.else
-PLIST_SUB+=	TABPP=""
-.endif
-
-.if defined(WITHOUT_AZOTH)
-PLIST_SUB+=	AZOTH="@comment "
-.else
+.if ${PORT_OPTIONS:MAZOTH}
 CMAKE_ARGS+=	-DENABLE_AZOTH=ON
 PLIST_SUB+=	AZOTH=""
+QT_COMPONENTS+=	multimedia
+LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libqxmpp-lc.a:${PORTSDIR}/net-im/qxmpp-leechcraft
+CONFLICTS=	qxmpp-[0-9]*
+.else
+CMAKE_ARGS+=	-DENABLE_AZOTH=OFF
+PLIST_SUB+=	AZOTH="@comment "
 .endif
 
-.if defined(WITHOUT_SECMAN)
-PLIST_SUB+=	SECMAN="@comment "
-.else
+.if ${PORT_OPTIONS:MSECMAN}
 CMAKE_ARGS+=	-DENABLE_SECMAN=ON
 PLIST_SUB+=	SECMAN=""
+.else
+CMAKE_ARGS+=	-DENABLE_SECMAN=OFF
+PLIST_SUB+=	SECMAN="@comment "
 .endif
 
-.if defined(WITHOUT_QROSP)
-PLIST_SUB+=	QROSP="@comment "
-.else
+.if ${PORT_OPTIONS:MQROSP}
 CMAKE_ARGS+=	-DENABLE_QROSP=ON
 PLIST_SUB+=	QROSP=""
-IGNORE=		sorry does not work now
+LIB_DEPENDS+=	qrosscore:${PORTSDIR}/devel/qross
+RUN_DEPENDS+=	${LOCALBASE}/lib/qrosspython.so:${PORTSDIR}/devel/qrosspython
+.else
+CMAKE_ARGS+=	-DENABLE_QROSP=OFF
+PLIST_SUB+=	QROSP="@comment "
 .endif
 
-.if defined(WITHOUT_POPISHU)
-PLIST_SUB+=	POPISHU="@comment "
-.else
+.if ${PORT_OPTIONS:MPOPISHU}
 CMAKE_ARGS+=	-DENABLE_POPISHU=ON
 PLIST_SUB+=	POPISHU=""
+LIB_DEPENDS+=	qscintilla2:${PORTSDIR}/devel/qscintilla2
+.else
+CMAKE_ARGS+=	-DENABLE_POPISHU=OFF
+PLIST_SUB+=	POPISHU="@comment "
 .endif
 
-.if defined(WITHOUT_LACKMAN)
-PLIST_SUB+=	LACKMAN="@comment "
-.else
+.if ${PORT_OPTIONS:MLACKMAN}
 CMAKE_ARGS+=	-DENABLE_LACKMAN=ON
 PLIST_SUB+=	LACKMAN=""
+.else
+CMAKE_ARGS+=	-DENABLE_LACKMAN=OFF
+PLIST_SUB+=	LACKMAN="@comment "
 .endif
 
-#post-patch:
-#	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-#		${WRKSRC}/plugins/poshuku/plugins/onlinebookmarks/CMakeLists.txt
+.if ${PORT_OPTIONS:MGLANCE}
+CMAKE_ARGS+=	-DENABLE_GLANCE=ON
+PLIST_SUB+=	GLANCE=""
+.else
+CMAKE_ARGS+=	-DENABLE_GLANCE=OFF
+PLIST_SUB+=	GLANCE="@comment "
+.endif
 
-.include <bsd.port.post.mk>
+.if ${PORT_OPTIONS:MKNOWHOW}
+CMAKE_ARGS+=	-DENABLE_KNOWHOW=ON
+PLIST_SUB+=	KNOWHOW=""
+.else
+CMAKE_ARGS+=	-DENABLE_KNOWHOW=OFF
+PLIST_SUB+=	KNOWHOW="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSIDEBAR}
+CMAKE_ARGS+=	-DENABLE_SIDEBAR=ON
+PLIST_SUB+=	SIDEBAR=""
+.else
+CMAKE_ARGS+=	-DENABLE_SIDEBAR=OFF
+PLIST_SUB+=	SIDEBAR="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSNAILS}
+CMAKE_ARGS+=	-DENABLE_SNAILS=ON
+PLIST_SUB+=	SNAILS=""
+LIB_DEPENDS+=	vmime:${PORTSDIR}/mail/libvmime
+.else
+CMAKE_ARGS+=	-DENABLE_SNAILS=OFF
+PLIST_SUB+=	SNAILS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MTABSLIST}
+CMAKE_ARGS+=	-DENABLE_TABSLIST=ON
+PLIST_SUB+=	TABSLIST=""
+.else
+CMAKE_ARGS+=	-DENABLE_TABSLIST=OFF
+PLIST_SUB+=	TABSLIST="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSYNCER}
+CMAKE_ARGS+=	-DENABLE_SYNCER=ON
+PLIST_SUB+=	SYNCER=""
+.else
+CMAKE_ARGS+=	-DENABLE_SYNCER=OFF
+PLIST_SUB+=	SYNCER="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MANOTIFI}
+CMAKE_ARGS+=	-DENABLE_ADVANCEDNOTIFICATIONS=ON
+PLIST_SUB+=	ANOTIFI=""
+.else
+CMAKE_ARGS+=	-DENABLE_ADVANCEDNOTIFICATIONS=OFF
+PLIST_SUB+=	ANOTIFI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MGNOTIFI}
+CMAKE_ARGS+=	-DENABLE_GMAILNOTIFIER=ON
+PLIST_SUB+=	GNOTIFI=""
+.else
+CMAKE_ARGS+=	-DENABLE_GMAILNOTIFIER=OFF
+PLIST_SUB+=	GNOTIFI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLAURE}
+CMAKE_ARGS+=	-DENABLE_LAURE=ON
+PLIST_SUB+=	LAURE=""
+LIB_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
+.else
+CMAKE_ARGS+=	-DENABLE_LAURE=OFF
+PLIST_SUB+=	LAURE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOTZERKALU}
+CMAKE_ARGS+=	-DENABLE_OTZERKALU=ON
+PLIST_SUB+=	OTZERKALU=""
+.else
+CMAKE_ARGS+=	-DENABLE_OTZERKALU=OFF
+PLIST_SUB+=	OTZERKALU="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MMONOCLE}
+CMAKE_ARGS+=	-DENABLE_MONOCLE=ON
+PLIST_SUB+=	MONOCLE=""
+.else
+CMAKE_ARGS+=	-DENABLE_MONOCLE=OFF
+PLIST_SUB+=	MONOCLE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MXPROXY}
+CMAKE_ARGS+=	-DENABLE_XPROXY=ON
+PLIST_SUB+=	XPROXY=""
+.else
+CMAKE_ARGS+=	-DENABLE_XPROXY=OFF
+PLIST_SUB+=	XPROXY="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPINTAB}
+CMAKE_ARGS+=	-DENABLE_PINTAB=ON
+PLIST_SUB+=	PINTAB=""
+.else
+CMAKE_ARGS+=	-DENABLE_PINTAB=OFF
+PLIST_SUB+=	PINTAB="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVROOBY}
+CMAKE_ARGS+=	-DENABLE_VROOBY=ON
+PLIST_SUB+=	VROOBY=""
+.else
+CMAKE_ARGS+=	-DENABLE_VROOBY=OFF
+PLIST_SUB+=	VROOBY="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDOLOZHEE}
+CMAKE_ARGS+=	-DENABLE_DOLOZHEE=ON
+PLIST_SUB+=	DOLOZHEE=""
+.else
+CMAKE_ARGS+=	-DENABLE_DOLOZHEE=OFF
+PLIST_SUB+=	DOLOZHEE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLHTR}
+CMAKE_ARGS+=	-DENABLE_LHTR=ON
+PLIST_SUB+=	LHTR=""
+.else
+CMAKE_ARGS+=	-DENABLE_LHTR=OFF
+PLIST_SUB+=	LHTR="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNACHEKU}
+CMAKE_ARGS+=	-DENABLE_NACHEKU=ON
+PLIST_SUB+=	NACHEKU=""
+.else
+CMAKE_ARGS+=	-DENABLE_NACHEKU=OFF
+PLIST_SUB+=	NACHEKU="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MTABSESSMANAGER}
+CMAKE_ARGS+=	-DENABLE_TABSESSMANAGER=ON
+PLIST_SUB+=	TABSESSMANAGER=""
+.else
+CMAKE_ARGS+=	-DENABLE_TABSESSMANAGER=OFF
+PLIST_SUB+=	TABSESSMANAGER="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MYANDEXDISK}
+CMAKE_ARGS+=	-DENABLE_NETSTOREMANAGER_YANDEXDISK=ON
+PLIST_SUB+=	YANDEXDISK=""
+.else
+CMAKE_ARGS+=	-DENABLE_NETSTOREMANAGER_YANDEXDISK=OFF
+PLIST_SUB+=	YANDEXDISK="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNETSTOREMANAGER}
+CMAKE_ARGS+=	-DENABLE_NETSTOREMANAGER=ON
+PLIST_SUB+=	NETSTOREMANAGER=""
+.else
+CMAKE_ARGS+=	-DENABLE_NETSTOREMANAGER=OFF
+PLIST_SUB+=	NETSTOREMANAGER="@comment "
+.endif
+
+.include <bsd.port.mk>
