@@ -1,0 +1,19 @@
+HyperDex is a next-generation key-value store with the following features:
+
+Fast HyperDex has lower latency, higher throughput, and lower variance than
+other key-value stores. Specifically, HyperDex is a factor of 2-14
+faster than MongoDB, Cassandra and Redis on the industry-standard
+YCSB benchmarks.
+
+Searchable HyperDex enables lookups of non-primary data attributes. Such
+searches are implemented efficiently and contact a small number of servers.
+
+Scalable HyperDex scales as more machines are added to the system.
+
+Consistent The value you GET is always the latest value you PUT. Not just
+"eventually," but immediately and always.
+
+Fault tolerant HyperDex handles failures. Data is automatically replicated
+on multiple machines so that failures do not cause data loss
+
+WWW: http://hyperdex.org
