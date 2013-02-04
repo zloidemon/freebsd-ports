@@ -2,46 +2,48 @@
 # Date created:		2010-01-17
 # Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
 #
-# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.11 2011/04/01 12:29:11 dhn Exp $
+# $FreeBSD: ports/audio/deadbeef/Makefile,v 1.23 2012/07/19 20:15:37 naddy Exp $
 #
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.6
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rc1
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	DeaDBeeF is an audio player
-
-LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		mad.2:${PORTSDIR}/audio/libmad \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+COMMENT=	Ultimate music player for Unix-like systems
 
 LICENSE=	GPLv2
+
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
+		mad:${PORTSDIR}/audio/libmad \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout \
-		CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
+		CPPFLAGS="-I../dumb/dumb-kode54/include  -I../libmp4ff -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo -lintl"
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
+SH=		${LOCALBASE}/bin/bash # Hack for detecting depends
 
 OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		GUI "standard GTK2 user interface plugin" on\
 		VFS "HTTP streaming vfs plugin" on\
 		LASTFM "last.fm/libre.fm scrobbler plugin" on\
-		ART "album art loader plugin(not work now)" off\
-		EQ "SuperEQ DSP plugin(broken with amd64)" off\
-		SID "SID music player plugin(broken with amd64)" off\
+		ART "album art loader plugin" on\
+		EQ "SuperEQ DSP plugin" on\
+		SID "SID music player plugin" on\
 		FFAP "Monkey's Audio plugin" on\
 		VTX "libayemy VTX ZX-Spectrum music player plugin" on\
-		ADP "adplug plugin(broken with amd64)" off\
+		ADP "adplug plugin" on\
 		HOTKEYS "global hotkeys plugin" on\
 		OGG "Ogg Vorbis player plugin" on\
 		FFMPEG "FFMPEG plugin for WMA, MPC, TTA, etc" on\
@@ -49,7 +51,7 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		SNDFILE "libsndfile plugin for PCM wave files" on\
 		WAV "wavpack plugin" on\
 		CDDA "CD-Audio plugin" on\
-		GME "Game Music Emu plugin(broken with amd64)" off\
+		GME "Game Music Emu plugin" on\
 		DUMB "D.U.M.B. plugin for MOD, S3M and other" on\
 		NOTIFY "support for OSD notifications into GTKUI plugin" on\
 		MUSEPACK "musepack plugin" on\
@@ -63,7 +65,9 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		SHELLEXEC "shell commands plugin" on\
 		NLS "Native Language Support" on\
 		M3U "m3u plugin" on\
+		PSF "AOSDK-based PSF(,QSF,SSF,DSF) plugin" on\
 		DSP "libsamplerate (SRC) plugin" on\
+		MONO2STEREO "mono2stereo DSP plugin" on\
 		CONVERTER "Build converter" on\
 		VFS_ZIP "ZIP support" on
 
@@ -74,11 +78,12 @@ CONFIGURE_ARGS+=	--disable-pulse
 PLIST_SUB+=	PULSE="@comment "
 .else
 PLIST_SUB+=	PULSE=""
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 .endif
 
 .if defined(WITHOUT_GUI)
 CONFIGURE_ARGS+=	--disable-gtkui
+CONFIGURE_ARGS+=	--disable-gtk3
 PLIST_SUB+=	GUI="@comment "
 .else
 PLIST_SUB+=	GUI=""
@@ -90,7 +95,7 @@ CONFIGURE_ARGS+=	--disable-vfs-curl
 PLIST_SUB+=	VFS="@comment "
 .else
 PLIST_SUB+=	VFS=""
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITHOUT_LASTFM)
@@ -98,7 +103,7 @@ CONFIGURE_ARGS+=	--disable-lfm
 PLIST_SUB+=	LASTFM="@comment "
 .else
 PLIST_SUB+=	LASTFM=""
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITHOUT_ART)
@@ -108,8 +113,8 @@ PLIST_SUB+=	ART="@comment "
 .if !defined(WITHOUT_VFS)
 CONFIGURE_ARTS+=	--disable-artwork-imlib2
 PLIST_SUB+=	ART=""
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
+		jpeg:${PORTSDIR}/graphics/jpeg
 .else
 BROKEN=		VFS plugin required for album art loader, please rerun 'make config' and either disable ART or enable VFS
 .endif
@@ -120,9 +125,6 @@ CONFIGURE_ARGS+=	--disable-supereq
 PLIST_SUB+=	EQ="@comment "
 .else
 PLIST_SUB+=	EQ=""
-.if ${ARCH} == amd64
-BROKEN=		EQ do not support ${ARCH}
-.endif
 .endif
 
 .if defined(WITHOUT_SID)
@@ -130,9 +132,6 @@ CONFIGURE_ARGS+=	--disable-sid
 PLIST_SUB+=	SID="@comment "
 .else
 PLIST_SUB+=	SID=""
-.if ${ARCH} == amd64
-BROKEN=		SID do not support ${ARCH}
-.endif
 .endif
 
 .if defined(WITHOUT_FFAP)
@@ -140,6 +139,7 @@ CONFIGURE_ARGS+=	--disable-ffap
 PLIST_SUB+=	FFAP="@comment "
 .else
 PLIST_SUB+=	FFAP=""
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 .endif
 
 .if defined(WITHOUT_VTX)
@@ -154,9 +154,6 @@ CONFIGURE_ARGS+=	--disable-adplug
 PLIST_SUB+=	ADP="@comment "
 .else
 PLIST_SUB+=	ADP=""
-.if ${ARCH} == amd64
-BROKEN=		ADP do not support ${ARCH}
-.endif
 .endif
 
 .if defined(WITHOUT_HOTKEYS)
@@ -170,7 +167,7 @@ PLIST_SUB+=	HOTKEYS=""
 CONFIGURE_ARGS+=	--disable-vorbis
 PLIST_SUB+=	OGG="@comment "
 .else
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	OGG=""
 .endif
 
@@ -179,16 +176,16 @@ CONFIGURE_ARGS+=	--disable-ffmpeg
 PLIST_SUB+=	FFMPEG="@comment "
 .else
 PLIST_SUB+=	FFMPEG=""
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		avformat.1:${PORTSDIR}/multimedia/ffmpeg \
-		avutil.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		avformat:${PORTSDIR}/multimedia/ffmpeg \
+		avutil:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 .if defined(WITHOUT_FLAC)
 CONFIGURE_ARGS+=	--disable-flac
 PLIST_SUB+=	FLAC="@comment "
 .else
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .endif
 
@@ -196,7 +193,7 @@ PLIST_SUB+=	FLAC=""
 CONFIGURE_ARGS+=	--disable-sndfile
 PLIST_SUB+=	SNDFILE="@comment "
 .else
-LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 PLIST_SUB+=	SNDFILE=""
 .endif
 
@@ -204,7 +201,7 @@ PLIST_SUB+=	SNDFILE=""
 CONFIGURE_ARGS+=	--disable-wavpack
 PLIST_SUB+=	WAV="@comment "
 .else
-LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
 PLIST_SUB+=	WAV=""
 .endif
 
@@ -213,8 +210,8 @@ CONFIGURE_ARGS+=	--disable-cdda
 PLIST_SUB+=	CDDA="@comment "
 .else
 PLIST_SUB+=	CDDA=""
-LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio \
-		cddb.4:${PORTSDIR}/audio/libcddb
+LIB_DEPENDS+=	cdio:${PORTSDIR}/sysutils/libcdio \
+		cddb:${PORTSDIR}/audio/libcddb
 .endif
 
 .if defined(WITHOUT_GME)
@@ -222,9 +219,6 @@ CONFIGURE_ARGS+=	--disable-gme
 PLIST_SUB+=	GME="@comment "
 .else
 PLIST_SUB+=	GME=""
-.if ${ARCH} == amd64
-BROKEN=		GME do not support ${ARCH}
-.endif
 .endif
 
 .if defined(WITHOUT_DUMB)
@@ -239,7 +233,7 @@ CONFIGURE_ARGS+=	--disable-notify
 PLIST_SUB+=	NOTIFY="@comment "
 .else
 PLIST_SUB+=	NOTIFY=""
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 .endif
 
 .if defined(WITHOUT_MUSEPACK)
@@ -253,6 +247,7 @@ PLIST_SUB+=	MUSEPACK=""
 CONFIGURE_ARGS+=	--disable-wildmidi
 PLIST_SUB+=	WILD="@comment "
 .else
+RUN_DEPENDS+=	${LOCALBASE}/share/freepats/crude.cfg:${PORTSDIR}/audio/freepats
 PLIST_SUB+=	WILD=""
 .endif
 
@@ -275,7 +270,7 @@ CONFIGURE_ARGS+=	--disable-aac
 PLIST_SUB+=	AAC="@comment "
 .else
 PLIST_SUB+=	AAC=""
-LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
 .endif
 
 .if defined(WITHOUT_MMS)
@@ -332,12 +327,26 @@ PLIST_SUB+=	M3U="@comment "
 PLIST_SUB+=	M3U=""
 .endif
 
+.if defined(WITHOUT_PSF)
+CONFIGURE_ARGS+=	--disable-psf
+PLIST_SUB+=	PSF="@comment "
+.else
+PLIST_SUB+=	PSF=""
+.endif
+
 .if defined(WITHOUT_DSP)
 CONFIGURE_ARGS+=	--disable-src
 PLIST_SUB+=	DSP="@comment "
 .else
 PLIST_SUB+=	DSP=""
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+.endif
+
+.if defined(WITHOUT_MONO2STEREO)
+CONFIGURE_ARGS+=	--disable-mono2stereo
+PLIST_SUB+=	MONO2STEREO="@comment "
+.else
+PLIST_SUB+=	MONO2STEREO=""
 .endif
 
 .if defined(WITHOUT_VFS_ZIP)
@@ -345,7 +354,25 @@ CONFIGURE_ARGS+=	--disable-vfs-zip
 PLIST_SUB+=	VFS_ZIP="@comment "
 .else
 PLIST_SUB+=	VFS_ZIP=""
-LIB_DEPENDS+=	zip.3:${PORTSDIR}/archivers/libzip
+LIB_DEPENDS+=	zip:${PORTSDIR}/archivers/libzip
 .endif
 
-.include <bsd.port.mk>
+post-patch:
+# Do not link to libsupc++ which may be PIC-unsafe (breaks 64-bit arches)
+	@${REINPLACE_CMD} -e 's, -lsupc++,,' \
+		${WRKSRC}/plugins/adplug/Makefile.in \
+		${WRKSRC}/plugins/gme/Makefile.in \
+		${WRKSRC}/plugins/sid/Makefile.in \
+		${WRKSRC}/plugins/supereq/Makefile.in
+	@${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}/bin/bash,' \
+		${WRKSRC}/yasmwrapper.sh
+	@${REINPLACE_CMD} -e 's,/etc/timidity++/timidity-freepats.cfg:/etc/timidity/freepats.cfg:/etc/timidity/,${LOCALBASE}/share/,' \
+		${WRKSRC}/plugins/wildmidi/wildmidiplug.c
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not build on powerpc-9: fails to compile
+.endif
+
+.include <bsd.port.post.mk>
