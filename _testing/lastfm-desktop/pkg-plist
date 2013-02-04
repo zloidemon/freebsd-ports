@@ -1,0 +1,13 @@
+bin/lastfm-desktop
+lib/liblistener.so
+lib/liblistener.so.1
+lib/liblistener.so.1.0
+lib/liblistener.so.1.0.0
+lib/liblogger.so
+lib/liblogger.so.1
+lib/liblogger.so.1.0
+lib/liblogger.so.1.0.0
+lib/libunicorn.so
+lib/libunicorn.so.1
+lib/libunicorn.so.1.0
+lib/libunicorn.so.1.0.0
