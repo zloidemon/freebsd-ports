@@ -1,12 +1,8 @@
-# New ports collection makefile for:	qmetro
-# Date created:		2012-01-06
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qmetro
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/source/
 
@@ -16,8 +12,7 @@ COMMENT=	Map of the transport system for many city subways
 LICENSE=	GPLv2
 
 USE_ZIP=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
+USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build
 
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
