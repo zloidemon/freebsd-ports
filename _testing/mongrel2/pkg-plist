@@ -1,8 +1,0 @@
-bin/mongrel2
-bin/m2sh
-lib/mongrel2/config_modules/null.so
-lib/mongrel2/config_modules/zmq.so
-lib/mongrel2/filters/null.so
-@dirrm lib/mongrel2/filters
-@dirrm lib/mongrel2/config_modules
-@dirrm lib/mongrel2
