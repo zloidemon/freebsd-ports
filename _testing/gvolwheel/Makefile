@@ -1,12 +1,8 @@
-# New ports collection makefile for:	gvolwheel
-# Date created:		2010-06-08
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gvolwheel
-PORTVERSION=	0.7
+PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -15,21 +11,21 @@ COMMENT=	Volume mixer
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 USE_ICONV=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gtk30
+CONFIGURE_ARGS+=--enable-oss
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|linux/soundcard|sys/soundcard|g' \
-		${WRKSRC}/src/callbacks.c ${WRKSRC}/src/actions.c
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS} 
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -37,4 +33,8 @@ PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
 .endif
 
-.include <bsd.port.post.mk>
+pre-configure:
+	${REINPLACE_CMD} -e 's|linux/soundcard|sys/soundcard|g' \
+		${WRKSRC}/src/callbacks.c ${WRKSRC}/src/actions.c
+
+.include <bsd.port.mk>
