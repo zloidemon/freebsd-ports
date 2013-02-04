@@ -1,20 +1,17 @@
-# New ports collection makefile for:	mongrel2
-# Date created:		2011-09-28
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
-# $FreeBSD: ports/www/mongrel2/Makefile,v 1.2 2012/11/17 06:02:43 svnexp Exp $
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# $FreeBSD$
 
 PORTNAME=	mongrel2
 PORTVERSION=	1.7.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mongrel2.org/static/downloads/
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Is an application, language, and network arch
 
-LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	zmq:${PORTSDIR}/devel/zmq \
+		sqlite3:${PORTSDIR}/databases/sqlite3
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -30,11 +27,12 @@ EXAMPLES_LIST=	bbs \
 		tornado \
 		zcov
 
-OPTIONS=	EXAMPLES "Install examplse" on
+OPTIONS_DEFINE=	EXAMPLES
+EXAMPLES_DESC=	Install examplse
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
@@ -44,11 +42,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Makefile
 
 post-install:
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for examples in ${EXAMPLES_LIST}
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${examples} ${EXAMPLESDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

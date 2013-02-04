@@ -1,51 +1,50 @@
-# New ports collection makefile for:	qiviewer
-# Date created:		2011-04-02
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qiviewer
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=	A Qt image viewer, designed to be fast and lightweight
+COMMENT=	Fast and lightweight image viewer
 
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml dbus linguist qmake_build moc_build \
-		rcc_build
+USE_QT4=	gui xml dbus linguist_build qmake_build moc_build \
+		rcc_build uic_build
 QMAKEFLAGS+=	PREFIX="${PREFIX}"
 
 PLIST_FILES=	bin/qiviewer \
 		share/applications/qiviewer.desktop \
-		%%DATADIR%%/locale/es_AR.qm \
-		%%DATADIR%%/locale/es_ES.qm \
-
+		share/qiviewer/locale/el.qm \
+		share/qiviewer/locale/es_AR.qm \
+		share/qiviewer/locale/es_ES.qm
 PLIST_DIRS=	share/qiviewer/locale \
-		share/qiviewer
+		share/qiviewer \
+		share/applications
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-OPTIONS=	WEBP "support webp (experemental)" off
+OPTIONS_DEFINE= WEBP
+WEBP_DESC=	 Support for WebP image format (experimental)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_WEBP)
-PLIST_SUB+=	WEBP="@comment "
-.else
+.if ${PORT_OPTIONS:MWEBP}
 QMAKEFLAGS+=	CONFIG+=enable-webp
 PLIST_SUB+=	WEBP=""
+.else
+PLIST_SUB+=	WEBP="@comment "
 .endif
 
 do-configure:
 	@cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
+
 post-configure:
 	${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
