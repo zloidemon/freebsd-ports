@@ -1,15 +1,11 @@
-# New ports collection makefile for:	db2dhcp
-# Date created:		2011-03-06
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	db2dhcp
 PORTVERSION=	0.1
 CATEGORIES=	net
 MASTER_SITES=	http://netpatch.ru/projects/db2dhcp/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.a
+DISTNAME=	${PORTNAME}-${PORTVERSION}.a.10
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	The Dynamic Host Configuration Protocol server with SQL
@@ -20,25 +16,29 @@ CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql" \
 		--prefix=${PREFIX}
 
-OPTIONS=	MYSQL "MySQL database support" on \
-		PGSQL "PostgreSQL database support" off
+OPTIONS_DEFINE=	MYSQL PGSQL
+MYSQL_DESC=	MySQL database support
+PGSQL_DESC=	PostgreSQL database support
+
+OPTIONS_DEFAULT=MYSQL
 
 PLIST_FILES=	sbin/db2dhcp
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-extract:
 	${REINPLACE_CMD} -e 's|postgresql/libpq-fe.h|libpq-fe.h|g' \
 		${WRKSRC}/configure
 
-.if defined(WITH_MYSQL)
-CONFIGURE_ARGS+=	--enable-mysql
+.if ${PORT_OPTIONS:MMYSQL}
+CONFIGURE_ARGS+=	--enable-mysql \
+			LDFLAGS="-L${LOCALBASE}/lib/mysql"
 USE_MYSQL=	yes
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--enable-postgresql
 USE_PGSQL=	yes
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
