@@ -1,14 +1,14 @@
-bin/gvolwheel
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
 %%NLS%%share/locale/ru/LC_MESSAGES/gvolwheel.mo
+bin/gvolwheel
 share/pixmaps/gvolwheel/audio-volume-high.png
 share/pixmaps/gvolwheel/audio-volume-low.png
 share/pixmaps/gvolwheel/audio-volume-medium.png
 share/pixmaps/gvolwheel/audio-volume-muted.png
+@dirrm %%DOCSDIR%%
 @dirrm share/pixmaps/gvolwheel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

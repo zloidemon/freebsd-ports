@@ -13,17 +13,17 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool
 
+CONFIGURE_ARGS+=--enable-oss
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	yes
-USE_ICONV=	yes
 USE_GNOME=	gnomehack gtk30
-CONFIGURE_ARGS+=--enable-oss
+USE_ICONV=	yes
+USE_PKGCONFIG=	yes
+
+OPTIONS_DEFINE=	NLS
+NLS_DESC=	Native language support
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS} 
-.endif
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-nls
@@ -34,6 +34,7 @@ USE_GETTEXT=	yes
 .endif
 
 pre-configure:
+	${ECHO} "${DOCSDIR}"
 	${REINPLACE_CMD} -e 's|linux/soundcard|sys/soundcard|g' \
 		${WRKSRC}/src/callbacks.c ${WRKSRC}/src/actions.c
 
