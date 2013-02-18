@@ -14,14 +14,15 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		cups:${PORTSDIR}/print/cups-client
 
-USE_QT4=	corelib dbus gui moc_build qmake_build rcc sql sql-sqlite3 \
+USE_QT4=	corelib dbus gui moc_build qmake_build rcc_build sql sql-sqlite3_run \
 					svg xml
 
 MAN1=		${PORTNAME}.1
 
-OPTIONS_DEFINE=	DJVU PS
+OPTIONS_DEFINE=	DJVU PDF PS
 DJVU_DESC=	Enable djvu support
 PS_DESC=		Enable post script support
+OPTIONS_DEFAULT= PDF
 
 .include <bsd.port.options.mk>
 
@@ -31,6 +32,13 @@ LIB_DEPENDS+=	djvulibre:${PORTSDIR}/graphics/djvulibre
 .else
 QMAKEFLAGS+= "CONFIG+=without_djvu"
 PLIST_SUB+=	DJVU="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPDF}
+PLIST_SUB+=	PDF=""
+.else
+QMAKEFLAGS+=	"CONFIG+=without_pdf"
+PLIST_SUB+=	PDF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPS}

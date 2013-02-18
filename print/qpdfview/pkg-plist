@@ -1,3 +1,5 @@
+bin/qpdfview
+share/applications/qpdfview.desktop
 %%DATADIR%%/help.html
 %%DATADIR%%/qpdfview.svg
 %%DATADIR%%/qpdfview_ast.qm
@@ -29,9 +31,7 @@
 %%DATADIR%%/qpdfview_uk.qm
 %%DATADIR%%/qpdfview_zh_CN.qm
 %%DJVU%%lib/qpdfview/libqpdfview_djvu.so
-bin/qpdfview
-lib/qpdfview/libqpdfview_pdf.so
-share/applications/qpdfview.desktop
-@dirrm lib/qpdfview
+%%PDF%%lib/qpdfview/libqpdfview_pdf.so
+@dirrmtry lib/qpdfview
 @dirrmtry share/applications
 @dirrm %%DATADIR%%
