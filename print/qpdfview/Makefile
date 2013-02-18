@@ -17,6 +17,8 @@ LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 USE_QT4=	corelib dbus gui moc_build qmake_build rcc_build sql sql-sqlite3_run \
 					svg xml
 
+DATADIR=share/${PORTNAME}
+
 MAN1=		${PORTNAME}.1
 
 OPTIONS_DEFINE=	DJVU PDF PS
