@@ -32,6 +32,7 @@ share/applications/qpdfview.desktop
 %%DATADIR%%/qpdfview_zh_CN.qm
 %%DJVU%%lib/qpdfview/libqpdfview_djvu.so
 %%PDF%%lib/qpdfview/libqpdfview_pdf.so
+%%PS%%lib/qpdfview/libqpdfview_ps.so
 @dirrmtry lib/qpdfview
 @dirrmtry share/applications
 @dirrm %%DATADIR%%
