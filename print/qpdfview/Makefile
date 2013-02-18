@@ -2,10 +2,9 @@
 # $FreeBSD: ports/print/qpdfview/Makefile,v 1.4 2012/12/14 21:39:38 svnexp Exp $
 
 PORTNAME=	qpdfview
-PORTVERSION=	0.3.7
+PORTVERSION=	0.4
 CATEGORIES=	print
-MASTER_SITES=	https://launchpadlibrarian.net/125207295/
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta1
+MASTER_SITES=	https://launchpadlibrarian.net/131409309/
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Tabbed PDF viewer using the poppler library
@@ -15,9 +14,32 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		cups:${PORTSDIR}/print/cups-client
 
-USE_QT4=	corelib dbus gui moc_build qmake_build rcc sql svg xml
+USE_QT4=	corelib dbus gui moc_build qmake_build rcc sql sql-sqlite3 \
+					svg xml
 
 MAN1=		${PORTNAME}.1
+
+OPTIONS_DEFINE=	DJVU PS
+DJVU_DESC=	Enable djvu support
+PS_DESC=		Enable post script support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDJVU}
+PLIST_SUB+=	DJVU=""
+LIB_DEPENDS+=	djvulibre:${PORTSDIR}/graphics/djvulibre
+.else
+QMAKEFLAGS+= "CONFIG+=without_djvu"
+PLIST_SUB+=	DJVU="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPS}
+PLIST_SUB+=	PS=""
+LIB_DEPENDS+=	spectre:${PORTSDIR}/print/libspectre
+.else
+QMAKEFLAGS+=	"CONFIG+=without_ps"
+PLIST_SUB+=	PS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 pre-configure:
@@ -25,5 +47,6 @@ pre-configure:
 		${WRKSRC}/${PORTNAME}.pri
 
 do-configure:
-	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
+	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
+
 .include <bsd.port.post.mk>

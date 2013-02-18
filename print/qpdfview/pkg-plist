@@ -1,5 +1,3 @@
-bin/qpdfview
-share/applications/qpdfview.desktop
 %%DATADIR%%/help.html
 %%DATADIR%%/qpdfview.svg
 %%DATADIR%%/qpdfview_ast.qm
@@ -11,11 +9,15 @@ share/applications/qpdfview.desktop
 %%DATADIR%%/qpdfview_el.qm
 %%DATADIR%%/qpdfview_en_GB.qm
 %%DATADIR%%/qpdfview_es.qm
+%%DATADIR%%/qpdfview_eu.qm
 %%DATADIR%%/qpdfview_fi.qm
 %%DATADIR%%/qpdfview_fr.qm
 %%DATADIR%%/qpdfview_he.qm
 %%DATADIR%%/qpdfview_hr.qm
+%%DATADIR%%/qpdfview_id.qm
 %%DATADIR%%/qpdfview_it.qm
+%%DATADIR%%/qpdfview_ky.qm
+%%DATADIR%%/qpdfview_ms.qm
 %%DATADIR%%/qpdfview_my.qm
 %%DATADIR%%/qpdfview_pl.qm
 %%DATADIR%%/qpdfview_pt_BR.qm
@@ -26,5 +28,10 @@ share/applications/qpdfview.desktop
 %%DATADIR%%/qpdfview_ug.qm
 %%DATADIR%%/qpdfview_uk.qm
 %%DATADIR%%/qpdfview_zh_CN.qm
+%%DJVU%%lib/qpdfview/libqpdfview_djvu.so
+bin/qpdfview
+lib/qpdfview/libqpdfview_pdf.so
+share/applications/qpdfview.desktop
+@dirrm lib/qpdfview
 @dirrmtry share/applications
 @dirrm %%DATADIR%%
