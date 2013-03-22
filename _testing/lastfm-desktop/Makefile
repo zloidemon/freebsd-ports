@@ -6,7 +6,7 @@ PORTVERSION=	2.1.30
 CATEGORIES=	audio
 MASTER_SITES=	http://cdn.last.fm/client/Linux/
 PKGNAMESUFFIX=	-desktop
-DISTNAME=	Last.fm-2.1.30
+DISTNAME=	Last.fm-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Official Last.fm desktop application suite
