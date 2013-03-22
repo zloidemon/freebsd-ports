@@ -9,15 +9,20 @@ PKGNAMESUFFIX=	-desktop
 DISTNAME=	Last.fm-2.1.30
 
 MAINTAINER=	g.veniamin@googlemail.com
-COMMENT=
+COMMENT=	Official Last.fm desktop application suite
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	lastfm:${PORTSDIR}/audio/liblastfm
+LIB_DEPENDS=	lastfm:${PORTSDIR}/audio/liblastfm \
+		avcodec1:${PORTSDIR}/multimedia/ffmpeg1 \
+		gpod:${PORTSDIR}/audio/libgpod
 
 USE_BZIP2=	yes
-USE_QT4=	gui network xml qmake_build uic_build moc_build rcc_build \
-		linguist_build
+USE_QT4=	gui linguist_build moc_build network phonon qmake_build \
+		rcc_build uic_build xml
+USE_LDCONFIG=	yes
+LASTFM=		${PORTNAME}${PKGNAMESUFFIX}
+SUB_FILES=	${LASTFM}.sh
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -25,9 +30,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/_bin/Last.fm\ Scrobbler \
-		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
-	${INSTALL_LIB} ${WRKSRC}/_bin/lib*.so* \
-		${PREFIX}/lib
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${LASTFM}.sh ${PREFIX}/bin/${LASTFM}
+	@${INSTALL_PROGRAM} ${WRKSRC}/_bin/Last.fm\ Scrobbler ${DATADIR}/
+	@${INSTALL_LIB} ${WRKSRC}/_bin/lib*.so* ${DATADIR}/
+	@${INSTALL_DATA} ${WRKSRC}/app/client/Last.fm\ Scrobbler.css \
+		${DATADIR}/
 
 .include <bsd.port.post.mk>
