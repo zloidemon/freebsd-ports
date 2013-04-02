@@ -2,7 +2,7 @@
 # $FreeBSD: ports/devel/avro/Makefile,v 1.1 2013/02/01 13:45:40 svnexp Exp $
 
 PORTNAME=	avro
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none

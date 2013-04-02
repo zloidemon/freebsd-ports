@@ -1,10 +1,11 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD: ports/devel/avro-c/Makefile,v 1.1 2013/01/27 14:46:16 svnexp Exp $
+# $FreeBSD: devel/avro-c/Makefile 314960 2013-03-22 20:06:14Z makc $
 
 PORTNAME=	avro
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	devel
-MASTER_SITES=	APACHE
+MASTER_SITES=	http://www.sai.msu.su/apache/${PORTNAME}/${PORTNAME}-${PORTVERSION}/ \
+		APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable
 PKGNAMESUFFIX=	-c
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -12,7 +13,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Data serialization system for ANSI C
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
 
