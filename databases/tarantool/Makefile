@@ -1,9 +1,9 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD: ports/databases/tarantool/Makefile,v 1.3 2012/12/11 20:03:42 svnexp Exp $
+# $FreeBSD: databases/tarantool/Makefile 314960 2013-03-22 20:06:14Z makc $
 
 PORTNAME=	tarantool
 PORTVERSION=	1.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
@@ -13,8 +13,8 @@ COMMENT=	High performance key/value storage server
 
 LICENSE=	BSD
 
-TR_REV=		31-g9ca7fda
-USE_CMAKE=	yes
+TR_REV=		72-g277010b
+USES=		cmake
 USE_GCC=	4.6+
 USE_GETTEXT=	build
 USE_GMAKE=	yes

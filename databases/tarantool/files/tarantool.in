@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: ports/databases/tarantool/files/tarantool.in,v 1.4 2012/12/11 20:03:42 svnexp Exp $
+# $FreeBSD: databases/tarantool/files/tarantool.in 308708 2012-12-11 20:00:36Z rm $
 
 # PROVIDE: tarantool
 # REQUIRE: LOGIN
