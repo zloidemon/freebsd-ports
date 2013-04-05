@@ -105,7 +105,6 @@
 %%CONFIG%%share/applications/razor-config-qtconfig.desktop
 %%CONFIG%%share/applications/razor-config.desktop
 %%CONFIG%%etc/xdg/razor/menus/razor-config.menu
-%%CONFIG%%etc/xdg/razor/menus/razor-applications.menu
 %%CONFIG%%share/razor/razor-config/razor-config-appearance_ar.qm
 %%CONFIG%%share/razor/razor-config/razor-config-appearance_cs.qm
 %%CONFIG%%share/razor/razor-config/razor-config-appearance_cs_CZ.qm
@@ -1277,6 +1276,39 @@ share/librazorqt/librazorqt_tr.qm
 share/librazorqt/librazorqt_uk.qm
 share/librazorqt/librazorqt_zh_CN.qm
 share/librazorqt/librazorqt_zh_TW.qm
+share/razor/razor-panel/panelvolume/panelvolume_pl_PL.qm
+share/razor/razor-panel/panelvolume/panelvolume_ru.qm
+share/razor/razor-panel/panelvolume/panelvolume_he.qm
+share/razor/razor-panel/panelvolume/panelvolume_es_VE.qm
+share/razor/razor-panel/panelvolume/panelvolume_tr.qm
+share/razor/razor-panel/panelvolume/panelvolume_el_GR.qm
+share/razor/razor-panel/panelvolume/panelvolume_fr.qm
+share/razor/razor-panel/panelvolume/panelvolume_ar.qm
+share/razor/razor-panel/panelvolume/panelvolume_ia.qm
+share/razor/razor-panel/panelvolume/panelvolume_zh_CN.qm
+share/razor/razor-panel/panelvolume/panelvolume_zh_TW.qm
+share/razor/razor-panel/panelvolume/panelvolume_th_TH.qm
+share/razor/razor-panel/panelvolume/panelvolume_ja.qm
+share/razor/razor-panel/panelvolume/panelvolume_es_MX.qm
+share/razor/razor-panel/panelvolume/panelvolume_bg.qm
+share/razor/razor-panel/panelvolume/panelvolume_es.qm
+share/razor/razor-panel/panelvolume/panelvolume_sl.qm
+share/razor/razor-panel/panelvolume/panelvolume_uk.qm
+share/razor/razor-panel/panelvolume/panelvolume_cs_CZ.qm
+share/razor/razor-panel/panelvolume/panelvolume_pt_BR.qm
+share/razor/razor-panel/panelvolume/panelvolume_de_DE.qm
+share/razor/razor-panel/panelvolume/panelvolume_it_IT.qm
+share/razor/razor-panel/panelvolume/panelvolume_fi.qm
+share/razor/razor-panel/panelvolume/panelvolume_pt.qm
+share/razor/razor-panel/panelvolume/panelvolume_gl.qm
+share/razor/razor-panel/panelvolume/panelvolume_eu.qm
+share/razor/razor-panel/panelvolume/panelvolume_ro_RO.qm
+share/razor/razor-panel/panelvolume/panelvolume_lt.qm
+share/razor/razor-panel/panelvolume/panelvolume_cs.qm
+share/razor/razor-panel/panelvolume/panelvolume_da_DK.qm
+share/razor/razor-panel/panelvolume.desktop
+lib/razor-panel/libpanelvolume.so
+@dirrm share/razor/razor-panel/panelvolume
 %%NOTIFICATIOND%%@dirrm share/razor/razor-notificationd
 %%NOTIFICATIOND%%@dirrm share/razor/razor-config-notificationd
 %%RESOURCES%%@dirrm share/razor/themes/a-mego/razor-lightdm-greeter
@@ -1341,9 +1373,11 @@ share/librazorqt/librazorqt_zh_TW.qm
 %%PANEL%%@dirrm share/razor/razor-panel
 %%PANEL%%@dirrm etc/xdg/razor/razor-panel
 %%RUNNER%%@dirrm share/razor/razor-runner
+@dirrm etc/xdg/razor
 @dirrm include/razormount
 @dirrm include/razorqxt
 @dirrm include/qtxdg
 @dirrm include/razorqt
 @dirrm share/libqtxdg
 @dirrm share/librazorqt
+@dirrm share/razor

@@ -66,8 +66,6 @@ lib/cairo-compmgr/libccm_window_animation.so
 lib/libcairo_compmgr.la
 lib/libcairo_compmgr.so
 lib/libcairo_compmgr.so.0
-lib/pkgconfig/cairo-compmgr.pc
-man/man1/cairo-compmgr.1
 share/applications/cairo-compmgr.desktop
 %%DATADIR%%/schemas/ccm-automate.schema-key
 %%DATADIR%%/schemas/ccm-decoration.schema-key

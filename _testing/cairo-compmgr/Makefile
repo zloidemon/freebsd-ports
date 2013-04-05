@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cairo-compmgr
-# Date created:		2010-03-22
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cairo-compmgr
 PORTVERSION=	0.3.0
@@ -15,18 +11,22 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Cairo Composite Manager
 
 BUILD_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr \
-		valac:${PORTSDIR}/lang/vala
+		valac:${PORTSDIR}/lang/vala \
+		iberty:${PORTSDIR}/devel/gnulibiberty
 
 USE_XORG=	xdamage xext xi sm pixman
 USE_GNOME=	gtk20 gnomelibs
+USES=		pathfix
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	4.6+
 USE_GMAKE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/share
+CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/share \
+		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libiberty" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo"
+
+MAN1=		cairo-compmgr.1
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
