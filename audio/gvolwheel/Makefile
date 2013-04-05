@@ -1,5 +1,5 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD$
+# $FreeBSD: ports/audio/gvolwheel/Makefile,v 1.1 2013/02/10 18:08:46 svnexp Exp $
 
 PORTNAME=	gvolwheel
 PORTVERSION=	1.0
