@@ -1,0 +1,11 @@
+MonetDB  pioneered column-store solutions for high-performance data warehouses
+for business intelligence and eScience since 1993. It achieves its goal by
+innovations at all layers of a DBMS, e.g. a storage model based on vertical
+fragmentation, a modern CPU-tuned query execution architecture, automatic and
+adaptive indices, run-time query optimization, and a modular software
+architecture. It is based on the SQL 2003 standard with full support for
+foreign keys, joins, views, triggers, and stored procedures. It is fully ACID
+compliant and supports a rich spectrum of programming interfaces (JDBC, ODBC,
+PHP, Python, RoR, C/C++, Perl).
+
+WWW: http://www.monetdb.org/
