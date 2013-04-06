@@ -13,7 +13,7 @@ COMMENT=	The Dynamic Host Configuration Protocol server with SQL
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		--prefix=${PREFIX}
 
 OPTIONS_DEFINE=	MYSQL PGSQL
