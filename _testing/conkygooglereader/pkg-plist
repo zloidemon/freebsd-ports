@@ -1,6 +1,0 @@
-bin/conkyGoogleReader
-%%DATADIR%%/conkyGoogleReader.py
-%%DATADIR%%/example/conkyrc
-%%DATADIR%%/example/conkyGoogleReader.template
-@dirrm %%DATADIR%%/example
-@dirrm %%DATADIR%%
