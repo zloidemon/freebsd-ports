@@ -104,7 +104,7 @@
 %%CONFIG%%share/applications/razor-config-mouse.desktop
 %%CONFIG%%share/applications/razor-config-qtconfig.desktop
 %%CONFIG%%share/applications/razor-config.desktop
-%%CONFIG%%etc/xdg/razor/menus/razor-config.menu
+%%CONFIG%%etc/xdg/menus/razor-config.menu
 %%CONFIG%%share/razor/razor-config/razor-config-appearance_ar.qm
 %%CONFIG%%share/razor/razor-config/razor-config-appearance_cs.qm
 %%CONFIG%%share/razor/razor-config/razor-config-appearance_cs_CZ.qm
@@ -896,20 +896,20 @@
 %%RESOURCES%%etc/xdg/razor/razor.conf
 %%RESOURCES%%etc/xdg/razor/session.conf
 %%RESOURCES%%etc/xdg/razor/windowmanagers.conf
-%%RESOURCES%%etc/xdg/razor/autostart/razor-appswitcher.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-autosuspend.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-desktop.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-globalkeyshortcuts.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-notifications.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-panel.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-policykit-agent.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-ptbatterysystemtray-autostart.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-qlipper-autostart.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-qstardict-autostart.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-qxkb-autostart.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-runner.desktop
-%%RESOURCES%%etc/xdg/razor/autostart/razor-xscreensaver-autostart.desktop
-%%RESOURCES%%etc/xdg/razor/menus/razor-applications.menu
+%%RESOURCES%%etc/xdg/autostart/razor/razor-appswitcher.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-autosuspend.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-desktop.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-globalkeyshortcuts.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-notifications.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-panel.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-policykit-agent.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-ptbatterysystemtray-autostart.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-qlipper-autostart.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-qstardict-autostart.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-qxkb-autostart.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-runner.desktop
+%%RESOURCES%%etc/xdg/autostart/razor/razor-xscreensaver-autostart.desktop
+%%RESOURCES%%etc/xdg/menus/razor-applications.menu
 %%RESOURCES%%share/xsessions/razor.desktop
 %%RESOURCES%%share/desktop-directories/razor-audio-video.directory
 %%RESOURCES%%share/desktop-directories/razor-development.directory
@@ -1332,8 +1332,8 @@ lib/razor-panel/libpanelvolume.so
 %%RESOURCES%%@dirrm share/razor/themes
 %%RESOURCES%%@dirrm share/desktop-directories
 %%RESOURCES%%@dirrm share/razor/graphics
-%%RESOURCES%%@dirrm etc/xdg/razor/autostart
-%%RESOURCES%%@dirrm etc/xdg/razor/menus
+%%RESOURCES%%@dirrm etc/xdg/autostart/razor
+%%RESOURCES%%@dirrm etc/xdg/menus/razor
 %%RESOURCES%%@dirrm share/xsessions
 %%POWER%%@dirrm share/razor/razor-power
 %%GLOBALKEYSHORTCUTS%%@dirrm share/razor/razor-config-globalkeyshortcuts
@@ -1348,7 +1348,7 @@ lib/razor-panel/libpanelvolume.so
 %%CONFUPDATE%%@dirrm share/razor/razor-confupdate
 %%CONFIG%%@dirrm share/razor/razor-config
 %%CONFIG%%@dirrmtry share/xsessions
-%%CONFIG%%@dirrmtry etc/xdg/razor/menus
+%%CONFIG%%@dirrmtry etc/xdg/menus/razor
 %%CONFIG%%@dirrmtry etc/xdg/razor
 %%CONFIG%%@dirrmtry etc/xdg
 %%AUTOSUSPEND%%@dirrm share/razor/razor-config-autosuspend
@@ -1381,3 +1381,4 @@ lib/razor-panel/libpanelvolume.so
 @dirrm share/libqtxdg
 @dirrm share/librazorqt
 @dirrm share/razor
+@dirrm etc/xdg/menus
