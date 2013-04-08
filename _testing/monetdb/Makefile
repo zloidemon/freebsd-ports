@@ -77,8 +77,14 @@ CONFIGURE_ARGS+=	--enable-console=no
 
 .if ${PORT_OPTIONS:MDATACELL}
 CONFIGURE_ARGS+=	--enable-datacell=yes
+.if ${PORT_OPTIONS:MMONETDB5}
+PLIST_SUB+=		DATACELL=""
+.else
+PLIST_SUB+=		DATACELL="@comment "
+.endif
 .else
 CONFIGURE_ARGS+=	--enable-datacell=no
+PLIST_SUB+=		DATACELL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
