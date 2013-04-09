@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.a.10
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	The Dynamic Host Configuration Protocol server with SQL
 
+USE_RC_SUBR=    db2dhcp
+
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -32,7 +34,7 @@ post-extract:
 
 .if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--enable-mysql \
-			LDFLAGS="-L${LOCALBASE}/lib/mysql"
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/mysql"
 USE_MYSQL=	yes
 .endif
 
