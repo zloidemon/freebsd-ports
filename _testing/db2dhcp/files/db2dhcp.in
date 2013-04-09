@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# PROVIDE: db2dhcp
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to enable db2dhcp:
+#
+# db2dhcp_enable (bool):		Set it to "YES" to enable db2dhcp.
+# db2dhcp_flags (flags):		Set flags to db2dhcp.
+#					Example: "em0"
+#
+
+. /etc/rc.subr
+
+name="db2dhcp"
+rcvar=db2dhcp_enable
+
+load_rc_config $name
+
+: ${db2dhcp_enable="NO"}
+
+command=%%PREFIX%%/sbin/db2dhcp
+
+run_rc_command "$1"
