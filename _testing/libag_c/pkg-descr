@@ -1,0 +1,7 @@
+I've written a C interface that can be used to integrate AngelScript with other
+languages than C++, for example C, Delphi, Pascal, etc. As it is not part of
+the standard SDK I do not keep it updated with every release, but it is quite
+easy to update for the latest release when needed, so don't hesitate to let me
+know if you'd like to have it updated.
+
+WWW: http://www.angelcode.com/angelscript/resources.html
