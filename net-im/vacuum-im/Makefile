@@ -1,9 +1,8 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD: ports/net-im/vacuum-im/Makefile,v 1.10 2013/01/23 15:05:37 svnexp Exp $
+# $FreeBSD: net-im/vacuum-im/Makefile 314960 2013-03-22 20:06:14Z makc $
 
 PORTNAME=	vacuum
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-im
@@ -16,7 +15,7 @@ LICENSE=	GPLv3
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_XZ=	yes
-USE_CMAKE=	yes
+USES=		cmake
 USE_XORG=	xscrnsaver
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
