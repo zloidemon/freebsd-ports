@@ -1,8 +1,9 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD: ports/print/qpdfview/Makefile,v 1.4 2012/12/14 21:39:38 svnexp Exp $
+# $FreeBSD: print/qpdfview/Makefile 314805 2013-03-21 05:27:16Z mezz $
 
 PORTNAME=	qpdfview
 PORTVERSION=	0.4
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/131409309/
 
@@ -14,16 +15,17 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		cups:${PORTSDIR}/print/cups-client
 
-USE_QT4=	corelib dbus gui moc_build qmake_build rcc_build sql sql-sqlite3_run \
-		svg xml
+USE_QT4=	corelib dbus gui imageformats moc_build qmake_build rcc_build \
+		sql sql-sqlite3_run svg xml
+QMAKEFLAGS+=	QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_RELEASE=""
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 
 MAN1=		${PORTNAME}.1
 
 OPTIONS_DEFINE=	DJVU PDF PS
-DJVU_DESC=	Enable djvu support
-PS_DESC=	Enable post script support
+DJVU_DESC=	DjVu support
+PS_DESC=	PostScript support
 OPTIONS_DEFAULT=	PDF
 
 .include <bsd.port.options.mk>
@@ -51,7 +53,6 @@ QMAKEFLAGS+=	"CONFIG+=without_ps"
 PLIST_SUB+=	PS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
 pre-configure:
 	${REINPLACE_CMD} -e 's#/usr#${PREFIX}#g;s#${PREFIX}/share/man#${PREFIX}/man#g' \
 		${WRKSRC}/${PORTNAME}.pri
@@ -59,4 +60,4 @@ pre-configure:
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
