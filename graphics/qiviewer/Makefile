@@ -1,5 +1,5 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD$
+# $FreeBSD: ports/graphics/qiviewer/Makefile,v 1.6 2013/02/20 17:55:16 svnexp Exp $
 
 PORTNAME=	qiviewer
 PORTVERSION=	0.5.0
@@ -13,8 +13,8 @@ COMMENT=	Fast and lightweight image viewer
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_QT4=	gui xml dbus linguist_build qmake_build moc_build \
-		rcc_build uic_build
+USE_QT4=	gui xml dbus imageformats linguist_build qmake_build \
+		moc_build rcc_build uic_build
 QMAKEFLAGS+=	PREFIX="${PREFIX}"
 
 PLIST_FILES=	bin/qiviewer \
@@ -28,8 +28,8 @@ PLIST_DIRS=	share/qiviewer/locale \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-OPTIONS_DEFINE= WEBP
-WEBP_DESC=	 Support for WebP image format (experimental)
+OPTIONS_DEFINE=	WEBP
+WEBP_DESC=	Support for WebP image format (experimental)
 
 .include <bsd.port.options.mk>
 
