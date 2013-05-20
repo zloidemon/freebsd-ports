@@ -1,9 +1,8 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD: ports/audio/clementine-player/Makefile,v 1.24 2013/02/11 13:49:53 svnexp Exp $
+# $FreeBSD: audio/clementine-player/Makefile 315312 2013-03-26 16:13:17Z miwi $
 
 PORTNAME=	clementine
-PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTVERSION=	1.1.1
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -25,9 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
-CONFLICTS_BUILD=	qt-3*
-
-USE_CMAKE=	yes
+USES=		cmake
 USE_GL=		glew
 USE_QT4=	dbus gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl qtestlib corelib webkit
