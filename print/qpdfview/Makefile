@@ -1,5 +1,5 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD: print/qpdfview/Makefile 314805 2013-03-21 05:27:16Z mezz $
+# $FreeBSD: print/qpdfview/Makefile 318445 2013-05-18 20:01:36Z rakuco $
 
 PORTNAME=	qpdfview
 PORTVERSION=	0.4
