@@ -1,5 +1,5 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD$
+# $FreeBSD: audio/lastfm-desktop/Makefile 316136 2013-04-20 09:46:18Z pawel $
 
 PORTNAME=	lastfm
 PORTVERSION=	2.1.30
@@ -19,22 +19,22 @@ LIB_DEPENDS=	lastfm:${PORTSDIR}/audio/liblastfm \
 
 USE_BZIP2=	yes
 USE_QT4=	gui linguist_build moc_build network phonon qmake_build \
-		rcc_build uic_build xml
+		rcc_build uic_build webkit xml
 USE_LDCONFIG=	yes
 LASTFM=		${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	${LASTFM}.sh
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
+
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${LASTFM}.sh ${PREFIX}/bin/${LASTFM}
-	@${INSTALL_PROGRAM} ${WRKSRC}/_bin/Last.fm\ Scrobbler ${DATADIR}/
-	@${INSTALL_LIB} ${WRKSRC}/_bin/lib*.so* ${DATADIR}/
-	@${INSTALL_DATA} ${WRKSRC}/app/client/Last.fm\ Scrobbler.css \
+	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${LASTFM}.sh ${PREFIX}/bin/${LASTFM}
+	${INSTALL_PROGRAM} ${WRKSRC}/_bin/Last.fm\ Scrobbler ${DATADIR}/
+	${INSTALL_LIB} ${WRKSRC}/_bin/lib*.so* ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/app/client/Last.fm\ Scrobbler.css \
 		${DATADIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
