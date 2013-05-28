@@ -2,10 +2,9 @@
 # $FreeBSD: print/qpdfview/Makefile 318445 2013-05-18 20:01:36Z rakuco $
 
 PORTNAME=	qpdfview
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.4.3
 CATEGORIES=	print
-MASTER_SITES=	https://launchpadlibrarian.net/131409309/
+MASTER_SITES=	https://launchpadlibrarian.net/140746246/
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Tabbed PDF viewer using the poppler library
