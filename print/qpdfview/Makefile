@@ -57,6 +57,7 @@ pre-configure:
 		${WRKSRC}/${PORTNAME}.pri
 
 do-configure:
+	cd ${WRKSRC} && lrelease-qt4 ${PORTNAME}.pro
 	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
 
 .include <bsd.port.mk>
