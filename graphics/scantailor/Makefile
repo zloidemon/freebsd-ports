@@ -1,5 +1,5 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD: graphics/scantailor/Makefile 316662 2013-04-27 11:59:28Z mva $
+# $FreeBSD: graphics/scantailor/Makefile 318189 2013-05-14 19:13:10Z rakuco $
 
 PORTNAME=	scantailor
 PORTVERSION=	0.9.11

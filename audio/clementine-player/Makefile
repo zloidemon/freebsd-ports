@@ -1,5 +1,5 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD: audio/clementine-player/Makefile 315312 2013-03-26 16:13:17Z miwi $
+# $FreeBSD: audio/clementine-player/Makefile 319559 2013-06-01 10:27:59Z pawel $
 
 PORTNAME=	clementine
 PORTVERSION=	1.1.1
